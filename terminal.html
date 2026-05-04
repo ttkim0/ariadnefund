@@ -222,6 +222,22 @@ const fmtUSD = n => "$" + Number(n).toLocaleString(undefined, {maximumFractionDi
 const fmtUSDsmall = n => "$" + Number(n).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 const fmtPct = n => (n >= 0 ? "+" : "") + n.toFixed(1) + "%";
 
+// Render any UTC timestamp as Pacific time (auto PST/PDT) → "2026-05-04 01:36:01 PDT"
+function formatPacific(utcStr) {
+  if (!utcStr) return "—";
+  const d = new Date(utcStr);
+  if (isNaN(d)) return "—";
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Los_Angeles",
+    year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", second: "2-digit",
+    hour12: false,
+    timeZoneName: "short"
+  }).formatToParts(d);
+  const get = t => (parts.find(p => p.type === t) || {}).value || "";
+  return `${get("year")}-${get("month")}-${get("day")} ${get("hour")}:${get("minute")}:${get("second")} ${get("timeZoneName")}`;
+}
+
 // Fetch & render
 fetch("data/fund_state.json")
   .then(r => r.json())
@@ -251,8 +267,7 @@ function render(s) {
   document.getElementById("s-trades").textContent = p.n_trades.toLocaleString();
   document.getElementById("s-strat").textContent = f.strategy;
 
-  document.getElementById("t-snapshot").textContent =
-    new Date(s.generated_at_utc).toISOString().slice(0, 19) + "Z";
+  document.getElementById("t-snapshot").textContent = formatPacific(s.generated_at_utc);
 
   // forecast strip
   const fs = document.getElementById("forecast-strip");
