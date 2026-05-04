@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ariadne Labs — A quantitative hedge fund for prediction markets</title>
-<meta name="description" content="Ariadne Labs is a quantitative AI hedge fund that systematically prices gaps between machine-implied probabilities and prediction-market prices.">
+<meta name="description" content="Ariadne Labs is a quantitative AI hedge fund that systematically prices gaps between machine-implied probabilities and prediction-market prices on Kalshi, Polymarket, and other event-contract exchanges.">
 <meta name="author" content="Ariadne Labs">
 <meta property="og:title" content="Ariadne Labs">
-<meta property="og:description" content="A quantitative hedge fund for prediction markets.">
+<meta property="og:description" content="A multi-strategy quantitative hedge fund for prediction markets — Kalshi, Polymarket, and beyond.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,26 +52,30 @@
     </p>
 
     <p>
-      Prediction markets are the modern labyrinth. Liquidity is uneven.
-      Settlement triggers vary. Information arrives at odd intervals. The
-      participant mix is mostly retail, which leaves durable but small
-      inefficiencies in the price-discovery process. Most participants
-      navigate these markets by guessing the outcome. We navigate them by
-      holding a calibrated thread &mdash; a probabilistic distribution we
-      can read back at every step, and a set of decision rules that act
-      only where the thread tells us the market is mispriced.
+      Prediction markets &mdash; Kalshi, Polymarket, and the event-contract
+      exchanges that follow them &mdash; are the modern labyrinth. Liquidity
+      is uneven. Settlement triggers vary. Information arrives at odd
+      intervals. The participant mix is mostly retail, which leaves durable
+      but small inefficiencies in the price-discovery process. Most
+      participants navigate these markets by guessing the outcome. We
+      navigate them by holding a calibrated thread &mdash; a probabilistic
+      distribution we can read back at every step, and a set of decision
+      rules that act only where the thread tells us the market is
+      mispriced.
     </p>
 
     <p>
-      A typical retail participant on Kalshi sees a contract chain of six
-      mutually-exclusive temperature buckets and asks <em>which one will it
-      be?</em> They make a guess, possibly check a forecast, and place a
-      bet. We do not do that. The model does not pick a bucket at all: it
-      outputs a calibrated probability for every bucket simultaneously, and
-      the trading layer compares each of those probabilities to the market
-      mid. Nine times out of ten the comparison favors the market and we
-      hold no position. The tenth time, the gap is real, and we trade it
-      with size proportional to its statistical significance.
+      A typical retail participant sees a contract chain of mutually-
+      exclusive outcomes &mdash; six temperature buckets, a dozen NFL
+      score lines, the candidates in a primary &mdash; and asks
+      <em>which one will it be?</em> They make a guess, possibly check a
+      forecast or a poll, and place a bet. We do not do that. The model
+      does not pick a bucket at all: it outputs a calibrated probability
+      for every outcome simultaneously, and the trading layer compares
+      each of those probabilities to the market mid. Nine times out of
+      ten the comparison favors the market and we hold no position. The
+      tenth time, the gap is real, and we trade it with size proportional
+      to its statistical significance.
     </p>
   </section>
 
@@ -209,32 +213,99 @@
     <p>
       We trade liquid event-contract chains where the underlying truth
       source is observable shortly before settlement. Daily-temperature
-      contracts at U.S. airport stations are the cleanest example. The
-      National Weather Service publishes the official daily high and low
-      for each station to integer precision. The contract chain is six
-      mutually-exclusive 2°F buckets. The settlement source is a public
-      auditable record. The participant mix is heavily retail. All four
-      conditions for a tradable inefficiency are satisfied.
+      contracts at U.S. airport stations are the cleanest example, and
+      where Strategy 01 lives today. The National Weather Service
+      publishes the official daily high and low for each station to
+      integer precision. The contract chain is six mutually-exclusive
+      2°F buckets. The settlement source is a public auditable record.
+      The participant mix is heavily retail. All four conditions for a
+      tradable inefficiency are satisfied. The same four conditions hold
+      for a much wider universe of contracts &mdash; box scores in
+      progress, electricity-demand auctions, monthly economic releases,
+      airline on-time statistics &mdash; and the framework generalizes
+      directly.
     </p>
 
     <p>
       We do not trade at horizons where we have no informational advantage.
-      At twenty-four hours and beyond, the market participants have access
-      to numerical weather prediction model output &mdash; GFS, HRRR,
-      ECMWF &mdash; whose forecast skill our station-only model cannot
-      match. The system simply abstains in that regime. Discipline about
-      <em>when not to trade</em> is the part of the strategy that most
-      retail participants get wrong and that most professional managers
-      get right. We get it right by mechanical rule rather than by
-      judgment.
+      For weather at twenty-four hours and beyond, the market participants
+      have access to numerical weather prediction model output &mdash;
+      GFS, HRRR, ECMWF &mdash; whose forecast skill our station-only
+      model cannot match. The system simply abstains in that regime.
+      The same logic applies elsewhere: we do not bet on outcomes that
+      depend on information we are not privileged to read faster than the
+      crowd. Discipline about <em>when not to trade</em> is the part of
+      the strategy that most retail participants get wrong and that most
+      professional managers get right. We get it right by mechanical
+      rule rather than by judgment.
     </p>
 
     <p>
       We do not trade contracts whose settlement source is opaque,
-      delayed, or subject to discretion. That excludes most political
-      contracts, most novelty contracts, and a number of macroeconomic
-      contracts where the settlement reference is itself produced by a
-      market or by an opinion poll.
+      delayed, or subject to discretion. That excludes most novelty
+      contracts, headline-political contracts where the settlement
+      reference is itself an opinion poll, and any contract whose
+      resolution depends on an exchange's editorial judgment rather than
+      a public auditable record.
+    </p>
+  </section>
+
+  <!-- ─────────────────────────── roadmap ─────────────────────────── -->
+  <section class="block">
+    <h2 class="block-label">Roadmap</h2>
+
+    <p>
+      Weather is the first domain because it has the cleanest settlement
+      mechanics and the most transparent observational record &mdash; an
+      ideal training ground for the calibration discipline the strategy
+      depends on. The methodology generalizes far beyond it. Each new
+      strategy follows the same template: identify a contract universe
+      whose ground truth is publicly observable, build a model that
+      outputs a calibrated distribution over outcomes, and trade only the
+      gaps between that distribution and the market.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat"><span class="v">01</span><span class="l">Weather · live</span></div>
+      <div class="stat"><span class="v">02</span><span class="l">Sports · in research</span></div>
+      <div class="stat"><span class="v">03</span><span class="l">Macro releases · scoping</span></div>
+      <div class="stat"><span class="v">04</span><span class="l">Energy &amp; grid · scoping</span></div>
+    </div>
+
+    <p>
+      <em class="brand">Strategy 02 (sports).</em> Live in-game NFL, NBA,
+      and MLB markets on Kalshi and Polymarket, where line movement
+      lags the play-by-play feed by a measurable interval. The same
+      quantile-forecasting machinery that produces a CDF over a daily
+      temperature produces a CDF over a final score given the current
+      game state.
+    </p>
+
+    <p>
+      <em class="brand">Strategy 03 (macro releases).</em> CPI, non-farm
+      payrolls, FOMC outcomes, GDP advance estimates &mdash; contracts
+      that settle on a single scheduled government release. The market
+      typically prices these against consensus economist surveys; we
+      price them against a distributional model trained on the
+      underlying high-frequency data, with explicit handling of the
+      revision and seasonal-adjustment processes that introduce most of
+      the residual uncertainty.
+    </p>
+
+    <p>
+      <em class="brand">Strategy 04 (energy and grid).</em> Day-ahead
+      and intra-day electricity demand and price contracts on regional
+      ISO data, where the settlement source is a public ISO data feed
+      and the underlying load follows weather and calendar drivers we
+      already model.
+    </p>
+
+    <p>
+      We are deliberate about expansion. Each new strategy must clear the
+      same statistical bar Strategy 01 cleared on a held-out test set
+      before it is allocated capital. Building a calibrated thread for a
+      new asset class is not an afternoon's work, and we treat it that
+      way.
     </p>
   </section>
 
@@ -243,14 +314,16 @@
     <h2 class="block-label">Research</h2>
 
     <p>
-      Paper 01 documents the full system &mdash; data ingestion, the
-      timezone-alignment pitfall in the NOAA archives, the forecasting
-      model, strike mapping, meta-calibration, the realistic backtest, and
-      the live-deployment infrastructure &mdash; in 33 pages, with 12
-      figures and 65 references. Three further papers are in preparation:
-      one on adding NWP features to extend the high-skill regime, one on
-      multi-station scaling, and one on a contextual-bandit position-sizing
-      layer.
+      Paper 01 documents Strategy 01 end-to-end &mdash; data ingestion,
+      the timezone-alignment pitfall in the NOAA archives, the
+      forecasting model, strike mapping, meta-calibration, the realistic
+      backtest, and the live-deployment infrastructure &mdash; in 33
+      pages, with 12 figures and 65 references. Several further papers
+      are in preparation: one on adding NWP features to extend the high-
+      skill regime in weather, one on a contextual-bandit position-
+      sizing layer common to all strategies, and one introducing the
+      live in-game scoring model behind Strategy 02. We expect to
+      publish at the rate of roughly one paper per strategy.
     </p>
 
     <p class="btn-row">
@@ -286,7 +359,7 @@
   <div class="site-footer-inner">
     <div>
       <a href="index.html" class="wordmark">Ariadne <em>Labs</em></a>
-      <p>A quantitative hedge fund for prediction markets. Stanford, California.</p>
+      <p>A multi-strategy quantitative hedge fund for prediction markets. Stanford, California.</p>
     </div>
     <nav class="links">
       <a href="research.html">Research</a>

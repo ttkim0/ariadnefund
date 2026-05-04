@@ -124,6 +124,73 @@ if fc:
         "h24_median": f24["median"] if f24 else None,
     }
 
+# Bucket-probability charts: per (series_ticker, day_D) — list of buckets with our model
+# probability vs the Kalshi market price. The terminal renders one chart per group.
+bucket_charts = []
+if sig.get("signals"):
+    groups = {}
+    for s in sig["signals"]:
+        key = (s.get("series_ticker"), s.get("day_D"))
+        groups.setdefault(key, []).append(s)
+
+    def _strike_sort(s):
+        # order buckets along the temperature axis: less → between → greater
+        st = s.get("strike_type")
+        floor = s.get("floor_strike")
+        cap = s.get("cap_strike")
+        if st == "less":
+            return (0, cap if cap is not None else -1e9)
+        if st == "between":
+            mid = ((floor or 0) + (cap or 0)) / 2.0
+            return (1, mid)
+        if st == "greater":
+            return (2, floor if floor is not None else 1e9)
+        return (3, 0)
+
+    for (series, day), items in groups.items():
+        if not series or not day:
+            continue
+        items_sorted = sorted(items, key=_strike_sort)
+        buckets = []
+        for s in items_sorted:
+            ask = s.get("yes_ask")
+            bid = s.get("yes_bid")
+            mid = None
+            if ask is not None and bid is not None:
+                mid = (float(ask) + float(bid)) / 2.0
+            buckets.append({
+                "label": s.get("yes_sub_title") or "",
+                "p_model": round(float(s.get("model_prob_yes") or 0), 3),
+                "p_final": round(float(s.get("p_final") or 0), 3),
+                "p_market": round(float(mid), 3) if mid is not None else None,
+                "yes_ask": round(float(ask), 3) if ask is not None else None,
+                "yes_bid": round(float(bid), 3) if bid is not None else None,
+            })
+        side_label = items_sorted[0].get("side_label") or ""
+        bucket_charts.append({
+            "series_ticker": series,
+            "day_D": day,
+            "side_label": side_label,
+            "title": f"{side_label} · {day}",
+            "buckets": buckets,
+        })
+    # sort by day then side (HIGH before LOW for visual consistency)
+    bucket_charts.sort(key=lambda c: (c["day_D"], 0 if c["side_label"] == "HIGH" else 1))
+
+# Last 72h of hourly observations (temp + dew) for the terminal line chart
+obs_72h = []
+try:
+    h = pd.read_parquet(ROOT / "data" / "sfo_hourly.parquet")
+    h = h.dropna(subset=["temp_f"]).sort_values("hour").tail(72)
+    for _, r in h.iterrows():
+        obs_72h.append({
+            "t": pd.Timestamp(r["hour"]).strftime("%Y-%m-%d %H:%M"),
+            "temp_f": round(float(r["temp_f"]), 2),
+            "dew_f": round(float(r["dew_f"]), 2) if pd.notna(r["dew_f"]) else None,
+        })
+except Exception as e:
+    print(f"warn: could not build obs_72h ({e})")
+
 # AUM scaling from backtest
 # Backtest used $1k → $X; scale to AUM
 aum_scale = AUM / init_bk
@@ -161,6 +228,8 @@ state = {
     "horizon_skill": horizon_skill,
     "equity_curve": equity,
     "recent_trades": recent_trades,
+    "bucket_charts": bucket_charts,
+    "obs_72h": obs_72h,
     "generated_at_utc": pd.Timestamp.utcnow().isoformat(),
 }
 

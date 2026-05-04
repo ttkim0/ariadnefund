@@ -152,6 +152,30 @@ if (!window.AriadneAuth.isLoggedIn()) {
     </table>
   </section>
 
+  <!-- ===================== bucket probability charts ===================== -->
+  <section class="t-panel t-row-full">
+    <div class="t-panel-header">
+      <span class="num">06</span><span class="title">BUCKET PROBABILITIES · MODEL vs KALSHI</span>
+      <span class="sub">per-day strike ladder · model bar (amber) over market mid (blue)</span>
+      <span class="pill" id="bk-count">—</span>
+    </div>
+    <div class="t-bucket-grid" id="bucket-grid">
+      <div class="muted">loading…</div>
+    </div>
+  </section>
+
+  <!-- ===================== 72h observations ===================== -->
+  <section class="t-panel t-row-full">
+    <div class="t-panel-header">
+      <span class="num">07</span><span class="title">SFO OBSERVATIONS · LAST 72h</span>
+      <span class="sub">hourly METAR · temperature (amber) &amp; dew point (blue)</span>
+      <span class="pill" id="obs-span">—</span>
+    </div>
+    <div class="t-chart-wrap">
+      <canvas class="t-chart" id="obs-canvas" width="800" height="240"></canvas>
+    </div>
+  </section>
+
   <!-- ===================== meta footer ===================== -->
   <section class="t-meta t-row-full">
     <span><span class="k">VENUE</span> Kalshi (public market data)</span>
@@ -307,6 +331,157 @@ function render(s) {
     document.getElementById("eq-span").textContent =
       s.equity_curve[0].t + " → " + s.equity_curve[s.equity_curve.length - 1].t;
   }
+
+  // bucket probability grid
+  renderBucketCharts(s.bucket_charts || []);
+
+  // 72h observations
+  drawObsChart(s.obs_72h || []);
+  if (s.obs_72h && s.obs_72h.length >= 2) {
+    document.getElementById("obs-span").textContent =
+      s.obs_72h[0].t.slice(5) + " → " + s.obs_72h[s.obs_72h.length - 1].t.slice(5);
+  }
+}
+
+// ───────── bucket probability charts (CSS bars, model vs market) ─────────
+function renderBucketCharts(charts) {
+  const grid = document.getElementById("bucket-grid");
+  document.getElementById("bk-count").textContent =
+    charts.length + (charts.length === 1 ? " market" : " markets");
+  if (!charts.length) {
+    grid.innerHTML = '<div class="muted">no upcoming Kalshi markets cached</div>';
+    return;
+  }
+  grid.innerHTML = "";
+  charts.forEach(c => {
+    const card = document.createElement("div");
+    card.className = "t-bucket-card";
+    const sideClass = c.side_label === "HIGH" ? "hi" : "lo";
+    let html = `
+      <div class="t-bucket-head">
+        <span class="side ${sideClass}">${c.side_label}</span>
+        <span class="day">${c.day_D}</span>
+        <span class="ser">${c.series_ticker}</span>
+      </div>
+      <div class="t-bucket-rows">`;
+    c.buckets.forEach(b => {
+      const pm = (b.p_model || 0) * 100;
+      const pf = (b.p_final || 0) * 100;
+      const pk = b.p_market != null ? b.p_market * 100 : null;
+      html += `
+        <div class="row">
+          <div class="lbl">${b.label}</div>
+          <div class="bars">
+            <div class="bar bar-model" style="width:${pm.toFixed(1)}%;" title="model ${pm.toFixed(1)}%"></div>
+            ${pk != null
+              ? `<div class="bar bar-market" style="width:${pk.toFixed(1)}%;" title="kalshi mid ${pk.toFixed(1)}%"></div>`
+              : ""}
+          </div>
+          <div class="nums">
+            <span class="m">${pm.toFixed(0)}%</span>
+            <span class="k">${pk != null ? pk.toFixed(0) + "%" : "—"}</span>
+          </div>
+        </div>`;
+    });
+    html += `</div>
+      <div class="t-bucket-legend">
+        <span><i class="sw sw-model"></i>model</span>
+        <span><i class="sw sw-market"></i>kalshi&nbsp;mid</span>
+      </div>`;
+    card.innerHTML = html;
+    grid.appendChild(card);
+  });
+}
+
+// ───────── 72h observations canvas line chart ─────────
+function drawObsChart(obs) {
+  if (!obs || obs.length < 2) return;
+  const c = document.getElementById("obs-canvas");
+  const dpi = window.devicePixelRatio || 1;
+  const W = c.clientWidth, H = c.clientHeight;
+  c.width = W * dpi; c.height = H * dpi;
+  const ctx = c.getContext("2d");
+  ctx.scale(dpi, dpi);
+
+  const padL = 50, padR = 16, padT = 14, padB = 22;
+  const w = W - padL - padR, h = H - padT - padB;
+
+  const temps = obs.map(o => o.temp_f);
+  const dews  = obs.map(o => (o.dew_f == null ? NaN : o.dew_f));
+  const allY = temps.concat(dews.filter(v => !isNaN(v)));
+  const yMin = Math.min(...allY), yMax = Math.max(...allY);
+  const yPad = (yMax - yMin) * 0.10 || 1;
+  const yLo = yMin - yPad, yHi = yMax + yPad;
+  const px = i => padL + (i / (obs.length - 1)) * w;
+  const py = v => padT + (1 - (v - yLo) / (yHi - yLo)) * h;
+
+  // grid
+  ctx.strokeStyle = "rgba(247, 177, 62, 0.10)";
+  ctx.lineWidth = 1;
+  for (let g = 0; g <= 4; g++) {
+    const y = padT + (g / 4) * h;
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + w, y); ctx.stroke();
+  }
+  for (let g = 0; g <= 6; g++) {
+    const x = padL + (g / 6) * w;
+    ctx.beginPath(); ctx.moveTo(x, padT); ctx.lineTo(x, padT + h); ctx.stroke();
+  }
+
+  // y-axis labels (°F)
+  ctx.fillStyle = "#5a6660";
+  ctx.font = "10px 'JetBrains Mono', monospace";
+  ctx.textAlign = "right";
+  for (let g = 0; g <= 4; g++) {
+    const v = yLo + (1 - g / 4) * (yHi - yLo);
+    ctx.fillText(v.toFixed(0) + "°", padL - 6, padT + (g / 4) * h + 3);
+  }
+
+  // x-axis labels — sparse, MM-DD HH
+  ctx.textAlign = "center";
+  const labelEvery = Math.max(1, Math.floor(obs.length / 6));
+  for (let i = 0; i < obs.length; i += labelEvery) {
+    ctx.fillText(obs[i].t.slice(5, 13), px(i), padT + h + 14);
+  }
+
+  // dew line (drawn first, dimmer blue)
+  ctx.strokeStyle = "rgba(107, 142, 255, 0.75)";
+  ctx.lineWidth = 1.2;
+  ctx.beginPath();
+  let started = false;
+  for (let i = 0; i < obs.length; i++) {
+    const v = obs[i].dew_f;
+    if (v == null || isNaN(v)) { started = false; continue; }
+    const X = px(i), Y = py(v);
+    if (!started) { ctx.moveTo(X, Y); started = true; }
+    else ctx.lineTo(X, Y);
+  }
+  ctx.stroke();
+
+  // temp line (amber, on top)
+  ctx.strokeStyle = "#f7b13e";
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  for (let i = 0; i < obs.length; i++) {
+    const X = px(i), Y = py(obs[i].temp_f);
+    if (i === 0) ctx.moveTo(X, Y); else ctx.lineTo(X, Y);
+  }
+  ctx.stroke();
+
+  // last point dot
+  const lastX = px(obs.length - 1), lastY = py(obs[obs.length - 1].temp_f);
+  ctx.fillStyle = "#f7b13e";
+  ctx.beginPath();
+  ctx.arc(lastX, lastY, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  // legend (top-right)
+  ctx.font = "10px 'JetBrains Mono', monospace";
+  ctx.textAlign = "left";
+  const lx = padL + w - 130, ly = padT + 4;
+  ctx.fillStyle = "#f7b13e"; ctx.fillRect(lx, ly, 14, 2);
+  ctx.fillStyle = "#9BA59E"; ctx.fillText("temp °F", lx + 18, ly + 4);
+  ctx.fillStyle = "rgba(107,142,255,0.85)"; ctx.fillRect(lx + 70, ly, 14, 2);
+  ctx.fillStyle = "#9BA59E"; ctx.fillText("dew °F", lx + 88, ly + 4);
 }
 
 function drawEquityCurve(curve) {
@@ -382,7 +557,10 @@ function drawEquityCurve(curve) {
 }
 
 window.addEventListener("resize", () => {
-  fetch("data/fund_state.json").then(r => r.json()).then(s => drawEquityCurve(s.equity_curve));
+  fetch("data/fund_state.json").then(r => r.json()).then(s => {
+    drawEquityCurve(s.equity_curve);
+    drawObsChart(s.obs_72h || []);
+  });
 });
 </script>
 

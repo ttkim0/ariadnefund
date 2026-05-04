@@ -240,6 +240,94 @@ canvas.t-chart { width: 100%; height: 240px; display: block; }
 .t-forecast .h .v.amber { color: var(--t-amber); }
 .t-forecast .h .ci { font-size: 10px; font-style: italic; color: var(--t-fg-muted); font-family: var(--t-serif); }
 
+/* ═══════ bucket probability grid ═══════ */
+.t-bucket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1px;
+  background: var(--t-rule);
+  margin-top: 0.4rem;
+}
+.t-bucket-card {
+  background: var(--t-bg);
+  padding: 0.7rem 0.9rem 0.85rem;
+  display: flex; flex-direction: column; gap: 0.45rem;
+}
+.t-bucket-head {
+  display: flex; align-items: baseline; gap: 0.6rem;
+  font-size: 9.5px; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--t-fg-faint);
+  border-bottom: 1px solid var(--t-rule-soft);
+  padding-bottom: 0.3rem;
+}
+.t-bucket-head .side {
+  font-weight: 500; letter-spacing: 0.2em;
+  padding: 1px 6px; border-radius: 2px;
+  font-size: 9px;
+}
+.t-bucket-head .side.hi { color: var(--t-amber); border: 1px solid var(--t-amber-dim); }
+.t-bucket-head .side.lo { color: var(--t-blue);  border: 1px solid rgba(107,142,255,0.45); }
+.t-bucket-head .day { color: var(--t-fg-muted); letter-spacing: 0.06em; }
+.t-bucket-head .ser {
+  margin-left: auto;
+  font-family: var(--t-mono);
+  letter-spacing: 0.04em;
+  color: var(--t-fg-faint);
+}
+
+.t-bucket-rows { display: flex; flex-direction: column; gap: 0.28rem; }
+.t-bucket-rows .row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 4.4rem;
+  gap: 0.55rem;
+  align-items: center;
+  font-size: 10.5px;
+}
+.t-bucket-rows .row .lbl {
+  color: var(--t-fg-muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.t-bucket-rows .row .bars {
+  position: relative;
+  height: 12px;
+  background: var(--t-panel-2);
+  border: 1px solid var(--t-rule-soft);
+}
+.t-bucket-rows .row .bar {
+  position: absolute; top: 0; left: 0; height: 100%;
+}
+.t-bucket-rows .row .bar.bar-market {
+  background: rgba(107, 142, 255, 0.35);
+  border-right: 1px solid rgba(107, 142, 255, 0.7);
+  z-index: 1;
+}
+.t-bucket-rows .row .bar.bar-model {
+  background: rgba(247, 177, 62, 0.55);
+  border-right: 1px solid var(--t-amber);
+  z-index: 2;
+}
+.t-bucket-rows .row .nums {
+  display: flex; gap: 0.45rem; justify-content: flex-end;
+  font-variant-numeric: tabular-nums;
+}
+.t-bucket-rows .row .nums .m { color: var(--t-amber); }
+.t-bucket-rows .row .nums .k { color: var(--t-blue); }
+
+.t-bucket-legend {
+  display: flex; gap: 0.9rem;
+  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--t-fg-faint);
+  padding-top: 0.2rem;
+}
+.t-bucket-legend .sw {
+  display: inline-block; width: 10px; height: 6px;
+  margin-right: 0.3rem; vertical-align: 0.05em;
+}
+.t-bucket-legend .sw.sw-model  { background: rgba(247, 177, 62, 0.7); border: 1px solid var(--t-amber); }
+.t-bucket-legend .sw.sw-market { background: rgba(107, 142, 255, 0.45); border: 1px solid rgba(107, 142, 255, 0.8); }
+
 /* ═══════ meta footer row ═══════ */
 .t-meta {
   grid-column: 1 / -1;
