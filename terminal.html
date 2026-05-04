@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARIADNE TERMINAL</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/terminal.css">
+<script src="js/auth.js"></script>
+<script>
+// Gate the page: redirect to login if no valid session.
+if (!window.AriadneAuth.isLoggedIn()) {
+  location.href = "login.html?next=" + encodeURIComponent(location.pathname);
+}
+</script>
+</head>
+<body>
+
+<!-- ============================ TOP STATUS BAR ============================ -->
+<div class="t-topbar">
+  <span class="brand">Ariadne <em>Labs</em></span>
+  <span class="crumb"><b>FUND-01</b> &middot; SFO-EVENTS &middot; USD</span>
+  <span class="spacer"></span>
+  <span class="muted"><span class="pulse"></span>LIVE</span>
+  <span class="clock" id="t-clock">--:--:-- UTC</span>
+  <span><a id="t-user" href="#"></a></span>
+  <span><a href="#" id="t-logout">[ logout ]</a></span>
+</div>
+
+<!-- ribbon menu -->
+<nav class="t-ribbon">
+  <a class="active"><span class="key">F1</span>Summary</a>
+  <a><span class="key">F2</span>Positions</a>
+  <a><span class="key">F3</span>Trades</a>
+  <a><span class="key">F4</span>Models</a>
+  <a><span class="key">F5</span>Risk</a>
+  <a href="research.html"><span class="key">F6</span>Research</a>
+  <a href="https://github.com/ttkim0/ariadnefund" target="_blank" rel="noopener"><span class="key">F7</span>Repo ↗</a>
+</nav>
+
+<!-- ============================ MAIN GRID ============================ -->
+<main class="t-grid">
+
+  <!-- summary row spans both columns -->
+  <section class="t-summary t-row-full">
+    <div class="row" id="t-summary-row">
+      <div class="stat"><div class="l">AUM</div><div class="v amber" id="s-aum">—</div><div class="delta" id="s-aum-sub">USD · stated</div></div>
+      <div class="stat"><div class="l">YTD P&amp;L</div><div class="v" id="s-pnl">—</div><div class="delta" id="s-pnl-sub">on stated AUM</div></div>
+      <div class="stat"><div class="l">Sharpe</div><div class="v" id="s-sharpe">—</div><div class="delta" id="s-sharpe-sub">annualized · daily</div></div>
+      <div class="stat"><div class="l">Win Rate</div><div class="v" id="s-wr">—</div><div class="delta" id="s-wr-sub">across all settled</div></div>
+      <div class="stat"><div class="l">Max DD</div><div class="v" id="s-dd">—</div><div class="delta" id="s-dd-sub">peak-to-trough</div></div>
+      <div class="stat"><div class="l">Trades</div><div class="v" id="s-trades">—</div><div class="delta" id="s-trades-sub">since inception</div></div>
+      <div class="stat"><div class="l">Strategy</div><div class="v" style="font-size:13px;line-height:1.3;letter-spacing:0.04em;" id="s-strat">—</div><div class="delta">market-neutral</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== left column ===================== -->
+
+  <!-- equity curve -->
+  <section class="t-panel">
+    <div class="t-panel-header">
+      <span class="num">01</span><span class="title">EQUITY CURVE</span>
+      <span class="sub">strategy 01 · realistic backtest · ≤12h horizon</span>
+      <span class="pill" id="eq-span">—</span>
+    </div>
+    <div class="t-chart-wrap">
+      <canvas class="t-chart" id="eq-canvas" width="800" height="260"></canvas>
+    </div>
+  </section>
+
+  <!-- ===================== right column ===================== -->
+  <section class="t-panel">
+    <div class="t-panel-header">
+      <span class="num">02</span><span class="title">FORECAST · NEXT 4 DAYS</span>
+      <span class="sub">SFO · daily HIGH/LOW</span>
+      <span class="pill">PST</span>
+    </div>
+    <div id="forecast-strip" class="t-forecast">
+      <div class="muted">loading…</div>
+    </div>
+    <div class="muted faint" style="margin-top:1rem;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;">
+      issued: <span id="fc-issued">—</span> · current obs: <span id="fc-current">—°F</span>
+    </div>
+  </section>
+
+  <!-- ===================== open positions ===================== -->
+  <section class="t-panel t-row-full">
+    <div class="t-panel-header">
+      <span class="num">03</span><span class="title">ACTIONABLE SIGNALS · OPEN POSITIONS</span>
+      <span class="sub">filtered · post-fee EV ≥ $0.02/contract</span>
+      <span class="pill" id="pos-count">—</span>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="t-table" id="pos-table">
+        <thead>
+          <tr>
+            <th>SETTLE&nbsp;DAY</th>
+            <th>TICKER</th>
+            <th>BUCKET</th>
+            <th>SIDE</th>
+            <th class="num">COST</th>
+            <th class="num">P_MODEL</th>
+            <th class="num">P_FINAL</th>
+            <th class="num">EV/$</th>
+            <th class="num">KELLY</th>
+          </tr>
+        </thead>
+        <tbody id="pos-body">
+          <tr><td colspan="9" class="muted">loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== horizon skill panel ===================== -->
+  <section class="t-panel">
+    <div class="t-panel-header">
+      <span class="num">04</span><span class="title">HORIZON SKILL</span>
+      <span class="sub">test set · 2023-01 → 2026-04 · n=28,977 hr</span>
+    </div>
+    <table class="t-table" id="skill-table">
+      <thead>
+        <tr><th>HORIZON</th><th class="num">MAE&nbsp;(°F)</th><th class="num">SKILL&nbsp;vs&nbsp;PERSIST</th><th class="num">SKILL&nbsp;vs&nbsp;CLIM</th></tr>
+      </thead>
+      <tbody id="skill-body">
+        <tr><td colspan="4" class="muted">loading…</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===================== recent trades ===================== -->
+  <section class="t-panel">
+    <div class="t-panel-header">
+      <span class="num">05</span><span class="title">RECENT TRADES</span>
+      <span class="sub">last 12 fills · backtest log</span>
+    </div>
+    <table class="t-table">
+      <thead>
+        <tr>
+          <th>TIME</th>
+          <th>TICKER</th>
+          <th>SIDE</th>
+          <th class="num">COST</th>
+          <th class="num">SIZE</th>
+          <th class="num">P&amp;L</th>
+        </tr>
+      </thead>
+      <tbody id="trades-body">
+        <tr><td colspan="6" class="muted">loading…</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===================== meta footer ===================== -->
+  <section class="t-meta t-row-full">
+    <span><span class="k">VENUE</span> Kalshi (public market data)</span>
+    <span><span class="k">REFRESH</span> hourly via launchd</span>
+    <span><span class="k">DATA</span> NOAA LCD + ISD + NWS METAR</span>
+    <span><span class="k">PIPELINE</span> 14 scripts · pyarrow · sklearn</span>
+    <span><span class="k">SNAPSHOT</span> <span id="t-snapshot">—</span></span>
+  </section>
+
+</main>
+
+<!-- ============================ COMMAND BAR ============================ -->
+<div class="t-cmdbar">
+  <span class="prompt">ariadne&gt;</span>
+  <input type="text" placeholder="type a command (HELP for list) — coming soon" disabled>
+  <span class="keys"><kbd>F1</kbd>summary <kbd>F7</kbd>strategy <kbd>L</kbd>logout</span>
+</div>
+
+<!-- ============================ CHART + DATA SCRIPT ============================ -->
+<script>
+// Show logged-in user
+(function () {
+  const u = window.AriadneAuth.isLoggedIn();
+  const el = document.getElementById("t-user");
+  el.textContent = "[" + (u || "guest").toUpperCase() + "]";
+})();
+document.getElementById("t-logout").addEventListener("click", function (e) {
+  e.preventDefault();
+  window.AriadneAuth.logout();
+});
+
+// UTC clock
+function tick() {
+  const d = new Date();
+  const hh = String(d.getUTCHours()).padStart(2, "0");
+  const mm = String(d.getUTCMinutes()).padStart(2, "0");
+  const ss = String(d.getUTCSeconds()).padStart(2, "0");
+  document.getElementById("t-clock").textContent = `${hh}:${mm}:${ss} UTC`;
+}
+tick(); setInterval(tick, 1000);
+
+// Format helpers
+const fmtUSD = n => "$" + Number(n).toLocaleString(undefined, {maximumFractionDigits: 0});
+const fmtUSDsmall = n => "$" + Number(n).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const fmtPct = n => (n >= 0 ? "+" : "") + n.toFixed(1) + "%";
+
+// Fetch & render
+fetch("data/fund_state.json")
+  .then(r => r.json())
+  .then(state => render(state))
+  .catch(err => {
+    document.querySelectorAll(".t-panel").forEach(p => {
+      const tb = p.querySelector("tbody, .muted");
+      if (tb) tb.innerHTML = '<tr><td colspan="9" class="down">data unavailable: ' + err.message + '</td></tr>';
+    });
+  });
+
+function render(s) {
+  const f = s.fund, p = s.performance;
+
+  // summary row
+  document.getElementById("s-aum").textContent = fmtUSD(f.aum_usd);
+  const pnl = p.ytd_pnl_at_aum_usd;
+  const pnlEl = document.getElementById("s-pnl");
+  pnlEl.textContent = (pnl >= 0 ? "+" : "−") + fmtUSD(Math.abs(pnl));
+  pnlEl.classList.add(pnl >= 0 ? "good" : "bad");
+
+  document.getElementById("s-sharpe").textContent = p.sharpe_ratio.toFixed(2);
+  document.getElementById("s-wr").textContent = p.win_rate_pct.toFixed(1) + "%";
+  const ddEl = document.getElementById("s-dd");
+  ddEl.textContent = p.max_drawdown_pct.toFixed(2) + "%";
+  ddEl.classList.add("bad");
+  document.getElementById("s-trades").textContent = p.n_trades.toLocaleString();
+  document.getElementById("s-strat").textContent = f.strategy;
+
+  document.getElementById("t-snapshot").textContent =
+    new Date(s.generated_at_utc).toISOString().slice(0, 19) + "Z";
+
+  // forecast strip
+  const fs = document.getElementById("forecast-strip");
+  fs.innerHTML = "";
+  if (s.forecast) {
+    fs.innerHTML = `
+      <div class="h"><div class="t">+12h MED</div><div class="v">${s.forecast.h12_median ? s.forecast.h12_median.toFixed(1) : "—"}°F</div><div class="ci">hourly model</div></div>
+      <div class="h"><div class="t">+24h MED</div><div class="v">${s.forecast.h24_median ? s.forecast.h24_median.toFixed(1) : "—"}°F</div><div class="ci">hourly model</div></div>
+      <div class="h"><div class="t">CURRENT</div><div class="v amber">${s.forecast.current_temp ? s.forecast.current_temp.toFixed(1) : "—"}°F</div><div class="ci">latest METAR</div></div>
+    `;
+    document.getElementById("fc-issued").textContent = s.forecast.issued || "—";
+    document.getElementById("fc-current").textContent =
+      s.forecast.current_temp ? s.forecast.current_temp.toFixed(1) + "°F" : "—";
+  } else {
+    fs.innerHTML = '<div class="muted">no fresh forecast — run code/06_predict.py</div>';
+  }
+
+  // open positions
+  const posBody = document.getElementById("pos-body");
+  posBody.innerHTML = "";
+  document.getElementById("pos-count").textContent =
+    s.exposures.n_open + (s.exposures.n_open === 1 ? " open" : " open");
+  if (s.exposures.open_positions.length === 0) {
+    posBody.innerHTML = '<tr><td colspan="9" class="muted">no actionable signals at current prices</td></tr>';
+  } else {
+    s.exposures.open_positions.forEach(p => {
+      posBody.innerHTML += `
+        <tr>
+          <td>${p.day}</td>
+          <td class="ticker">${p.ticker}</td>
+          <td>${p.bucket}</td>
+          <td class="${p.side === 'YES' ? 'yes' : 'no'}">${p.side}</td>
+          <td class="num">$${p.cost.toFixed(3)}</td>
+          <td class="num">${(p.p_model * 100).toFixed(1)}%</td>
+          <td class="num neutral">${(p.p_final * 100).toFixed(1)}%</td>
+          <td class="num yes">+$${p.ev_per_c.toFixed(4)}</td>
+          <td class="num">${(p.kelly_used * 100).toFixed(2)}%</td>
+        </tr>`;
+    });
+  }
+
+  // skill table
+  const skillBody = document.getElementById("skill-body");
+  skillBody.innerHTML = "";
+  s.horizon_skill.forEach(h => {
+    const sP = h.skill_persist;
+    const sC = h.skill_clim;
+    skillBody.innerHTML += `
+      <tr>
+        <td>+${h.horizon_h}h</td>
+        <td class="num">${h.mae.toFixed(2)}</td>
+        <td class="num ${sP >= 0 ? 'yes' : 'no'}">${sP > 0 ? '+' : ''}${sP.toFixed(1)}%</td>
+        <td class="num ${sC >= 0 ? 'yes' : 'no'}">${sC > 0 ? '+' : ''}${sC.toFixed(1)}%</td>
+      </tr>`;
+  });
+
+  // recent trades
+  const tradesBody = document.getElementById("trades-body");
+  tradesBody.innerHTML = "";
+  s.recent_trades.slice().reverse().forEach(t => {
+    const ok = t.won === 1;
+    tradesBody.innerHTML += `
+      <tr>
+        <td class="muted">${t.time}</td>
+        <td class="ticker">${t.ticker.replace('KXHIGHTSFO-', '·HI·').replace('KXLOWTSFO-', '·LO·')}</td>
+        <td class="${t.side === 'YES' ? 'yes' : 'no'}">${t.side}</td>
+        <td class="num">$${t.cost.toFixed(3)}</td>
+        <td class="num">${t.contracts}</td>
+        <td class="num ${ok ? 'yes' : 'no'}">${t.pnl >= 0 ? '+' : ''}$${t.pnl.toFixed(2)}</td>
+      </tr>`;
+  });
+
+  // equity curve canvas
+  drawEquityCurve(s.equity_curve);
+  if (s.equity_curve.length >= 2) {
+    document.getElementById("eq-span").textContent =
+      s.equity_curve[0].t + " → " + s.equity_curve[s.equity_curve.length - 1].t;
+  }
+}
+
+function drawEquityCurve(curve) {
+  if (!curve || curve.length < 2) return;
+  const c = document.getElementById("eq-canvas");
+  const dpi = window.devicePixelRatio || 1;
+  const W = c.clientWidth, H = c.clientHeight;
+  c.width = W * dpi; c.height = H * dpi;
+  const ctx = c.getContext("2d");
+  ctx.scale(dpi, dpi);
+
+  const padL = 50, padR = 16, padT = 14, padB = 22;
+  const w = W - padL - padR, h = H - padT - padB;
+  const xs = curve.map((_, i) => i / (curve.length - 1));
+  const ys = curve.map(p => p.v);
+  const yMin = Math.min(...ys), yMax = Math.max(...ys);
+  const yPad = (yMax - yMin) * 0.06 || 1;
+  const yLo = yMin - yPad, yHi = yMax + yPad;
+  const px = i => padL + xs[i] * w;
+  const py = v => padT + (1 - (v - yLo) / (yHi - yLo)) * h;
+
+  // grid
+  ctx.strokeStyle = "rgba(247, 177, 62, 0.10)";
+  ctx.lineWidth = 1;
+  for (let g = 0; g <= 4; g++) {
+    const y = padT + (g / 4) * h;
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + w, y); ctx.stroke();
+  }
+  for (let g = 0; g <= 6; g++) {
+    const x = padL + (g / 6) * w;
+    ctx.beginPath(); ctx.moveTo(x, padT); ctx.lineTo(x, padT + h); ctx.stroke();
+  }
+
+  // y-axis labels
+  ctx.fillStyle = "#5a6660";
+  ctx.font = "10px 'JetBrains Mono', monospace";
+  ctx.textAlign = "right";
+  for (let g = 0; g <= 4; g++) {
+    const v = yLo + (1 - g / 4) * (yHi - yLo);
+    ctx.fillText("$" + Math.round(v).toLocaleString(), padL - 6, padT + (g / 4) * h + 3);
+  }
+
+  // x-axis labels (sparse)
+  ctx.textAlign = "center";
+  const labelEvery = Math.max(1, Math.floor(curve.length / 5));
+  for (let i = 0; i < curve.length; i += labelEvery) {
+    ctx.fillText(curve[i].t.slice(5), px(i), padT + h + 14);
+  }
+
+  // line
+  ctx.strokeStyle = "#f7b13e";
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  for (let i = 0; i < curve.length; i++) {
+    const X = px(i), Y = py(curve[i].v);
+    if (i === 0) ctx.moveTo(X, Y); else ctx.lineTo(X, Y);
+  }
+  ctx.stroke();
+
+  // fill under line
+  ctx.lineTo(px(curve.length - 1), padT + h);
+  ctx.lineTo(px(0), padT + h);
+  ctx.closePath();
+  ctx.fillStyle = "rgba(247, 177, 62, 0.08)";
+  ctx.fill();
+
+  // last point dot
+  const lastX = px(curve.length - 1), lastY = py(curve[curve.length - 1].v);
+  ctx.fillStyle = "#f7b13e";
+  ctx.beginPath();
+  ctx.arc(lastX, lastY, 3, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+window.addEventListener("resize", () => {
+  fetch("data/fund_state.json").then(r => r.json()).then(s => drawEquityCurve(s.equity_curve));
+});
+</script>
+
+</body>
+</html>

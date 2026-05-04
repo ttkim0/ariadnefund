@@ -1,0 +1,31 @@
+# Keep the Vercel deploy lean: only the public website goes up.
+# All the research code, models, papers, raw data, and reports stay in
+# GitHub for transparency but are not served from the live URL.
+
+code/
+models/
+paper/
+reports/
+logs/
+data/*.parquet
+data/*.csv
+build_fund_state.py
+serve.sh
+
+# raw NOAA CSVs (already gitignored, but belt-and-braces)
+LCD datas.csv
+global hourly.csv
+
+# project-level docs (not part of the public site)
+USAGE.md
+AUTOMATION.md
+
+# OS / editor
+.DS_Store
+.claude/
+.vscode/
+.idea/
+
+# git directory
+.git/
+.gitignore
