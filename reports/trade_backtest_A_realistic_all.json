@@ -1,0 +1,18 @@
+{
+  "n_trades": 466,
+  "n_wins": 252,
+  "win_rate": 0.5407725321888412,
+  "total_pnl": -367.2514159370672,
+  "total_fee": 173.9289159370673,
+  "final_bankroll": 632.7485840629329,
+  "return_pct": -36.72514159370671,
+  "mean_kelly_used": 0.042542650025249054,
+  "mean_size_dollars": 13.33331008583691,
+  "max_drawdown_dollars": 499.2678957808174,
+  "trades_yes": 180,
+  "trades_no": 286,
+  "avg_pnl_per_trade": -0.7880931672469252,
+  "prob_col": "model_prob_yes",
+  "max_hours_to_settle": null,
+  "label": "A_realistic_all"
+}

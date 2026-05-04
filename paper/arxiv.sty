@@ -1,0 +1,72 @@
+% arxiv.sty — minimal arxiv-style preprint formatting (A PREPRINT)
+% Lightweight reproduction of the popular style used by many arxiv submissions.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{arxiv}[2026/05/03 v1.0 minimal arxiv preprint style]
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage[english]{babel}
+\RequirePackage{microtype}
+\RequirePackage[margin=1in,headheight=14pt]{geometry}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{booktabs}
+\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+\RequirePackage{hyperref}
+\RequirePackage{url}
+\RequirePackage[capitalize,noabbrev]{cleveref}
+\RequirePackage{enumitem}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{authblk}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    citecolor=blue!50!black,
+    urlcolor=blue!50!black,
+    pdftitle={Probabilistic Forecasting and Trading on Event Markets},
+    pdfauthor={Terry Kim, Andrew Liang, Krit Phaisamran}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\renewcommand{\Authsep}{\quad}
+\renewcommand{\Authand}{\quad}
+\renewcommand{\Authands}{\quad}
+\renewcommand\Affilfont{\itshape\small}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{0.5em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{\small\itshape Probabilistic Forecasting on Event Markets}
+\fancyhead[R]{\small\itshape A \textsc{Preprint}}
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\maketitle}{%
+  \begin{center}
+    \vspace*{-0.5em}
+    {\LARGE\bfseries \@title \par}
+    \vspace{1.2em}
+    {\large \textsc{A Preprint} \par}
+    \vspace{1.0em}
+    \@author
+    \vspace{0.5em}\par
+    {\small \@date}
+  \end{center}
+  \vspace{0.6em}
+}
+
+\renewenvironment{abstract}
+  {\centerline{\bfseries\large Abstract}\vspace{0.4em}\begin{quote}\itshape}
+  {\end{quote}\vspace{0.6em}\hrule\vspace{0.6em}}
+
+\providecommand{\keywords}[1]{\noindent\textbf{Keywords:} #1\par\vspace{0.4em}\hrule\vspace{0.6em}}

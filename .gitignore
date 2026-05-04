@@ -1,0 +1,81 @@
+# ============================================================
+# SECRETS — never commit
+# ============================================================
+*.pem
+*.key
+*.crt
+.env
+.env.*
+credentials*
+secrets*
+**/kalshi*.pem
+**/.kalshi/
+
+# ============================================================
+# Large source data (regenerable from public NOAA / Kalshi APIs)
+# ============================================================
+# These are too big for git (>100MB GitHub hard limit).
+# Re-download via:
+#   * NOAA LCD:   https://www.ncei.noaa.gov/cdo-web/  (request product=LCD, station=USW00023234)
+#   * NOAA ISD:   https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database
+LCD datas.csv
+global hourly.csv
+
+# Large derived parquet (regenerable in ~2 min via code/03_features.py)
+data/sfo_features.parquet
+data/sfo_targets.parquet
+data/test_predictions.parquet
+data/decision_dataset.parquet
+data/decision_dataset_v2.parquet
+data/decision_dataset_v2_meta.parquet
+data/kalshi_candles.parquet
+
+# ============================================================
+# Reference PDFs (third-party arXiv papers we cite — not ours)
+# ============================================================
+paper/refs/
+
+# ============================================================
+# Build / runtime
+# ============================================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+.vercel/
+node_modules/
+
+# ============================================================
+# OS / editor / tooling artifacts
+# ============================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+.claude/
+
+# ============================================================
+# Logs (auto-refresh chain produces these locally)
+# ============================================================
+logs/*.log
+logs/*.out.log
+logs/*.err.log
+
+# ============================================================
+# LaTeX intermediate
+# ============================================================
+paper/main.aux
+paper/main.log
+paper/main.out
+paper/main.toc
+paper/main.bbl
+paper/main.blg
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk

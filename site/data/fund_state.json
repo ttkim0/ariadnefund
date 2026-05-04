@@ -1,0 +1,535 @@
+{
+  "fund": {
+    "name": "Ariadne Labs",
+    "aum_usd": 600000,
+    "strategy": "Quantitative prediction-market arbitrage",
+    "inception": "2026-01",
+    "domicile": "Stanford, CA"
+  },
+  "performance": {
+    "n_trades": 277,
+    "win_rate_pct": 65.3,
+    "backtest_return_pct": 723.1,
+    "annualized_return_pct": 120073484.9,
+    "sharpe_ratio": 6.66,
+    "max_drawdown_pct": -17.25,
+    "ytd_pnl_at_aum_usd": 4338617.08,
+    "starting_bankroll_usd": 1000.0,
+    "current_bankroll_usd": 8231.03,
+    "days_live": 55
+  },
+  "exposures": {
+    "asset_class": "Event contracts (Kalshi)",
+    "venue": "Kalshi",
+    "instruments": [
+      "KXHIGHTSFO daily HIGH",
+      "KXLOWTSFO daily LOW"
+    ],
+    "open_positions": [
+      {
+        "ticker": "KXHIGHTSFO-26MAY03-B62.5",
+        "side": "YES",
+        "bucket": "62\u00b0 to 63\u00b0",
+        "day": "2026-05-03",
+        "cost": 0.01,
+        "p_model": 0.661,
+        "p_final": 0.386,
+        "ev_per_c": 0.3658,
+        "kelly_used": 0.05
+      },
+      {
+        "ticker": "KXHIGHTSFO-26MAY04-T66",
+        "side": "YES",
+        "bucket": "67\u00b0 or above",
+        "day": "2026-05-04",
+        "cost": 0.05,
+        "p_model": 0.393,
+        "p_final": 0.386,
+        "ev_per_c": 0.3258,
+        "kelly_used": 0.05
+      },
+      {
+        "ticker": "KXHIGHTSFO-26MAY04-B65.5",
+        "side": "YES",
+        "bucket": "65\u00b0 to 66\u00b0",
+        "day": "2026-05-04",
+        "cost": 0.12,
+        "p_model": 0.425,
+        "p_final": 0.386,
+        "ev_per_c": 0.2558,
+        "kelly_used": 0.05
+      },
+      {
+        "ticker": "KXHIGHTSFO-26MAY04-B61.5",
+        "side": "NO",
+        "bucket": "61\u00b0 to 62\u00b0",
+        "day": "2026-05-04",
+        "cost": 0.7,
+        "p_model": 0.0,
+        "p_final": 0.073,
+        "ev_per_c": 0.2126,
+        "kelly_used": 0.05
+      },
+      {
+        "ticker": "KXLOWTSFO-26MAY04-T55",
+        "side": "YES",
+        "bucket": "56\u00b0 or above",
+        "day": "2026-05-04",
+        "cost": 0.19,
+        "p_model": 0.294,
+        "p_final": 0.386,
+        "ev_per_c": 0.1851,
+        "kelly_used": 0.05
+      },
+      {
+        "ticker": "KXLOWTSFO-26MAY03-B52.5",
+        "side": "YES",
+        "bucket": "52\u00b0 to 53\u00b0",
+        "day": "2026-05-03",
+        "cost": 0.1,
+        "p_model": 0.197,
+        "p_final": 0.291,
+        "ev_per_c": 0.1815,
+        "kelly_used": 0.05
+      },
+      {
+        "ticker": "KXLOWTSFO-26MAY04-B50.5",
+        "side": "YES",
+        "bucket": "50\u00b0 to 51\u00b0",
+        "day": "2026-05-04",
+        "cost": 0.21,
+        "p_model": 0.052,
+        "p_final": 0.288,
+        "ev_per_c": 0.0666,
+        "kelly_used": 0.0247
+      },
+      {
+        "ticker": "KXHIGHTSFO-26MAY04-B63.5",
+        "side": "NO",
+        "bucket": "63\u00b0 to 64\u00b0",
+        "day": "2026-05-04",
+        "cost": 0.55,
+        "p_model": 0.183,
+        "p_final": 0.386,
+        "ev_per_c": 0.0468,
+        "kelly_used": 0.0357
+      }
+    ],
+    "n_open": 8
+  },
+  "forecast": {
+    "issued": "2026-05-03 21:00:00",
+    "current_temp": 55.94,
+    "h12_median": 61.22731461757596,
+    "h24_median": 57.508101371532184
+  },
+  "horizon_skill": [
+    {
+      "horizon_h": 1,
+      "mae": 0.859,
+      "skill_persist": 30.5,
+      "skill_clim": 75.0
+    },
+    {
+      "horizon_h": 3,
+      "mae": 1.291,
+      "skill_persist": 56.7,
+      "skill_clim": 62.4
+    },
+    {
+      "horizon_h": 6,
+      "mae": 1.66,
+      "skill_persist": 67.1,
+      "skill_clim": 51.6
+    },
+    {
+      "horizon_h": 12,
+      "mae": 2.033,
+      "skill_persist": 69.7,
+      "skill_clim": 40.7
+    },
+    {
+      "horizon_h": 24,
+      "mae": 2.349,
+      "skill_persist": 13.1,
+      "skill_clim": 31.5
+    },
+    {
+      "horizon_h": 48,
+      "mae": 2.784,
+      "skill_persist": 16.9,
+      "skill_clim": 18.9
+    },
+    {
+      "horizon_h": 72,
+      "mae": 3.005,
+      "skill_persist": 17.7,
+      "skill_clim": 12.5
+    }
+  ],
+  "equity_curve": [
+    {
+      "t": "2026-02-25",
+      "v": 1008.12
+    },
+    {
+      "t": "2026-02-26",
+      "v": 1082.02
+    },
+    {
+      "t": "2026-02-27",
+      "v": 1221.1
+    },
+    {
+      "t": "2026-03-01",
+      "v": 1334.36
+    },
+    {
+      "t": "2026-03-02",
+      "v": 1551.07
+    },
+    {
+      "t": "2026-03-04",
+      "v": 2098.98
+    },
+    {
+      "t": "2026-03-05",
+      "v": 2689.11
+    },
+    {
+      "t": "2026-03-07",
+      "v": 2346.32
+    },
+    {
+      "t": "2026-03-07",
+      "v": 2679.5
+    },
+    {
+      "t": "2026-03-08",
+      "v": 2916.71
+    },
+    {
+      "t": "2026-03-09",
+      "v": 3045.09
+    },
+    {
+      "t": "2026-03-09",
+      "v": 2999.06
+    },
+    {
+      "t": "2026-03-10",
+      "v": 3446.3
+    },
+    {
+      "t": "2026-03-11",
+      "v": 3475.32
+    },
+    {
+      "t": "2026-03-12",
+      "v": 3572.75
+    },
+    {
+      "t": "2026-03-13",
+      "v": 3618.63
+    },
+    {
+      "t": "2026-03-14",
+      "v": 3701.84
+    },
+    {
+      "t": "2026-03-14",
+      "v": 3955.19
+    },
+    {
+      "t": "2026-03-15",
+      "v": 3974.18
+    },
+    {
+      "t": "2026-03-16",
+      "v": 4065.43
+    },
+    {
+      "t": "2026-03-18",
+      "v": 4076.38
+    },
+    {
+      "t": "2026-03-19",
+      "v": 3958.76
+    },
+    {
+      "t": "2026-03-20",
+      "v": 3793.66
+    },
+    {
+      "t": "2026-03-22",
+      "v": 3625.06
+    },
+    {
+      "t": "2026-03-23",
+      "v": 4158.74
+    },
+    {
+      "t": "2026-03-24",
+      "v": 4547.66
+    },
+    {
+      "t": "2026-03-27",
+      "v": 4805.64
+    },
+    {
+      "t": "2026-03-28",
+      "v": 4601.44
+    },
+    {
+      "t": "2026-03-29",
+      "v": 4387.93
+    },
+    {
+      "t": "2026-03-31",
+      "v": 5732.08
+    },
+    {
+      "t": "2026-04-02",
+      "v": 5776.87
+    },
+    {
+      "t": "2026-04-03",
+      "v": 6006.17
+    },
+    {
+      "t": "2026-04-04",
+      "v": 5647.53
+    },
+    {
+      "t": "2026-04-04",
+      "v": 5421.41
+    },
+    {
+      "t": "2026-04-05",
+      "v": 5686.6
+    },
+    {
+      "t": "2026-04-06",
+      "v": 5714.07
+    },
+    {
+      "t": "2026-04-07",
+      "v": 6412.35
+    },
+    {
+      "t": "2026-04-07",
+      "v": 6449.2
+    },
+    {
+      "t": "2026-04-08",
+      "v": 6831.69
+    },
+    {
+      "t": "2026-04-09",
+      "v": 7320.45
+    },
+    {
+      "t": "2026-04-10",
+      "v": 7640.63
+    },
+    {
+      "t": "2026-04-10",
+      "v": 7651.81
+    },
+    {
+      "t": "2026-04-11",
+      "v": 7746.28
+    },
+    {
+      "t": "2026-04-11",
+      "v": 7501.7
+    },
+    {
+      "t": "2026-04-12",
+      "v": 7758.91
+    },
+    {
+      "t": "2026-04-13",
+      "v": 8054.81
+    },
+    {
+      "t": "2026-04-14",
+      "v": 7979.1
+    },
+    {
+      "t": "2026-04-14",
+      "v": 8333.47
+    },
+    {
+      "t": "2026-04-15",
+      "v": 8205.85
+    },
+    {
+      "t": "2026-04-16",
+      "v": 9084.86
+    },
+    {
+      "t": "2026-04-17",
+      "v": 9181.54
+    },
+    {
+      "t": "2026-04-17",
+      "v": 8751.68
+    },
+    {
+      "t": "2026-04-18",
+      "v": 8713.27
+    },
+    {
+      "t": "2026-04-19",
+      "v": 8837.52
+    },
+    {
+      "t": "2026-04-20",
+      "v": 8368.86
+    },
+    {
+      "t": "2026-04-21",
+      "v": 8220.71
+    },
+    {
+      "t": "2026-04-21",
+      "v": 8231.03
+    }
+  ],
+  "recent_trades": [
+    {
+      "time": "2026-04-19 12:00",
+      "ticker": "KXHIGHTSFO-26APR19-B66.5",
+      "side": "NO",
+      "size_usd": 199.96,
+      "contracts": 285,
+      "p_model": 0.158,
+      "cost": 0.7,
+      "won": 1,
+      "pnl": 80.86
+    },
+    {
+      "time": "2026-04-19 12:00",
+      "ticker": "KXHIGHTSFO-26APR19-B68.5",
+      "side": "YES",
+      "size_usd": 200.66,
+      "contracts": 444,
+      "p_model": 0.629,
+      "cost": 0.45,
+      "won": 0,
+      "pnl": -208.36
+    },
+    {
+      "time": "2026-04-20 12:00",
+      "ticker": "KXHIGHTSFO-26APR20-B65.5",
+      "side": "NO",
+      "size_usd": 126.0,
+      "contracts": 500,
+      "p_model": 0.691,
+      "cost": 0.25,
+      "won": 0,
+      "pnl": -132.6
+    },
+    {
+      "time": "2026-04-20 12:00",
+      "ticker": "KXLOWTSFO-26APR20-B54.5",
+      "side": "NO",
+      "size_usd": 29.81,
+      "contracts": 185,
+      "p_model": 0.759,
+      "cost": 0.16,
+      "won": 0,
+      "pnl": -31.66
+    },
+    {
+      "time": "2026-04-20 14:00",
+      "ticker": "KXLOWTSFO-26APR20-B52.5",
+      "side": "YES",
+      "size_usd": 18.06,
+      "contracts": 198,
+      "p_model": 0.227,
+      "cost": 0.09,
+      "won": 0,
+      "pnl": -20.04
+    },
+    {
+      "time": "2026-04-20 14:00",
+      "ticker": "KXHIGHTSFO-26APR20-B67.5",
+      "side": "YES",
+      "size_usd": 71.0,
+      "contracts": 500,
+      "p_model": 0.261,
+      "cost": 0.14,
+      "won": 0,
+      "pnl": -76.0
+    },
+    {
+      "time": "2026-04-21 12:00",
+      "ticker": "KXLOWTSFO-26APR21-B50.5",
+      "side": "YES",
+      "size_usd": 10.06,
+      "contracts": 165,
+      "p_model": 0.131,
+      "cost": 0.06,
+      "won": 0,
+      "pnl": -11.71
+    },
+    {
+      "time": "2026-04-21 12:00",
+      "ticker": "KXHIGHTSFO-26APR21-T65",
+      "side": "NO",
+      "size_usd": 200.09,
+      "contracts": 206,
+      "p_model": 0.0,
+      "cost": 0.97,
+      "won": 1,
+      "pnl": 3.85
+    },
+    {
+      "time": "2026-04-21 12:00",
+      "ticker": "KXHIGHTSFO-26APR21-B62.5",
+      "side": "NO",
+      "size_usd": 96.0,
+      "contracts": 500,
+      "p_model": 0.493,
+      "cost": 0.19,
+      "won": 0,
+      "pnl": -101.43
+    },
+    {
+      "time": "2026-04-21 12:00",
+      "ticker": "KXLOWTSFO-26APR21-B48.5",
+      "side": "NO",
+      "size_usd": 27.26,
+      "contracts": 29,
+      "p_model": 0.0,
+      "cost": 0.94,
+      "won": 1,
+      "pnl": 1.45
+    },
+    {
+      "time": "2026-04-21 13:00",
+      "ticker": "KXLOWTSFO-26APR21-B52.5",
+      "side": "NO",
+      "size_usd": 37.66,
+      "contracts": 266,
+      "p_model": 0.664,
+      "cost": 0.14,
+      "won": 0,
+      "pnl": -40.31
+    },
+    {
+      "time": "2026-04-21 15:00",
+      "ticker": "KXHIGHTSFO-26APR21-B64.5",
+      "side": "NO",
+      "size_usd": 199.56,
+      "contracts": 212,
+      "p_model": 0.0,
+      "cost": 0.94,
+      "won": 1,
+      "pnl": 10.32
+    }
+  ],
+  "generated_at_utc": "2026-05-04T06:02:00.410879+00:00"
+}

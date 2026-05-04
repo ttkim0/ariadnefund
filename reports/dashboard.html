@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="300">
+<title>SFO Weather Dashboard</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+  body { background: #fff; color: #111; font: 14px/1.45 -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif; margin: 0; padding: 18px; max-width: 1280px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  h2 { margin: 22px 0 8px; font-size: 16px; }
+  h3 { margin: 14px 0 6px; font-size: 14px; font-weight: 600; }
+  .small { color: #666; font-size: 12px; }
+  .panel { border: 1px solid #ccc; padding: 12px; margin-bottom: 12px; }
+  .nowbar { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0 12px; }
+  .stat { border: 1px solid #ccc; padding: 8px 12px; min-width: 130px; }
+  .stat .v { font-size: 20px; font-weight: 700; }
+  .stat .l { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #ddd; }
+  th { background: #f3f3f3; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .yes { color: #1a6e1a; font-weight: 600; }
+  .no  { color: #a82929; font-weight: 600; }
+  .row2 { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+  .explain { background: #fffbe6; border: 1px solid #e6d99a; padding: 10px 12px; font-size: 12px; margin-bottom: 12px; }
+  @media (max-width: 760px) { .row2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>SFO Weather + Kalshi Dashboard</h1>
+<div class="small" id="header-sub"></div>
+<div class="small" id="page-loaded"></div>
+<div class="small" id="freshness"></div>
+
+<div class="nowbar" id="nowbar"></div>
+
+<div class="row2">
+  <div>
+    <h2 id="ddh_title">Daily HIGH forecast — next 4 days</h2>
+    <div class="panel"><div id="daily_high_chart" style="height:300px;"></div></div>
+  </div>
+  <div>
+    <h2 id="ddl_title">Daily LOW forecast — next 4 days</h2>
+    <div class="panel"><div id="daily_low_chart" style="height:300px;"></div></div>
+  </div>
+</div>
+
+<h2>Joint outcomes — if you take BOTH the best HIGH and best LOW trade for each day</h2>
+<div class="explain">
+  <b>This is the math you asked about.</b> Probabilities <i>multiply</i> for independent events (you can't add them).
+  The table below shows, for each day where we have an actionable HIGH bet AND an actionable LOW bet,
+  the probability that <b>both win</b>, <b>only HIGH wins</b>, <b>only LOW wins</b>, or <b>both lose</b>.
+  These come from your actual model probabilities for the trades, not a generic 65%.
+</div>
+<div id="joint_panel"></div>
+
+<h2>Bucket probabilities for upcoming Kalshi markets</h2>
+<div class="explain">
+  <b>How to read this:</b> Each bar shows the probability the daily HIGH (or LOW) for that calendar day
+  lands in that 2°F bucket. Blue = our model. Yellow = Kalshi market mid price (= market's implied probability).
+  Numeric % is shown above each bar. When our blue is taller, we think it's underpriced; when shorter, overpriced.
+</div>
+<div id="bucket_charts_container"></div>
+
+<h2>Recent SFO observations — last 72h</h2>
+<div class="panel"><div id="obs_chart" style="height:280px;"></div></div>
+
+<h2>Actionable Kalshi trades (after fees and spread crossing)</h2>
+<div id="signals_panel"></div>
+
+<h2>Hourly forecast samples — diagnostic only</h2>
+<div class="explain">
+  <b>Why this looks lower than the daily HIGH chart above:</b> The hourly model is sampled at exactly
+  7 horizons from issuance time: <code>+1h, +3h, +6h, +12h, +24h, +48h, +72h</code>.
+  None of those land at SF's typical daily peak hour (12-13 PST), so the points below systematically miss
+  the warmest part of each day. <b>For Kalshi daily-HIGH/LOW contracts, use the daily-extreme charts
+  above</b> (which are produced by a different model targeting day-max/day-min directly). This panel is
+  shown only to display short-horizon dynamics, not to predict daily peaks.
+</div>
+<div class="panel"><div id="fan_chart" style="height:280px;"></div></div>
+
+<div class="small" style="margin-top:18px">
+  Built from NOAA LCD + ISD + live KSFO METARs. All times PST (UTC−8). Buckets settle on NWS Climatological Report for SFO.
+</div>
+
+<script id="data" type="application/json">{
+  "issued": "2026-05-03 21:00:00",
+  "issued_label": "Sun May 3, 2026 at 9:00 PM PST",
+  "today_pst": "2026-05-03",
+  "today_label": "Sun May 3, 2026",
+  "generated_at_pst": "2026-05-03 22:07:39 PST",
+  "generated_at_pdt": "2026-05-03 23:07:39 PDT",
+  "current_temp": 55.94,
+  "current_dew": 48.02,
+  "current_wind_speed": 5.7539,
+  "current_wind_dir": 310.0,
+  "today_high_so_far": 62.959999999999994,
+  "today_low_so_far": 53.96,
+  "obs": {
+    "x": [
+      "2026-04-30 22:00:00",
+      "2026-04-30 23:00:00",
+      "2026-05-01 00:00:00",
+      "2026-05-01 01:00:00",
+      "2026-05-01 02:00:00",
+      "2026-05-01 03:00:00",
+      "2026-05-01 04:00:00",
+      "2026-05-01 05:00:00",
+      "2026-05-01 06:00:00",
+      "2026-05-01 07:00:00",
+      "2026-05-01 08:00:00",
+      "2026-05-01 09:00:00",
+      "2026-05-01 10:00:00",
+      "2026-05-01 11:00:00",
+      "2026-05-01 12:00:00",
+      "2026-05-01 13:00:00",
+      "2026-05-01 14:00:00",
+      "2026-05-01 15:00:00",
+      "2026-05-01 16:00:00",
+      "2026-05-01 17:00:00",
+      "2026-05-01 18:00:00",
+      "2026-05-01 19:00:00",
+      "2026-05-01 20:00:00",
+      "2026-05-01 21:00:00",
+      "2026-05-01 22:00:00",
+      "2026-05-01 23:00:00",
+      "2026-05-02 00:00:00",
+      "2026-05-02 01:00:00",
+      "2026-05-02 02:00:00",
+      "2026-05-02 03:00:00",
+      "2026-05-02 04:00:00",
+      "2026-05-02 05:00:00",
+      "2026-05-02 06:00:00",
+      "2026-05-02 07:00:00",
+      "2026-05-02 08:00:00",
+      "2026-05-02 09:00:00",
+      "2026-05-02 10:00:00",
+      "2026-05-02 11:00:00",
+      "2026-05-02 12:00:00",
+      "2026-05-02 13:00:00",
+      "2026-05-02 14:00:00",
+      "2026-05-02 15:00:00",
+      "2026-05-02 16:00:00",
+      "2026-05-02 17:00:00",
+      "2026-05-02 18:00:00",
+      "2026-05-02 19:00:00",
+      "2026-05-02 20:00:00",
+      "2026-05-02 21:00:00",
+      "2026-05-02 22:00:00",
+      "2026-05-02 23:00:00",
+      "2026-05-03 00:00:00",
+      "2026-05-03 01:00:00",
+      "2026-05-03 02:00:00",
+      "2026-05-03 03:00:00",
+      "2026-05-03 04:00:00",
+      "2026-05-03 05:00:00",
+      "2026-05-03 06:00:00",
+      "2026-05-03 07:00:00",
+      "2026-05-03 08:00:00",
+      "2026-05-03 09:00:00",
+      "2026-05-03 10:00:00",
+      "2026-05-03 11:00:00",
+      "2026-05-03 12:00:00",
+      "2026-05-03 13:00:00",
+      "2026-05-03 14:00:00",
+      "2026-05-03 15:00:00",
+      "2026-05-03 16:00:00",
+      "2026-05-03 17:00:00",
+      "2026-05-03 18:00:00",
+      "2026-05-03 19:00:00",
+      "2026-05-03 20:00:00",
+      "2026-05-03 21:00:00"
+    ],
+    "y": [
+      55.04,
+      53.96,
+      55.04,
+      55.04,
+      53.96,
+      53.96,
+      53.96,
+      53.96,
+      55.04,
+      55.04,
+      55.94,
+      57.92,
+      60.08,
+      60.980000000000004,
+      62.059999999999995,
+      62.059999999999995,
+      62.959999999999994,
+      62.059999999999995,
+      59.0,
+      57.02,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.94,
+      57.02,
+      57.92,
+      59.0,
+      60.08,
+      59.0,
+      59.0,
+      57.02,
+      57.02,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      55.04,
+      53.96,
+      55.04,
+      55.94,
+      60.08,
+      60.980000000000004,
+      62.059999999999995,
+      62.959999999999994,
+      62.959999999999994,
+      60.980000000000004,
+      62.059999999999995,
+      60.980000000000004,
+      59.0,
+      57.02,
+      55.94,
+      57.02,
+      55.94
+    ],
+    "dew": [
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      51.08,
+      51.08,
+      51.08,
+      51.98,
+      51.08,
+      51.98,
+      51.98,
+      51.08,
+      51.08,
+      51.08,
+      50.0,
+      50.0,
+      50.0,
+      51.08,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      50.0,
+      51.08,
+      50.0,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.02,
+      48.02,
+      48.02,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      48.92,
+      51.08,
+      51.08,
+      51.08,
+      50.0,
+      48.02,
+      48.02,
+      46.94,
+      46.94,
+      46.94,
+      46.94,
+      46.94,
+      48.02,
+      48.02,
+      48.02,
+      46.94,
+      48.02
+    ]
+  },
+  "fan": [
+    {
+      "valid_time": "2026-05-03 22:00:00",
+      "horizon": 1,
+      "median": 56.08327280241945,
+      "q10": 54.09158902153276,
+      "q90": 56.757746973880444
+    },
+    {
+      "valid_time": "2026-05-04 00:00:00",
+      "horizon": 3,
+      "median": 55.92131342214143,
+      "q10": 53.980951562003625,
+      "q90": 57.074782624906575
+    },
+    {
+      "valid_time": "2026-05-04 03:00:00",
+      "horizon": 6,
+      "median": 56.37276000929573,
+      "q10": 53.64973105911711,
+      "q90": 57.40112353139751
+    },
+    {
+      "valid_time": "2026-05-04 09:00:00",
+      "horizon": 12,
+      "median": 61.22731461757596,
+      "q10": 58.74332289228824,
+      "q90": 62.91090036537151
+    },
+    {
+      "valid_time": "2026-05-04 21:00:00",
+      "horizon": 24,
+      "median": 57.508101371532184,
+      "q10": 55.55620004366803,
+      "q90": 59.684605503129845
+    },
+    {
+      "valid_time": "2026-05-05 21:00:00",
+      "horizon": 48,
+      "median": 58.32028053470624,
+      "q10": 54.733871004682754,
+      "q90": 59.682091237967555
+    },
+    {
+      "valid_time": "2026-05-06 21:00:00",
+      "horizon": 72,
+      "median": 58.987343838336464,
+      "q10": 54.744772433262604,
+      "q90": 61.66842885398257
+    }
+  ],
+  "daily": [
+    {
+      "day": "2026-05-03",
+      "hours_to_settle": 3.0,
+      "high_q10": 63.07121935060333,
+      "high_q50": 63.07121935060333,
+      "high_q90": 63.73838232239961,
+      "low_q10": 53.06416760145239,
+      "low_q50": 54.35474895949903,
+      "low_q90": 55.40610588546008
+    },
+    {
+      "day": "2026-05-04",
+      "hours_to_settle": 27.0,
+      "high_q10": 63.51639545315838,
+      "high_q50": 65.30340849894657,
+      "high_q90": 69.61441629703621,
+      "low_q10": 52.270676696739656,
+      "low_q50": 54.11022362320312,
+      "low_q90": 57.7765313024849
+    },
+    {
+      "day": "2026-05-05",
+      "hours_to_settle": 51.0,
+      "high_q10": 63.25698919804523,
+      "high_q50": 66.15718581462892,
+      "high_q90": 70.84728611875911,
+      "low_q10": 51.39030668912428,
+      "low_q50": 53.734026913989716,
+      "low_q90": 58.73960606935597
+    },
+    {
+      "day": "2026-05-06",
+      "hours_to_settle": 75.0,
+      "high_q10": 63.27091726210108,
+      "high_q50": 66.23039774735531,
+      "high_q90": 72.58970469671655,
+      "low_q10": 51.123334808843154,
+      "low_q50": 53.812224240519605,
+      "low_q90": 58.780922747267425
+    }
+  ],
+  "bucket_charts": [
+    {
+      "kind": "HIGH",
+      "day_D": "2026-05-03",
+      "buckets": [
+        {
+          "label": "59\u00b0 or below",
+          "sort": -1000,
+          "p_model": 0.0,
+          "p_market": 0.005,
+          "ticker": "KXHIGHTSFO-26MAY03-T60"
+        },
+        {
+          "label": "60\u00b0 to 61\u00b0",
+          "sort": 121,
+          "p_model": 0.0,
+          "p_market": 0.005,
+          "ticker": "KXHIGHTSFO-26MAY03-B60.5"
+        },
+        {
+          "label": "62\u00b0 to 63\u00b0",
+          "sort": 125,
+          "p_model": 0.6607,
+          "p_market": 0.005,
+          "ticker": "KXHIGHTSFO-26MAY03-B62.5"
+        },
+        {
+          "label": "64\u00b0 to 65\u00b0",
+          "sort": 129,
+          "p_model": 0.3393,
+          "p_market": 0.995,
+          "ticker": "KXHIGHTSFO-26MAY03-B64.5"
+        },
+        {
+          "label": "66\u00b0 to 67\u00b0",
+          "sort": 133,
+          "p_model": 0.0,
+          "p_market": 0.005,
+          "ticker": "KXHIGHTSFO-26MAY03-B66.5"
+        },
+        {
+          "label": "68\u00b0 or above",
+          "sort": 1000,
+          "p_model": 0.0,
+          "p_market": 0.005,
+          "ticker": "KXHIGHTSFO-26MAY03-T67"
+        }
+      ]
+    },
+    {
+      "kind": "HIGH",
+      "day_D": "2026-05-04",
+      "buckets": [
+        {
+          "label": "58\u00b0 or below",
+          "sort": -1000,
+          "p_model": 0.0,
+          "p_market": 0.015,
+          "ticker": "KXHIGHTSFO-26MAY04-T59"
+        },
+        {
+          "label": "59\u00b0 to 60\u00b0",
+          "sort": 119,
+          "p_model": 0.0,
+          "p_market": 0.055,
+          "ticker": "KXHIGHTSFO-26MAY04-B59.5"
+        },
+        {
+          "label": "61\u00b0 to 62\u00b0",
+          "sort": 123,
+          "p_model": 0.0,
+          "p_market": 0.305,
+          "ticker": "KXHIGHTSFO-26MAY04-B61.5"
+        },
+        {
+          "label": "63\u00b0 to 64\u00b0",
+          "sort": 127,
+          "p_model": 0.1826,
+          "p_market": 0.455,
+          "ticker": "KXHIGHTSFO-26MAY04-B63.5"
+        },
+        {
+          "label": "65\u00b0 to 66\u00b0",
+          "sort": 131,
+          "p_model": 0.4246,
+          "p_market": 0.105,
+          "ticker": "KXHIGHTSFO-26MAY04-B65.5"
+        },
+        {
+          "label": "67\u00b0 or above",
+          "sort": 1000,
+          "p_model": 0.3928,
+          "p_market": 0.045,
+          "ticker": "KXHIGHTSFO-26MAY04-T66"
+        }
+      ]
+    },
+    {
+      "kind": "LOW",
+      "day_D": "2026-05-03",
+      "buckets": [
+        {
+          "label": "47\u00b0 or below",
+          "sort": -1000,
+          "p_model": 0.0,
+          "p_market": 0.005,
+          "ticker": "KXLOWTSFO-26MAY03-T48"
+        },
+        {
+          "label": "48\u00b0 to 49\u00b0",
+          "sort": 97,
+          "p_model": 0.0,
+          "p_market": 0.005,
+          "ticker": "KXLOWTSFO-26MAY03-B48.5"
+        },
+        {
+          "label": "50\u00b0 to 51\u00b0",
+          "sort": 101,
+          "p_model": 0.0,
+          "p_market": 0.04,
+          "ticker": "KXLOWTSFO-26MAY03-B50.5"
+        },
+        {
+          "label": "52\u00b0 to 53\u00b0",
+          "sort": 105,
+          "p_model": 0.1968,
+          "p_market": 0.055,
+          "ticker": "KXLOWTSFO-26MAY03-B52.5"
+        },
+        {
+          "label": "54\u00b0 to 55\u00b0",
+          "sort": 109,
+          "p_model": 0.8032,
+          "p_market": 0.77,
+          "ticker": "KXLOWTSFO-26MAY03-B54.5"
+        },
+        {
+          "label": "56\u00b0 or above",
+          "sort": 1000,
+          "p_model": 0.0,
+          "p_market": 0.005,
+          "ticker": "KXLOWTSFO-26MAY03-T55"
+        }
+      ]
+    },
+    {
+      "kind": "LOW",
+      "day_D": "2026-05-04",
+      "buckets": [
+        {
+          "label": "47\u00b0 or below",
+          "sort": -1000,
+          "p_model": 0.0,
+          "p_market": 0.02,
+          "ticker": "KXLOWTSFO-26MAY04-T48"
+        },
+        {
+          "label": "48\u00b0 to 49\u00b0",
+          "sort": 97,
+          "p_model": 0.0,
+          "p_market": 0.034999999999999996,
+          "ticker": "KXLOWTSFO-26MAY04-B48.5"
+        },
+        {
+          "label": "50\u00b0 to 51\u00b0",
+          "sort": 101,
+          "p_model": 0.0521,
+          "p_market": 0.135,
+          "ticker": "KXLOWTSFO-26MAY04-B50.5"
+        },
+        {
+          "label": "52\u00b0 to 53\u00b0",
+          "sort": 105,
+          "p_model": 0.2701,
+          "p_market": 0.485,
+          "ticker": "KXLOWTSFO-26MAY04-B52.5"
+        },
+        {
+          "label": "54\u00b0 to 55\u00b0",
+          "sort": 109,
+          "p_model": 0.3839,
+          "p_market": 0.47,
+          "ticker": "KXLOWTSFO-26MAY04-B54.5"
+        },
+        {
+          "label": "56\u00b0 or above",
+          "sort": 1000,
+          "p_model": 0.294,
+          "p_market": 0.11,
+          "ticker": "KXLOWTSFO-26MAY04-T55"
+        }
+      ]
+    }
+  ],
+  "actionable": [
+    {
+      "ticker": "KXHIGHTSFO-26MAY03-B62.5",
+      "event_ticker": "KXHIGHTSFO-26MAY03",
+      "series_ticker": "KXHIGHTSFO",
+      "side_label": "HIGH",
+      "day_D": "2026-05-03",
+      "hours_to_settle": 3.0,
+      "yes_sub_title": "62\u00b0 to 63\u00b0",
+      "strike_type": "between",
+      "floor_strike": 62,
+      "cap_strike": 63,
+      "yes_bid": 0.0,
+      "yes_ask": 0.01,
+      "spread": 0.01,
+      "model_prob_yes": 0.6607,
+      "meta_prob_yes": 0.3858,
+      "p_final": 0.3858,
+      "model_median_temp_f": 63.07,
+      "trade_side": "yes",
+      "trade_cost": 0.01,
+      "trade_ev_per_c": 0.36582677165354327,
+      "kelly_full": 0.3796,
+      "kelly_used": 0.05,
+      "open_interest": null,
+      "volume": null,
+      "data_status": "candle"
+    },
+    {
+      "ticker": "KXHIGHTSFO-26MAY04-T66",
+      "event_ticker": "KXHIGHTSFO-26MAY04",
+      "series_ticker": "KXHIGHTSFO",
+      "side_label": "HIGH",
+      "day_D": "2026-05-04",
+      "hours_to_settle": 27.0,
+      "yes_sub_title": "67\u00b0 or above",
+      "strike_type": "greater",
+      "floor_strike": 66,
+      "cap_strike": null,
+      "yes_bid": 0.04,
+      "yes_ask": 0.05,
+      "spread": 0.010000000000000002,
+      "model_prob_yes": 0.3928,
+      "meta_prob_yes": 0.3858,
+      "p_final": 0.3858,
+      "model_median_temp_f": 65.3,
+      "trade_side": "yes",
+      "trade_cost": 0.05,
+      "trade_ev_per_c": 0.3258267716535433,
+      "kelly_full": 0.3535,
+      "kelly_used": 0.05,
+      "open_interest": null,
+      "volume": null,
+      "data_status": "candle"
+    },
+    {
+      "ticker": "KXHIGHTSFO-26MAY04-B65.5",
+      "event_ticker": "KXHIGHTSFO-26MAY04",
+      "series_ticker": "KXHIGHTSFO",
+      "side_label": "HIGH",
+      "day_D": "2026-05-04",
+      "hours_to_settle": 27.0,
+      "yes_sub_title": "65\u00b0 to 66\u00b0",
+      "strike_type": "between",
+      "floor_strike": 65,
+      "cap_strike": 66,
+      "yes_bid": 0.09,
+      "yes_ask": 0.12,
+      "spread": 0.03,
+      "model_prob_yes": 0.4246,
+      "meta_prob_yes": 0.3858,
+      "p_final": 0.3858,
+      "model_median_temp_f": 65.3,
+      "trade_side": "yes",
+      "trade_cost": 0.12,
+      "trade_ev_per_c": 0.2558267716535433,
+      "kelly_full": 0.3021,
+      "kelly_used": 0.05,
+      "open_interest": null,
+      "volume": null,
+      "data_status": "candle"
+    },
+    {
+      "ticker": "KXHIGHTSFO-26MAY04-B61.5",
+      "event_ticker": "KXHIGHTSFO-26MAY04",
+      "series_ticker": "KXHIGHTSFO",
+      "side_label": "HIGH",
+      "day_D": "2026-05-04",
+      "hours_to_settle": 27.0,
+      "yes_sub_title": "61\u00b0 to 62\u00b0",
+      "strike_type": "between",
+      "floor_strike": 61,
+      "cap_strike": 62,
+      "yes_bid": 0.3,
+      "yes_ask": 0.31,
+      "spread": 0.010000000000000009,
+      "model_prob_yes": 0.0,
+      "meta_prob_yes": 0.0727,
+      "p_final": 0.0727,
+      "model_median_temp_f": 65.3,
+      "trade_side": "no",
+      "trade_cost": 0.7,
+      "trade_ev_per_c": 0.21259188619599584,
+      "kelly_full": 0.7576,
+      "kelly_used": 0.05,
+      "open_interest": null,
+      "volume": null,
+      "data_status": "candle"
+    },
+    {
+      "ticker": "KXLOWTSFO-26MAY04-T55",
+      "event_ticker": "KXLOWTSFO-26MAY04",
+      "series_ticker": "KXLOWTSFO",
+      "side_label": "LOW",
+      "day_D": "2026-05-04",
+      "hours_to_settle": 27.0,
+      "yes_sub_title": "56\u00b0 or above",
+      "strike_type": "greater",
+      "floor_strike": 55,
+      "cap_strike": null,
+      "yes_bid": 0.03,
+      "yes_ask": 0.19,
+      "spread": 0.16,
+      "model_prob_yes": 0.294,
+      "meta_prob_yes": 0.3858,
+      "p_final": 0.3858,
+      "model_median_temp_f": 54.11,
+      "trade_side": "yes",
+      "trade_cost": 0.19,
+      "trade_ev_per_c": 0.18505377165354328,
+      "kelly_full": 0.2418,
+      "kelly_used": 0.05,
+      "open_interest": null,
+      "volume": null,
+      "data_status": "candle"
+    },
+    {
+      "ticker": "KXLOWTSFO-26MAY03-B52.5",
+      "event_ticker": "KXLOWTSFO-26MAY03",
+      "series_ticker": "KXLOWTSFO",
+      "side_label": "LOW",
+      "day_D": "2026-05-03",
+      "hours_to_settle": 3.0,
+      "yes_sub_title": "52\u00b0 to 53\u00b0",
+      "strike_type": "between",
+      "floor_strike": 52,
+      "cap_strike": 53,
+      "yes_bid": 0.01,
+      "yes_ask": 0.1,
+      "spread": 0.09000000000000001,
+      "model_prob_yes": 0.1968,
+      "meta_prob_yes": 0.2915,
+      "p_final": 0.2915,
+      "model_median_temp_f": 54.35,
+      "trade_side": "yes",
+      "trade_cost": 0.1,
+      "trade_ev_per_c": 0.18154518950437318,
+      "kelly_full": 0.2128,
+      "kelly_used": 0.05,
+      "open_interest": null,
+      "volume": null,
+      "data_status": "candle"
+    },
+    {
+      "ticker": "KXLOWTSFO-26MAY04-B50.5",
+      "event_ticker": "KXLOWTSFO-26MAY04",
+      "series_ticker": "KXLOWTSFO",
+      "side_label": "LOW",
+      "day_D": "2026-05-04",
+      "hours_to_settle": 27.0,
+      "yes_sub_title": "50\u00b0 to 51\u00b0",
+      "strike_type": "between",
+      "floor_strike": 50,
+      "cap_strike": 51,
+      "yes_bid": 0.06,
+      "yes_ask": 0.21,
+      "spread": 0.15,
+      "model_prob_yes": 0.0521,
+      "meta_prob_yes": 0.2882,
+      "p_final": 0.2882,
+      "model_median_temp_f": 54.11,
+      "trade_side": "yes",
+      "trade_cost": 0.21,
+      "trade_ev_per_c": 0.06655904301075267,
+      "kelly_full": 0.099,
+      "kelly_used": 0.0247,
+      "open_interest": null,
+      "volume": null,
+      "data_status": "candle"
+    },
+    {
+      "ticker": "KXHIGHTSFO-26MAY04-B63.5",
+      "event_ticker": "KXHIGHTSFO-26MAY04",
+      "series_ticker": "KXHIGHTSFO",
+      "side_label": "HIGH",
+      "day_D": "2026-05-04",
+      "hours_to_settle": 27.0,
+      "yes_sub_title": "63\u00b0 to 64\u00b0",
+      "strike_type": "between",
+      "floor_strike": 63,
+      "cap_strike": 64,
+      "yes_bid": 0.45,
+      "yes_ask": 0.46,
+      "spread": 0.010000000000000009,
+      "model_prob_yes": 0.1826,
+      "meta_prob_yes": 0.3858,
+      "p_final": 0.3858,
+      "model_median_temp_f": 65.3,
+      "trade_side": "no",
+      "trade_cost": 0.55,
+      "trade_ev_per_c": 0.04684822834645667,
+      "kelly_full": 0.1426,
+      "kelly_used": 0.0357,
+      "open_interest": null,
+      "volume": null,
+      "data_status": "candle"
+    }
+  ],
+  "joint_outcomes": [
+    {
+      "day": "2026-05-03",
+      "high_ticker": "KXHIGHTSFO-26MAY03-B62.5",
+      "low_ticker": "KXLOWTSFO-26MAY03-B52.5",
+      "high_side": "yes",
+      "low_side": "yes",
+      "high_bucket": "62\u00b0 to 63\u00b0",
+      "low_bucket": "52\u00b0 to 53\u00b0",
+      "p_high_win": 0.386,
+      "p_low_win": 0.291,
+      "both_win": 0.112,
+      "high_only": 0.273,
+      "low_only": 0.179,
+      "both_lose": 0.435,
+      "high_cost": 0.01,
+      "low_cost": 0.1,
+      "high_ev": 0.36582677165354327,
+      "low_ev": 0.18154518950437318
+    },
+    {
+      "day": "2026-05-04",
+      "high_ticker": "KXHIGHTSFO-26MAY04-T66",
+      "low_ticker": "KXLOWTSFO-26MAY04-T55",
+      "high_side": "yes",
+      "low_side": "yes",
+      "high_bucket": "67\u00b0 or above",
+      "low_bucket": "56\u00b0 or above",
+      "p_high_win": 0.386,
+      "p_low_win": 0.386,
+      "both_win": 0.149,
+      "high_only": 0.237,
+      "low_only": 0.237,
+      "both_lose": 0.377,
+      "high_cost": 0.05,
+      "low_cost": 0.19,
+      "high_ev": 0.3258267716535433,
+      "low_ev": 0.18505377165354328
+    }
+  ]
+}</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const fmtDay = ymd => {
+  const [y, m, d] = ymd.split('-').map(Number);
+  const dt = new Date(y, m - 1, d);
+  return dt.toLocaleDateString(undefined, {weekday:'short', month:'short', day:'numeric'});
+};
+document.getElementById('page-loaded').textContent = 'page loaded ' + new Date().toLocaleString();
+document.getElementById('header-sub').textContent =
+  'forecasts issued at ' + DATA.issued_label + '  ·  today is ' + DATA.today_label;
+
+// Compute and display data freshness so you can tell if the auto-refresh ran
+const generatedAt = new Date(DATA.generated_at_pdt.replace(' PDT', ''));
+const ageSeconds = (new Date() - generatedAt) / 1000;
+const ageStr = ageSeconds < 120 ? Math.round(ageSeconds) + ' sec ago'
+             : ageSeconds < 7200 ? Math.round(ageSeconds/60) + ' min ago'
+             : Math.round(ageSeconds/3600) + ' hours ago';
+const freshColor = ageSeconds < 3900 ? '#1a6e1a' : '#a82929';
+document.getElementById('freshness').innerHTML =
+  '<span style="color:' + freshColor + '; font-weight: 600;">dashboard last regenerated: ' +
+  DATA.generated_at_pdt + ' (' + ageStr + ')</span>' +
+  ' — auto-refresh runs hourly via launchd';
+
+const nowbar = document.getElementById('nowbar');
+function stat(label, value) {
+  const d = document.createElement('div');
+  d.className = 'stat';
+  d.innerHTML = '<div class="v">' + value + '</div><div class="l">' + label + '</div>';
+  nowbar.appendChild(d);
+}
+stat('current temp', DATA.current_temp.toFixed(0) + '°F');
+if (DATA.current_dew !== null) stat('dew point', DATA.current_dew.toFixed(0) + '°F');
+if (DATA.current_wind_speed !== null) {
+  let s = DATA.current_wind_speed.toFixed(0) + ' mph';
+  if (DATA.current_wind_dir !== null) s += ' from ' + Math.round(DATA.current_wind_dir) + '°';
+  stat('wind', s);
+}
+if (DATA.today_high_so_far !== null) stat("today's high so far", DATA.today_high_so_far.toFixed(0) + '°F');
+if (DATA.today_low_so_far !== null)  stat("today's low so far",  DATA.today_low_so_far.toFixed(0)  + '°F');
+if (DATA.actionable) stat('actionable trades', DATA.actionable.length);
+
+// ---------- Daily HIGH / LOW bar charts with explicit dates ----------
+function dailyChart(divId, kind) {
+  if (!DATA.daily) return;
+  const xLabels = DATA.daily.map(d => fmtDay(d.day) + '<br>' + d.day);
+  const med = DATA.daily.map(d => d[kind + '_q50']);
+  const q10 = DATA.daily.map(d => d[kind + '_q10']);
+  const q90 = DATA.daily.map(d => d[kind + '_q90']);
+  const lo = med.map((m, i) => m - q10[i]);
+  const hi = med.map((m, i) => q90[i] - m);
+  const color = kind === 'high' ? '#1a6e1a' : '#1f4ea8';
+  const traces = [{
+    x: xLabels, y: med, type: 'bar',
+    marker: {color: color, opacity: 0.65, line: {color: color, width: 1.2}},
+    text: med.map((m, i) =>
+      m.toFixed(1) + '°F<br><span style="font-size:10px;color:#444">[' +
+      q10[i].toFixed(0) + '–' + q90[i].toFixed(0) + ']</span>'),
+    textposition: 'outside',
+    error_y: {type: 'data', symmetric: false, array: hi, arrayminus: lo,
+              color: color, thickness: 1.5, width: 8},
+  }];
+  Plotly.newPlot(divId, traces, {
+    margin: {l: 50, r: 20, t: 10, b: 60}, font: {color: '#111'},
+    xaxis: {gridcolor: '#eee'}, yaxis: {gridcolor: '#eee', title: '°F'},
+    showlegend: false,
+  }, {displayModeBar: false, responsive: true});
+}
+dailyChart('daily_high_chart', 'high');
+dailyChart('daily_low_chart',  'low');
+
+// ---------- Joint outcomes table ----------
+const jp = document.getElementById('joint_panel');
+if (DATA.joint_outcomes && DATA.joint_outcomes.length > 0) {
+  const rows = DATA.joint_outcomes.map(j => {
+    const dateLabel = fmtDay(j.day) + ' (' + j.day + ')';
+    const pct = v => (v*100).toFixed(1) + '%';
+    return '<tr>' +
+      '<td>' + dateLabel + '</td>' +
+      '<td><code>' + j.high_ticker + '</code> ' + j.high_side.toUpperCase() + ' @ $' + j.high_cost.toFixed(3) + '</td>' +
+      '<td><code>' + j.low_ticker  + '</code> ' + j.low_side.toUpperCase()  + ' @ $' + j.low_cost.toFixed(3)  + '</td>' +
+      '<td class="num">' + pct(j.p_high_win) + '</td>' +
+      '<td class="num">' + pct(j.p_low_win)  + '</td>' +
+      '<td class="num yes">' + pct(j.both_win) + '</td>' +
+      '<td class="num">' + pct(j.high_only)  + '</td>' +
+      '<td class="num">' + pct(j.low_only)   + '</td>' +
+      '<td class="num no">'  + pct(j.both_lose) + '</td>' +
+    '</tr>';
+  }).join('');
+  jp.innerHTML = '<div class="panel"><table>' +
+    '<thead><tr><th>day</th><th>HIGH trade</th><th>LOW trade</th>' +
+    '<th class="num">P(HIGH wins)</th><th class="num">P(LOW wins)</th>' +
+    '<th class="num">both win</th><th class="num">only HIGH</th>' +
+    '<th class="num">only LOW</th><th class="num">both lose</th></tr></thead>' +
+    '<tbody>' + rows + '</tbody></table>' +
+    '<div class="small" style="margin-top:8px;">Probabilities multiply (independent). ' +
+    '"Both win" = max profit. "Both lose" = max loss. The middle two are ~breakeven days.</div>' +
+  '</div>';
+} else {
+  jp.innerHTML = '<div class="panel" style="color:#666;">' +
+    'Need both an actionable HIGH trade and an actionable LOW trade for the same day. ' +
+    'No paired opportunities right now.</div>';
+}
+
+// ---------- Per-day bucket charts (Kalshi) ----------
+const bcc = document.getElementById('bucket_charts_container');
+if (DATA.bucket_charts && DATA.bucket_charts.length > 0) {
+  DATA.bucket_charts.forEach((bc, idx) => {
+    const wrap = document.createElement('div');
+    const dateLabel = fmtDay(bc.day_D) + ' (' + bc.day_D + ')';
+    wrap.innerHTML = '<h3>' + bc.kind + ' for ' + dateLabel + '</h3>' +
+                     '<div class="panel"><div id="bc_' + idx + '" style="height:300px;"></div></div>';
+    bcc.appendChild(wrap);
+    const labels = bc.buckets.map(b => b.label);
+    const pmodel  = bc.buckets.map(b => (b.p_model  != null ? b.p_model  * 100 : 0));
+    const pmarket = bc.buckets.map(b => (b.p_market != null ? b.p_market * 100 : 0));
+    const traces = [
+      {x: labels, y: pmodel, type:'bar', marker:{color:'#3a8dff'}, name:'our model',
+       text: pmodel.map(v => v.toFixed(0) + '%'), textposition:'outside'},
+      {x: labels, y: pmarket, type:'bar', marker:{color:'#d4a017'}, name:'Kalshi market',
+       text: pmarket.map(v => v.toFixed(0) + '%'), textposition:'outside'},
+    ];
+    Plotly.newPlot('bc_' + idx, traces, {
+      barmode: 'group', margin: {l: 50, r: 20, t: 10, b: 60}, font: {color: '#111'},
+      xaxis: {gridcolor: '#eee'}, yaxis: {gridcolor: '#eee', title: 'P(YES) %', range: [0, 110]},
+      legend: {x: 0.02, y: 1.10, orientation:'h'},
+    }, {displayModeBar: false, responsive: true});
+  });
+} else {
+  bcc.innerHTML = '<div class="panel" style="color:#666;">No upcoming Kalshi markets.</div>';
+}
+
+// ---------- Recent observations line chart ----------
+if (DATA.obs) {
+  const traces = [
+    {x: DATA.obs.x, y: DATA.obs.y, mode: 'lines+markers', line: {color: '#1f4ea8'},
+     marker: {size: 4}, name: 'observed temp'},
+  ];
+  if (DATA.obs.dew && DATA.obs.dew.some(v => v !== null)) {
+    traces.push({x: DATA.obs.x, y: DATA.obs.dew, mode: 'lines',
+                 line: {color: '#1a6e1a', dash: 'dot'}, name: 'dew point'});
+  }
+  Plotly.newPlot('obs_chart', traces, {
+    margin: {l: 50, r: 20, t: 10, b: 40}, font: {color: '#111'},
+    xaxis: {gridcolor: '#eee'}, yaxis: {gridcolor: '#eee', title: '°F'},
+    legend: {x: 0.02, y: 1.10, orientation:'h'},
+  }, {displayModeBar: false, responsive: true});
+}
+
+// ---------- Hourly forecast samples (kept for context, clearly labeled) ----------
+if (DATA.fan) {
+  const x = DATA.fan.map(p => p.valid_time);
+  const med = DATA.fan.map(p => p.median);
+  const q10 = DATA.fan.map(p => p.q10);
+  const q90 = DATA.fan.map(p => p.q90);
+  const traces = [
+    {x: x.concat(x.slice().reverse()), y: q10.concat(q90.slice().reverse()),
+     fill: 'toself', fillcolor: 'rgba(31,78,168,0.15)', line: {color: 'rgba(0,0,0,0)'},
+     hoverinfo: 'skip', showlegend: false},
+    {x: x, y: med, mode: 'lines+markers', line: {color: '#1f4ea8', width: 2},
+     marker: {size: 8}, name: 'median (each dot = one model horizon)',
+     text: DATA.fan.map(p => '+' + p.horizon + 'h: ' + p.median.toFixed(1) + '°F'),
+     hovertemplate: '%{text} (valid %{x})<extra></extra>'},
+  ];
+  Plotly.newPlot('fan_chart', traces, {
+    margin: {l: 50, r: 20, t: 10, b: 40}, font: {color: '#111'},
+    xaxis: {gridcolor: '#eee', title: 'Valid time (PST) — only 7 sample points'},
+    yaxis: {gridcolor: '#eee', title: '°F'},
+    showlegend: false,
+  }, {displayModeBar: false, responsive: true});
+}
+
+// ---------- Actionable signals table ----------
+const sp = document.getElementById('signals_panel');
+if (DATA.actionable && DATA.actionable.length > 0) {
+  const rows = DATA.actionable.map(s => {
+    const sideClass = s.trade_side === 'yes' ? 'yes' : 'no';
+    const dateLabel = fmtDay(s.day_D) + ' (' + s.day_D + ')';
+    return '<tr>' +
+      '<td>' + dateLabel + '</td>' +
+      '<td><code>' + s.ticker + '</code></td>' +
+      '<td>' + (s.yes_sub_title || '') + '</td>' +
+      '<td class="' + sideClass + '">' + (s.trade_side || '').toUpperCase() + '</td>' +
+      '<td class="num">$' + (s.trade_cost || 0).toFixed(3) + '</td>' +
+      '<td class="num">' + (s.model_prob_yes != null ? (s.model_prob_yes * 100).toFixed(1) + '%' : '—') + '</td>' +
+      '<td class="num">' + (s.p_final != null ? (s.p_final * 100).toFixed(1) + '%' : '—') + '</td>' +
+      '<td class="num yes">+$' + (s.trade_ev_per_c || 0).toFixed(3) + '</td>' +
+      '<td class="num">' + ((s.kelly_used || 0) * 100).toFixed(2) + '%</td>' +
+    '</tr>';
+  }).join('');
+  sp.innerHTML = '<div class="panel"><table>' +
+    '<thead><tr><th>day</th><th>ticker</th><th>bucket</th><th>side</th>' +
+    '<th class="num">cost</th><th class="num">p_model</th><th class="num">p_final</th>' +
+    '<th class="num">EV/contract</th><th class="num">Kelly</th></tr></thead>' +
+    '<tbody>' + rows + '</tbody></table></div>';
+} else {
+  sp.innerHTML = '<div class="panel" style="color:#666;">No actionable trades right now.</div>';
+}
+</script>
+</body>
+</html>

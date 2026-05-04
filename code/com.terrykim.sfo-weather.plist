@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.terrykim.sfo-weather</string>
+
+    <!-- We point at a wrapper outside ~/Documents, so launchd (which lacks
+         automatic TCC access to ~/Documents) can at least read the entrypoint.
+         The wrapper then exec's into the real script inside ~/Documents. -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/terrykim/Library/Application Support/sfo-weather/refresh_chain_wrapper.sh</string>
+    </array>
+
+    <!-- Run every 5 minutes (300 seconds). The full chain takes ~30s so this is
+         idle ~90% of the time. NOAA METARs only update hourly, but Kalshi
+         market prices change every minute, so 5-min refresh keeps prices
+         current without spamming NOAA. -->
+    <key>StartInterval</key>
+    <integer>300</integer>
+
+    <!-- Run once at load so the dashboard has fresh data immediately. -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- Stay nice on the system. -->
+    <key>ProcessType</key>
+    <string>Background</string>
+    <key>Nice</key>
+    <integer>5</integer>
+    <key>LowPriorityIO</key>
+    <true/>
+
+    <!-- launchd's own stdout/stderr (separate from refresh.log inside the script). -->
+    <key>StandardOutPath</key>
+    <string>/Users/terrykim/Documents/SF Weather/logs/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/terrykim/Documents/SF Weather/logs/launchd.err.log</string>
+
+    <!-- Don't keep restarting if the script crashes. -->
+    <key>KeepAlive</key>
+    <false/>
+</dict>
+</plist>
