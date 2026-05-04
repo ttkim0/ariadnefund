@@ -13,12 +13,13 @@
         <string>/Users/terrykim/Library/Application Support/sfo-weather/refresh_chain_wrapper.sh</string>
     </array>
 
-    <!-- Run every 5 minutes (300 seconds). The full chain takes ~30s so this is
-         idle ~90% of the time. NOAA METARs only update hourly, but Kalshi
-         market prices change every minute, so 5-min refresh keeps prices
-         current without spamming NOAA. -->
+    <!-- Run every 90 seconds.  The chain is now split: slow steps (NOAA +
+         forecast + dashboard) auto-skip if they ran in the last 10 min, so
+         the typical fast cycle is just (kalshi signals + fund_state + git
+         push), which finishes in ~5 seconds.  This keeps Kalshi prices on
+         the public Vercel terminal current to within ~2 minutes. -->
     <key>StartInterval</key>
-    <integer>300</integer>
+    <integer>90</integer>
 
     <!-- Run once at load so the dashboard has fresh data immediately. -->
     <key>RunAtLoad</key>
