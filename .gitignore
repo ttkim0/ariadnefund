@@ -29,6 +29,21 @@ data/decision_dataset.parquet
 data/decision_dataset_v2.parquet
 data/decision_dataset_v2_meta.parquet
 data/kalshi_candles.parquet
+# Per-city large derived parquets (multi-city pipeline)
+data/*_features.parquet
+data/*_targets.parquet
+data/*_test_predictions.parquet
+data/*_decision_dataset*.parquet
+
+# Per-city LCD symlinks point to user-specific absolute paths in
+# ~/Documents/Weather data/, so the symlinks themselves are not portable.
+# Recreate them on a fresh checkout with:  bash data/lcd_raw/_symlink.sh
+data/lcd_raw/*.csv
+
+# Refresh-chain runtime state
+logs/.last_auto_push
+logs/.last_slow_refresh
+logs/.refresh.lock
 
 # ============================================================
 # Reference PDFs (third-party arXiv papers we cite — not ours)

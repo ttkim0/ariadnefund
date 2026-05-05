@@ -1,0 +1,192 @@
+{
+  "city_slug": "atl",
+  "city_name": "Atlanta",
+  "icao": "KATL",
+  "timezone": "America/New_York",
+  "fetched_at_utc": "2026-05-05T05:55:18.218186+00:00",
+  "duration_sec": 2.01,
+  "errors": [],
+  "bucket_charts": [
+    {
+      "city_slug": "atl",
+      "city_name": "Atlanta",
+      "icao": "KATL",
+      "side_label": "HIGH",
+      "series_ticker": "KXHIGHTATL",
+      "event_ticker": "KXHIGHTATL-26MAY05",
+      "day_D": "2026-05-05",
+      "title": "Atlanta \u00b7 HIGH \u00b7 2026-05-05",
+      "buckets": [
+        {
+          "ticker": "KXHIGHTATL-26MAY05-T78",
+          "subtitle": "77\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 78,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTATL-26MAY05-B78.5",
+          "subtitle": "78\u00b0 to 79\u00b0",
+          "strike_type": "between",
+          "floor_strike": 78,
+          "cap_strike": 79,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTATL-26MAY05-B80.5",
+          "subtitle": "80\u00b0 to 81\u00b0",
+          "strike_type": "between",
+          "floor_strike": 80,
+          "cap_strike": 81,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTATL-26MAY05-B82.5",
+          "subtitle": "82\u00b0 to 83\u00b0",
+          "strike_type": "between",
+          "floor_strike": 82,
+          "cap_strike": 83,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTATL-26MAY05-B84.5",
+          "subtitle": "84\u00b0 to 85\u00b0",
+          "strike_type": "between",
+          "floor_strike": 84,
+          "cap_strike": 85,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTATL-26MAY05-T85",
+          "subtitle": "86\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 85,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "city_slug": "atl",
+      "city_name": "Atlanta",
+      "icao": "KATL",
+      "side_label": "LOW",
+      "series_ticker": "KXLOWTATL",
+      "event_ticker": "KXLOWTATL-26MAY05",
+      "day_D": "2026-05-05",
+      "title": "Atlanta \u00b7 LOW \u00b7 2026-05-05",
+      "buckets": [
+        {
+          "ticker": "KXLOWTATL-26MAY05-T48",
+          "subtitle": "47\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 48,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTATL-26MAY05-B48.5",
+          "subtitle": "48\u00b0 to 49\u00b0",
+          "strike_type": "between",
+          "floor_strike": 48,
+          "cap_strike": 49,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTATL-26MAY05-B50.5",
+          "subtitle": "50\u00b0 to 51\u00b0",
+          "strike_type": "between",
+          "floor_strike": 50,
+          "cap_strike": 51,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTATL-26MAY05-B52.5",
+          "subtitle": "52\u00b0 to 53\u00b0",
+          "strike_type": "between",
+          "floor_strike": 52,
+          "cap_strike": 53,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTATL-26MAY05-B54.5",
+          "subtitle": "54\u00b0 to 55\u00b0",
+          "strike_type": "between",
+          "floor_strike": 54,
+          "cap_strike": 55,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTATL-26MAY05-T55",
+          "subtitle": "56\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 55,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "n_events": 2
+}

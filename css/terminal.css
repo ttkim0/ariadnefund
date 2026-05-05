@@ -97,6 +97,52 @@ a:hover { text-decoration: underline; text-decoration-color: var(--t-amber-dim);
 }
 .t-ribbon a:hover .key, .t-ribbon a.active .key { color: var(--t-fg-muted); }
 
+/* ═══════ city tab strip ═══════ */
+.t-citytabs {
+  display: flex; flex-wrap: wrap;
+  border-bottom: 1px solid var(--t-rule);
+  background: linear-gradient(to bottom, #0F140F, #0B0F0C);
+  padding: 0 0.4rem;
+  font-size: 9.5px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  align-items: center;
+  gap: 0;
+}
+.t-citytabs .lbl {
+  color: var(--t-fg-faint);
+  padding: 0.45rem 0.6rem 0.45rem 0.6rem;
+  border-right: 1px solid var(--t-rule);
+  margin-right: 0.25rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+.t-citytabs a {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.42rem 0.7rem;
+  color: var(--t-fg-faint);
+  border-right: 1px solid var(--t-rule-soft);
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  position: relative;
+  transition: color 80ms;
+}
+.t-citytabs a:hover { color: var(--t-fg); background: var(--t-panel-2); text-decoration: none; }
+.t-citytabs a.active {
+  color: var(--t-amber);
+  border-bottom-color: var(--t-amber);
+  background: var(--t-panel-2);
+}
+.t-citytabs a .dot {
+  display: inline-block; width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--t-fg-faint);
+  flex-shrink: 0;
+}
+.t-citytabs a.is-trained .dot  { background: var(--t-good); box-shadow: 0 0 4px rgba(91, 200, 113, 0.55); }
+.t-citytabs a.is-pending .dot  { background: var(--t-amber-dim); }
+.t-citytabs a .code { font-weight: 500; }
+
 /* ═══════ main grid ═══════ */
 main.t-grid {
   display: grid;

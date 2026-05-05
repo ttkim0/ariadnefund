@@ -1,0 +1,192 @@
+{
+  "city_slug": "bos",
+  "city_name": "Boston",
+  "icao": "KBOS",
+  "timezone": "America/New_York",
+  "fetched_at_utc": "2026-05-05T05:55:20.279926+00:00",
+  "duration_sec": 2.06,
+  "errors": [],
+  "bucket_charts": [
+    {
+      "city_slug": "bos",
+      "city_name": "Boston",
+      "icao": "KBOS",
+      "side_label": "HIGH",
+      "series_ticker": "KXHIGHTBOS",
+      "event_ticker": "KXHIGHTBOS-26MAY05",
+      "day_D": "2026-05-05",
+      "title": "Boston \u00b7 HIGH \u00b7 2026-05-05",
+      "buckets": [
+        {
+          "ticker": "KXHIGHTBOS-26MAY05-T74",
+          "subtitle": "73\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 74,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTBOS-26MAY05-B74.5",
+          "subtitle": "74\u00b0 to 75\u00b0",
+          "strike_type": "between",
+          "floor_strike": 74,
+          "cap_strike": 75,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTBOS-26MAY05-B76.5",
+          "subtitle": "76\u00b0 to 77\u00b0",
+          "strike_type": "between",
+          "floor_strike": 76,
+          "cap_strike": 77,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTBOS-26MAY05-B78.5",
+          "subtitle": "78\u00b0 to 79\u00b0",
+          "strike_type": "between",
+          "floor_strike": 78,
+          "cap_strike": 79,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTBOS-26MAY05-B80.5",
+          "subtitle": "80\u00b0 to 81\u00b0",
+          "strike_type": "between",
+          "floor_strike": 80,
+          "cap_strike": 81,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTBOS-26MAY05-T81",
+          "subtitle": "82\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 81,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "city_slug": "bos",
+      "city_name": "Boston",
+      "icao": "KBOS",
+      "side_label": "LOW",
+      "series_ticker": "KXLOWTBOS",
+      "event_ticker": "KXLOWTBOS-26MAY05",
+      "day_D": "2026-05-05",
+      "title": "Boston \u00b7 LOW \u00b7 2026-05-05",
+      "buckets": [
+        {
+          "ticker": "KXLOWTBOS-26MAY05-T45",
+          "subtitle": "44\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 45,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTBOS-26MAY05-B45.5",
+          "subtitle": "45\u00b0 to 46\u00b0",
+          "strike_type": "between",
+          "floor_strike": 45,
+          "cap_strike": 46,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTBOS-26MAY05-B47.5",
+          "subtitle": "47\u00b0 to 48\u00b0",
+          "strike_type": "between",
+          "floor_strike": 47,
+          "cap_strike": 48,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTBOS-26MAY05-B49.5",
+          "subtitle": "49\u00b0 to 50\u00b0",
+          "strike_type": "between",
+          "floor_strike": 49,
+          "cap_strike": 50,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTBOS-26MAY05-B51.5",
+          "subtitle": "51\u00b0 to 52\u00b0",
+          "strike_type": "between",
+          "floor_strike": 51,
+          "cap_strike": 52,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTBOS-26MAY05-T52",
+          "subtitle": "53\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 52,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "n_events": 2
+}

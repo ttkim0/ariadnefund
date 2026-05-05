@@ -1,0 +1,192 @@
+{
+  "city_slug": "dca",
+  "city_name": "Washington, DC",
+  "icao": "KDCA",
+  "timezone": "America/New_York",
+  "fetched_at_utc": "2026-05-05T05:55:33.645406+00:00",
+  "duration_sec": 2.07,
+  "errors": [],
+  "bucket_charts": [
+    {
+      "city_slug": "dca",
+      "city_name": "Washington, DC",
+      "icao": "KDCA",
+      "side_label": "HIGH",
+      "series_ticker": "KXHIGHTDC",
+      "event_ticker": "KXHIGHTDC-26MAY05",
+      "day_D": "2026-05-05",
+      "title": "Washington, DC \u00b7 HIGH \u00b7 2026-05-05",
+      "buckets": [
+        {
+          "ticker": "KXHIGHTDC-26MAY05-T81",
+          "subtitle": "80\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 81,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTDC-26MAY05-B81.5",
+          "subtitle": "81\u00b0 to 82\u00b0",
+          "strike_type": "between",
+          "floor_strike": 81,
+          "cap_strike": 82,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTDC-26MAY05-B83.5",
+          "subtitle": "83\u00b0 to 84\u00b0",
+          "strike_type": "between",
+          "floor_strike": 83,
+          "cap_strike": 84,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTDC-26MAY05-B85.5",
+          "subtitle": "85\u00b0 to 86\u00b0",
+          "strike_type": "between",
+          "floor_strike": 85,
+          "cap_strike": 86,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTDC-26MAY05-B87.5",
+          "subtitle": "87\u00b0 to 88\u00b0",
+          "strike_type": "between",
+          "floor_strike": 87,
+          "cap_strike": 88,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXHIGHTDC-26MAY05-T88",
+          "subtitle": "89\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 88,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "city_slug": "dca",
+      "city_name": "Washington, DC",
+      "icao": "KDCA",
+      "side_label": "LOW",
+      "series_ticker": "KXLOWTDC",
+      "event_ticker": "KXLOWTDC-26MAY05",
+      "day_D": "2026-05-05",
+      "title": "Washington, DC \u00b7 LOW \u00b7 2026-05-05",
+      "buckets": [
+        {
+          "ticker": "KXLOWTDC-26MAY05-T55",
+          "subtitle": "54\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 55,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDC-26MAY05-B55.5",
+          "subtitle": "55\u00b0 to 56\u00b0",
+          "strike_type": "between",
+          "floor_strike": 55,
+          "cap_strike": 56,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDC-26MAY05-B57.5",
+          "subtitle": "57\u00b0 to 58\u00b0",
+          "strike_type": "between",
+          "floor_strike": 57,
+          "cap_strike": 58,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDC-26MAY05-B59.5",
+          "subtitle": "59\u00b0 to 60\u00b0",
+          "strike_type": "between",
+          "floor_strike": 59,
+          "cap_strike": 60,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDC-26MAY05-B61.5",
+          "subtitle": "61\u00b0 to 62\u00b0",
+          "strike_type": "between",
+          "floor_strike": 61,
+          "cap_strike": 62,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDC-26MAY05-T62",
+          "subtitle": "63\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 62,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "n_events": 2
+}

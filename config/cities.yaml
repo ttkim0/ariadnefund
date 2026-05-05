@@ -1,0 +1,344 @@
+# Ariadne Labs — multi-city configuration
+#
+# One entry per city we trade.  All scripts take --city <slug> and look up the
+# rest here.  The slug doubles as a filename prefix (data/{slug}_hourly.parquet,
+# models/{slug}/qmodel_*.joblib, etc.) so do NOT change a slug after training.
+#
+# Field reference:
+#   slug:           short stable identifier, [a-z0-9_]+
+#   name:           human display
+#   icao:           4-letter ICAO airport code (NOAA + NWS METAR feed)
+#   nws_office:     issuing forecast office (informational; not used by code)
+#   zip:            ZIP for the airport (informational)
+#   timezone:       IANA timezone name — Kalshi settlement time and the canonical
+#                   "local time" for this city's daily HIGH/LOW
+#   lcd_raw:        path to the raw NOAA LCD CSV (under data/lcd_raw/) — these
+#                   files are gitignored because they total ~2 GB
+#   kalshi:
+#     high_series:  Kalshi series ticker for daily HIGH (null if Kalshi has no HIGH market)
+#     low_series:   Kalshi series ticker for daily LOW  (null if Kalshi has no LOW market)
+#   climatology:    informational seasonal anchor — month -> typical [low, high] in °F.
+#                   Used only as a sanity-check: model predictions outside this band
+#                   throw an audit warning.
+
+cities:
+
+  - slug: sfo
+    name: San Francisco
+    icao: KSFO
+    nws_office: KMTR
+    zip: "94128"
+    timezone: America/Los_Angeles
+    lcd_raw: data/lcd_raw/sfo.csv
+    kalshi:
+      high_series: KXHIGHTSFO
+      low_series:  KXLOWTSFO
+    climatology:
+      jan: [42, 58]
+      apr: [48, 64]
+      jul: [54, 68]
+      oct: [52, 70]
+
+  - slug: nyc
+    name: New York (Central Park)
+    icao: KNYC
+    nws_office: KOKX
+    zip: "10024"
+    timezone: America/New_York
+    lcd_raw: data/lcd_raw/nyc.csv
+    kalshi:
+      high_series: null
+      low_series:  KXLOWTNYC
+    climatology:
+      jan: [27, 39]
+      apr: [44, 62]
+      jul: [69, 85]
+      oct: [49, 67]
+
+  - slug: lax
+    name: Los Angeles
+    icao: KLAX
+    nws_office: KLOX
+    zip: "90045"
+    timezone: America/Los_Angeles
+    lcd_raw: data/lcd_raw/lax.csv
+    kalshi:
+      high_series: null
+      low_series:  KXLOWTLAX
+    climatology:
+      jan: [50, 65]
+      apr: [55, 68]
+      jul: [64, 76]
+      oct: [60, 76]
+
+  - slug: mia
+    name: Miami
+    icao: KMIA
+    nws_office: KMFL
+    zip: "33142"
+    timezone: America/New_York
+    lcd_raw: data/lcd_raw/mia.csv
+    kalshi:
+      high_series: null
+      low_series:  KXLOWTMIA
+    climatology:
+      jan: [60, 76]
+      apr: [70, 83]
+      jul: [78, 90]
+      oct: [73, 86]
+
+  - slug: chi
+    name: Chicago (Midway)
+    icao: KMDW
+    nws_office: KLOT
+    zip: "60638"
+    timezone: America/Chicago
+    lcd_raw: data/lcd_raw/chi.csv
+    kalshi:
+      high_series: null
+      low_series:  KXLOWTCHI
+    climatology:
+      jan: [21, 33]
+      apr: [42, 60]
+      jul: [70, 86]
+      oct: [46, 65]
+
+  - slug: phx
+    name: Phoenix
+    icao: KPHX
+    nws_office: KPSR
+    zip: "85034"
+    timezone: America/Phoenix    # NO DST — important
+    lcd_raw: data/lcd_raw/phx.csv
+    kalshi:
+      high_series: KXHIGHTPHX
+      low_series:  KXLOWTPHX
+    climatology:
+      jan: [46, 67]
+      apr: [60, 84]
+      jul: [85, 106]
+      oct: [69, 89]
+
+  - slug: den
+    name: Denver
+    icao: KDEN
+    nws_office: KBOU
+    zip: "80249"
+    timezone: America/Denver
+    lcd_raw: data/lcd_raw/den.csv
+    kalshi:
+      high_series: null
+      low_series:  KXLOWTDEN
+    climatology:
+      jan: [18, 44]
+      apr: [37, 62]
+      jul: [60, 89]
+      oct: [40, 67]
+
+  - slug: aus
+    name: Austin
+    icao: KAUS
+    nws_office: KEWX
+    zip: "78719"
+    timezone: America/Chicago
+    lcd_raw: data/lcd_raw/aus.csv
+    kalshi:
+      high_series: null
+      low_series:  KXLOWTAUS
+    climatology:
+      jan: [42, 62]
+      apr: [60, 80]
+      jul: [74, 96]
+      oct: [60, 82]
+
+  - slug: atl
+    name: Atlanta
+    icao: KATL
+    nws_office: KFFC
+    zip: "30320"
+    timezone: America/New_York
+    lcd_raw: data/lcd_raw/atl.csv
+    kalshi:
+      high_series: KXHIGHTATL
+      low_series:  KXLOWTATL
+    climatology:
+      jan: [34, 53]
+      apr: [50, 73]
+      jul: [71, 89]
+      oct: [54, 75]
+
+  - slug: okc
+    name: Oklahoma City
+    icao: KOKC
+    nws_office: KOUN
+    zip: "73159"
+    timezone: America/Chicago
+    lcd_raw: data/lcd_raw/okc.csv
+    kalshi:
+      high_series: KXHIGHTOKC
+      low_series:  KXLOWTOKC
+    climatology:
+      jan: [28, 49]
+      apr: [49, 71]
+      jul: [73, 94]
+      oct: [52, 74]
+
+  - slug: bos
+    name: Boston
+    icao: KBOS
+    nws_office: KBOX
+    zip: "02128"
+    timezone: America/New_York
+    lcd_raw: data/lcd_raw/bos.csv
+    kalshi:
+      high_series: KXHIGHTBOS
+      low_series:  KXLOWTBOS
+    climatology:
+      jan: [22, 36]
+      apr: [40, 56]
+      jul: [66, 82]
+      oct: [47, 64]
+
+  - slug: sea
+    name: Seattle
+    icao: KSEA
+    nws_office: KSEW
+    zip: "98158"
+    timezone: America/Los_Angeles
+    lcd_raw: data/lcd_raw/sea.csv
+    kalshi:
+      high_series: KXHIGHTSEA
+      low_series:  KXLOWTSEA
+    climatology:
+      jan: [36, 47]
+      apr: [42, 59]
+      jul: [56, 76]
+      oct: [46, 60]
+
+  - slug: msp
+    name: Minneapolis-Saint Paul
+    icao: KMSP
+    nws_office: KMPX
+    zip: "55450"
+    timezone: America/Chicago
+    lcd_raw: data/lcd_raw/msp.csv
+    kalshi:
+      high_series: KXHIGHTMIN
+      low_series:  KXLOWTMIN
+    climatology:
+      jan: [8, 24]
+      apr: [37, 60]
+      jul: [66, 84]
+      oct: [40, 62]
+
+  - slug: phl
+    name: Philadelphia
+    icao: KPHL
+    nws_office: KPHI
+    zip: "19153"
+    timezone: America/New_York
+    lcd_raw: data/lcd_raw/phl.csv
+    kalshi:
+      high_series: null
+      low_series:  KXLOWTPHIL
+    climatology:
+      jan: [25, 41]
+      apr: [44, 64]
+      jul: [69, 87]
+      oct: [49, 69]
+
+  - slug: las
+    name: Las Vegas
+    icao: KLAS
+    nws_office: KVEF
+    zip: "89119"
+    timezone: America/Los_Angeles
+    lcd_raw: data/lcd_raw/las.csv
+    kalshi:
+      high_series: KXHIGHTLV
+      low_series:  KXLOWTLV
+    climatology:
+      jan: [38, 58]
+      apr: [55, 78]
+      jul: [82, 105]
+      oct: [60, 84]
+
+  - slug: san
+    name: San Antonio
+    icao: KSAT
+    nws_office: KEWX
+    zip: "78216"
+    timezone: America/Chicago
+    lcd_raw: data/lcd_raw/san.csv
+    kalshi:
+      high_series: KXHIGHTSATX
+      low_series:  KXLOWTSATX
+    climatology:
+      jan: [42, 63]
+      apr: [60, 80]
+      jul: [74, 96]
+      oct: [60, 83]
+
+  - slug: dal
+    name: Dallas-Fort Worth
+    icao: KDFW
+    nws_office: KFWD
+    zip: "75261"
+    timezone: America/Chicago
+    lcd_raw: data/lcd_raw/dal.csv
+    kalshi:
+      high_series: KXHIGHTDAL
+      low_series:  KXLOWTDAL
+    climatology:
+      jan: [36, 56]
+      apr: [56, 76]
+      jul: [76, 96]
+      oct: [58, 79]
+
+  - slug: dca
+    name: Washington, DC
+    icao: KDCA
+    nws_office: KLWX
+    zip: "22202"
+    timezone: America/New_York
+    lcd_raw: data/lcd_raw/dca.csv
+    kalshi:
+      high_series: KXHIGHTDC
+      low_series:  KXLOWTDC
+    climatology:
+      jan: [30, 44]
+      apr: [47, 68]
+      jul: [72, 89]
+      oct: [52, 71]
+
+  - slug: msy
+    name: New Orleans
+    icao: KMSY
+    nws_office: KLIX
+    zip: "70062"
+    timezone: America/Chicago
+    lcd_raw: data/lcd_raw/msy.csv
+    kalshi:
+      high_series: KXHIGHTNOLA
+      low_series:  KXLOWTNOLA
+    climatology:
+      jan: [46, 63]
+      apr: [62, 79]
+      jul: [76, 91]
+      oct: [60, 82]
+
+  - slug: hou
+    name: Houston (Hobby)
+    icao: KHOU
+    nws_office: KHGX
+    zip: "77061"
+    timezone: America/Chicago
+    lcd_raw: data/lcd_raw/hou.csv
+    kalshi:
+      high_series: KXHIGHTHOU
+      low_series:  KXLOWTHOU
+    climatology:
+      jan: [44, 63]
+      apr: [62, 79]
+      jul: [76, 92]
+      oct: [60, 84]

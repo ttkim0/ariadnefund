@@ -1,0 +1,192 @@
+{
+  "city_slug": "den",
+  "city_name": "Denver",
+  "icao": "KDEN",
+  "timezone": "America/Denver",
+  "fetched_at_utc": "2026-05-05T05:55:12.720849+00:00",
+  "duration_sec": 1.89,
+  "errors": [],
+  "bucket_charts": [
+    {
+      "city_slug": "den",
+      "city_name": "Denver",
+      "icao": "KDEN",
+      "side_label": "LOW",
+      "series_ticker": "KXLOWTDEN",
+      "event_ticker": "KXLOWTDEN-26MAY04",
+      "day_D": "2026-05-04",
+      "title": "Denver \u00b7 LOW \u00b7 2026-05-04",
+      "buckets": [
+        {
+          "ticker": "KXLOWTDEN-26MAY04-T44",
+          "subtitle": "43\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 44,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY04-B44.5",
+          "subtitle": "44\u00b0 to 45\u00b0",
+          "strike_type": "between",
+          "floor_strike": 44,
+          "cap_strike": 45,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY04-B46.5",
+          "subtitle": "46\u00b0 to 47\u00b0",
+          "strike_type": "between",
+          "floor_strike": 46,
+          "cap_strike": 47,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY04-B48.5",
+          "subtitle": "48\u00b0 to 49\u00b0",
+          "strike_type": "between",
+          "floor_strike": 48,
+          "cap_strike": 49,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY04-B50.5",
+          "subtitle": "50\u00b0 to 51\u00b0",
+          "strike_type": "between",
+          "floor_strike": 50,
+          "cap_strike": 51,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY04-T51",
+          "subtitle": "52\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 51,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "city_slug": "den",
+      "city_name": "Denver",
+      "icao": "KDEN",
+      "side_label": "LOW",
+      "series_ticker": "KXLOWTDEN",
+      "event_ticker": "KXLOWTDEN-26MAY05",
+      "day_D": "2026-05-05",
+      "title": "Denver \u00b7 LOW \u00b7 2026-05-05",
+      "buckets": [
+        {
+          "ticker": "KXLOWTDEN-26MAY05-T31",
+          "subtitle": "30\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 31,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY05-B31.5",
+          "subtitle": "31\u00b0 to 32\u00b0",
+          "strike_type": "between",
+          "floor_strike": 31,
+          "cap_strike": 32,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY05-B33.5",
+          "subtitle": "33\u00b0 to 34\u00b0",
+          "strike_type": "between",
+          "floor_strike": 33,
+          "cap_strike": 34,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY05-B35.5",
+          "subtitle": "35\u00b0 to 36\u00b0",
+          "strike_type": "between",
+          "floor_strike": 35,
+          "cap_strike": 36,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY05-B37.5",
+          "subtitle": "37\u00b0 to 38\u00b0",
+          "strike_type": "between",
+          "floor_strike": 37,
+          "cap_strike": 38,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY05-T38",
+          "subtitle": "39\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 38,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "n_events": 2
+}

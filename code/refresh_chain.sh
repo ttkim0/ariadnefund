@@ -83,6 +83,9 @@ else
 fi
 
 run_step "live kalshi signals"  "${PY}" code/13_live_signal.py
+# Pull live Kalshi market data for ALL configured cities (model-free).
+# Adds ~25s when called for all 20 cities at parallelism=2 (Kalshi rate-limit).
+run_step "multi-city kalshi"    "${PY}" code/16_multi_kalshi_fetch.py
 run_step "fund state json"      "${PY}" build_fund_state.py
 
 # ─────────────────────────────────────────────────────────────────────────

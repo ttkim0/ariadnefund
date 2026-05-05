@@ -39,6 +39,12 @@ if (!window.AriadneAuth.isLoggedIn()) {
   <a href="https://github.com/ttkim0/ariadnefund" target="_blank" rel="noopener"><span class="key">F7</span>Repo ↗</a>
 </nav>
 
+<!-- city tab strip — populated by JS from state.cities -->
+<nav class="t-citytabs" id="t-citytabs">
+  <span class="lbl">CITY</span>
+  <span class="muted">loading…</span>
+</nav>
+
 <!-- ============================ MAIN GRID ============================ -->
 <main class="t-grid">
 
@@ -238,10 +244,15 @@ function formatPacific(utcStr) {
   return `${get("year")}-${get("month")}-${get("day")} ${get("hour")}:${get("minute")}:${get("second")} ${get("timeZoneName")}`;
 }
 
+// Cached state + currently-selected city.  Tab clicks just re-render the
+// per-city panels off the same cached state.
+let _state = null;
+let _currentCity = "sfo";
+
 // Fetch & render
 fetch("data/fund_state.json")
   .then(r => r.json())
-  .then(state => render(state))
+  .then(state => { _state = state; render(state); })
   .catch(err => {
     document.querySelectorAll(".t-panel").forEach(p => {
       const tb = p.querySelector("tbody, .muted");
@@ -269,45 +280,15 @@ function render(s) {
 
   document.getElementById("t-snapshot").textContent = formatPacific(s.generated_at_utc);
 
-  // forecast strip
-  const fs = document.getElementById("forecast-strip");
-  fs.innerHTML = "";
-  if (s.forecast) {
-    fs.innerHTML = `
-      <div class="h"><div class="t">+12h MED</div><div class="v">${s.forecast.h12_median ? s.forecast.h12_median.toFixed(1) : "—"}°F</div><div class="ci">hourly model</div></div>
-      <div class="h"><div class="t">+24h MED</div><div class="v">${s.forecast.h24_median ? s.forecast.h24_median.toFixed(1) : "—"}°F</div><div class="ci">hourly model</div></div>
-      <div class="h"><div class="t">CURRENT</div><div class="v amber">${s.forecast.current_temp ? s.forecast.current_temp.toFixed(1) : "—"}°F</div><div class="ci">latest METAR</div></div>
-    `;
-    document.getElementById("fc-issued").textContent = s.forecast.issued || "—";
-    document.getElementById("fc-current").textContent =
-      s.forecast.current_temp ? s.forecast.current_temp.toFixed(1) + "°F" : "—";
-  } else {
-    fs.innerHTML = '<div class="muted">no fresh forecast — run code/06_predict.py</div>';
-  }
-
-  // open positions
-  const posBody = document.getElementById("pos-body");
-  posBody.innerHTML = "";
-  document.getElementById("pos-count").textContent =
-    s.exposures.n_open + (s.exposures.n_open === 1 ? " open" : " open");
-  if (s.exposures.open_positions.length === 0) {
-    posBody.innerHTML = '<tr><td colspan="9" class="muted">no actionable signals at current prices</td></tr>';
-  } else {
-    s.exposures.open_positions.forEach(p => {
-      posBody.innerHTML += `
-        <tr>
-          <td>${p.day}</td>
-          <td class="ticker">${p.ticker}</td>
-          <td>${p.bucket}</td>
-          <td class="${p.side === 'YES' ? 'yes' : 'no'}">${p.side}</td>
-          <td class="num">$${p.cost.toFixed(3)}</td>
-          <td class="num">${(p.p_model * 100).toFixed(1)}%</td>
-          <td class="num neutral">${(p.p_final * 100).toFixed(1)}%</td>
-          <td class="num yes">+$${p.ev_per_c.toFixed(4)}</td>
-          <td class="num">${(p.kelly_used * 100).toFixed(2)}%</td>
-        </tr>`;
-    });
-  }
+  // city tabs (data-driven from state.cities)
+  renderCityTabs(s);
+  // pick the initial city: prefer ?city=xxx in URL, then sfo, then first available
+  const url = new URL(location.href);
+  const wantCity = url.searchParams.get("city");
+  const slugs = (s.cities || []).map(c => c.slug);
+  if (wantCity && slugs.includes(wantCity)) _currentCity = wantCity;
+  else if (slugs.includes("sfo"))           _currentCity = "sfo";
+  else if (slugs.length)                    _currentCity = slugs[0];
 
   // skill table
   const skillBody = document.getElementById("skill-body");
@@ -347,24 +328,129 @@ function render(s) {
       s.equity_curve[0].t + " → " + s.equity_curve[s.equity_curve.length - 1].t;
   }
 
-  // bucket probability grid
-  renderBucketCharts(s.bucket_charts || []);
+  // Per-city panels (forecast strip, bucket charts, open positions, 72h obs).
+  // These re-render whenever the user clicks a different city tab.
+  renderCity(s, _currentCity);
+}
 
-  // 72h observations
-  drawObsChart(s.obs_72h || []);
-  if (s.obs_72h && s.obs_72h.length >= 2) {
+// ───────── city tabs (top strip) ─────────
+function renderCityTabs(s) {
+  const nav = document.getElementById("t-citytabs");
+  if (!nav) return;
+  const cities = s.cities || [];
+  if (!cities.length) { nav.innerHTML = '<span class="lbl">CITY</span><span class="muted">no cities configured</span>'; return; }
+  let html = '<span class="lbl">CITY</span>';
+  cities.forEach(c => {
+    const cls = c.model_status === "trained" ? "is-trained" : "is-pending";
+    html += `<a data-city="${c.slug}" class="${cls}"><span class="dot"></span><span class="code">${c.slug.toUpperCase()}</span></a>`;
+  });
+  nav.innerHTML = html;
+  nav.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", e => {
+      e.preventDefault();
+      _currentCity = a.dataset.city;
+      // update URL so a phone refresh keeps the same tab
+      const u = new URL(location.href);
+      u.searchParams.set("city", _currentCity);
+      history.replaceState(null, "", u);
+      // mark active
+      nav.querySelectorAll("a").forEach(x => x.classList.remove("active"));
+      a.classList.add("active");
+      // re-render the per-city panels
+      if (_state) renderCity(_state, _currentCity);
+    });
+  });
+  // mark initial active
+  const target = nav.querySelector(`a[data-city="${_currentCity}"]`) || nav.querySelector("a");
+  if (target) target.classList.add("active");
+}
+
+// ───────── per-city panel rendering ─────────
+// Called once on initial render and again on every tab click.  Pulls the
+// matching entry from state.cities[] and populates: forecast strip, open
+// positions table, bucket-probability grid, 72h obs canvas.
+function renderCity(s, slug) {
+  const city = (s.cities || []).find(c => c.slug === slug);
+  if (!city) return;
+
+  // ── forecast strip (panel 02)
+  const fs = document.getElementById("forecast-strip");
+  const tzPretty = (city.timezone || "").split("/").pop().replace(/_/g, " ");
+  if (city.model_status === "trained" && s.forecast && city.slug === "sfo") {
+    // SFO has the legacy forecast.json — keep showing the rich version
+    fs.innerHTML = `
+      <div class="h"><div class="t">+12h MED</div><div class="v">${s.forecast.h12_median ? s.forecast.h12_median.toFixed(1) : "—"}°F</div><div class="ci">hourly model</div></div>
+      <div class="h"><div class="t">+24h MED</div><div class="v">${s.forecast.h24_median ? s.forecast.h24_median.toFixed(1) : "—"}°F</div><div class="ci">hourly model</div></div>
+      <div class="h"><div class="t">CURRENT</div><div class="v amber">${s.forecast.current_temp ? s.forecast.current_temp.toFixed(1) : "—"}°F</div><div class="ci">latest METAR</div></div>
+    `;
+    document.getElementById("fc-issued").textContent = s.forecast.issued || "—";
+    document.getElementById("fc-current").textContent =
+      s.forecast.current_temp ? s.forecast.current_temp.toFixed(1) + "°F" : "—";
+  } else {
+    // Untrained city: show last METAR (if any) + status
+    const lastObs = (city.obs_72h || []).slice(-1)[0];
+    const status = city.model_status === "trained"
+      ? '<span class="amber">model · trained</span>'
+      : '<span class="muted">model · pending overnight training</span>';
+    fs.innerHTML = `
+      <div class="h"><div class="t">CITY</div><div class="v">${city.icao}</div><div class="ci">${city.name}</div></div>
+      <div class="h"><div class="t">CURRENT</div><div class="v amber">${lastObs ? lastObs.temp_f.toFixed(1)+'°F' : '—'}</div><div class="ci">${lastObs ? 'last METAR · '+lastObs.t.slice(5) : 'no obs yet'}</div></div>
+      <div class="h"><div class="t">STATUS</div><div class="v" style="font-size:13px;letter-spacing:0.04em;">${status}</div><div class="ci">${tzPretty}</div></div>
+    `;
+    document.getElementById("fc-issued").textContent = city.fetched_at_utc ? formatPacific(city.fetched_at_utc) : "—";
+    document.getElementById("fc-current").textContent = lastObs ? lastObs.temp_f.toFixed(1)+'°F' : "—";
+  }
+
+  // ── open positions (panel 03)
+  const posBody = document.getElementById("pos-body");
+  posBody.innerHTML = "";
+  const positions = city.open_positions || [];
+  document.getElementById("pos-count").textContent = positions.length + " open · " + city.slug.toUpperCase();
+  if (positions.length === 0) {
+    posBody.innerHTML = `<tr><td colspan="9" class="muted">${
+      city.model_status === "trained"
+        ? 'no actionable signals at current prices for ' + city.name
+        : city.name + ' — model pending overnight training; only Kalshi market data available'
+    }</td></tr>`;
+  } else {
+    positions.forEach(p => {
+      posBody.innerHTML += `
+        <tr>
+          <td>${p.day}</td>
+          <td class="ticker">${p.ticker}</td>
+          <td>${p.bucket}</td>
+          <td class="${p.side === 'YES' ? 'yes' : 'no'}">${p.side}</td>
+          <td class="num">$${p.cost.toFixed(3)}</td>
+          <td class="num">${(p.p_model * 100).toFixed(1)}%</td>
+          <td class="num neutral">${(p.p_final * 100).toFixed(1)}%</td>
+          <td class="num yes">+$${p.ev_per_c.toFixed(4)}</td>
+          <td class="num">${(p.kelly_used * 100).toFixed(2)}%</td>
+        </tr>`;
+    });
+  }
+
+  // ── bucket probability grid (panel 06)
+  renderBucketCharts(city.bucket_charts || [], city);
+
+  // ── 72h observations canvas (panel 07)
+  const obs = city.obs_72h || [];
+  drawObsChart(obs);
+  if (obs.length >= 2) {
     document.getElementById("obs-span").textContent =
-      s.obs_72h[0].t.slice(5) + " → " + s.obs_72h[s.obs_72h.length - 1].t.slice(5);
+      obs[0].t.slice(5) + " → " + obs[obs.length - 1].t.slice(5);
+  } else {
+    document.getElementById("obs-span").textContent = city.model_status === "trained" ? "—" : "obs pending";
   }
 }
 
 // ───────── bucket probability charts (CSS bars, model vs market) ─────────
-function renderBucketCharts(charts) {
+function renderBucketCharts(charts, city) {
   const grid = document.getElementById("bucket-grid");
+  const tag = city ? " · " + city.slug.toUpperCase() : "";
   document.getElementById("bk-count").textContent =
-    charts.length + (charts.length === 1 ? " market" : " markets");
+    charts.length + (charts.length === 1 ? " market" : " markets") + tag;
   if (!charts.length) {
-    grid.innerHTML = '<div class="muted">no upcoming Kalshi markets cached</div>';
+    grid.innerHTML = '<div class="muted">no Kalshi markets currently listed for ' + (city ? city.name : 'this city') + '</div>';
     return;
   }
   grid.innerHTML = "";
@@ -380,28 +466,32 @@ function renderBucketCharts(charts) {
       </div>
       <div class="t-bucket-rows">`;
     c.buckets.forEach(b => {
-      const pm = (b.p_model || 0) * 100;
-      const pf = (b.p_final || 0) * 100;
-      const pk = b.p_market != null ? b.p_market * 100 : null;
+      const pmRaw = b.p_model;             // null if model not yet trained for this city
+      const pkRaw = b.p_market;
+      const pm = pmRaw != null ? pmRaw * 100 : null;
+      const pk = pkRaw != null ? pkRaw * 100 : null;
       html += `
         <div class="row">
           <div class="lbl">${b.label}</div>
           <div class="bars">
-            <div class="bar bar-model" style="width:${pm.toFixed(1)}%;" title="model ${pm.toFixed(1)}%"></div>
+            ${pm != null
+              ? `<div class="bar bar-model" style="width:${pm.toFixed(1)}%;" title="model ${pm.toFixed(1)}%"></div>` : ""}
             ${pk != null
-              ? `<div class="bar bar-market" style="width:${pk.toFixed(1)}%;" title="kalshi mid ${pk.toFixed(1)}%"></div>`
-              : ""}
+              ? `<div class="bar bar-market" style="width:${pk.toFixed(1)}%;" title="kalshi mid ${pk.toFixed(1)}%"></div>` : ""}
           </div>
           <div class="nums">
-            <span class="m">${pm.toFixed(0)}%</span>
+            <span class="m">${pm != null ? pm.toFixed(0) + "%" : "—"}</span>
             <span class="k">${pk != null ? pk.toFixed(0) + "%" : "—"}</span>
           </div>
         </div>`;
     });
+    const note = (city && city.model_status !== "trained")
+      ? '<span class="muted faint" style="margin-left:auto;">model pending</span>' : '';
     html += `</div>
       <div class="t-bucket-legend">
         <span><i class="sw sw-model"></i>model</span>
         <span><i class="sw sw-market"></i>kalshi&nbsp;mid</span>
+        ${note}
       </div>`;
     card.innerHTML = html;
     grid.appendChild(card);
@@ -572,10 +662,11 @@ function drawEquityCurve(curve) {
 }
 
 window.addEventListener("resize", () => {
-  fetch("data/fund_state.json").then(r => r.json()).then(s => {
-    drawEquityCurve(s.equity_curve);
-    drawObsChart(s.obs_72h || []);
-  });
+  if (_state) {
+    drawEquityCurve(_state.equity_curve);
+    const city = (_state.cities || []).find(c => c.slug === _currentCity);
+    drawObsChart(city ? (city.obs_72h || []) : []);
+  }
 });
 </script>
 

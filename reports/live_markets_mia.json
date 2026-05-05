@@ -1,0 +1,102 @@
+{
+  "city_slug": "mia",
+  "city_name": "Miami",
+  "icao": "KMIA",
+  "timezone": "America/New_York",
+  "fetched_at_utc": "2026-05-05T05:55:08.860890+00:00",
+  "duration_sec": 0.2,
+  "errors": [],
+  "bucket_charts": [
+    {
+      "city_slug": "mia",
+      "city_name": "Miami",
+      "icao": "KMIA",
+      "side_label": "LOW",
+      "series_ticker": "KXLOWTMIA",
+      "event_ticker": "KXLOWTMIA-26MAY05",
+      "day_D": "2026-05-05",
+      "title": "Miami \u00b7 LOW \u00b7 2026-05-05",
+      "buckets": [
+        {
+          "ticker": "KXLOWTMIA-26MAY05-T68",
+          "subtitle": "67\u00b0 or below",
+          "strike_type": "less",
+          "floor_strike": null,
+          "cap_strike": 68,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTMIA-26MAY05-B68.5",
+          "subtitle": "68\u00b0 to 69\u00b0",
+          "strike_type": "between",
+          "floor_strike": 68,
+          "cap_strike": 69,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTMIA-26MAY05-B70.5",
+          "subtitle": "70\u00b0 to 71\u00b0",
+          "strike_type": "between",
+          "floor_strike": 70,
+          "cap_strike": 71,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTMIA-26MAY05-B72.5",
+          "subtitle": "72\u00b0 to 73\u00b0",
+          "strike_type": "between",
+          "floor_strike": 72,
+          "cap_strike": 73,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTMIA-26MAY05-B74.5",
+          "subtitle": "74\u00b0 to 75\u00b0",
+          "strike_type": "between",
+          "floor_strike": 74,
+          "cap_strike": 75,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        },
+        {
+          "ticker": "KXLOWTMIA-26MAY05-T75",
+          "subtitle": "76\u00b0 or above",
+          "strike_type": "greater",
+          "floor_strike": 75,
+          "cap_strike": null,
+          "yes_bid": null,
+          "yes_ask": null,
+          "yes_mid": null,
+          "open_interest": null,
+          "volume": null,
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "n_events": 1
+}

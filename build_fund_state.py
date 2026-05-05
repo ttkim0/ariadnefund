@@ -2,14 +2,21 @@
 
 Reads:
   reports/backtest_metrics.json
-  reports/live_signals.json
+  reports/live_signals.json                       (SFO model-based signals; legacy)
+  reports/live_signals_<slug>.json                (per-city model-based signals)
+  reports/live_markets_<slug>.json                (per-city Kalshi-only market data)
   reports/forecast.json
   data/trade_log_B_realistic_short.parquet
+  data/<slug>_hourly.parquet                      (per-city METAR observations)
+  config/cities.yaml                              (via cities_config)
+
 Writes:
-  data/fund_state.json
+  data/fund_state.json   — single aggregated payload for the public terminal,
+                           with one entry per city under state['cities'].
 """
 
 import json
+import sys
 from pathlib import Path
 import pandas as pd
 import numpy as np
@@ -18,6 +25,14 @@ import numpy as np
 # project root and the site public root are the same directory.
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "data" / "fund_state.json"
+
+sys.path.insert(0, str(ROOT / "code"))
+try:
+    from cities_config import load_cities  # noqa: E402
+    CITIES = load_cities()
+except Exception as e:
+    print(f"warn: could not load cities config ({e}); proceeding SFO-only")
+    CITIES = []
 
 # Stated AUM (set by founders)
 AUM = 600_000
@@ -191,6 +206,155 @@ try:
 except Exception as e:
     print(f"warn: could not build obs_72h ({e})")
 
+# ─────────────────────────────────────────────────────────────────────────
+# Multi-city aggregation
+#
+# For each city in cities.yaml, we look for two artifacts:
+#   reports/live_markets_<slug>.json   — Kalshi-only data (always emitted by
+#                                         16_multi_kalshi_fetch.py for every
+#                                         city with a configured series).
+#   reports/live_signals_<slug>.json   — full model-based signals (only emitted
+#                                         once a city has trained models).
+#
+# We merge them into a per-city object the terminal renders as one tab.  The
+# `model_status` field is what the UI uses to decide whether to show p_model
+# overlays and EV — "trained" if signals are present, "pending" otherwise.
+# ─────────────────────────────────────────────────────────────────────────
+def _build_city_section(city) -> dict:
+    mk_path = ROOT / "reports" / f"live_markets_{city.slug}.json"
+    sg_path = ROOT / "reports" / f"live_signals_{city.slug}.json"
+    hr_path = ROOT / "data"    / f"{city.slug}_hourly.parquet"
+
+    # SFO predates the multi-city pipeline — fall back to the legacy paths.
+    if city.slug == "sfo":
+        if not sg_path.exists() and (ROOT / "reports" / "live_signals.json").exists():
+            sg_path = ROOT / "reports" / "live_signals.json"
+        if not hr_path.exists() and (ROOT / "data" / "sfo_hourly.parquet").exists():
+            hr_path = ROOT / "data" / "sfo_hourly.parquet"
+
+    section = {
+        "slug":         city.slug,
+        "name":         city.name,
+        "icao":         city.icao,
+        "timezone":     city.timezone,
+        "trains_high":  city.trains_high,
+        "trains_low":   city.trains_low,
+        "model_status": "pending",
+        "bucket_charts": [],
+        "obs_72h":       [],
+        "open_positions": [],
+        "fetched_at_utc": None,
+    }
+
+    # ── Kalshi market-only data (always present once 16_multi_kalshi_fetch ran)
+    if mk_path.exists():
+        try:
+            mk = json.loads(mk_path.read_text())
+            section["fetched_at_utc"] = mk.get("fetched_at_utc")
+            for c in mk.get("bucket_charts", []):
+                section["bucket_charts"].append({
+                    "side_label":    c["side_label"],
+                    "series_ticker": c["series_ticker"],
+                    "day_D":         c["day_D"],
+                    "title":         f"{c['side_label']} · {c['day_D'] or ''}",
+                    "buckets": [{
+                        "label":     b.get("subtitle", ""),
+                        "p_model":   None,
+                        "p_final":   None,
+                        "p_market":  b.get("yes_mid"),
+                        "yes_bid":   b.get("yes_bid"),
+                        "yes_ask":   b.get("yes_ask"),
+                    } for b in c.get("buckets", [])],
+                })
+        except Exception as e:
+            print(f"warn: {city.slug}: failed to load live_markets ({e})")
+
+    # ── Per-city trained-model signals (only present once city has models)
+    if sg_path.exists():
+        try:
+            sg = json.loads(sg_path.read_text())
+            section["model_status"] = "trained"
+            # Replace bucket_charts with the model-overlaid version
+            groups = {}
+            for s in sg.get("signals", []) or []:
+                groups.setdefault((s.get("series_ticker"), s.get("day_D")), []).append(s)
+            new_charts = []
+            for (series, day), items in groups.items():
+                if not series or not day:
+                    continue
+                items_sorted = sorted(items, key=_strike_sort)
+                buckets = []
+                for s in items_sorted:
+                    ask, bid = s.get("yes_ask"), s.get("yes_bid")
+                    mid = (float(ask) + float(bid)) / 2.0 if ask is not None and bid is not None else None
+                    buckets.append({
+                        "label":    s.get("yes_sub_title") or "",
+                        "p_model":  round(float(s.get("model_prob_yes") or 0), 3),
+                        "p_final":  round(float(s.get("p_final") or 0), 3),
+                        "p_market": round(float(mid), 3) if mid is not None else None,
+                        "yes_ask":  round(float(ask), 3) if ask is not None else None,
+                        "yes_bid":  round(float(bid), 3) if bid is not None else None,
+                    })
+                new_charts.append({
+                    "side_label":    items_sorted[0].get("side_label") or "",
+                    "series_ticker": series,
+                    "day_D":         day,
+                    "title":         f"{items_sorted[0].get('side_label') or ''} · {day}",
+                    "buckets":       buckets,
+                })
+            new_charts.sort(key=lambda c: (c["day_D"], 0 if c["side_label"] == "HIGH" else 1))
+            if new_charts:
+                section["bucket_charts"] = new_charts
+
+            # Actionable signals → open positions
+            for s in sg.get("signals", []) or []:
+                if s.get("trade_side") is None:
+                    continue
+                section["open_positions"].append({
+                    "ticker":     s["ticker"],
+                    "side":       s["trade_side"].upper(),
+                    "bucket":     s.get("yes_sub_title") or "",
+                    "day":        s.get("day_D"),
+                    "cost":       round(float(s.get("trade_cost") or 0), 3),
+                    "p_model":    round(float(s.get("model_prob_yes") or 0), 3),
+                    "p_final":    round(float(s.get("p_final") or 0), 3),
+                    "ev_per_c":   round(float(s.get("trade_ev_per_c") or 0), 4),
+                    "kelly_used": round(float(s.get("kelly_used") or 0), 4),
+                })
+        except Exception as e:
+            print(f"warn: {city.slug}: failed to load live_signals ({e})")
+
+    # ── Per-city last 72h observations (only present once 02_build_dataset ran)
+    if hr_path.exists():
+        try:
+            hh = pd.read_parquet(hr_path)
+            hh = hh.dropna(subset=["temp_f"]).sort_values("hour").tail(72)
+            for _, r in hh.iterrows():
+                section["obs_72h"].append({
+                    "t": pd.Timestamp(r["hour"]).strftime("%Y-%m-%d %H:%M"),
+                    "temp_f": round(float(r["temp_f"]), 2),
+                    "dew_f":  round(float(r["dew_f"]), 2) if pd.notna(r.get("dew_f")) else None,
+                })
+        except Exception as e:
+            print(f"warn: {city.slug}: failed to load hourly ({e})")
+
+    section["n_open"] = len(section["open_positions"])
+    section["n_charts"] = len(section["bucket_charts"])
+    return section
+
+
+def _strike_sort(s):
+    st = s.get("strike_type"); floor = s.get("floor_strike"); cap = s.get("cap_strike")
+    if st == "less":    return (0, cap if cap is not None else -1e9)
+    if st == "between": return (1, ((floor or 0) + (cap or 0)) / 2.0)
+    if st == "greater": return (2, floor if floor is not None else 1e9)
+    return (3, 0)
+
+
+cities_payload = []
+for city in CITIES:
+    cities_payload.append(_build_city_section(city))
+
 # AUM scaling from backtest
 # Backtest used $1k → $X; scale to AUM
 aum_scale = AUM / init_bk
@@ -228,8 +392,13 @@ state = {
     "horizon_skill": horizon_skill,
     "equity_curve": equity,
     "recent_trades": recent_trades,
+    # ── Legacy single-city (SFO) shape — terminal still reads these for
+    #     backwards compatibility while the multi-city UI is rolling out.
     "bucket_charts": bucket_charts,
     "obs_72h": obs_72h,
+    # ── New multi-city payload — array of per-city objects, see _build_city_section.
+    "cities": cities_payload,
+    "n_cities": len(cities_payload),
     "generated_at_utc": pd.Timestamp.utcnow().isoformat(),
 }
 
