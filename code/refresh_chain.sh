@@ -69,55 +69,12 @@ run_step() {
 SLOW_INTERVAL=600   # 10 min
 SLOW_FLAG="${ROOT}/logs/.last_slow_refresh"
 
-now_epoch=$(date +%s)
-slow_age=$(( now_epoch - $(cat "${SLOW_FLAG}" 2>/dev/null || echo 0) ))
-
-if [ "${slow_age}" -ge "${SLOW_INTERVAL}" ]; then
-    log "(slow steps: last ran ${slow_age}s ago, refreshing)"
-    run_step "noaa metar refresh (sfo)"   "${PY}" code/14_refresh_noaa.py --hours 168
-    run_step "multi-city METAR refresh"   "${PY}" code/14b_multi_refresh_metar.py --hours 24
-    run_step "hourly forecast (sfo)"      "${PY}" code/06_predict.py
-    run_step "dashboard (sfo)"            "${PY}" code/15_dashboard.py
-    # CRITICAL: regenerate features for every trained city BEFORE running
-    # live signals.  Without this step features.parquet stays frozen at the
-    # timestamp it had when 03_features first ran, and 13_live_signal will
-    # re-issue an old forecast (midnight if 04_train ran overnight) every
-    # cycle, ignoring any METARs that have arrived since.
-    run_step "features refresh (trained)" bash code/03b_refresh_features_trained.sh
-    # Run 13_live_signal for every city that has finished training.
-    # Skips untrained cities silently (the script self-guards).
-    run_step "live signals (all trained)" bash code/13c_live_signal_all_trained.sh
-    date +%s > "${SLOW_FLAG}"
-else
-    log "(slow steps: last ran ${slow_age}s ago, <${SLOW_INTERVAL}s — skipping)"
-fi
-
-run_step "live kalshi signals"  "${PY}" code/13_live_signal.py
-# Pull live Kalshi market data for ALL configured cities (model-free).
-# Adds ~25s when called for all 20 cities at parallelism=2 (Kalshi rate-limit).
-run_step "multi-city kalshi"    "${PY}" code/16_multi_kalshi_fetch.py
-run_step "fund state json"      "${PY}" build_fund_state.py
-
-# ─────────────────────────────────────────────────────────────────────────
-# Auto-push the refreshed fund_state.json to GitHub.  Vercel auto-deploys
-# the static site on every push, so this is what makes the public terminal
-# at https://ariadnefund.vercel.app/terminal stay in lockstep with the
-# local terminal.
-#
-# Behaviour:
-#   - Only commits if data/fund_state.json actually changed since HEAD.
-#   - Uses a tiny rate-limit (skip if last auto-push was <8 min ago) so
-#     we stay safely under Vercel Hobby's deploy quota even if launchd
-#     fires more often than expected.
-#   - Falls back gracefully if the keychain credential isn't available
-#     (logs "push skipped" rather than killing the chain).
-# ─────────────────────────────────────────────────────────────────────────
+# Auto-push function and its constants are defined here (before first call
+# in phase A).  Pushes fund_state.json to GitHub iff it actually changed
+# AND the throttle window has passed.  Vercel Pro deploys on push.
 LAST_PUSH_FILE="${ROOT}/logs/.last_auto_push"
-# Vercel Pro limits (from /docs/limits, May 2026):
-#   6,000 deploys/day, 450/hour, 120 per 5 min.
-# At 30s throttle and a 90s launchd interval the binding rate is the launchd
-# cycle: max 40 pushes/hour, ~960/day, well under all three Pro caps.  Pushes
-# only happen when fund_state.json actually changed, so real rate is lower.
+# Vercel Pro caps: 6000/day, 450/hour, 120 per 5 min.  At 30s throttle on a
+# 90s launchd interval, max ~40 pushes/hour — well under all caps.
 MIN_PUSH_INTERVAL=30
 
 push_data() {
@@ -157,7 +114,50 @@ push_data() {
     fi
 }
 
-log "→ auto-push fund_state.json"
+now_epoch=$(date +%s)
+slow_age=$(( now_epoch - $(cat "${SLOW_FLAG}" 2>/dev/null || echo 0) ))
+
+# ─────────────────────────────────────────────────────────────────────────
+# Phase A — FAST PATH (every cycle, runs FIRST so Vercel gets fresh Kalshi
+# prices within ~30s of cycle start, regardless of whether slow steps fire).
+# Previously the slow path ran first and Vercel could lag 3-4 min during
+# slow cycles.  Now Kalshi-fetch + build + push happens up front, then slow
+# steps run, then a SECOND build + push captures any model-output changes.
+# ─────────────────────────────────────────────────────────────────────────
+run_step "multi-city kalshi"    "${PY}" code/16_multi_kalshi_fetch.py
+run_step "fund state json (early)" "${PY}" build_fund_state.py
+log "→ early auto-push (Kalshi-fresh)"
+push_data
+
+# ─────────────────────────────────────────────────────────────────────────
+# Phase B — SLOW PATH (every SLOW_INTERVAL, runs AFTER the early push so
+# user sees Kalshi prices immediately even when slow steps are scheduled).
+# ─────────────────────────────────────────────────────────────────────────
+if [ "${slow_age}" -ge "${SLOW_INTERVAL}" ]; then
+    log "(slow steps: last ran ${slow_age}s ago, refreshing)"
+    run_step "noaa metar refresh (sfo)"   "${PY}" code/14_refresh_noaa.py --hours 168
+    run_step "multi-city METAR refresh"   "${PY}" code/14b_multi_refresh_metar.py --hours 24
+    run_step "hourly forecast (sfo)"      "${PY}" code/06_predict.py
+    run_step "dashboard (sfo)"            "${PY}" code/15_dashboard.py
+    # CRITICAL: regenerate features for every trained city BEFORE running
+    # live signals — otherwise features.parquet stays frozen at training
+    # time and 13_live_signal re-issues a stale midnight forecast.
+    run_step "features refresh (trained)" bash code/03b_refresh_features_trained.sh
+    # 13_live_signal for every city that has finished training.
+    run_step "live signals (all trained)" bash code/13c_live_signal_all_trained.sh
+    date +%s > "${SLOW_FLAG}"
+else
+    log "(slow steps: last ran ${slow_age}s ago, <${SLOW_INTERVAL}s — skipping)"
+fi
+
+# ─────────────────────────────────────────────────────────────────────────
+# Phase C — FINAL build + push (only if slow steps actually ran and produced
+# fresh model output).  Cheap if slow path skipped.
+# ─────────────────────────────────────────────────────────────────────────
+run_step "live kalshi signals (sfo)"  "${PY}" code/13_live_signal.py
+run_step "fund state json (final)"    "${PY}" build_fund_state.py
+
+log "→ final auto-push (post-slow-path, if anything changed)"
 push_data
 
 log "refresh_chain.sh done"
