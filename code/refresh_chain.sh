@@ -113,7 +113,12 @@ run_step "fund state json"      "${PY}" build_fund_state.py
 #     (logs "push skipped" rather than killing the chain).
 # ─────────────────────────────────────────────────────────────────────────
 LAST_PUSH_FILE="${ROOT}/logs/.last_auto_push"
-MIN_PUSH_INTERVAL=60    # 60 seconds — push as fast as Vercel will redeploy
+# Vercel Hobby tier rate-limits deploys after roughly 100/day.  We were hitting
+# ~576/day at 60s throttle, so Vercel was silently dropping deploys (commits
+# pushed but the live site never updated).  10-min throttle keeps us under
+# the limit (~144 max/day, fewer in practice since most cycles produce no
+# data delta) so every push actually deploys.
+MIN_PUSH_INTERVAL=600
 
 push_data() {
     if ! command -v git >/dev/null 2>&1; then
