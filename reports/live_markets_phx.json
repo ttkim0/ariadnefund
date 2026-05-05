@@ -3,8 +3,8 @@
   "city_name": "Phoenix",
   "icao": "KPHX",
   "timezone": "America/Phoenix",
-  "fetched_at_utc": "2026-05-05T05:55:16.210171+00:00",
-  "duration_sec": 5.53,
+  "fetched_at_utc": "2026-05-05T06:07:45.080342+00:00",
+  "duration_sec": 4.08,
   "errors": [],
   "bucket_charts": [
     {

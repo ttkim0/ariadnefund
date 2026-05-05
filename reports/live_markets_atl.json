@@ -3,8 +3,8 @@
   "city_name": "Atlanta",
   "icao": "KATL",
   "timezone": "America/New_York",
-  "fetched_at_utc": "2026-05-05T05:55:18.218186+00:00",
-  "duration_sec": 2.01,
+  "fetched_at_utc": "2026-05-05T06:07:48.935136+00:00",
+  "duration_sec": 3.87,
   "errors": [],
   "bucket_charts": [
     {

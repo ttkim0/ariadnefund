@@ -1,5 +1,5 @@
 {
-  "started_at_utc": "2026-05-05T05:55:04.870131+00:00",
+  "started_at_utc": "2026-05-05T06:07:35.006171+00:00",
   "cities": [
     {
       "slug": "nyc",
@@ -14,21 +14,21 @@
       "errors": []
     },
     {
-      "slug": "mia",
-      "n_events": 1,
-      "n_charts": 1,
-      "errors": []
-    },
-    {
       "slug": "sfo",
       "n_events": 4,
       "n_charts": 4,
       "errors": []
     },
     {
+      "slug": "mia",
+      "n_events": 1,
+      "n_charts": 1,
+      "errors": []
+    },
+    {
       "slug": "chi",
-      "n_events": 2,
-      "n_charts": 2,
+      "n_events": 1,
+      "n_charts": 1,
       "errors": []
     },
     {
@@ -38,13 +38,19 @@
       "errors": []
     },
     {
+      "slug": "aus",
+      "n_events": 1,
+      "n_charts": 1,
+      "errors": []
+    },
+    {
       "slug": "phx",
       "n_events": 4,
       "n_charts": 4,
       "errors": []
     },
     {
-      "slug": "aus",
+      "slug": "okc",
       "n_events": 2,
       "n_charts": 2,
       "errors": []
@@ -62,21 +68,15 @@
       "errors": []
     },
     {
-      "slug": "okc",
+      "slug": "sea",
       "n_events": 4,
       "n_charts": 4,
       "errors": []
     },
     {
       "slug": "msp",
-      "n_events": 4,
-      "n_charts": 4,
-      "errors": []
-    },
-    {
-      "slug": "sea",
-      "n_events": 4,
-      "n_charts": 4,
+      "n_events": 2,
+      "n_charts": 2,
       "errors": []
     },
     {
@@ -86,15 +86,21 @@
       "errors": []
     },
     {
+      "slug": "san",
+      "n_events": 2,
+      "n_charts": 2,
+      "errors": []
+    },
+    {
       "slug": "las",
       "n_events": 4,
       "n_charts": 4,
       "errors": []
     },
     {
-      "slug": "san",
-      "n_events": 4,
-      "n_charts": 4,
+      "slug": "dal",
+      "n_events": 2,
+      "n_charts": 2,
       "errors": []
     },
     {
@@ -104,23 +110,17 @@
       "errors": []
     },
     {
-      "slug": "dal",
-      "n_events": 4,
-      "n_charts": 4,
-      "errors": []
-    },
-    {
       "slug": "msy",
-      "n_events": 4,
-      "n_charts": 4,
+      "n_events": 2,
+      "n_charts": 2,
       "errors": []
     },
     {
       "slug": "hou",
-      "n_events": 4,
-      "n_charts": 4,
+      "n_events": 2,
+      "n_charts": 2,
       "errors": []
     }
   ],
-  "finished_at_utc": "2026-05-05T05:55:39.292924+00:00"
+  "finished_at_utc": "2026-05-05T06:08:04.768376+00:00"
 }

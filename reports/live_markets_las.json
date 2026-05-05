@@ -3,8 +3,8 @@
   "city_name": "Las Vegas",
   "icao": "KLAS",
   "timezone": "America/Los_Angeles",
-  "fetched_at_utc": "2026-05-05T05:55:29.869881+00:00",
-  "duration_sec": 3.91,
+  "fetched_at_utc": "2026-05-05T06:07:58.781196+00:00",
+  "duration_sec": 4.02,
   "errors": [],
   "bucket_charts": [
     {

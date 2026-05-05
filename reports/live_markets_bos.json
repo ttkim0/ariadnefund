@@ -3,8 +3,8 @@
   "city_name": "Boston",
   "icao": "KBOS",
   "timezone": "America/New_York",
-  "fetched_at_utc": "2026-05-05T05:55:20.279926+00:00",
-  "duration_sec": 2.06,
+  "fetched_at_utc": "2026-05-05T06:07:51.035189+00:00",
+  "duration_sec": 3.82,
   "errors": [],
   "bucket_charts": [
     {

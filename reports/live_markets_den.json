@@ -3,8 +3,8 @@
   "city_name": "Denver",
   "icao": "KDEN",
   "timezone": "America/Denver",
-  "fetched_at_utc": "2026-05-05T05:55:12.720849+00:00",
-  "duration_sec": 1.89,
+  "fetched_at_utc": "2026-05-05T06:07:43.169880+00:00",
+  "duration_sec": 2.03,
   "errors": [],
   "bucket_charts": [
     {

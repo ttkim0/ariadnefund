@@ -3,8 +3,8 @@
   "city_name": "Miami",
   "icao": "KMIA",
   "timezone": "America/New_York",
-  "fetched_at_utc": "2026-05-05T05:55:08.860890+00:00",
-  "duration_sec": 0.2,
+  "fetched_at_utc": "2026-05-05T06:07:41.000122+00:00",
+  "duration_sec": 1.91,
   "errors": [],
   "bucket_charts": [
     {

@@ -3,100 +3,10 @@
   "city_name": "Chicago (Midway)",
   "icao": "KMDW",
   "timezone": "America/Chicago",
-  "fetched_at_utc": "2026-05-05T05:55:10.830649+00:00",
-  "duration_sec": 1.97,
+  "fetched_at_utc": "2026-05-05T06:07:41.142141+00:00",
+  "duration_sec": 2.0,
   "errors": [],
   "bucket_charts": [
-    {
-      "city_slug": "chi",
-      "city_name": "Chicago (Midway)",
-      "icao": "KMDW",
-      "side_label": "LOW",
-      "series_ticker": "KXLOWTCHI",
-      "event_ticker": "KXLOWTCHI-26MAY04",
-      "day_D": "2026-05-04",
-      "title": "Chicago (Midway) \u00b7 LOW \u00b7 2026-05-04",
-      "buckets": [
-        {
-          "ticker": "KXLOWTCHI-26MAY04-T42",
-          "subtitle": "41\u00b0 or below",
-          "strike_type": "less",
-          "floor_strike": null,
-          "cap_strike": 42,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTCHI-26MAY04-B42.5",
-          "subtitle": "42\u00b0 to 43\u00b0",
-          "strike_type": "between",
-          "floor_strike": 42,
-          "cap_strike": 43,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTCHI-26MAY04-B44.5",
-          "subtitle": "44\u00b0 to 45\u00b0",
-          "strike_type": "between",
-          "floor_strike": 44,
-          "cap_strike": 45,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTCHI-26MAY04-B46.5",
-          "subtitle": "46\u00b0 to 47\u00b0",
-          "strike_type": "between",
-          "floor_strike": 46,
-          "cap_strike": 47,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTCHI-26MAY04-B48.5",
-          "subtitle": "48\u00b0 to 49\u00b0",
-          "strike_type": "between",
-          "floor_strike": 48,
-          "cap_strike": 49,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTCHI-26MAY04-T49",
-          "subtitle": "50\u00b0 or above",
-          "strike_type": "greater",
-          "floor_strike": 49,
-          "cap_strike": null,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        }
-      ]
-    },
     {
       "city_slug": "chi",
       "city_name": "Chicago (Midway)",
@@ -188,5 +98,5 @@
       ]
     }
   ],
-  "n_events": 2
+  "n_events": 1
 }

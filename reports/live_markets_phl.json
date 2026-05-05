@@ -3,8 +3,8 @@
   "city_name": "Philadelphia",
   "icao": "KPHL",
   "timezone": "America/New_York",
-  "fetched_at_utc": "2026-05-05T05:55:26.154404+00:00",
-  "duration_sec": 1.91,
+  "fetched_at_utc": "2026-05-05T06:07:54.789110+00:00",
+  "duration_sec": 1.87,
   "errors": [],
   "bucket_charts": [
     {

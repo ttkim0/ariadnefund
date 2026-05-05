@@ -3,100 +3,10 @@
   "city_name": "Austin",
   "icao": "KAUS",
   "timezone": "America/Chicago",
-  "fetched_at_utc": "2026-05-05T05:55:16.305417+00:00",
-  "duration_sec": 3.58,
+  "fetched_at_utc": "2026-05-05T06:07:45.066969+00:00",
+  "duration_sec": 1.9,
   "errors": [],
   "bucket_charts": [
-    {
-      "city_slug": "aus",
-      "city_name": "Austin",
-      "icao": "KAUS",
-      "side_label": "LOW",
-      "series_ticker": "KXLOWTAUS",
-      "event_ticker": "KXLOWTAUS-26MAY04",
-      "day_D": "2026-05-04",
-      "title": "Austin \u00b7 LOW \u00b7 2026-05-04",
-      "buckets": [
-        {
-          "ticker": "KXLOWTAUS-26MAY04-T51",
-          "subtitle": "50\u00b0 or below",
-          "strike_type": "less",
-          "floor_strike": null,
-          "cap_strike": 51,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTAUS-26MAY04-B51.5",
-          "subtitle": "51\u00b0 to 52\u00b0",
-          "strike_type": "between",
-          "floor_strike": 51,
-          "cap_strike": 52,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTAUS-26MAY04-B53.5",
-          "subtitle": "53\u00b0 to 54\u00b0",
-          "strike_type": "between",
-          "floor_strike": 53,
-          "cap_strike": 54,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTAUS-26MAY04-B55.5",
-          "subtitle": "55\u00b0 to 56\u00b0",
-          "strike_type": "between",
-          "floor_strike": 55,
-          "cap_strike": 56,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTAUS-26MAY04-B57.5",
-          "subtitle": "57\u00b0 to 58\u00b0",
-          "strike_type": "between",
-          "floor_strike": 57,
-          "cap_strike": 58,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        },
-        {
-          "ticker": "KXLOWTAUS-26MAY04-T58",
-          "subtitle": "59\u00b0 or above",
-          "strike_type": "greater",
-          "floor_strike": 58,
-          "cap_strike": null,
-          "yes_bid": null,
-          "yes_ask": null,
-          "yes_mid": null,
-          "open_interest": null,
-          "volume": null,
-          "status": "active"
-        }
-      ]
-    },
     {
       "city_slug": "aus",
       "city_name": "Austin",
@@ -188,5 +98,5 @@
       ]
     }
   ],
-  "n_events": 2
+  "n_events": 1
 }

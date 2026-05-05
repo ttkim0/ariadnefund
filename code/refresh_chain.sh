@@ -74,9 +74,10 @@ slow_age=$(( now_epoch - $(cat "${SLOW_FLAG}" 2>/dev/null || echo 0) ))
 
 if [ "${slow_age}" -ge "${SLOW_INTERVAL}" ]; then
     log "(slow steps: last ran ${slow_age}s ago, refreshing)"
-    run_step "noaa metar refresh"   "${PY}" code/14_refresh_noaa.py --hours 168
-    run_step "hourly forecast"      "${PY}" code/06_predict.py
-    run_step "dashboard"            "${PY}" code/15_dashboard.py
+    run_step "noaa metar refresh (sfo)"   "${PY}" code/14_refresh_noaa.py --hours 168
+    run_step "multi-city METAR refresh"   "${PY}" code/14b_multi_refresh_metar.py --hours 24
+    run_step "hourly forecast (sfo)"      "${PY}" code/06_predict.py
+    run_step "dashboard (sfo)"            "${PY}" code/15_dashboard.py
     date +%s > "${SLOW_FLAG}"
 else
     log "(slow steps: last ran ${slow_age}s ago, <${SLOW_INTERVAL}s — skipping)"
