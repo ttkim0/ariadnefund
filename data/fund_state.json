@@ -1996,7 +1996,7 @@
           "kelly_used": 0.0275
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:38:19.688836+00:00",
+      "fetched_at_utc": "2026-05-05T19:40:52.975998+00:00",
       "n_open": 13,
       "n_charts": 4
     },
@@ -2841,7 +2841,7 @@
           "kelly_used": 0.0081
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:38:21.364455+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:00.425127+00:00",
       "n_open": 15,
       "n_charts": 4
     },
@@ -3433,7 +3433,7 @@
           "kelly_used": 0.0161
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:38:23.587206+00:00",
+      "fetched_at_utc": "2026-05-05T19:40:56.665254+00:00",
       "n_open": 6,
       "n_charts": 2
     },
@@ -4050,7 +4050,7 @@
           "kelly_used": 0.05
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:38:21.762054+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:12.075070+00:00",
       "n_open": 8,
       "n_charts": 2
     },
@@ -4579,7 +4579,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:23.955114+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:04.236046+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -5255,7 +5255,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:32.890669+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:10.095294+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -5784,7 +5784,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:27.721447+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:13.931192+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -6312,7 +6312,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:31.642717+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:15.831337+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -6988,7 +6988,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:40.551471+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:19.605520+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -7079,80 +7079,6 @@
           ]
         },
         {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTOKC",
-          "day_D": "2026-05-05",
-          "title": "LOW \u00b7 2026-05-05",
-          "buckets": [
-            {
-              "label": "45\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": null,
-              "cap_strike": 46,
-              "strike_type": "less"
-            },
-            {
-              "label": "46\u00b0 to 47\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 46,
-              "cap_strike": 47,
-              "strike_type": "between"
-            },
-            {
-              "label": "48\u00b0 to 49\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 48,
-              "cap_strike": 49,
-              "strike_type": "between"
-            },
-            {
-              "label": "50\u00b0 to 51\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 50,
-              "cap_strike": 51,
-              "strike_type": "between"
-            },
-            {
-              "label": "52\u00b0 to 53\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 52,
-              "cap_strike": 53,
-              "strike_type": "between"
-            },
-            {
-              "label": "54\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 53,
-              "cap_strike": null,
-              "strike_type": "greater"
-            }
-          ]
-        },
-        {
           "side_label": "HIGH",
           "series_ticker": "KXHIGHTOKC",
           "day_D": "2026-05-06",
@@ -7221,80 +7147,6 @@
               "yes_bid": null,
               "yes_ask": null,
               "floor_strike": 68,
-              "cap_strike": null,
-              "strike_type": "greater"
-            }
-          ]
-        },
-        {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTOKC",
-          "day_D": "2026-05-06",
-          "title": "LOW \u00b7 2026-05-06",
-          "buckets": [
-            {
-              "label": "40\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": null,
-              "cap_strike": 41,
-              "strike_type": "less"
-            },
-            {
-              "label": "41\u00b0 to 42\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 41,
-              "cap_strike": 42,
-              "strike_type": "between"
-            },
-            {
-              "label": "43\u00b0 to 44\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 43,
-              "cap_strike": 44,
-              "strike_type": "between"
-            },
-            {
-              "label": "45\u00b0 to 46\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 45,
-              "cap_strike": 46,
-              "strike_type": "between"
-            },
-            {
-              "label": "47\u00b0 to 48\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 47,
-              "cap_strike": 48,
-              "strike_type": "between"
-            },
-            {
-              "label": "49\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null,
-              "floor_strike": 48,
               "cap_strike": null,
               "strike_type": "greater"
             }
@@ -7664,9 +7516,9 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:35.533018+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:41.249364+00:00",
       "n_open": 0,
-      "n_charts": 4
+      "n_charts": 2
     },
     {
       "slug": "bos",
@@ -8344,7 +8196,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:41.489419+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:32.261596+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -9020,7 +8872,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:44.771520+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:38.174204+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -9700,7 +9552,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:53.741067+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:42.518273+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -10225,7 +10077,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:50.091762+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:48.450768+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -10898,7 +10750,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:52.792068+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:45.105943+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -11574,7 +11426,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:38:57.024056+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:54.216880+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -12250,7 +12102,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:39:03.087914+00:00",
+      "fetched_at_utc": "2026-05-05T19:41:59.427012+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -12930,7 +12782,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:39:01.308795+00:00",
+      "fetched_at_utc": "2026-05-05T19:42:06.585220+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -13610,7 +13462,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:39:05.605095+00:00",
+      "fetched_at_utc": "2026-05-05T19:42:01.952323+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -14286,11 +14138,11 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:39:07.258534+00:00",
+      "fetched_at_utc": "2026-05-05T19:42:12.815132+00:00",
       "n_open": 0,
       "n_charts": 4
     }
   ],
   "n_cities": 20,
-  "generated_at_utc": "2026-05-05T19:39:10.383057+00:00"
+  "generated_at_utc": "2026-05-05T19:42:15.862495+00:00"
 }
