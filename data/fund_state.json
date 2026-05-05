@@ -49,23 +49,23 @@
         "kelly_used": 0.05
       },
       {
-        "ticker": "KXLOWTSFO-26MAY05-B54.5",
-        "side": "YES",
-        "bucket": "54\u00b0 to 55\u00b0",
-        "day": "2026-05-05",
-        "cost": 0.01,
-        "p_model": 0.298,
-        "p_final": 0.19,
-        "ev_per_c": 0.1695,
-        "kelly_used": 0.0453
-      },
-      {
         "ticker": "KXLOWTSFO-26MAY05-T55",
         "side": "YES",
         "bucket": "56\u00b0 or above",
         "day": "2026-05-05",
         "cost": 0.01,
         "p_model": 0.195,
+        "p_final": 0.19,
+        "ev_per_c": 0.1695,
+        "kelly_used": 0.0453
+      },
+      {
+        "ticker": "KXLOWTSFO-26MAY05-B54.5",
+        "side": "YES",
+        "bucket": "54\u00b0 to 55\u00b0",
+        "day": "2026-05-05",
+        "cost": 0.01,
+        "p_model": 0.298,
         "p_final": 0.19,
         "ev_per_c": 0.1695,
         "kelly_used": 0.0453
@@ -1516,23 +1516,23 @@
           "kelly_used": 0.05
         },
         {
-          "ticker": "KXLOWTSFO-26MAY05-B54.5",
-          "side": "YES",
-          "bucket": "54\u00b0 to 55\u00b0",
-          "day": "2026-05-05",
-          "cost": 0.01,
-          "p_model": 0.298,
-          "p_final": 0.19,
-          "ev_per_c": 0.1695,
-          "kelly_used": 0.0453
-        },
-        {
           "ticker": "KXLOWTSFO-26MAY05-T55",
           "side": "YES",
           "bucket": "56\u00b0 or above",
           "day": "2026-05-05",
           "cost": 0.01,
           "p_model": 0.195,
+          "p_final": 0.19,
+          "ev_per_c": 0.1695,
+          "kelly_used": 0.0453
+        },
+        {
+          "ticker": "KXLOWTSFO-26MAY05-B54.5",
+          "side": "YES",
+          "bucket": "54\u00b0 to 55\u00b0",
+          "day": "2026-05-05",
+          "cost": 0.01,
+          "p_model": 0.298,
           "p_final": 0.19,
           "ev_per_c": 0.1695,
           "kelly_used": 0.0453
@@ -1582,7 +1582,7 @@
           "kelly_used": 0.0144
         }
       ],
-      "fetched_at_utc": "2026-05-05T09:03:47.516787+00:00",
+      "fetched_at_utc": "2026-05-05T09:05:57.279178+00:00",
       "n_open": 8,
       "n_charts": 2
     },
@@ -2015,7 +2015,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:47.452352+00:00",
+      "fetched_at_utc": "2026-05-05T09:05:56.979693+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -2448,7 +2448,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:49.560208+00:00",
+      "fetched_at_utc": "2026-05-05T09:05:58.993767+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -2881,7 +2881,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:49.733531+00:00",
+      "fetched_at_utc": "2026-05-05T09:05:59.150609+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -3314,7 +3314,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:49.829270+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:01.029601+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -3803,7 +3803,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:53.753811+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:03.286697+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -4236,7 +4236,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:51.984798+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:01.401393+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -4669,7 +4669,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:53.922221+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:03.438079+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -5158,7 +5158,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:56.191630+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:05.424977+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -5647,7 +5647,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:10.982237+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:07.440531+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -6136,7 +6136,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:58.418817+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:09.348052+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -6625,7 +6625,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:03:58.949783+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:11.516187+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -7114,7 +7114,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:01.259005+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:11.617235+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -7547,7 +7547,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:01.524099+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:13.561988+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -8036,7 +8036,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:03.744978+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:13.869944+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -8525,7 +8525,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:04.229564+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:15.818573+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -9014,7 +9014,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:06.476856+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:17.761795+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -9503,7 +9503,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:08.693906+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:19.847090+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -9992,7 +9992,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:09.147764+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:20.034674+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -10481,11 +10481,11 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T09:04:13.027447+00:00",
+      "fetched_at_utc": "2026-05-05T09:06:22.233273+00:00",
       "n_open": 0,
       "n_charts": 2
     }
   ],
   "n_cities": 20,
-  "generated_at_utc": "2026-05-05T09:04:15.540448+00:00"
+  "generated_at_utc": "2026-05-05T09:06:24.523772+00:00"
 }
