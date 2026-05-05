@@ -469,21 +469,27 @@ function renderBucketCharts(charts, city) {
       </div>
       <div class="t-bucket-rows">`;
     c.buckets.forEach(b => {
-      const pmRaw = b.p_model;             // null if model not yet trained for this city
+      // Prefer p_final (the meta-calibrated probability that blends raw model
+      // with Kalshi market) when it's available.  Raw model_prob is shown as
+      // a thinner trailing bar so you can still see the model's standalone
+      // view, but p_final is the trustworthy number we actually trade off.
+      const pfRaw = b.p_final;
+      const pmRaw = b.p_model;
       const pkRaw = b.p_market;
+      const pf = pfRaw != null ? pfRaw * 100 : null;
       const pm = pmRaw != null ? pmRaw * 100 : null;
       const pk = pkRaw != null ? pkRaw * 100 : null;
       html += `
         <div class="row">
           <div class="lbl">${b.label}</div>
           <div class="bars">
-            ${pm != null
-              ? `<div class="bar bar-model" style="width:${pm.toFixed(1)}%;" title="model ${pm.toFixed(1)}%"></div>` : ""}
+            ${pf != null
+              ? `<div class="bar bar-model" style="width:${pf.toFixed(1)}%;" title="our probability (model + kalshi blend) ${pf.toFixed(1)}%"></div>` : ""}
             ${pk != null
               ? `<div class="bar bar-market" style="width:${pk.toFixed(1)}%;" title="kalshi mid ${pk.toFixed(1)}%"></div>` : ""}
           </div>
           <div class="nums">
-            <span class="m">${pm != null ? pm.toFixed(0) + "%" : "—"}</span>
+            <span class="m">${pf != null ? pf.toFixed(0) + "%" : (pm != null ? pm.toFixed(0) + "%" : "—")}</span>
             <span class="k">${pk != null ? pk.toFixed(0) + "%" : "—"}</span>
           </div>
         </div>`;
@@ -492,7 +498,7 @@ function renderBucketCharts(charts, city) {
       ? '<span class="muted faint" style="margin-left:auto;">model pending</span>' : '';
     html += `</div>
       <div class="t-bucket-legend">
-        <span><i class="sw sw-model"></i>model</span>
+        <span><i class="sw sw-model"></i>our&nbsp;p&nbsp;(model+kalshi&nbsp;blend)</span>
         <span><i class="sw sw-market"></i>kalshi&nbsp;mid</span>
         ${note}
       </div>`;
