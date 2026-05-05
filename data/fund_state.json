@@ -1130,5 +1130,3981 @@
       "dew_f": 46.94
     }
   ],
-  "generated_at_utc": "2026-05-05T05:51:34.612420+00:00"
+  "cities": [
+    {
+      "slug": "sfo",
+      "name": "San Francisco",
+      "icao": "KSFO",
+      "timezone": "America/Los_Angeles",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "trained",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTSFO",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "58\u00b0 or below",
+              "p_model": 0.0,
+              "p_final": 0.0,
+              "p_market": 0.005,
+              "yes_ask": 0.01,
+              "yes_bid": 0.0
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": 0.0,
+              "p_final": 0.003,
+              "p_market": 0.005,
+              "yes_ask": 0.01,
+              "yes_bid": 0.0
+            },
+            {
+              "label": "61\u00b0 to 62\u00b0",
+              "p_model": 0.0,
+              "p_final": 0.003,
+              "p_market": 0.005,
+              "yes_ask": 0.01,
+              "yes_bid": 0.0
+            },
+            {
+              "label": "63\u00b0 to 64\u00b0",
+              "p_model": 1.0,
+              "p_final": 1.0,
+              "p_market": 0.995,
+              "yes_ask": 1.0,
+              "yes_bid": 0.99
+            },
+            {
+              "label": "65\u00b0 to 66\u00b0",
+              "p_model": 0.0,
+              "p_final": 0.003,
+              "p_market": 0.005,
+              "yes_ask": 0.01,
+              "yes_bid": 0.0
+            },
+            {
+              "label": "67\u00b0 or above",
+              "p_model": 0.0,
+              "p_final": 0.003,
+              "p_market": 0.005,
+              "yes_ask": 0.01,
+              "yes_bid": 0.0
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTSFO",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "47\u00b0 or below",
+              "p_model": 0.0,
+              "p_final": 0.0,
+              "p_market": 0.005,
+              "yes_ask": 0.01,
+              "yes_bid": 0.0
+            },
+            {
+              "label": "48\u00b0 to 49\u00b0",
+              "p_model": 0.0,
+              "p_final": 0.003,
+              "p_market": 0.005,
+              "yes_ask": 0.01,
+              "yes_bid": 0.0
+            },
+            {
+              "label": "50\u00b0 to 51\u00b0",
+              "p_model": 0.0,
+              "p_final": 0.073,
+              "p_market": 0.04,
+              "yes_ask": 0.08,
+              "yes_bid": 0.0
+            },
+            {
+              "label": "52\u00b0 to 53\u00b0",
+              "p_model": 0.078,
+              "p_final": 0.268,
+              "p_market": 0.11,
+              "yes_ask": 0.14,
+              "yes_bid": 0.08
+            },
+            {
+              "label": "54\u00b0 to 55\u00b0",
+              "p_model": 0.922,
+              "p_final": 0.726,
+              "p_market": 0.88,
+              "yes_ask": 0.9,
+              "yes_bid": 0.86
+            },
+            {
+              "label": "56\u00b0 or above",
+              "p_model": 0.0,
+              "p_final": 0.003,
+              "p_market": 0.005,
+              "yes_ask": 0.01,
+              "yes_bid": 0.0
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTSFO",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "59\u00b0 or below",
+              "p_model": 0.0,
+              "p_final": 0.0,
+              "p_market": 0.055,
+              "yes_ask": 0.06,
+              "yes_bid": 0.05
+            },
+            {
+              "label": "60\u00b0 to 61\u00b0",
+              "p_model": 0.0,
+              "p_final": 0.073,
+              "p_market": 0.135,
+              "yes_ask": 0.14,
+              "yes_bid": 0.13
+            },
+            {
+              "label": "62\u00b0 to 63\u00b0",
+              "p_model": 0.119,
+              "p_final": 0.386,
+              "p_market": 0.355,
+              "yes_ask": 0.38,
+              "yes_bid": 0.33
+            },
+            {
+              "label": "64\u00b0 to 65\u00b0",
+              "p_model": 0.439,
+              "p_final": 0.386,
+              "p_market": 0.395,
+              "yes_ask": 0.4,
+              "yes_bid": 0.39
+            },
+            {
+              "label": "66\u00b0 to 67\u00b0",
+              "p_model": 0.175,
+              "p_final": 0.219,
+              "p_market": 0.055,
+              "yes_ask": 0.06,
+              "yes_bid": 0.05
+            },
+            {
+              "label": "68\u00b0 or above",
+              "p_model": 0.266,
+              "p_final": 0.288,
+              "p_market": 0.025,
+              "yes_ask": 0.03,
+              "yes_bid": 0.02
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTSFO",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "47\u00b0 or below",
+              "p_model": 0.0,
+              "p_final": 0.0,
+              "p_market": 0.02,
+              "yes_ask": 0.03,
+              "yes_bid": 0.01
+            },
+            {
+              "label": "48\u00b0 to 49\u00b0",
+              "p_model": 0.0,
+              "p_final": 0.065,
+              "p_market": 0.035,
+              "yes_ask": 0.05,
+              "yes_bid": 0.02
+            },
+            {
+              "label": "50\u00b0 to 51\u00b0",
+              "p_model": 0.059,
+              "p_final": 0.19,
+              "p_market": 0.045,
+              "yes_ask": 0.05,
+              "yes_bid": 0.04
+            },
+            {
+              "label": "52\u00b0 to 53\u00b0",
+              "p_model": 0.352,
+              "p_final": 0.386,
+              "p_market": 0.37,
+              "yes_ask": 0.4,
+              "yes_bid": 0.34
+            },
+            {
+              "label": "54\u00b0 to 55\u00b0",
+              "p_model": 0.296,
+              "p_final": 0.386,
+              "p_market": 0.465,
+              "yes_ask": 0.49,
+              "yes_bid": 0.44
+            },
+            {
+              "label": "56\u00b0 or above",
+              "p_model": 0.293,
+              "p_final": 0.338,
+              "p_market": 0.105,
+              "yes_ask": 0.11,
+              "yes_bid": 0.1
+            }
+          ]
+        }
+      ],
+      "obs_72h": [
+        {
+          "t": "2026-05-01 21:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-01 22:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-01 23:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 00:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 01:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 02:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 03:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 04:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 05:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 06:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 07:00",
+          "temp_f": 55.04,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 08:00",
+          "temp_f": 55.04,
+          "dew_f": 51.08
+        },
+        {
+          "t": "2026-05-02 09:00",
+          "temp_f": 55.94,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-02 10:00",
+          "temp_f": 57.02,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 11:00",
+          "temp_f": 57.92,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 12:00",
+          "temp_f": 59.0,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 13:00",
+          "temp_f": 60.08,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 14:00",
+          "temp_f": 59.0,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 15:00",
+          "temp_f": 59.0,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-02 16:00",
+          "temp_f": 57.02,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-02 17:00",
+          "temp_f": 57.02,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-02 18:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 19:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 20:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 21:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 22:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-02 23:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-03 00:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-03 01:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-03 02:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-03 03:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-03 04:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-03 05:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-03 06:00",
+          "temp_f": 53.96,
+          "dew_f": 51.08
+        },
+        {
+          "t": "2026-05-03 07:00",
+          "temp_f": 55.04,
+          "dew_f": 51.08
+        },
+        {
+          "t": "2026-05-03 08:00",
+          "temp_f": 55.94,
+          "dew_f": 51.08
+        },
+        {
+          "t": "2026-05-03 09:00",
+          "temp_f": 60.08,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-03 10:00",
+          "temp_f": 60.98,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-03 11:00",
+          "temp_f": 62.06,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-03 12:00",
+          "temp_f": 62.96,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-03 13:00",
+          "temp_f": 62.96,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-03 14:00",
+          "temp_f": 60.98,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-03 15:00",
+          "temp_f": 62.06,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-03 16:00",
+          "temp_f": 60.98,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-03 17:00",
+          "temp_f": 59.0,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-03 18:00",
+          "temp_f": 57.02,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-03 19:00",
+          "temp_f": 55.94,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-03 20:00",
+          "temp_f": 57.02,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-03 21:00",
+          "temp_f": 55.94,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-03 22:00",
+          "temp_f": 55.94,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-03 23:00",
+          "temp_f": 55.94,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-04 00:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-04 01:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-04 02:00",
+          "temp_f": 55.94,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-04 03:00",
+          "temp_f": 55.94,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-04 04:00",
+          "temp_f": 55.04,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-04 05:00",
+          "temp_f": 53.96,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-04 06:00",
+          "temp_f": 57.02,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-04 07:00",
+          "temp_f": 60.08,
+          "dew_f": 51.08
+        },
+        {
+          "t": "2026-05-04 08:00",
+          "temp_f": 60.08,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-04 09:00",
+          "temp_f": 60.98,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-04 10:00",
+          "temp_f": 60.98,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-04 11:00",
+          "temp_f": 60.98,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-04 12:00",
+          "temp_f": 62.06,
+          "dew_f": 46.04
+        },
+        {
+          "t": "2026-05-04 13:00",
+          "temp_f": 62.96,
+          "dew_f": 46.04
+        },
+        {
+          "t": "2026-05-04 14:00",
+          "temp_f": 60.98,
+          "dew_f": 44.96
+        },
+        {
+          "t": "2026-05-04 15:00",
+          "temp_f": 60.98,
+          "dew_f": 48.02
+        },
+        {
+          "t": "2026-05-04 16:00",
+          "temp_f": 59.0,
+          "dew_f": 48.92
+        },
+        {
+          "t": "2026-05-04 17:00",
+          "temp_f": 57.92,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-04 18:00",
+          "temp_f": 57.02,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-05-04 19:00",
+          "temp_f": 55.94,
+          "dew_f": 46.94
+        },
+        {
+          "t": "2026-05-04 20:00",
+          "temp_f": 55.04,
+          "dew_f": 46.94
+        }
+      ],
+      "open_positions": [
+        {
+          "ticker": "KXHIGHTSFO-26MAY05-T67",
+          "side": "YES",
+          "bucket": "68\u00b0 or above",
+          "day": "2026-05-05",
+          "cost": 0.03,
+          "p_model": 0.266,
+          "p_final": 0.288,
+          "ev_per_c": 0.2482,
+          "kelly_used": 0.05
+        },
+        {
+          "ticker": "KXLOWTSFO-26MAY05-T55",
+          "side": "YES",
+          "bucket": "56\u00b0 or above",
+          "day": "2026-05-05",
+          "cost": 0.11,
+          "p_model": 0.293,
+          "p_final": 0.338,
+          "ev_per_c": 0.2184,
+          "kelly_used": 0.05
+        },
+        {
+          "ticker": "KXHIGHTSFO-26MAY05-B66.5",
+          "side": "YES",
+          "bucket": "66\u00b0 to 67\u00b0",
+          "day": "2026-05-05",
+          "cost": 0.06,
+          "p_model": 0.175,
+          "p_final": 0.219,
+          "ev_per_c": 0.1494,
+          "kelly_used": 0.0424
+        },
+        {
+          "ticker": "KXLOWTSFO-26MAY05-B50.5",
+          "side": "YES",
+          "bucket": "50\u00b0 to 51\u00b0",
+          "day": "2026-05-05",
+          "cost": 0.05,
+          "p_model": 0.059,
+          "p_final": 0.19,
+          "ev_per_c": 0.1295,
+          "kelly_used": 0.0367
+        },
+        {
+          "ticker": "KXLOWTSFO-26MAY04-B54.5",
+          "side": "NO",
+          "bucket": "54\u00b0 to 55\u00b0",
+          "day": "2026-05-04",
+          "cost": 0.14,
+          "p_model": 0.922,
+          "p_final": 0.726,
+          "ev_per_c": 0.1244,
+          "kelly_used": 0.0391
+        },
+        {
+          "ticker": "KXLOWTSFO-26MAY04-B52.5",
+          "side": "YES",
+          "bucket": "52\u00b0 to 53\u00b0",
+          "day": "2026-05-04",
+          "cost": 0.14,
+          "p_model": 0.078,
+          "p_final": 0.268,
+          "ev_per_c": 0.1179,
+          "kelly_used": 0.0372
+        },
+        {
+          "ticker": "KXHIGHTSFO-26MAY05-B60.5",
+          "side": "NO",
+          "bucket": "60\u00b0 to 61\u00b0",
+          "day": "2026-05-05",
+          "cost": 0.87,
+          "p_model": 0.0,
+          "p_final": 0.073,
+          "ev_per_c": 0.0473,
+          "kelly_used": 0.05
+        },
+        {
+          "ticker": "KXHIGHTSFO-26MAY05-T60",
+          "side": "NO",
+          "bucket": "59\u00b0 or below",
+          "day": "2026-05-05",
+          "cost": 0.95,
+          "p_model": 0.0,
+          "p_final": 0.0,
+          "ev_per_c": 0.04,
+          "kelly_used": 0.05
+        },
+        {
+          "ticker": "KXLOWTSFO-26MAY05-B54.5",
+          "side": "NO",
+          "bucket": "54\u00b0 to 55\u00b0",
+          "day": "2026-05-05",
+          "cost": 0.56,
+          "p_model": 0.296,
+          "p_final": 0.386,
+          "ev_per_c": 0.0369,
+          "kelly_used": 0.0308
+        }
+      ],
+      "fetched_at_utc": "2026-05-05T05:50:08.113605+00:00",
+      "n_open": 9,
+      "n_charts": 4
+    },
+    {
+      "slug": "nyc",
+      "name": "New York (Central Park)",
+      "icao": "KNYC",
+      "timezone": "America/New_York",
+      "trains_high": false,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTNYC",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "51\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "52\u00b0 to 53\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "54\u00b0 to 55\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "56\u00b0 to 57\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "58\u00b0 to 59\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "60\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:05.831579+00:00",
+      "n_open": 0,
+      "n_charts": 1
+    },
+    {
+      "slug": "lax",
+      "name": "Los Angeles",
+      "icao": "KLAX",
+      "timezone": "America/Los_Angeles",
+      "trains_high": false,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTLAX",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "48\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "49\u00b0 to 50\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "51\u00b0 to 52\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTLAX",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "48\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "49\u00b0 to 50\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "51\u00b0 to 52\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:09.604993+00:00",
+      "n_open": 0,
+      "n_charts": 2
+    },
+    {
+      "slug": "mia",
+      "name": "Miami",
+      "icao": "KMIA",
+      "timezone": "America/New_York",
+      "trains_high": false,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTMIA",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "67\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "68\u00b0 to 69\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "70\u00b0 to 71\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "72\u00b0 to 73\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "74\u00b0 to 75\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "76\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:11.647863+00:00",
+      "n_open": 0,
+      "n_charts": 1
+    },
+    {
+      "slug": "chi",
+      "name": "Chicago (Midway)",
+      "icao": "KMDW",
+      "timezone": "America/Chicago",
+      "trains_high": false,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTCHI",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "41\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "42\u00b0 to 43\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "44\u00b0 to 45\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "46\u00b0 to 47\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "48\u00b0 to 49\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "50\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTCHI",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "41\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "42\u00b0 to 43\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "44\u00b0 to 45\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "46\u00b0 to 47\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "48\u00b0 to 49\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "50\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:09.951954+00:00",
+      "n_open": 0,
+      "n_charts": 2
+    },
+    {
+      "slug": "phx",
+      "name": "Phoenix",
+      "icao": "KPHX",
+      "timezone": "America/Phoenix",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTPHX",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "80\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "81\u00b0 to 82\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "83\u00b0 to 84\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "85\u00b0 to 86\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "87\u00b0 to 88\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "89\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTPHX",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "63\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "64\u00b0 to 65\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "66\u00b0 to 67\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "68\u00b0 to 69\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "70\u00b0 to 71\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "72\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTPHX",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "75\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "76\u00b0 to 77\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "78\u00b0 to 79\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "80\u00b0 to 81\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "82\u00b0 to 83\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "84\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTPHX",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "58\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 to 62\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "63\u00b0 to 64\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "65\u00b0 to 66\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "67\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:15.490028+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    },
+    {
+      "slug": "den",
+      "name": "Denver",
+      "icao": "KDEN",
+      "timezone": "America/Denver",
+      "trains_high": false,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTDEN",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "43\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "44\u00b0 to 45\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "46\u00b0 to 47\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "48\u00b0 to 49\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "50\u00b0 to 51\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "52\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTDEN",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "30\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "31\u00b0 to 32\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "33\u00b0 to 34\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "35\u00b0 to 36\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "37\u00b0 to 38\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "39\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:13.755522+00:00",
+      "n_open": 0,
+      "n_charts": 2
+    },
+    {
+      "slug": "aus",
+      "name": "Austin",
+      "icao": "KAUS",
+      "timezone": "America/Chicago",
+      "trains_high": false,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTAUS",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "50\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "51\u00b0 to 52\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTAUS",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "63\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "64\u00b0 to 65\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "66\u00b0 to 67\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "68\u00b0 to 69\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "70\u00b0 to 71\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "72\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:15.798333+00:00",
+      "n_open": 0,
+      "n_charts": 2
+    },
+    {
+      "slug": "atl",
+      "name": "Atlanta",
+      "icao": "KATL",
+      "timezone": "America/New_York",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTATL",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "77\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "78\u00b0 to 79\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "80\u00b0 to 81\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "82\u00b0 to 83\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "84\u00b0 to 85\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "86\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTATL",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "47\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "48\u00b0 to 49\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "50\u00b0 to 51\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "52\u00b0 to 53\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "54\u00b0 to 55\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "56\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:17.554976+00:00",
+      "n_open": 0,
+      "n_charts": 2
+    },
+    {
+      "slug": "okc",
+      "name": "Oklahoma City",
+      "icao": "KOKC",
+      "timezone": "America/Chicago",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTOKC",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "82\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "83\u00b0 to 84\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "85\u00b0 to 86\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "87\u00b0 to 88\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "89\u00b0 to 90\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "91\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTOKC",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "52\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTOKC",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "70\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "71\u00b0 to 72\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "73\u00b0 to 74\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "75\u00b0 to 76\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "77\u00b0 to 78\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "79\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTOKC",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "45\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "46\u00b0 to 47\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "48\u00b0 to 49\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "50\u00b0 to 51\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "52\u00b0 to 53\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "54\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:21.455447+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    },
+    {
+      "slug": "bos",
+      "name": "Boston",
+      "icao": "KBOS",
+      "timezone": "America/New_York",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTBOS",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "73\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "74\u00b0 to 75\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "76\u00b0 to 77\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "78\u00b0 to 79\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "80\u00b0 to 81\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "82\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTBOS",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "44\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "45\u00b0 to 46\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "47\u00b0 to 48\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "49\u00b0 to 50\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "51\u00b0 to 52\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:21.456718+00:00",
+      "n_open": 0,
+      "n_charts": 2
+    },
+    {
+      "slug": "sea",
+      "name": "Seattle",
+      "icao": "KSEA",
+      "timezone": "America/Los_Angeles",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTSEA",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "77\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "78\u00b0 to 79\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "80\u00b0 to 81\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "82\u00b0 to 83\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "84\u00b0 to 85\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "86\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTSEA",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "48\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "49\u00b0 to 50\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "51\u00b0 to 52\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTSEA",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "72\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "73\u00b0 to 74\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "75\u00b0 to 76\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "77\u00b0 to 78\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "79\u00b0 to 80\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "81\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTSEA",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "46\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "47\u00b0 to 48\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "49\u00b0 to 50\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "51\u00b0 to 52\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:25.490019+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    },
+    {
+      "slug": "msp",
+      "name": "Minneapolis-Saint Paul",
+      "icao": "KMSP",
+      "timezone": "America/Chicago",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTMIN",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "64\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "65\u00b0 to 66\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "67\u00b0 to 68\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "69\u00b0 to 70\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "71\u00b0 to 72\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "73\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTMIN",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "43\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "44\u00b0 to 45\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "46\u00b0 to 47\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "48\u00b0 to 49\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "50\u00b0 to 51\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "52\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTMIN",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "49\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "50\u00b0 to 51\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "52\u00b0 to 53\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "54\u00b0 to 55\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "56\u00b0 to 57\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "58\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTMIN",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "30\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "31\u00b0 to 32\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "33\u00b0 to 34\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "35\u00b0 to 36\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "37\u00b0 to 38\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "39\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:25.417124+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    },
+    {
+      "slug": "phl",
+      "name": "Philadelphia",
+      "icao": "KPHL",
+      "timezone": "America/New_York",
+      "trains_high": false,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTPHIL",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "52\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:27.399255+00:00",
+      "n_open": 0,
+      "n_charts": 1
+    },
+    {
+      "slug": "las",
+      "name": "Las Vegas",
+      "icao": "KLAS",
+      "timezone": "America/Los_Angeles",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTLV",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "75\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "76\u00b0 to 77\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "78\u00b0 to 79\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "80\u00b0 to 81\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "82\u00b0 to 83\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "84\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTLV",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "54\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 to 62\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "63\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTLV",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "71\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "72\u00b0 to 73\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "74\u00b0 to 75\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "76\u00b0 to 77\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "78\u00b0 to 79\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "80\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTLV",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "48\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "49\u00b0 to 50\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "51\u00b0 to 52\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:31.332031+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    },
+    {
+      "slug": "san",
+      "name": "San Antonio",
+      "icao": "KSAT",
+      "timezone": "America/Chicago",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTSATX",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "83\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "84\u00b0 to 85\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "86\u00b0 to 87\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "88\u00b0 to 89\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "90\u00b0 to 91\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "92\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTSATX",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "52\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTSATX",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "88\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "89\u00b0 to 90\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "91\u00b0 to 92\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "93\u00b0 to 94\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "95\u00b0 to 96\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "97\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTSATX",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "62\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "63\u00b0 to 64\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "65\u00b0 to 66\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "67\u00b0 to 68\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "69\u00b0 to 70\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "71\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:31.464892+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    },
+    {
+      "slug": "dal",
+      "name": "Dallas-Fort Worth",
+      "icao": "KDFW",
+      "timezone": "America/Chicago",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTDAL",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "80\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "81\u00b0 to 82\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "83\u00b0 to 84\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "85\u00b0 to 86\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "87\u00b0 to 88\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "89\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTDAL",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "54\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 to 62\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "63\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTDAL",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "86\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "87\u00b0 to 88\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "89\u00b0 to 90\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "91\u00b0 to 92\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "93\u00b0 to 94\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "95\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTDAL",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "63\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "64\u00b0 to 65\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "66\u00b0 to 67\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "68\u00b0 to 69\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "70\u00b0 to 71\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "72\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:35.267689+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    },
+    {
+      "slug": "dca",
+      "name": "Washington, DC",
+      "icao": "KDCA",
+      "timezone": "America/New_York",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTDC",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "80\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "81\u00b0 to 82\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "83\u00b0 to 84\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "85\u00b0 to 86\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "87\u00b0 to 88\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "89\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTDC",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "54\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 to 62\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "63\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:35.209880+00:00",
+      "n_open": 0,
+      "n_charts": 2
+    },
+    {
+      "slug": "msy",
+      "name": "New Orleans",
+      "icao": "KMSY",
+      "timezone": "America/Chicago",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTNOLA",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "76\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "77\u00b0 to 78\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "79\u00b0 to 80\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "81\u00b0 to 82\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "83\u00b0 to 84\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "85\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTNOLA",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "52\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "53\u00b0 to 54\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTNOLA",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "80\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "81\u00b0 to 82\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "83\u00b0 to 84\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "85\u00b0 to 86\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "87\u00b0 to 88\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "89\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTNOLA",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "56\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 to 62\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "63\u00b0 to 64\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "65\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:39.273664+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    },
+    {
+      "slug": "hou",
+      "name": "Houston (Hobby)",
+      "icao": "KHOU",
+      "timezone": "America/Chicago",
+      "trains_high": true,
+      "trains_low": true,
+      "model_status": "pending",
+      "bucket_charts": [
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTHOU",
+          "day_D": "2026-05-04",
+          "title": "HIGH \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "79\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "80\u00b0 to 81\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "82\u00b0 to 83\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "84\u00b0 to 85\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "86\u00b0 to 87\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "88\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTHOU",
+          "day_D": "2026-05-04",
+          "title": "LOW \u00b7 2026-05-04",
+          "buckets": [
+            {
+              "label": "54\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "55\u00b0 to 56\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "57\u00b0 to 58\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "59\u00b0 to 60\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "61\u00b0 to 62\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "63\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "HIGH",
+          "series_ticker": "KXHIGHTHOU",
+          "day_D": "2026-05-05",
+          "title": "HIGH \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "82\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "83\u00b0 to 84\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "85\u00b0 to 86\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "87\u00b0 to 88\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "89\u00b0 to 90\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "91\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        },
+        {
+          "side_label": "LOW",
+          "series_ticker": "KXLOWTHOU",
+          "day_D": "2026-05-05",
+          "title": "LOW \u00b7 2026-05-05",
+          "buckets": [
+            {
+              "label": "64\u00b0 or below",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "65\u00b0 to 66\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "67\u00b0 to 68\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "69\u00b0 to 70\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "71\u00b0 to 72\u00b0",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            },
+            {
+              "label": "73\u00b0 or above",
+              "p_model": null,
+              "p_final": null,
+              "p_market": null,
+              "yes_bid": null,
+              "yes_ask": null
+            }
+          ]
+        }
+      ],
+      "obs_72h": [],
+      "open_positions": [],
+      "fetched_at_utc": "2026-05-05T05:50:41.286391+00:00",
+      "n_open": 0,
+      "n_charts": 4
+    }
+  ],
+  "n_cities": 20,
+  "generated_at_utc": "2026-05-05T05:54:07.359664+00:00"
 }
