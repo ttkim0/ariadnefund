@@ -264,6 +264,9 @@ def _build_city_section(city) -> dict:
                         "p_market":  b.get("yes_mid"),
                         "yes_bid":   b.get("yes_bid"),
                         "yes_ask":   b.get("yes_ask"),
+                        "floor_strike": b.get("floor_strike"),
+                        "cap_strike":   b.get("cap_strike"),
+                        "strike_type":  b.get("strike_type"),
                     } for b in c.get("buckets", [])],
                 })
         except Exception as e:
@@ -294,6 +297,9 @@ def _build_city_section(city) -> dict:
                         "p_market": round(float(mid), 3) if mid is not None else None,
                         "yes_ask":  round(float(ask), 3) if ask is not None else None,
                         "yes_bid":  round(float(bid), 3) if bid is not None else None,
+                        "floor_strike": s.get("floor_strike"),
+                        "cap_strike":   s.get("cap_strike"),
+                        "strike_type":  s.get("strike_type"),
                     })
                 new_charts.append({
                     "side_label":    items_sorted[0].get("side_label") or "",
@@ -351,9 +357,112 @@ def _strike_sort(s):
     return (3, 0)
 
 
+# ─────────────────────────────────────────────────────────────────────────
+# Lock-detector: zero out bucket probabilities that are mathematically
+# impossible given today's already-observed temperature extremes, then
+# renormalize.
+#
+# Rationale: our quantile model is statistically humble — even when the
+# day's daily extreme is essentially locked (e.g., the morning low was
+# 53°F and temp has risen monotonically since), the model still spreads
+# probability across nearby buckets.  The meta-calibrator helps but
+# doesn't have a "truth-already-observed" feature, so its p_final stays
+# diffuse too.  This post-process fixes that with hard math:
+#
+#   For LOW market, bucket "X to Y" wins iff day_low ∈ [X-0.5, Y+0.5).
+#   Since day_low ≤ obs_min_so_far (always, since day_low is min over the
+#   whole day), if obs_min_so_far < X-0.5 the bucket cannot win.  Snap to 0.
+#
+#   For HIGH market, bucket "X to Y" wins iff day_high ∈ [X-0.5, Y+0.5).
+#   day_high ≥ obs_max_so_far, so if obs_max_so_far > Y+0.5 the bucket
+#   cannot win.  Snap to 0.
+#
+# We don't snap "winning" buckets to 1 because future cooling (LOW) or
+# warming (HIGH) can still produce a more extreme value — we'd need a
+# "no further extreme expected" detector for that, which is harder.
+# Just removing impossible buckets and renormalizing is safe and correct.
+# ─────────────────────────────────────────────────────────────────────────
+def _bucket_excluded(side: str, b: dict, obs_min: float, obs_max: float) -> bool:
+    """Decide if a bucket cannot win YES given the day's observed extremes
+    so far.  Uses Kalshi's strike-naming conventions:
+      between  (floor=X, cap=Y): YES if reported temp ∈ {X..Y} → actual in [X-0.5, Y+0.5)
+      greater  (floor=X):        YES if reported temp > X     → actual ≥ X+0.5
+      less     (cap=Y):          YES if reported temp < Y     → actual < Y-0.5
+    """
+    floor = b.get("floor_strike")
+    cap   = b.get("cap_strike")
+    st    = b.get("strike_type")
+
+    if side == "LOW":
+        # day_low ≤ obs_min ALWAYS (since obs is partial; future could be lower).
+        # We can only safely exclude buckets whose lower bound exceeds obs_min.
+        if st == "between" and floor is not None:
+            return obs_min < float(floor) - 0.5
+        if st == "greater" and floor is not None:
+            # YES iff day_low ≥ floor+0.5.  obs_min < floor+0.5 ⇒ day_low ≤ obs_min < floor+0.5.
+            return obs_min < float(floor) + 0.5
+        # "less" buckets: future cooling could still hit them — never exclude.
+        return False
+
+    if side == "HIGH":
+        # day_high ≥ obs_max ALWAYS.  We can exclude buckets whose upper bound is
+        # already exceeded by the observed maximum.
+        if st == "between" and cap is not None:
+            return obs_max > float(cap) + 0.5
+        if st == "less" and cap is not None:
+            # YES iff day_high < cap-0.5.  obs_max ≥ cap-0.5 ⇒ day_high ≥ obs_max ≥ cap-0.5.
+            return obs_max >= float(cap) - 0.5
+        # "greater" buckets: future warming could still hit them — never exclude.
+        return False
+
+    return False
+
+
+def _apply_lock_detector(chart: dict, obs_72h: list) -> dict:
+    """Zero out impossible buckets given today's observations, renormalize."""
+    if not chart["buckets"] or not obs_72h or not chart.get("day_D"):
+        return chart
+    day_D = chart["day_D"]   # YYYY-MM-DD in local-standard time
+    side = chart["side_label"]
+    # Match obs that fall on the contract's local-standard day.
+    todays = [o["temp_f"] for o in obs_72h if o["t"][:10] == day_D]
+    if not todays:
+        return chart
+    obs_min = min(todays)
+    obs_max = max(todays)
+
+    excluded_idx = [i for i, b in enumerate(chart["buckets"])
+                    if _bucket_excluded(side, b, obs_min, obs_max)]
+    if not excluded_idx:
+        return chart
+
+    # Renormalize p_model and p_final independently.
+    for field in ("p_model", "p_final"):
+        kept_total = sum(
+            (b.get(field) or 0.0) for i, b in enumerate(chart["buckets"])
+            if i not in excluded_idx
+        )
+        if kept_total <= 1e-9:
+            continue
+        for i, b in enumerate(chart["buckets"]):
+            cur = b.get(field)
+            if cur is None:
+                continue
+            if i in excluded_idx:
+                b[field] = 0.001                                  # near-zero, not exactly 0
+            else:
+                b[field] = round(min(0.999, cur / kept_total), 3) # rescale to ~1.0
+    chart["_lock_detector_excluded"] = excluded_idx               # for debug visibility
+    return chart
+
+
 cities_payload = []
 for city in CITIES:
-    cities_payload.append(_build_city_section(city))
+    section = _build_city_section(city)
+    # Apply lock-detector to each bucket chart using the city's own obs_72h
+    for chart in section.get("bucket_charts", []):
+        _apply_lock_detector(chart, section.get("obs_72h", []))
+    cities_payload.append(section)
 
 # AUM scaling from backtest
 # Backtest used $1k → $X; scale to AUM

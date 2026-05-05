@@ -22,34 +22,41 @@ For each (market, decision_time t) pair:
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from pathlib import Path
 
 import joblib
 import numpy as np
 import pandas as pd
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
-EVENTS_PATH = ROOT / "data" / "kalshi_events.parquet"
-MARKETS_PATH = ROOT / "data" / "kalshi_markets.parquet"
-CANDLES_PATH = ROOT / "data" / "kalshi_candles.parquet"
-HOURLY_PATH = ROOT / "data" / "sfo_hourly.parquet"
-FEATURES_PATH = ROOT / "data" / "sfo_features.parquet"
-DX_META = ROOT / "reports" / "daily_extreme_metrics.json"
-HOURLY_META = ROOT / "reports" / "train_metrics.json"
-MODEL_DIR = ROOT / "models"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
 
-OUT_PATH = ROOT / "data" / "decision_dataset_v2.parquet"
-SUMMARY_PATH = ROOT / "reports" / "decision_dataset_v2_summary.md"
+ROOT = REPO_ROOT
 
 QUANTILES = [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
 
+# Local-standard-time UTC offset by IANA timezone (no DST).  Same map used
+# by 13_live_signal.py.
+_LOCAL_STD_OFFSET_H = {
+    "America/Los_Angeles": 8, "America/Denver": 7, "America/Phoenix": 7,
+    "America/Chicago": 6, "America/New_York": 5,
+}
 
-def utc_to_pst(ts_utc) -> pd.Timestamp:
+
+def utc_to_local_std(ts_utc, offset_h: int) -> pd.Timestamp:
     t = pd.Timestamp(ts_utc)
     if t.tzinfo is not None:
         t = t.tz_convert("UTC").tz_localize(None)
-    return t - pd.Timedelta(hours=8)
+    return t - pd.Timedelta(hours=offset_h)
+
+
+# back-compat alias for any leftover callers
+def utc_to_pst(ts_utc):
+    return utc_to_local_std(ts_utc, 8)
 
 
 def to_f32(d: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
@@ -72,12 +79,50 @@ def cdf_at_value(qpred_row: np.ndarray, qs: np.ndarray, x: float) -> float:
 
 
 def main():
-    print("[v2] loading inputs ...", flush=True)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo")
+    args = ap.parse_args()
+    city = get_city(args.city)
+    offset_h = _LOCAL_STD_OFFSET_H.get(city.timezone, 8)
+
+    if city.slug == "sfo":
+        EVENTS_PATH  = ROOT / "data" / "kalshi_events.parquet"
+        MARKETS_PATH = ROOT / "data" / "kalshi_markets.parquet"
+        CANDLES_PATH = ROOT / "data" / "kalshi_candles.parquet"
+        DX_META      = ROOT / "reports" / "daily_extreme_metrics.json"
+        HOURLY_META  = ROOT / "reports" / "train_metrics.json"
+        MODEL_DIR    = ROOT / "models"
+        OUT_PATH     = ROOT / "data" / "decision_dataset_v2.parquet"
+        SUMMARY_PATH = ROOT / "reports" / "decision_dataset_v2_summary.md"
+    else:
+        EVENTS_PATH  = ROOT / "data" / f"kalshi_events_{city.slug}.parquet"
+        MARKETS_PATH = ROOT / "data" / f"kalshi_markets_{city.slug}.parquet"
+        CANDLES_PATH = ROOT / "data" / f"kalshi_candles_{city.slug}.parquet"
+        DX_META      = ROOT / "reports" / f"daily_extreme_metrics_{city.slug}.json"
+        HOURLY_META  = ROOT / "reports" / f"train_metrics_{city.slug}.json"
+        MODEL_DIR    = city.models_dir
+        OUT_PATH     = ROOT / "data" / f"decision_dataset_v2_{city.slug}.parquet"
+        SUMMARY_PATH = ROOT / "reports" / f"decision_dataset_v2_summary_{city.slug}.md"
+
+    HOURLY_PATH   = city.hourly_path
+    FEATURES_PATH = city.features_path
+    LOW_SERIES    = city.kalshi.low_series
+    HIGH_SERIES   = city.kalshi.high_series
+
+    if not EVENTS_PATH.exists():
+        print(f"[v2:{city.slug}] no Kalshi historical fetch yet — run 07_kalshi_fetch first; skipping")
+        return
+
+    print(f"[v2:{city.slug}] loading inputs ...", flush=True)
     events = pd.read_parquet(EVENTS_PATH)
     markets = pd.read_parquet(MARKETS_PATH)
     candles = pd.read_parquet(CANDLES_PATH)
     hourly = pd.read_parquet(HOURLY_PATH)
+    if "timezone" in hourly.columns:
+        hourly = hourly.drop(columns=["timezone"])
     features = pd.read_parquet(FEATURES_PATH)
+    if "timezone" in features.columns:
+        features = features.drop(columns=["timezone"])
     dx_meta = json.loads(DX_META.read_text())
     fcols = dx_meta["feature_cols"]   # includes "hours_to_settle"
     hourly_fcols = json.loads(HOURLY_META.read_text())["feature_cols"]
@@ -92,18 +137,19 @@ def main():
     # Join events
     events_idx = events.set_index("event_ticker")[["strike_date", "title"]]
     m = markets.merge(events_idx, left_on="event_ticker", right_index=True, how="left")
-    m["side"] = np.where(m["_series_ticker"] == "KXLOWTSFO", "LOW", "HIGH")
-    strike_date_pst = m["strike_date"].apply(utc_to_pst)
-    m["day_D"] = (strike_date_pst - pd.Timedelta(days=1)).dt.floor("D")
+    # Per-city LOW vs HIGH: compare to the configured low_series, not hard SFO.
+    m["side"] = np.where(m["_series_ticker"] == LOW_SERIES, "LOW", "HIGH")
+    strike_date_local = m["strike_date"].apply(lambda t: utc_to_local_std(t, offset_h))
+    m["day_D"] = (strike_date_local - pd.Timedelta(days=1)).dt.floor("D")
     settled = m[m["status"].eq("finalized")].copy()
-    print(f"[v2] finalized markets: {len(settled):,}", flush=True)
+    print(f"[v2:{city.slug}] finalized markets: {len(settled):,}", flush=True)
 
     # Candle x market join
     cand = candles.merge(settled[["ticker", "event_ticker", "_series_ticker",
                                   "floor_strike", "cap_strike", "strike_type",
                                   "result", "open_time", "close_time", "side", "day_D"]],
                          on="ticker", how="inner")
-    cand["decision_time"] = cand["end_time"].apply(utc_to_pst).dt.floor("h")
+    cand["decision_time"] = cand["end_time"].apply(lambda t: utc_to_local_std(t, offset_h)).dt.floor("h")
     # k = (day_D - day(decision_time)) in days
     cand["day_t"] = cand["decision_time"].dt.floor("D")
     cand["k"] = ((cand["day_D"] - cand["day_t"]).dt.total_seconds() / 86400).round().astype("Int64")

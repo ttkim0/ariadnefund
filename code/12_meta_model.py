@@ -28,7 +28,9 @@ Eval: log-loss & Brier of meta vs market vs model on a chronological hold-out.
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from pathlib import Path
 
 import joblib
@@ -39,15 +41,16 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.isotonic import IsotonicRegression
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
-DECISION_PATH = ROOT / "data" / "decision_dataset_v2.parquet"
-META_OUT = ROOT / "models" / "meta_calibrator.joblib"
-DATASET_OUT = ROOT / "data" / "decision_dataset_v2_meta.parquet"
-SUMMARY_OUT = ROOT / "reports" / "meta_model_summary.md"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
 
-# Chronological split inside the Kalshi window (Jan 15 → present)
-META_TRAIN_END = pd.Timestamp("2026-03-31 23:00:00")  # train Jan-Mar
-# Test = April onwards
+ROOT = REPO_ROOT
+
+# Chronological split: by default the last 25% of the eligible window is held
+# out for testing.  Per-city, we derive the split from the actual data range
+# rather than hardcoding a date — different cities have different Kalshi
+# launch dates.
 
 
 def logit(p: np.ndarray, eps: float = 1e-6) -> np.ndarray:
@@ -73,18 +76,46 @@ def build_features(df: pd.DataFrame) -> tuple[np.ndarray, list[str]]:
 
 
 def main():
-    print(f"[meta] reading {DECISION_PATH}", flush=True)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo")
+    args = ap.parse_args()
+    city = get_city(args.city)
+
+    if city.slug == "sfo":
+        DECISION_PATH = ROOT / "data" / "decision_dataset_v2.parquet"
+        META_OUT      = ROOT / "models" / "meta_calibrator.joblib"
+        DATASET_OUT   = ROOT / "data" / "decision_dataset_v2_meta.parquet"
+        SUMMARY_OUT   = ROOT / "reports" / "meta_model_summary.md"
+    else:
+        DECISION_PATH = ROOT / "data" / f"decision_dataset_v2_{city.slug}.parquet"
+        META_OUT      = city.models_dir / "meta_calibrator.joblib"
+        DATASET_OUT   = ROOT / "data" / f"decision_dataset_v2_meta_{city.slug}.parquet"
+        SUMMARY_OUT   = ROOT / "reports" / f"meta_model_summary_{city.slug}.md"
+
+    if not DECISION_PATH.exists():
+        print(f"[meta:{city.slug}] no decision dataset — run 10_decision_dataset_v2 first; skipping")
+        return
+
+    print(f"[meta:{city.slug}] reading {DECISION_PATH}", flush=True)
     df = pd.read_parquet(DECISION_PATH)
     elig = df.dropna(subset=["model_prob_yes", "market_yes_close", "spread"])
     elig = elig[elig["yes_outcome_derived"].isin([0, 1])].copy()
     elig = elig.sort_values("decision_time").reset_index(drop=True)
-    print(f"[meta] eligible rows: {len(elig):,}", flush=True)
+    print(f"[meta:{city.slug}] eligible rows: {len(elig):,}", flush=True)
 
-    train = elig[elig["decision_time"] <= META_TRAIN_END]
-    test = elig[elig["decision_time"] > META_TRAIN_END]
-    print(f"[meta] train rows {len(train):,}, test rows {len(test):,}", flush=True)
+    if len(elig) < 200:
+        print(f"[meta:{city.slug}] insufficient eligible rows ({len(elig)}); skipping")
+        return
+
+    # Per-city split: hold out last 25% of rows chronologically.
+    cutoff_idx = int(len(elig) * 0.75)
+    META_TRAIN_END = elig["decision_time"].iloc[cutoff_idx]
+    train = elig.iloc[:cutoff_idx]
+    test  = elig.iloc[cutoff_idx:]
+    print(f"[meta:{city.slug}] train rows {len(train):,}, test rows {len(test):,} "
+          f"(cutoff {META_TRAIN_END})", flush=True)
     if len(train) < 100 or len(test) < 50:
-        print("[meta] insufficient data; skipping meta-model fit", flush=True)
+        print(f"[meta:{city.slug}] insufficient data; skipping meta-model fit", flush=True)
         return
 
     X_train, fnames = build_features(train)
@@ -134,11 +165,12 @@ def main():
     # Save artifacts
     META_OUT.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump({
+        "city": city.slug,
         "pipeline": pipe,
         "isotonic": iso,
         "feature_names": fnames,
     }, META_OUT)
-    print(f"\n[meta] wrote {META_OUT}", flush=True)
+    print(f"\n[meta:{city.slug}] wrote {META_OUT}", flush=True)
 
     # Add meta_prob_yes to the full eligible df and save
     X_all, _ = build_features(elig)

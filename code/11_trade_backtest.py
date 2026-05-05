@@ -50,12 +50,17 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
+
+ROOT = REPO_ROOT
 DEFAULT_DECISION_PATH = ROOT / "data" / "decision_dataset_v2.parquet"
 META_DECISION_PATH = ROOT / "data" / "decision_dataset_v2_meta.parquet"
 
@@ -249,20 +254,29 @@ def _max_drawdown(bk: pd.Series) -> float:
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo", help="city slug")
     ap.add_argument("--prob-col", default="model_prob_yes",
                     help="probability column to use ('model_prob_yes' or 'meta_prob_yes')")
-    ap.add_argument("--decision-path", default=str(DEFAULT_DECISION_PATH))
+    ap.add_argument("--decision-path", default=None,
+                    help="decision dataset path (default: per-city auto-derived)")
     ap.add_argument("--max-hours-to-settle", type=float, default=None,
                     help="only trade decisions with hours_to_settle <= this")
     ap.add_argument("--label", default="default",
                     help="label suffix for output files")
     args = ap.parse_args()
 
-    DECISION_PATH = Path(args.decision_path)
+    city = get_city(args.city)
+    if args.decision_path:
+        DECISION_PATH = Path(args.decision_path)
+    elif city.slug == "sfo":
+        DECISION_PATH = DEFAULT_DECISION_PATH
+    else:
+        DECISION_PATH = ROOT / "data" / f"decision_dataset_v2_{city.slug}.parquet"
     label = args.label
-    LOG_OUT = ROOT / "data" / f"trade_log_{label}.parquet"
-    JSON_OUT = ROOT / "reports" / f"trade_backtest_{label}.json"
-    MD_OUT = ROOT / "reports" / f"trade_backtest_{label}.md"
+    suffix = "" if city.slug == "sfo" else f"_{city.slug}"
+    LOG_OUT  = ROOT / "data"    / f"trade_log_{label}{suffix}.parquet"
+    JSON_OUT = ROOT / "reports" / f"trade_backtest_{label}{suffix}.json"
+    MD_OUT   = ROOT / "reports" / f"trade_backtest_{label}{suffix}.md"
 
     print(f"[backtest] reading {DECISION_PATH}", flush=True)
     df = pd.read_parquet(DECISION_PATH)

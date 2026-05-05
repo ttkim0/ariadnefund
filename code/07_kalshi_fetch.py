@@ -27,7 +27,9 @@ Notes:
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 import time
 import urllib.error
 import urllib.request
@@ -36,18 +38,21 @@ from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
-EVENTS_OUT = ROOT / "data" / "kalshi_events.parquet"
-MARKETS_OUT = ROOT / "data" / "kalshi_markets.parquet"
-CANDLES_OUT = ROOT / "data" / "kalshi_candles.parquet"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
+
+ROOT = REPO_ROOT
 
 API = "https://api.elections.kalshi.com/trade-api/v2"
-SERIES = ["KXHIGHTSFO", "KXLOWTSFO"]
 USER_AGENT = "kalshi-research/1.0"
-SLEEP = 0.05  # seconds between calls; ~20 req/s, well under any rate limit
+# Kalshi rate-limits the public API.  We saw 429s above ~3 concurrent
+# requests, so within a single fetch loop we use a bigger inter-request
+# delay than the original SFO version.  This is "polite" — slow but reliable.
+SLEEP = 0.15
 
 
-def http_get(url: str, retries: int = 3) -> dict:
+def http_get(url: str, retries: int = 5) -> dict:
     last_err = None
     for attempt in range(retries):
         try:
@@ -58,6 +63,10 @@ def http_get(url: str, retries: int = 3) -> dict:
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
+            if e.code == 429:
+                time.sleep(2.0 * (attempt + 1))   # back off harder on rate-limit
+                last_err = e
+                continue
             if e.code in (404, 400):
                 return {"_status": e.code}  # do not retry on hard errors
             last_err = e
@@ -210,19 +219,43 @@ def normalize_candle(market_ticker: str, c: dict) -> dict:
 
 
 def main():
-    print("[kalshi] fetching events ...", flush=True)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo", help="city slug (default: sfo)")
+    args = ap.parse_args()
+    city = get_city(args.city)
+
+    SERIES = city.kalshi_series()
+    if not SERIES:
+        print(f"[kalshi:{city.slug}] no Kalshi series configured; skipping")
+        return
+
+    # Per-city output paths.  SFO writes to legacy locations for backwards
+    # compat with downstream code that still references them.
+    if city.slug == "sfo":
+        EVENTS_OUT  = ROOT / "data" / "kalshi_events.parquet"
+        MARKETS_OUT = ROOT / "data" / "kalshi_markets.parquet"
+        CANDLES_OUT = ROOT / "data" / "kalshi_candles.parquet"
+    else:
+        EVENTS_OUT  = ROOT / "data" / f"kalshi_events_{city.slug}.parquet"
+        MARKETS_OUT = ROOT / "data" / f"kalshi_markets_{city.slug}.parquet"
+        CANDLES_OUT = ROOT / "data" / f"kalshi_candles_{city.slug}.parquet"
+
+    print(f"[kalshi:{city.slug}] fetching events for {SERIES} ...", flush=True)
     all_events = []
     for s in SERIES:
         ev = fetch_events(s)
         print(f"  {s}: {len(ev)} events", flush=True)
         all_events.extend(ev)
+    if not all_events:
+        print(f"[kalshi:{city.slug}] no events returned; skipping")
+        return
     events_df = pd.DataFrame([normalize_event(e) for e in all_events])
     events_df = events_df.sort_values(["series_ticker", "strike_date"]).reset_index(drop=True)
     EVENTS_OUT.parent.mkdir(parents=True, exist_ok=True)
     events_df.to_parquet(EVENTS_OUT, index=False)
-    print(f"[kalshi] wrote {EVENTS_OUT} ({len(events_df):,} rows)", flush=True)
+    print(f"[kalshi:{city.slug}] wrote {EVENTS_OUT} ({len(events_df):,} rows)", flush=True)
 
-    print("[kalshi] fetching markets per event ...", flush=True)
+    print(f"[kalshi:{city.slug}] fetching markets per event ...", flush=True)
     all_markets = []
     for i, e in enumerate(all_events):
         et = e.get("event_ticker")
@@ -236,9 +269,9 @@ def main():
     markets_df = pd.DataFrame([normalize_market(m) for m in all_markets])
     markets_df["_series_ticker"] = [m.get("_series_ticker") for m in all_markets]
     markets_df.to_parquet(MARKETS_OUT, index=False)
-    print(f"[kalshi] wrote {MARKETS_OUT} ({len(markets_df):,} rows)", flush=True)
+    print(f"[kalshi:{city.slug}] wrote {MARKETS_OUT} ({len(markets_df):,} rows)", flush=True)
 
-    print("[kalshi] fetching hourly candles per market ...", flush=True)
+    print(f"[kalshi:{city.slug}] fetching hourly candles per market ...", flush=True)
     candles_rows = []
     n = len(all_markets)
     for i, m in enumerate(all_markets):
@@ -266,10 +299,10 @@ def main():
     if not candles_df.empty:
         candles_df = candles_df.sort_values(["ticker", "end_ts"]).reset_index(drop=True)
     candles_df.to_parquet(CANDLES_OUT, index=False)
-    print(f"[kalshi] wrote {CANDLES_OUT} ({len(candles_df):,} rows)", flush=True)
+    print(f"[kalshi:{city.slug}] wrote {CANDLES_OUT} ({len(candles_df):,} rows)", flush=True)
 
     # Quick summary
-    print("\n=== KALSHI FETCH SUMMARY ===")
+    print(f"\n=== KALSHI FETCH SUMMARY ({city.slug}) ===")
     for s in SERIES:
         nev = (events_df["series_ticker"] == s).sum()
         nmk = (markets_df["_series_ticker"] == s).sum()
