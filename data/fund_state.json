@@ -1202,67 +1202,73 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTSFO-26MAY05-T60",
               "label": "59\u00b0 or below",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": null,
               "cap_strike": 60,
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY05-B60.5",
               "label": "60\u00b0 to 61\u00b0",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 60,
               "cap_strike": 61,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY05-B62.5",
               "label": "62\u00b0 to 63\u00b0",
               "p_model": 0.0,
               "p_final": 0.067,
-              "p_market": 0.345,
+              "p_market": 0.35,
+              "yes_bid": 0.32999999999999996,
               "yes_ask": 0.37,
-              "yes_bid": 0.32,
               "floor_strike": 62,
               "cap_strike": 63,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY05-B64.5",
               "label": "64\u00b0 to 65\u00b0",
               "p_model": 0.613,
               "p_final": 0.469,
-              "p_market": 0.54,
-              "yes_ask": 0.56,
-              "yes_bid": 0.52,
+              "p_market": 0.555,
+              "yes_bid": 0.53,
+              "yes_ask": 0.5800000000000001,
               "floor_strike": 64,
               "cap_strike": 65,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY05-B66.5",
               "label": "66\u00b0 to 67\u00b0",
               "p_model": 0.204,
               "p_final": 0.264,
-              "p_market": 0.07,
-              "yes_ask": 0.08,
-              "yes_bid": 0.06,
+              "p_market": 0.07999999999999996,
+              "yes_bid": 0.06999999999999995,
+              "yes_ask": 0.08999999999999997,
               "floor_strike": 66,
               "cap_strike": 67,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY05-T67",
               "label": "68\u00b0 or above",
               "p_model": 0.183,
               "p_final": 0.201,
-              "p_market": 0.015,
-              "yes_ask": 0.03,
+              "p_market": 0.010000000000000009,
               "yes_bid": 0.0,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": 67,
               "cap_strike": null,
               "strike_type": "greater"
@@ -1280,67 +1286,73 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTSFO-26MAY05-T48",
               "label": "47\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": null,
               "cap_strike": 48,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY05-B48.5",
               "label": "48\u00b0 to 49\u00b0",
               "p_model": 0.0,
               "p_final": 0.026,
-              "p_market": 0.02,
-              "yes_ask": 0.04,
+              "p_market": 0.020000000000000018,
               "yes_bid": 0.0,
+              "yes_ask": 0.040000000000000036,
               "floor_strike": 48,
               "cap_strike": 49,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY05-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": 0.0,
               "p_final": 0.026,
-              "p_market": 0.02,
-              "yes_ask": 0.04,
-              "yes_bid": 0.0,
+              "p_market": 0.020000000000000018,
+              "yes_bid": 0.010000000000000009,
+              "yes_ask": 0.030000000000000027,
               "floor_strike": 50,
               "cap_strike": 51,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY05-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": 0.999,
               "p_final": 0.948,
               "p_market": 0.97,
-              "yes_ask": 1.0,
               "yes_bid": 0.94,
+              "yes_ask": 1.0,
               "floor_strike": 52,
               "cap_strike": 53,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY05-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 54,
               "cap_strike": 55,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY05-T55",
               "label": "56\u00b0 or above",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 55,
               "cap_strike": null,
               "strike_type": "greater"
@@ -1358,67 +1370,73 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTSFO-26MAY06-T63",
               "label": "62\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.225,
-              "yes_ask": 0.23,
-              "yes_bid": 0.22,
+              "p_market": 0.22499999999999998,
+              "yes_bid": 0.21999999999999997,
+              "yes_ask": 0.22999999999999998,
               "floor_strike": null,
               "cap_strike": 63,
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY06-B63.5",
               "label": "63\u00b0 to 64\u00b0",
               "p_model": 0.158,
               "p_final": 0.338,
-              "p_market": 0.305,
-              "yes_ask": 0.31,
-              "yes_bid": 0.3,
+              "p_market": 0.30500000000000005,
+              "yes_bid": 0.30000000000000004,
+              "yes_ask": 0.31000000000000005,
               "floor_strike": 63,
               "cap_strike": 64,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY06-B65.5",
               "label": "65\u00b0 to 66\u00b0",
               "p_model": 0.374,
               "p_final": 0.338,
-              "p_market": 0.285,
-              "yes_ask": 0.29,
+              "p_market": 0.28500000000000003,
               "yes_bid": 0.28,
+              "yes_ask": 0.29000000000000004,
               "floor_strike": 65,
               "cap_strike": 66,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY06-B67.5",
               "label": "67\u00b0 to 68\u00b0",
               "p_model": 0.201,
               "p_final": 0.288,
               "p_market": 0.135,
-              "yes_ask": 0.14,
               "yes_bid": 0.13,
+              "yes_ask": 0.14,
               "floor_strike": 67,
               "cap_strike": 68,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY06-B69.5",
               "label": "69\u00b0 to 70\u00b0",
               "p_model": 0.104,
               "p_final": 0.19,
-              "p_market": 0.035,
-              "yes_ask": 0.04,
-              "yes_bid": 0.03,
+              "p_market": 0.03500000000000003,
+              "yes_bid": 0.030000000000000027,
+              "yes_ask": 0.040000000000000036,
               "floor_strike": 69,
               "cap_strike": 70,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSFO-26MAY06-T70",
               "label": "71\u00b0 or above",
               "p_model": 0.162,
               "p_final": 0.219,
-              "p_market": 0.04,
-              "yes_ask": 0.05,
-              "yes_bid": 0.03,
+              "p_market": 0.040000000000000036,
+              "yes_bid": 0.030000000000000027,
+              "yes_ask": 0.050000000000000044,
               "floor_strike": 70,
               "cap_strike": null,
               "strike_type": "greater"
@@ -1432,67 +1450,73 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTSFO-26MAY06-T48",
               "label": "47\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": null,
               "cap_strike": 48,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY06-B48.5",
               "label": "48\u00b0 to 49\u00b0",
               "p_model": 0.0,
               "p_final": 0.003,
-              "p_market": 0.015,
-              "yes_ask": 0.02,
-              "yes_bid": 0.01,
+              "p_market": 0.015000000000000013,
+              "yes_bid": 0.010000000000000009,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": 48,
               "cap_strike": 49,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY06-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": 0.053,
               "p_final": 0.19,
-              "p_market": 0.05,
-              "yes_ask": 0.07,
-              "yes_bid": 0.03,
+              "p_market": 0.05499999999999999,
+              "yes_bid": 0.030000000000000027,
+              "yes_ask": 0.07999999999999996,
               "floor_strike": 50,
               "cap_strike": 51,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY06-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": 0.389,
               "p_final": 0.386,
-              "p_market": 0.275,
-              "yes_ask": 0.3,
-              "yes_bid": 0.25,
+              "p_market": 0.27999999999999997,
+              "yes_bid": 0.24,
+              "yes_ask": 0.31999999999999995,
               "floor_strike": 52,
               "cap_strike": 53,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY06-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": 0.241,
               "p_final": 0.386,
-              "p_market": 0.505,
-              "yes_ask": 0.51,
+              "p_market": 0.51,
               "yes_bid": 0.5,
+              "yes_ask": 0.52,
               "floor_strike": 54,
               "cap_strike": 55,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSFO-26MAY06-T55",
               "label": "56\u00b0 or above",
               "p_model": 0.317,
               "p_final": 0.386,
-              "p_market": 0.205,
+              "p_market": 0.195,
+              "yes_bid": 0.15000000000000002,
               "yes_ask": 0.24,
-              "yes_bid": 0.17,
               "floor_strike": 55,
               "cap_strike": null,
               "strike_type": "greater"
@@ -2018,7 +2042,7 @@
           "kelly_used": 0.017
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:58:10.785357+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:42.395238+00:00",
       "n_open": 14,
       "n_charts": 4
     },
@@ -2038,67 +2062,73 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHNY-26MAY05-T77",
               "label": "76\u00b0 or below",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": null,
               "cap_strike": 77,
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHNY-26MAY05-B77.5",
               "label": "77\u00b0 to 78\u00b0",
               "p_model": 0.518,
               "p_final": 0.086,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 77,
               "cap_strike": 78,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHNY-26MAY05-B79.5",
               "label": "79\u00b0 to 80\u00b0",
               "p_model": 0.482,
               "p_final": 0.885,
-              "p_market": 0.795,
-              "yes_ask": 0.81,
-              "yes_bid": 0.78,
+              "p_market": 0.645,
+              "yes_bid": 0.62,
+              "yes_ask": 0.6699999999999999,
               "floor_strike": 79,
               "cap_strike": 80,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHNY-26MAY05-B81.5",
               "label": "81\u00b0 to 82\u00b0",
               "p_model": 0.0,
               "p_final": 0.029,
-              "p_market": 0.225,
-              "yes_ask": 0.24,
-              "yes_bid": 0.21,
+              "p_market": 0.245,
+              "yes_bid": 0.22999999999999998,
+              "yes_ask": 0.26,
               "floor_strike": 81,
               "cap_strike": 82,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHNY-26MAY05-B83.5",
               "label": "83\u00b0 to 84\u00b0",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.025,
-              "yes_ask": 0.03,
-              "yes_bid": 0.02,
+              "p_market": 0.05500000000000005,
+              "yes_bid": 0.050000000000000044,
+              "yes_ask": 0.06000000000000005,
               "floor_strike": 83,
               "cap_strike": 84,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHNY-26MAY05-T84",
               "label": "85\u00b0 or above",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.010000000000000009,
               "yes_bid": 0.0,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": 84,
               "cap_strike": null,
               "strike_type": "greater"
@@ -2115,67 +2145,73 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTNYC-26MAY05-T52",
               "label": "51\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": null,
               "cap_strike": 52,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY05-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": 0.132,
               "p_final": 0.022,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 52,
               "cap_strike": 53,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY05-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": 0.122,
               "p_final": 0.022,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 54,
               "cap_strike": 55,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY05-B56.5",
               "label": "56\u00b0 to 57\u00b0",
               "p_model": 0.275,
               "p_final": 0.074,
-              "p_market": 0.02,
-              "yes_ask": 0.04,
+              "p_market": 0.125,
               "yes_bid": 0.0,
+              "yes_ask": 0.25,
               "floor_strike": 56,
               "cap_strike": 57,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY05-B58.5",
               "label": "58\u00b0 to 59\u00b0",
               "p_model": 0.471,
               "p_final": 0.882,
               "p_market": 0.995,
-              "yes_ask": 1.0,
               "yes_bid": 0.99,
+              "yes_ask": 1.0,
               "floor_strike": 58,
               "cap_strike": 59,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY05-T59",
               "label": "60\u00b0 or above",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 59,
               "cap_strike": null,
               "strike_type": "greater"
@@ -2192,67 +2228,73 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHNY-26MAY06-T67",
               "label": "66\u00b0 or below",
               "p_model": 0.177,
               "p_final": 0.081,
-              "p_market": 0.045,
-              "yes_ask": 0.05,
-              "yes_bid": 0.04,
+              "p_market": 0.040000000000000036,
+              "yes_bid": 0.030000000000000027,
+              "yes_ask": 0.050000000000000044,
               "floor_strike": null,
               "cap_strike": 67,
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHNY-26MAY06-B67.5",
               "label": "67\u00b0 to 68\u00b0",
               "p_model": 0.061,
               "p_final": 0.097,
-              "p_market": 0.145,
-              "yes_ask": 0.15,
-              "yes_bid": 0.14,
+              "p_market": 0.10499999999999998,
+              "yes_bid": 0.08999999999999997,
+              "yes_ask": 0.12,
               "floor_strike": 67,
               "cap_strike": 68,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHNY-26MAY06-B69.5",
               "label": "69\u00b0 to 70\u00b0",
               "p_model": 0.126,
               "p_final": 0.326,
-              "p_market": 0.405,
-              "yes_ask": 0.42,
-              "yes_bid": 0.39,
+              "p_market": 0.375,
+              "yes_bid": 0.37,
+              "yes_ask": 0.38,
               "floor_strike": 69,
               "cap_strike": 70,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHNY-26MAY06-B71.5",
               "label": "71\u00b0 to 72\u00b0",
               "p_model": 0.14,
               "p_final": 0.241,
-              "p_market": 0.315,
-              "yes_ask": 0.32,
-              "yes_bid": 0.31,
+              "p_market": 0.325,
+              "yes_bid": 0.31000000000000005,
+              "yes_ask": 0.33999999999999997,
               "floor_strike": 71,
               "cap_strike": 72,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHNY-26MAY06-B73.5",
               "label": "73\u00b0 to 74\u00b0",
               "p_model": 0.123,
               "p_final": 0.074,
-              "p_market": 0.07,
-              "yes_ask": 0.08,
-              "yes_bid": 0.06,
+              "p_market": 0.09999999999999998,
+              "yes_bid": 0.08999999999999997,
+              "yes_ask": 0.10999999999999999,
               "floor_strike": 73,
               "cap_strike": 74,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHNY-26MAY06-T74",
               "label": "75\u00b0 or above",
               "p_model": 0.373,
               "p_final": 0.074,
-              "p_market": 0.025,
-              "yes_ask": 0.03,
-              "yes_bid": 0.02,
+              "p_market": 0.05500000000000005,
+              "yes_bid": 0.050000000000000044,
+              "yes_ask": 0.06000000000000005,
               "floor_strike": 74,
               "cap_strike": null,
               "strike_type": "greater"
@@ -2266,67 +2308,73 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTNYC-26MAY06-T56",
               "label": "55\u00b0 or below",
               "p_model": 0.483,
               "p_final": 0.253,
-              "p_market": 0.105,
-              "yes_ask": 0.11,
-              "yes_bid": 0.1,
+              "p_market": 0.13,
+              "yes_bid": 0.12,
+              "yes_ask": 0.14,
               "floor_strike": null,
               "cap_strike": 56,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY06-B56.5",
               "label": "56\u00b0 to 57\u00b0",
               "p_model": 0.219,
               "p_final": 0.176,
-              "p_market": 0.255,
-              "yes_ask": 0.26,
-              "yes_bid": 0.25,
+              "p_market": 0.20499999999999996,
+              "yes_bid": 0.18999999999999995,
+              "yes_ask": 0.21999999999999997,
               "floor_strike": 56,
               "cap_strike": 57,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY06-B58.5",
               "label": "58\u00b0 to 59\u00b0",
               "p_model": 0.099,
               "p_final": 0.176,
-              "p_market": 0.235,
-              "yes_ask": 0.26,
-              "yes_bid": 0.21,
+              "p_market": 0.24,
+              "yes_bid": 0.20999999999999996,
+              "yes_ask": 0.27,
               "floor_strike": 58,
               "cap_strike": 59,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY06-B60.5",
               "label": "60\u00b0 to 61\u00b0",
               "p_model": 0.064,
               "p_final": 0.155,
-              "p_market": 0.195,
-              "yes_ask": 0.2,
-              "yes_bid": 0.19,
+              "p_market": 0.19499999999999995,
+              "yes_bid": 0.18999999999999995,
+              "yes_ask": 0.19999999999999996,
               "floor_strike": 60,
               "cap_strike": 61,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY06-B62.5",
               "label": "62\u00b0 to 63\u00b0",
               "p_model": 0.061,
               "p_final": 0.081,
-              "p_market": 0.135,
-              "yes_ask": 0.14,
-              "yes_bid": 0.13,
+              "p_market": 0.125,
+              "yes_bid": 0.12,
+              "yes_ask": 0.13,
               "floor_strike": 62,
               "cap_strike": 63,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNYC-26MAY06-T63",
               "label": "64\u00b0 or above",
               "p_model": 0.074,
               "p_final": 0.035,
-              "p_market": 0.03,
-              "yes_ask": 0.04,
-              "yes_bid": 0.02,
+              "p_market": 0.03500000000000003,
+              "yes_bid": 0.030000000000000027,
+              "yes_ask": 0.040000000000000036,
               "floor_strike": 63,
               "cap_strike": null,
               "strike_type": "greater"
@@ -2863,7 +2911,7 @@
           "kelly_used": 0.0081
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:59:28.125557+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:44.027501+00:00",
       "n_open": 15,
       "n_charts": 4
     },
@@ -2883,67 +2931,73 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTLAX-26MAY05-T49",
               "label": "48\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.01,
-              "yes_ask": 0.02,
+              "p_market": 0.010000000000000009,
               "yes_bid": 0.0,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": null,
               "cap_strike": 49,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY05-B49.5",
               "label": "49\u00b0 to 50\u00b0",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 49,
               "cap_strike": 50,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY05-B51.5",
               "label": "51\u00b0 to 52\u00b0",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 51,
               "cap_strike": 52,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY05-B53.5",
               "label": "53\u00b0 to 54\u00b0",
               "p_model": 0.074,
               "p_final": 0.074,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 53,
               "cap_strike": 54,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY05-B55.5",
               "label": "55\u00b0 to 56\u00b0",
               "p_model": 0.472,
               "p_final": 0.472,
-              "p_market": 0.055,
-              "yes_ask": 0.08,
-              "yes_bid": 0.03,
+              "p_market": 0.044999999999999984,
+              "yes_bid": 0.020000000000000018,
+              "yes_ask": 0.06999999999999995,
               "floor_strike": 55,
               "cap_strike": 56,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY05-T56",
               "label": "57\u00b0 or above",
               "p_model": 0.454,
               "p_final": 0.454,
-              "p_market": 0.95,
-              "yes_ask": 0.96,
+              "p_market": 0.955,
               "yes_bid": 0.94,
+              "yes_ask": 0.97,
               "floor_strike": 56,
               "cap_strike": null,
               "strike_type": "greater"
@@ -2957,67 +3011,73 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTLAX-26MAY06-T50",
               "label": "49\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": null,
               "cap_strike": 50,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY06-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.025,
-              "yes_ask": 0.03,
-              "yes_bid": 0.02,
+              "p_market": 0.015000000000000013,
+              "yes_bid": 0.010000000000000009,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": 50,
               "cap_strike": 51,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY06-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": 0.062,
               "p_final": 0.062,
               "p_market": 0.065,
-              "yes_ask": 0.09,
-              "yes_bid": 0.04,
+              "yes_bid": 0.040000000000000036,
+              "yes_ask": 0.08999999999999997,
               "floor_strike": 52,
               "cap_strike": 53,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY06-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": 0.043,
               "p_final": 0.043,
               "p_market": 0.355,
-              "yes_ask": 0.36,
               "yes_bid": 0.35,
+              "yes_ask": 0.36,
               "floor_strike": 54,
               "cap_strike": 55,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY06-B56.5",
               "label": "56\u00b0 to 57\u00b0",
               "p_model": 0.566,
               "p_final": 0.566,
               "p_market": 0.475,
-              "yes_ask": 0.48,
               "yes_bid": 0.47,
+              "yes_ask": 0.48,
               "floor_strike": 56,
               "cap_strike": 57,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLAX-26MAY06-T57",
               "label": "58\u00b0 or above",
               "p_model": 0.329,
               "p_final": 0.329,
-              "p_market": 0.095,
-              "yes_ask": 0.11,
-              "yes_bid": 0.08,
+              "p_market": 0.09499999999999997,
+              "yes_bid": 0.07999999999999996,
+              "yes_ask": 0.10999999999999999,
               "floor_strike": 57,
               "cap_strike": null,
               "strike_type": "greater"
@@ -3455,7 +3515,7 @@
           "kelly_used": 0.0161
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:58:11.189443+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:47.923577+00:00",
       "n_open": 6,
       "n_charts": 2
     },
@@ -3475,67 +3535,73 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTMIA-26MAY05-T68",
               "label": "67\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.01,
-              "yes_ask": 0.02,
+              "p_market": 0.010000000000000009,
               "yes_bid": 0.0,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": null,
               "cap_strike": 68,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY05-B68.5",
               "label": "68\u00b0 to 69\u00b0",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 68,
               "cap_strike": 69,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY05-B70.5",
               "label": "70\u00b0 to 71\u00b0",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.01,
-              "yes_ask": 0.02,
+              "p_market": 0.010000000000000009,
               "yes_bid": 0.0,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": 70,
               "cap_strike": 71,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY05-B72.5",
               "label": "72\u00b0 to 73\u00b0",
               "p_model": 0.28,
               "p_final": 0.28,
-              "p_market": 0.035,
-              "yes_ask": 0.04,
-              "yes_bid": 0.03,
+              "p_market": 0.020000000000000018,
+              "yes_bid": 0.010000000000000009,
+              "yes_ask": 0.030000000000000027,
               "floor_strike": 72,
               "cap_strike": 73,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY05-B74.5",
               "label": "74\u00b0 to 75\u00b0",
               "p_model": 0.72,
               "p_final": 0.72,
               "p_market": 0.955,
-              "yes_ask": 0.96,
               "yes_bid": 0.95,
+              "yes_ask": 0.96,
               "floor_strike": 74,
               "cap_strike": 75,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY05-T75",
               "label": "76\u00b0 or above",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 75,
               "cap_strike": null,
               "strike_type": "greater"
@@ -3552,67 +3618,73 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTMIA-26MAY06-T68",
               "label": "67\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.015,
-              "yes_ask": 0.02,
-              "yes_bid": 0.01,
+              "p_market": 0.010000000000000009,
+              "yes_bid": 0.0,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": null,
               "cap_strike": 68,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY06-B68.5",
               "label": "68\u00b0 to 69\u00b0",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.045,
-              "yes_ask": 0.05,
-              "yes_bid": 0.04,
+              "p_market": 0.040000000000000036,
+              "yes_bid": 0.030000000000000027,
+              "yes_ask": 0.050000000000000044,
               "floor_strike": 68,
               "cap_strike": 69,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY06-B70.5",
               "label": "70\u00b0 to 71\u00b0",
               "p_model": 0.063,
               "p_final": 0.063,
-              "p_market": 0.04,
-              "yes_ask": 0.05,
-              "yes_bid": 0.03,
+              "p_market": 0.03500000000000003,
+              "yes_bid": 0.030000000000000027,
+              "yes_ask": 0.040000000000000036,
               "floor_strike": 70,
               "cap_strike": 71,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY06-B72.5",
               "label": "72\u00b0 to 73\u00b0",
               "p_model": 0.292,
               "p_final": 0.292,
-              "p_market": 0.405,
-              "yes_ask": 0.43,
-              "yes_bid": 0.38,
+              "p_market": 0.415,
+              "yes_bid": 0.39,
+              "yes_ask": 0.43999999999999995,
               "floor_strike": 72,
               "cap_strike": 73,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY06-B74.5",
               "label": "74\u00b0 to 75\u00b0",
               "p_model": 0.371,
               "p_final": 0.371,
-              "p_market": 0.395,
-              "yes_ask": 0.4,
-              "yes_bid": 0.39,
+              "p_market": 0.425,
+              "yes_bid": 0.4,
+              "yes_ask": 0.44999999999999996,
               "floor_strike": 74,
               "cap_strike": 75,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIA-26MAY06-T75",
               "label": "76\u00b0 or above",
               "p_model": 0.274,
               "p_final": 0.274,
-              "p_market": 0.085,
-              "yes_ask": 0.09,
-              "yes_bid": 0.08,
+              "p_market": 0.07500000000000001,
+              "yes_bid": 0.06000000000000005,
+              "yes_ask": 0.08999999999999997,
               "floor_strike": 75,
               "cap_strike": null,
               "strike_type": "greater"
@@ -4039,7 +4111,7 @@
           "kelly_used": 0.05
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:58:12.869966+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:44.370660+00:00",
       "n_open": 5,
       "n_charts": 2
     },
@@ -4059,67 +4131,73 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTCHI-26MAY05-T42",
               "label": "41\u00b0 or below",
               "p_model": 0.186,
               "p_final": 0.0,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": null,
               "cap_strike": 42,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY05-B42.5",
               "label": "42\u00b0 to 43\u00b0",
               "p_model": 0.14,
               "p_final": 0.0,
-              "p_market": 0.015,
-              "yes_ask": 0.02,
-              "yes_bid": 0.01,
+              "p_market": 0.0050000000000000044,
+              "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 42,
               "cap_strike": 43,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY05-B44.5",
               "label": "44\u00b0 to 45\u00b0",
               "p_model": 0.398,
               "p_final": 0.057,
-              "p_market": 0.025,
-              "yes_ask": 0.03,
-              "yes_bid": 0.02,
+              "p_market": 0.015000000000000013,
+              "yes_bid": 0.010000000000000009,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": 44,
               "cap_strike": 45,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY05-B46.5",
               "label": "46\u00b0 to 47\u00b0",
               "p_model": 0.276,
               "p_final": 0.943,
-              "p_market": 0.945,
-              "yes_ask": 0.95,
-              "yes_bid": 0.94,
+              "p_market": 0.985,
+              "yes_bid": 0.97,
+              "yes_ask": 1.0,
               "floor_strike": 46,
               "cap_strike": 47,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY05-B48.5",
               "label": "48\u00b0 to 49\u00b0",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 48,
               "cap_strike": 49,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY05-T49",
               "label": "50\u00b0 or above",
               "p_model": 0.001,
               "p_final": 0.001,
-              "p_market": 0.005,
-              "yes_ask": 0.01,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 49,
               "cap_strike": null,
               "strike_type": "greater"
@@ -4137,67 +4215,73 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTCHI-26MAY06-T38",
               "label": "37\u00b0 or below",
               "p_model": 0.13,
               "p_final": 0.065,
-              "p_market": 0.06,
-              "yes_ask": 0.07,
-              "yes_bid": 0.05,
+              "p_market": 0.025000000000000022,
+              "yes_bid": 0.020000000000000018,
+              "yes_ask": 0.030000000000000027,
               "floor_strike": null,
               "cap_strike": 38,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY06-B38.5",
               "label": "38\u00b0 to 39\u00b0",
               "p_model": 0.074,
               "p_final": 0.065,
-              "p_market": 0.12,
-              "yes_ask": 0.13,
-              "yes_bid": 0.11,
+              "p_market": 0.10499999999999998,
+              "yes_bid": 0.08999999999999997,
+              "yes_ask": 0.12,
               "floor_strike": 38,
               "cap_strike": 39,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY06-B40.5",
               "label": "40\u00b0 to 41\u00b0",
               "p_model": 0.177,
               "p_final": 0.182,
-              "p_market": 0.285,
-              "yes_ask": 0.29,
+              "p_market": 0.28500000000000003,
               "yes_bid": 0.28,
+              "yes_ask": 0.29000000000000004,
               "floor_strike": 40,
               "cap_strike": 41,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY06-B42.5",
               "label": "42\u00b0 to 43\u00b0",
               "p_model": 0.208,
               "p_final": 0.324,
-              "p_market": 0.355,
-              "yes_ask": 0.36,
-              "yes_bid": 0.35,
+              "p_market": 0.365,
+              "yes_bid": 0.36,
+              "yes_ask": 0.37,
               "floor_strike": 42,
               "cap_strike": 43,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY06-B44.5",
               "label": "44\u00b0 to 45\u00b0",
               "p_model": 0.137,
               "p_final": 0.116,
-              "p_market": 0.135,
-              "yes_ask": 0.14,
-              "yes_bid": 0.13,
+              "p_market": 0.16500000000000004,
+              "yes_bid": 0.16000000000000003,
+              "yes_ask": 0.17000000000000004,
               "floor_strike": 44,
               "cap_strike": 45,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTCHI-26MAY06-T45",
               "label": "46\u00b0 or above",
               "p_model": 0.274,
               "p_final": 0.065,
-              "p_market": 0.045,
-              "yes_ask": 0.05,
-              "yes_bid": 0.04,
+              "p_market": 0.04500000000000004,
+              "yes_bid": 0.040000000000000036,
+              "yes_ask": 0.050000000000000044,
               "floor_strike": 45,
               "cap_strike": null,
               "strike_type": "greater"
@@ -4602,7 +4686,7 @@
           "kelly_used": 0.05
         }
       ],
-      "fetched_at_utc": "2026-05-05T19:58:11.732168+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:49.513014+00:00",
       "n_open": 3,
       "n_charts": 2
     },
@@ -4622,6 +4706,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTPHX-26MAY05-T76",
               "label": "75\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -4633,6 +4718,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY05-B76.5",
               "label": "76\u00b0 to 77\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4644,28 +4730,31 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY05-B78.5",
               "label": "78\u00b0 to 79\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.49,
-              "yes_bid": 0.44999999999999996,
-              "yes_ask": 0.53,
+              "p_market": 0.38,
+              "yes_bid": 0.36,
+              "yes_ask": 0.4,
               "floor_strike": 78,
               "cap_strike": 79,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY05-B80.5",
               "label": "80\u00b0 to 81\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.495,
-              "yes_bid": 0.47,
-              "yes_ask": 0.52,
+              "p_market": 0.555,
+              "yes_bid": 0.53,
+              "yes_ask": 0.5800000000000001,
               "floor_strike": 80,
               "cap_strike": 81,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY05-B82.5",
               "label": "82\u00b0 to 83\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4677,6 +4766,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY05-T83",
               "label": "84\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -4696,6 +4786,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTPHX-26MAY05-T59",
               "label": "58\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -4707,6 +4798,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY05-B59.5",
               "label": "59\u00b0 to 60\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4718,17 +4810,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY05-B61.5",
               "label": "61\u00b0 to 62\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.065,
-              "yes_bid": 0.030000000000000027,
+              "p_market": 0.09499999999999997,
+              "yes_bid": 0.08999999999999997,
               "yes_ask": 0.09999999999999998,
               "floor_strike": 61,
               "cap_strike": 62,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY05-B63.5",
               "label": "63\u00b0 to 64\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4740,17 +4834,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY05-B65.5",
               "label": "65\u00b0 to 66\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.9099999999999999,
-              "yes_bid": 0.85,
-              "yes_ask": 0.97,
+              "p_market": 0.875,
+              "yes_bid": 0.86,
+              "yes_ask": 0.89,
               "floor_strike": 65,
               "cap_strike": 66,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY05-T66",
               "label": "67\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -4773,6 +4869,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTPHX-26MAY06-T81",
               "label": "80\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -4784,6 +4881,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY06-B81.5",
               "label": "81\u00b0 to 82\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4795,6 +4893,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY06-B83.5",
               "label": "83\u00b0 to 84\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4806,17 +4905,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY06-B85.5",
               "label": "85\u00b0 to 86\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.54,
-              "yes_bid": 0.51,
+              "p_market": 0.56,
+              "yes_bid": 0.55,
               "yes_ask": 0.5700000000000001,
               "floor_strike": 85,
               "cap_strike": 86,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY06-B87.5",
               "label": "87\u00b0 to 88\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4828,6 +4929,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTPHX-26MAY06-T88",
               "label": "89\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -4847,6 +4949,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTPHX-26MAY06-T52",
               "label": "51\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -4858,6 +4961,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY06-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4869,6 +4973,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY06-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4880,6 +4985,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY06-B56.5",
               "label": "56\u00b0 to 57\u00b0",
               "p_model": null,
               "p_final": null,
@@ -4891,17 +4997,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY06-B58.5",
               "label": "58\u00b0 to 59\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.125,
+              "p_market": 0.135,
               "yes_bid": 0.08999999999999997,
-              "yes_ask": 0.16000000000000003,
+              "yes_ask": 0.18000000000000005,
               "floor_strike": 58,
               "cap_strike": 59,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHX-26MAY06-T59",
               "label": "60\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -5278,7 +5386,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:17.602929+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:53.940456+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -5298,6 +5406,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTDEN-26MAY05-T31",
               "label": "30\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -5309,6 +5418,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY05-B31.5",
               "label": "31\u00b0 to 32\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5320,17 +5430,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY05-B33.5",
               "label": "33\u00b0 to 34\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.11499999999999999,
-              "yes_bid": 0.09999999999999998,
+              "p_market": 0.12,
+              "yes_bid": 0.10999999999999999,
               "yes_ask": 0.13,
               "floor_strike": 33,
               "cap_strike": 34,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY05-B35.5",
               "label": "35\u00b0 to 36\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5342,6 +5454,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY05-B37.5",
               "label": "37\u00b0 to 38\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5353,6 +5466,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY05-T38",
               "label": "39\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -5376,39 +5490,43 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTDEN-26MAY06-T24",
               "label": "23\u00b0 or below",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.06,
-              "yes_bid": 0.050000000000000044,
+              "p_market": 0.065,
+              "yes_bid": 0.06000000000000005,
               "yes_ask": 0.06999999999999995,
               "floor_strike": null,
               "cap_strike": 24,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY06-B24.5",
               "label": "24\u00b0 to 25\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.15500000000000003,
-              "yes_bid": 0.15000000000000002,
-              "yes_ask": 0.16000000000000003,
+              "p_market": 0.14,
+              "yes_bid": 0.13,
+              "yes_ask": 0.15000000000000002,
               "floor_strike": 24,
               "cap_strike": 25,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY06-B26.5",
               "label": "26\u00b0 to 27\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.28,
+              "p_market": 0.275,
               "yes_bid": 0.26,
-              "yes_ask": 0.30000000000000004,
+              "yes_ask": 0.29000000000000004,
               "floor_strike": 26,
               "cap_strike": 27,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY06-B28.5",
               "label": "28\u00b0 to 29\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5420,6 +5538,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY06-B30.5",
               "label": "30\u00b0 to 31\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5431,6 +5550,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDEN-26MAY06-T31",
               "label": "32\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -5807,7 +5927,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:14.989587+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:51.614171+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -5827,6 +5947,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTAUS-26MAY05-T64",
               "label": "63\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -5838,6 +5959,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY05-B64.5",
               "label": "64\u00b0 to 65\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5849,6 +5971,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY05-B66.5",
               "label": "66\u00b0 to 67\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5860,6 +5983,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY05-B68.5",
               "label": "68\u00b0 to 69\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5871,6 +5995,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY05-B70.5",
               "label": "70\u00b0 to 71\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5882,6 +6007,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY05-T71",
               "label": "72\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -5904,6 +6030,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTAUS-26MAY06-T68",
               "label": "67\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -5915,6 +6042,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY06-B68.5",
               "label": "68\u00b0 to 69\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5926,6 +6054,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY06-B70.5",
               "label": "70\u00b0 to 71\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5937,6 +6066,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY06-B72.5",
               "label": "72\u00b0 to 73\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5948,6 +6078,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY06-B74.5",
               "label": "74\u00b0 to 75\u00b0",
               "p_model": null,
               "p_final": null,
@@ -5959,6 +6090,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTAUS-26MAY06-T75",
               "label": "76\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -6335,7 +6467,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:17.273940+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:53.705163+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -6355,6 +6487,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTATL-26MAY05-T78",
               "label": "77\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -6366,28 +6499,31 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY05-B78.5",
               "label": "78\u00b0 to 79\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.505,
-              "yes_bid": 0.48,
-              "yes_ask": 0.53,
+              "p_market": 0.48500000000000004,
+              "yes_bid": 0.43000000000000005,
+              "yes_ask": 0.54,
               "floor_strike": 78,
               "cap_strike": 79,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY05-B80.5",
               "label": "80\u00b0 to 81\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.42000000000000004,
+              "p_market": 0.44,
               "yes_bid": 0.41000000000000003,
-              "yes_ask": 0.43000000000000005,
+              "yes_ask": 0.47,
               "floor_strike": 80,
               "cap_strike": 81,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY05-B82.5",
               "label": "82\u00b0 to 83\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6399,6 +6535,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY05-B84.5",
               "label": "84\u00b0 to 85\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6410,6 +6547,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY05-T85",
               "label": "86\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -6432,6 +6570,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTATL-26MAY05-T48",
               "label": "47\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -6443,6 +6582,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTATL-26MAY05-B48.5",
               "label": "48\u00b0 to 49\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6454,6 +6594,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTATL-26MAY05-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6465,6 +6606,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTATL-26MAY05-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6476,6 +6618,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTATL-26MAY05-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6487,6 +6630,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTATL-26MAY05-T55",
               "label": "56\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -6506,6 +6650,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTATL-26MAY06-T81",
               "label": "80\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -6517,6 +6662,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY06-B81.5",
               "label": "81\u00b0 to 82\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6528,6 +6674,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY06-B83.5",
               "label": "83\u00b0 to 84\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6539,6 +6686,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY06-B85.5",
               "label": "85\u00b0 to 86\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6550,6 +6698,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY06-B87.5",
               "label": "87\u00b0 to 88\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6561,6 +6710,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTATL-26MAY06-T88",
               "label": "89\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -6580,6 +6730,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTATL-26MAY06-T57",
               "label": "56\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -6591,6 +6742,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTATL-26MAY06-B57.5",
               "label": "57\u00b0 to 58\u00b0",
               "p_model": null,
               "p_final": null,
@@ -6602,45 +6754,49 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTATL-26MAY06-B59.5",
               "label": "59\u00b0 to 60\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.015000000000000013,
+              "p_market": 0.09999999999999998,
               "yes_bid": 0.010000000000000009,
-              "yes_ask": 0.020000000000000018,
+              "yes_ask": 0.18999999999999995,
               "floor_strike": 59,
               "cap_strike": 60,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTATL-26MAY06-B61.5",
               "label": "61\u00b0 to 62\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.10499999999999998,
+              "p_market": 0.14499999999999996,
               "yes_bid": 0.07999999999999996,
-              "yes_ask": 0.13,
+              "yes_ask": 0.20999999999999996,
               "floor_strike": 61,
               "cap_strike": 62,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTATL-26MAY06-B63.5",
               "label": "63\u00b0 to 64\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.39,
-              "yes_bid": 0.38,
+              "p_market": 0.37,
+              "yes_bid": 0.33999999999999997,
               "yes_ask": 0.4,
               "floor_strike": 63,
               "cap_strike": 64,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTATL-26MAY06-T64",
               "label": "65\u00b0 or above",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.475,
-              "yes_bid": 0.47,
-              "yes_ask": 0.48,
+              "p_market": 0.46499999999999997,
+              "yes_bid": 0.45999999999999996,
+              "yes_ask": 0.47,
               "floor_strike": 64,
               "cap_strike": null,
               "strike_type": "greater"
@@ -7011,7 +7167,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:21.635118+00:00",
+      "fetched_at_utc": "2026-05-05T20:00:58.026955+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -7031,6 +7187,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTOKC-26MAY05-T71",
               "label": "70\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -7042,6 +7199,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY05-B71.5",
               "label": "71\u00b0 to 72\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7053,6 +7211,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY05-B73.5",
               "label": "73\u00b0 to 74\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7064,6 +7223,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY05-B75.5",
               "label": "75\u00b0 to 76\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7075,6 +7235,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY05-B77.5",
               "label": "77\u00b0 to 78\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7086,6 +7247,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY05-T78",
               "label": "79\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -7108,6 +7270,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTOKC-26MAY05-T46",
               "label": "45\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -7119,17 +7282,19 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY05-B46.5",
               "label": "46\u00b0 to 47\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.195,
+              "p_market": 0.19,
               "yes_bid": 0.16000000000000003,
-              "yes_ask": 0.22999999999999998,
+              "yes_ask": 0.21999999999999997,
               "floor_strike": 46,
               "cap_strike": 47,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY05-B48.5",
               "label": "48\u00b0 to 49\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7141,6 +7306,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY05-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7152,6 +7318,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY05-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7163,6 +7330,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY05-T53",
               "label": "54\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -7182,28 +7350,31 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTOKC-26MAY06-T61",
               "label": "60\u00b0 or below",
               "p_model": null,
               "p_final": null,
               "p_market": 0.125,
-              "yes_bid": 0.12,
-              "yes_ask": 0.13,
+              "yes_bid": 0.10999999999999999,
+              "yes_ask": 0.14,
               "floor_strike": null,
               "cap_strike": 61,
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY06-B61.5",
               "label": "61\u00b0 to 62\u00b0",
               "p_model": null,
               "p_final": null,
               "p_market": 0.21999999999999997,
-              "yes_bid": 0.19999999999999996,
-              "yes_ask": 0.24,
+              "yes_bid": 0.18999999999999995,
+              "yes_ask": 0.25,
               "floor_strike": 61,
               "cap_strike": 62,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY06-B63.5",
               "label": "63\u00b0 to 64\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7215,6 +7386,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY06-B65.5",
               "label": "65\u00b0 to 66\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7226,6 +7398,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY06-B67.5",
               "label": "67\u00b0 to 68\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7237,6 +7410,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTOKC-26MAY06-T68",
               "label": "69\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -7256,6 +7430,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTOKC-26MAY06-T41",
               "label": "40\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -7267,6 +7442,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY06-B41.5",
               "label": "41\u00b0 to 42\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7278,6 +7454,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY06-B43.5",
               "label": "43\u00b0 to 44\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7289,6 +7466,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY06-B45.5",
               "label": "45\u00b0 to 46\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7300,6 +7478,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY06-B47.5",
               "label": "47\u00b0 to 48\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7311,12 +7490,13 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTOKC-26MAY06-T48",
               "label": "49\u00b0 or above",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.15500000000000003,
+              "p_market": 0.15000000000000002,
               "yes_bid": 0.14,
-              "yes_ask": 0.17000000000000004,
+              "yes_ask": 0.16000000000000003,
               "floor_strike": 48,
               "cap_strike": null,
               "strike_type": "greater"
@@ -7687,7 +7867,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:23.479135+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:03.393801+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -7707,6 +7887,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTBOS-26MAY05-T74",
               "label": "73\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -7718,6 +7899,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY05-B74.5",
               "label": "74\u00b0 to 75\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7729,6 +7911,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY05-B76.5",
               "label": "76\u00b0 to 77\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7740,6 +7923,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY05-B78.5",
               "label": "78\u00b0 to 79\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7751,17 +7935,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY05-B80.5",
               "label": "80\u00b0 to 81\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.04500000000000004,
-              "yes_bid": 0.040000000000000036,
-              "yes_ask": 0.050000000000000044,
+              "p_market": 0.030000000000000027,
+              "yes_bid": 0.020000000000000018,
+              "yes_ask": 0.040000000000000036,
               "floor_strike": 80,
               "cap_strike": 81,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY05-T81",
               "label": "82\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -7785,6 +7971,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTBOS-26MAY05-T45",
               "label": "44\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -7796,6 +7983,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY05-B45.5",
               "label": "45\u00b0 to 46\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7807,6 +7995,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY05-B47.5",
               "label": "47\u00b0 to 48\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7818,6 +8007,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY05-B49.5",
               "label": "49\u00b0 to 50\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7829,6 +8019,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY05-B51.5",
               "label": "51\u00b0 to 52\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7840,6 +8031,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY05-T52",
               "label": "53\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -7862,6 +8054,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTBOS-26MAY06-T65",
               "label": "64\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -7873,6 +8066,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY06-B65.5",
               "label": "65\u00b0 to 66\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7884,6 +8078,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY06-B67.5",
               "label": "67\u00b0 to 68\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7895,6 +8090,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY06-B69.5",
               "label": "69\u00b0 to 70\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7906,6 +8102,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY06-B71.5",
               "label": "71\u00b0 to 72\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7917,6 +8114,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTBOS-26MAY06-T72",
               "label": "73\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -7936,6 +8134,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTBOS-26MAY06-T51",
               "label": "50\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -7947,6 +8146,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY06-B51.5",
               "label": "51\u00b0 to 52\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7958,6 +8158,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY06-B53.5",
               "label": "53\u00b0 to 54\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7969,6 +8170,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY06-B55.5",
               "label": "55\u00b0 to 56\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7980,6 +8182,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY06-B57.5",
               "label": "57\u00b0 to 58\u00b0",
               "p_model": null,
               "p_final": null,
@@ -7991,6 +8194,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTBOS-26MAY06-T58",
               "label": "59\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -8367,7 +8571,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:25.854872+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:00.528312+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -8387,17 +8591,19 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTSEA-26MAY05-T73",
               "label": "72\u00b0 or below",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.875,
+              "p_market": 0.88,
               "yes_bid": 0.87,
-              "yes_ask": 0.88,
+              "yes_ask": 0.89,
               "floor_strike": null,
               "cap_strike": 73,
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY05-B73.5",
               "label": "73\u00b0 to 74\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8409,6 +8615,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY05-B75.5",
               "label": "75\u00b0 to 76\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8420,6 +8627,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY05-B77.5",
               "label": "77\u00b0 to 78\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8431,6 +8639,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY05-B79.5",
               "label": "79\u00b0 to 80\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8442,6 +8651,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY05-T80",
               "label": "81\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -8461,6 +8671,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTSEA-26MAY05-T47",
               "label": "46\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -8472,6 +8683,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY05-B47.5",
               "label": "47\u00b0 to 48\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8483,6 +8695,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY05-B49.5",
               "label": "49\u00b0 to 50\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8494,28 +8707,31 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY05-B51.5",
               "label": "51\u00b0 to 52\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.04999999999999999,
-              "yes_bid": 0.0,
-              "yes_ask": 0.09999999999999998,
+              "p_market": 0.065,
+              "yes_bid": 0.010000000000000009,
+              "yes_ask": 0.12,
               "floor_strike": 51,
               "cap_strike": 52,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY05-B53.5",
               "label": "53\u00b0 to 54\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.935,
-              "yes_bid": 0.9,
+              "p_market": 0.9299999999999999,
+              "yes_bid": 0.89,
               "yes_ask": 0.97,
               "floor_strike": 53,
               "cap_strike": 54,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY05-T54",
               "label": "55\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -8538,6 +8754,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTSEA-26MAY06-T69",
               "label": "68\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -8549,6 +8766,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY06-B69.5",
               "label": "69\u00b0 to 70\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8560,6 +8778,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY06-B71.5",
               "label": "71\u00b0 to 72\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8571,6 +8790,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY06-B73.5",
               "label": "73\u00b0 to 74\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8582,6 +8802,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY06-B75.5",
               "label": "75\u00b0 to 76\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8593,6 +8814,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSEA-26MAY06-T76",
               "label": "77\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -8612,6 +8834,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTSEA-26MAY06-T46",
               "label": "45\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -8623,6 +8846,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY06-B46.5",
               "label": "46\u00b0 to 47\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8634,17 +8858,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY06-B48.5",
               "label": "48\u00b0 to 49\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.19,
+              "p_market": 0.195,
               "yes_bid": 0.15000000000000002,
-              "yes_ask": 0.22999999999999998,
+              "yes_ask": 0.24,
               "floor_strike": 48,
               "cap_strike": 49,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY06-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8656,6 +8882,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY06-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": null,
               "p_final": null,
@@ -8667,6 +8894,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSEA-26MAY06-T53",
               "label": "54\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -9043,7 +9271,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:25.989847+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:04.700165+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -9063,6 +9291,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTMIN-26MAY05-T50",
               "label": "49\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -9074,6 +9303,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY05-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9085,28 +9315,31 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY05-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.8,
+              "p_market": 0.81,
               "yes_bid": 0.78,
-              "yes_ask": 0.8200000000000001,
+              "yes_ask": 0.84,
               "floor_strike": 52,
               "cap_strike": 53,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY05-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.19,
+              "p_market": 0.195,
               "yes_bid": 0.17000000000000004,
-              "yes_ask": 0.20999999999999996,
+              "yes_ask": 0.21999999999999997,
               "floor_strike": 54,
               "cap_strike": 55,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY05-B56.5",
               "label": "56\u00b0 to 57\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9118,12 +9351,13 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY05-T57",
               "label": "58\u00b0 or above",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.020000000000000018,
+              "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
-              "yes_ask": 0.040000000000000036,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 57,
               "cap_strike": null,
               "strike_type": "greater"
@@ -9141,6 +9375,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTMIN-26MAY05-T31",
               "label": "30\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -9152,6 +9387,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY05-B31.5",
               "label": "31\u00b0 to 32\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9163,6 +9399,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY05-B33.5",
               "label": "33\u00b0 to 34\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9174,6 +9411,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY05-B35.5",
               "label": "35\u00b0 to 36\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9185,6 +9423,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY05-B37.5",
               "label": "37\u00b0 to 38\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9196,6 +9435,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY05-T38",
               "label": "39\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -9218,6 +9458,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTMIN-26MAY06-T50",
               "label": "49\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -9229,6 +9470,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY06-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9240,6 +9482,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY06-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9251,6 +9494,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY06-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9262,6 +9506,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY06-B56.5",
               "label": "56\u00b0 to 57\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9273,6 +9518,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTMIN-26MAY06-T57",
               "label": "58\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -9292,6 +9538,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTMIN-26MAY06-T28",
               "label": "27\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -9303,6 +9550,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY06-B28.5",
               "label": "28\u00b0 to 29\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9314,6 +9562,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY06-B30.5",
               "label": "30\u00b0 to 31\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9325,6 +9574,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY06-B32.5",
               "label": "32\u00b0 to 33\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9336,6 +9586,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY06-B34.5",
               "label": "34\u00b0 to 35\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9347,6 +9598,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTMIN-26MAY06-T35",
               "label": "36\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -9723,7 +9975,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:30.052132+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:10.756461+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -9743,6 +9995,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTPHIL-26MAY05-T53",
               "label": "52\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -9754,6 +10007,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY05-B53.5",
               "label": "53\u00b0 to 54\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9765,6 +10019,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY05-B55.5",
               "label": "55\u00b0 to 56\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9776,6 +10031,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY05-B57.5",
               "label": "57\u00b0 to 58\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9787,6 +10043,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY05-B59.5",
               "label": "59\u00b0 to 60\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9798,6 +10055,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY05-T60",
               "label": "61\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -9817,28 +10075,31 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTPHIL-26MAY06-T58",
               "label": "57\u00b0 or below",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.22499999999999998,
+              "p_market": 0.21999999999999997,
               "yes_bid": 0.20999999999999996,
-              "yes_ask": 0.24,
+              "yes_ask": 0.22999999999999998,
               "floor_strike": null,
               "cap_strike": 58,
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY06-B58.5",
               "label": "58\u00b0 to 59\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.29000000000000004,
-              "yes_bid": 0.27,
+              "p_market": 0.29500000000000004,
+              "yes_bid": 0.28,
               "yes_ask": 0.31000000000000005,
               "floor_strike": 58,
               "cap_strike": 59,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY06-B60.5",
               "label": "60\u00b0 to 61\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9850,17 +10111,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY06-B62.5",
               "label": "62\u00b0 to 63\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.15000000000000002,
+              "p_market": 0.14500000000000002,
               "yes_bid": 0.13,
-              "yes_ask": 0.17000000000000004,
+              "yes_ask": 0.16000000000000003,
               "floor_strike": 62,
               "cap_strike": 63,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY06-B64.5",
               "label": "64\u00b0 to 65\u00b0",
               "p_model": null,
               "p_final": null,
@@ -9872,6 +10135,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTPHIL-26MAY06-T65",
               "label": "66\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -10248,7 +10512,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:29.703684+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:06.797585+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -10268,6 +10532,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTLV-26MAY05-T72",
               "label": "71\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -10279,6 +10544,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY05-B72.5",
               "label": "72\u00b0 to 73\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10290,39 +10556,43 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY05-B74.5",
               "label": "74\u00b0 to 75\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.5750000000000001,
+              "p_market": 0.585,
               "yes_bid": 0.5700000000000001,
-              "yes_ask": 0.5800000000000001,
+              "yes_ask": 0.6,
               "floor_strike": 74,
               "cap_strike": 75,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY05-B76.5",
               "label": "76\u00b0 to 77\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.385,
+              "p_market": 0.38,
               "yes_bid": 0.37,
-              "yes_ask": 0.4,
+              "yes_ask": 0.39,
               "floor_strike": 76,
               "cap_strike": 77,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY05-B78.5",
               "label": "78\u00b0 to 79\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.015000000000000013,
+              "p_market": 0.010000000000000009,
               "yes_bid": 0.0,
-              "yes_ask": 0.030000000000000027,
+              "yes_ask": 0.020000000000000018,
               "floor_strike": 78,
               "cap_strike": 79,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY05-T79",
               "label": "80\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -10342,6 +10612,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTLV-26MAY05-T49",
               "label": "48\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -10353,6 +10624,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTLV-26MAY05-B49.5",
               "label": "49\u00b0 to 50\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10364,6 +10636,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLV-26MAY05-B51.5",
               "label": "51\u00b0 to 52\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10375,6 +10648,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLV-26MAY05-B53.5",
               "label": "53\u00b0 to 54\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10386,6 +10660,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLV-26MAY05-B55.5",
               "label": "55\u00b0 to 56\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10397,6 +10672,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLV-26MAY05-T56",
               "label": "57\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -10416,6 +10692,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTLV-26MAY06-T82",
               "label": "81\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -10427,6 +10704,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY06-B82.5",
               "label": "82\u00b0 to 83\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10438,17 +10716,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY06-B84.5",
               "label": "84\u00b0 to 85\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.45499999999999996,
+              "p_market": 0.44999999999999996,
               "yes_bid": 0.43999999999999995,
-              "yes_ask": 0.47,
+              "yes_ask": 0.45999999999999996,
               "floor_strike": 84,
               "cap_strike": 85,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY06-B86.5",
               "label": "86\u00b0 to 87\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10460,6 +10740,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY06-B88.5",
               "label": "88\u00b0 to 89\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10471,6 +10752,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTLV-26MAY06-T89",
               "label": "90\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -10490,6 +10772,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTLV-26MAY06-T52",
               "label": "51\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -10501,6 +10784,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTLV-26MAY06-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10512,17 +10796,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLV-26MAY06-B54.5",
               "label": "54\u00b0 to 55\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.040000000000000036,
+              "p_market": 0.03500000000000003,
               "yes_bid": 0.030000000000000027,
-              "yes_ask": 0.050000000000000044,
+              "yes_ask": 0.040000000000000036,
               "floor_strike": 54,
               "cap_strike": 55,
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLV-26MAY06-B56.5",
               "label": "56\u00b0 to 57\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10534,6 +10820,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLV-26MAY06-B58.5",
               "label": "58\u00b0 to 59\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10545,6 +10832,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTLV-26MAY06-T59",
               "label": "60\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -10921,7 +11209,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:34.044508+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:12.573614+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -10941,28 +11229,31 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTSATX-26MAY05-T89",
               "label": "88\u00b0 or below",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.875,
-              "yes_bid": 0.86,
-              "yes_ask": 0.89,
+              "p_market": 0.845,
+              "yes_bid": 0.84,
+              "yes_ask": 0.85,
               "floor_strike": null,
               "cap_strike": 89,
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY05-B89.5",
               "label": "89\u00b0 to 90\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.125,
+              "p_market": 0.13,
               "yes_bid": 0.10999999999999999,
-              "yes_ask": 0.14,
+              "yes_ask": 0.15000000000000002,
               "floor_strike": 89,
               "cap_strike": 90,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY05-B91.5",
               "label": "91\u00b0 to 92\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10974,6 +11265,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY05-B93.5",
               "label": "93\u00b0 to 94\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10985,6 +11277,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY05-B95.5",
               "label": "95\u00b0 to 96\u00b0",
               "p_model": null,
               "p_final": null,
@@ -10996,6 +11289,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY05-T96",
               "label": "97\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -11015,6 +11309,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTSATX-26MAY05-T63",
               "label": "62\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -11026,6 +11321,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY05-B63.5",
               "label": "63\u00b0 to 64\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11037,6 +11333,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY05-B65.5",
               "label": "65\u00b0 to 66\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11048,6 +11345,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY05-B67.5",
               "label": "67\u00b0 to 68\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11059,6 +11357,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY05-B69.5",
               "label": "69\u00b0 to 70\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11070,6 +11369,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY05-T70",
               "label": "71\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -11092,6 +11392,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTSATX-26MAY06-T86",
               "label": "85\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -11103,6 +11404,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY06-B86.5",
               "label": "86\u00b0 to 87\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11114,17 +11416,19 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY06-B88.5",
               "label": "88\u00b0 to 89\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.21999999999999997,
-              "yes_bid": 0.20999999999999996,
-              "yes_ask": 0.22999999999999998,
+              "p_market": 0.19999999999999996,
+              "yes_bid": 0.18999999999999995,
+              "yes_ask": 0.20999999999999996,
               "floor_strike": 88,
               "cap_strike": 89,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY06-B90.5",
               "label": "90\u00b0 to 91\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11136,6 +11440,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY06-B92.5",
               "label": "92\u00b0 to 93\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11147,6 +11452,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTSATX-26MAY06-T93",
               "label": "94\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -11166,6 +11472,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTSATX-26MAY06-T68",
               "label": "67\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -11177,6 +11484,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY06-B68.5",
               "label": "68\u00b0 to 69\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11188,6 +11496,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY06-B70.5",
               "label": "70\u00b0 to 71\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11199,6 +11508,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY06-B72.5",
               "label": "72\u00b0 to 73\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11210,6 +11520,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY06-B74.5",
               "label": "74\u00b0 to 75\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11221,6 +11532,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTSATX-26MAY06-T75",
               "label": "76\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -11597,7 +11909,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:34.134228+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:16.654482+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -11617,6 +11929,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTDAL-26MAY05-T87",
               "label": "86\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -11628,55 +11941,60 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY05-B87.5",
               "label": "87\u00b0 to 88\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.07,
-              "yes_bid": 0.06000000000000005,
-              "yes_ask": 0.07999999999999996,
+              "p_market": 0.0050000000000000044,
+              "yes_bid": 0.0,
+              "yes_ask": 0.010000000000000009,
               "floor_strike": 87,
               "cap_strike": 88,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY05-B89.5",
               "label": "89\u00b0 to 90\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.5800000000000001,
-              "yes_bid": 0.5700000000000001,
-              "yes_ask": 0.5900000000000001,
+              "p_market": 0.605,
+              "yes_bid": 0.5800000000000001,
+              "yes_ask": 0.63,
               "floor_strike": 89,
               "cap_strike": 90,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY05-B91.5",
               "label": "91\u00b0 to 92\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.30000000000000004,
-              "yes_bid": 0.29000000000000004,
-              "yes_ask": 0.31000000000000005,
+              "p_market": 0.33,
+              "yes_bid": 0.30000000000000004,
+              "yes_ask": 0.36,
               "floor_strike": 91,
               "cap_strike": 92,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY05-B93.5",
               "label": "93\u00b0 to 94\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.10499999999999998,
-              "yes_bid": 0.09999999999999998,
-              "yes_ask": 0.10999999999999999,
+              "p_market": 0.065,
+              "yes_bid": 0.040000000000000036,
+              "yes_ask": 0.08999999999999997,
               "floor_strike": 93,
               "cap_strike": 94,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY05-T94",
               "label": "95\u00b0 or above",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.015000000000000013,
-              "yes_bid": 0.010000000000000009,
+              "p_market": 0.010000000000000009,
+              "yes_bid": 0.0,
               "yes_ask": 0.020000000000000018,
               "floor_strike": 94,
               "cap_strike": null,
@@ -11691,6 +12009,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTDAL-26MAY05-T64",
               "label": "63\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -11702,6 +12021,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY05-B64.5",
               "label": "64\u00b0 to 65\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11713,6 +12033,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY05-B66.5",
               "label": "66\u00b0 to 67\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11724,6 +12045,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY05-B68.5",
               "label": "68\u00b0 to 69\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11735,6 +12057,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY05-B70.5",
               "label": "70\u00b0 to 71\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11746,6 +12069,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY05-T71",
               "label": "72\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -11768,6 +12092,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTDAL-26MAY06-T74",
               "label": "73\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -11779,6 +12104,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY06-B74.5",
               "label": "74\u00b0 to 75\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11790,6 +12116,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY06-B76.5",
               "label": "76\u00b0 to 77\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11801,6 +12128,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY06-B78.5",
               "label": "78\u00b0 to 79\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11812,6 +12140,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY06-B80.5",
               "label": "80\u00b0 to 81\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11823,6 +12152,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDAL-26MAY06-T81",
               "label": "82\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -11842,6 +12172,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTDAL-26MAY06-T56",
               "label": "55\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -11853,6 +12184,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY06-B56.5",
               "label": "56\u00b0 to 57\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11864,6 +12196,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY06-B58.5",
               "label": "58\u00b0 to 59\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11875,6 +12208,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY06-B60.5",
               "label": "60\u00b0 to 61\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11886,6 +12220,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY06-B62.5",
               "label": "62\u00b0 to 63\u00b0",
               "p_model": null,
               "p_final": null,
@@ -11897,6 +12232,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDAL-26MAY06-T63",
               "label": "64\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -12273,7 +12609,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:38.552449+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:18.582739+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -12293,6 +12629,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTDC-26MAY05-T81",
               "label": "80\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -12304,6 +12641,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY05-B81.5",
               "label": "81\u00b0 to 82\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12315,6 +12653,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY05-B83.5",
               "label": "83\u00b0 to 84\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12326,28 +12665,31 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY05-B85.5",
               "label": "85\u00b0 to 86\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.94,
-              "yes_bid": 0.92,
-              "yes_ask": 0.96,
+              "p_market": 0.965,
+              "yes_bid": 0.96,
+              "yes_ask": 0.97,
               "floor_strike": 85,
               "cap_strike": 86,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY05-B87.5",
               "label": "87\u00b0 to 88\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.065,
-              "yes_bid": 0.030000000000000027,
-              "yes_ask": 0.09999999999999998,
+              "p_market": 0.050000000000000044,
+              "yes_bid": 0.040000000000000036,
+              "yes_ask": 0.06000000000000005,
               "floor_strike": 87,
               "cap_strike": 88,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY05-T88",
               "label": "89\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -12371,6 +12713,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTDC-26MAY05-T55",
               "label": "54\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -12382,6 +12725,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTDC-26MAY05-B55.5",
               "label": "55\u00b0 to 56\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12393,6 +12737,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDC-26MAY05-B57.5",
               "label": "57\u00b0 to 58\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12404,6 +12749,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDC-26MAY05-B59.5",
               "label": "59\u00b0 to 60\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12415,6 +12761,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDC-26MAY05-B61.5",
               "label": "61\u00b0 to 62\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12426,6 +12773,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDC-26MAY05-T62",
               "label": "63\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -12448,28 +12796,31 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTDC-26MAY06-T73",
               "label": "72\u00b0 or below",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.14500000000000002,
+              "p_market": 0.14,
               "yes_bid": 0.13,
-              "yes_ask": 0.16000000000000003,
+              "yes_ask": 0.15000000000000002,
               "floor_strike": null,
               "cap_strike": 73,
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY06-B73.5",
               "label": "73\u00b0 to 74\u00b0",
               "p_model": null,
               "p_final": null,
-              "p_market": 0.31,
+              "p_market": 0.30500000000000005,
               "yes_bid": 0.30000000000000004,
-              "yes_ask": 0.31999999999999995,
+              "yes_ask": 0.31000000000000005,
               "floor_strike": 73,
               "cap_strike": 74,
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY06-B75.5",
               "label": "75\u00b0 to 76\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12481,6 +12832,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY06-B77.5",
               "label": "77\u00b0 to 78\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12492,6 +12844,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY06-B79.5",
               "label": "79\u00b0 to 80\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12503,6 +12856,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTDC-26MAY06-T80",
               "label": "81\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -12522,6 +12876,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTDC-26MAY06-T59",
               "label": "58\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -12533,6 +12888,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTDC-26MAY06-B59.5",
               "label": "59\u00b0 to 60\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12544,6 +12900,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDC-26MAY06-B61.5",
               "label": "61\u00b0 to 62\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12555,6 +12912,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDC-26MAY06-B63.5",
               "label": "63\u00b0 to 64\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12566,6 +12924,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDC-26MAY06-B65.5",
               "label": "65\u00b0 to 66\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12577,6 +12936,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTDC-26MAY06-T66",
               "label": "67\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -12953,7 +13313,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T19:58:48.453046+00:00",
+      "fetched_at_utc": "2026-05-05T20:01:22.287340+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -12973,6 +13333,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTNOLA-26MAY05-T81",
               "label": "80\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -12984,6 +13345,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY05-B81.5",
               "label": "81\u00b0 to 82\u00b0",
               "p_model": null,
               "p_final": null,
@@ -12995,6 +13357,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY05-B83.5",
               "label": "83\u00b0 to 84\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13006,6 +13369,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY05-B85.5",
               "label": "85\u00b0 to 86\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13017,6 +13381,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY05-B87.5",
               "label": "87\u00b0 to 88\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13028,6 +13393,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY05-T88",
               "label": "89\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -13051,6 +13417,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTNOLA-26MAY05-T57",
               "label": "56\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -13062,6 +13429,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY05-B57.5",
               "label": "57\u00b0 to 58\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13073,6 +13441,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY05-B59.5",
               "label": "59\u00b0 to 60\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13084,6 +13453,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY05-B61.5",
               "label": "61\u00b0 to 62\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13095,6 +13465,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY05-B63.5",
               "label": "63\u00b0 to 64\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13106,6 +13477,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY05-T64",
               "label": "65\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -13128,6 +13500,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTNOLA-26MAY06-T85",
               "label": "84\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -13139,6 +13512,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY06-B85.5",
               "label": "85\u00b0 to 86\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13150,6 +13524,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY06-B87.5",
               "label": "87\u00b0 to 88\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13161,6 +13536,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY06-B89.5",
               "label": "89\u00b0 to 90\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13172,6 +13548,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY06-B91.5",
               "label": "91\u00b0 to 92\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13183,6 +13560,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTNOLA-26MAY06-T92",
               "label": "93\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -13202,6 +13580,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTNOLA-26MAY06-T66",
               "label": "65\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -13213,6 +13592,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY06-B66.5",
               "label": "66\u00b0 to 67\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13224,6 +13604,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY06-B68.5",
               "label": "68\u00b0 to 69\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13235,6 +13616,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY06-B70.5",
               "label": "70\u00b0 to 71\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13246,6 +13628,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY06-B72.5",
               "label": "72\u00b0 to 73\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13257,6 +13640,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTNOLA-26MAY06-T73",
               "label": "74\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -13653,6 +14037,7 @@
           "title": "HIGH \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXHIGHTHOU-26MAY05-T83",
               "label": "82\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -13664,6 +14049,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY05-B83.5",
               "label": "83\u00b0 to 84\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13675,6 +14061,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY05-B85.5",
               "label": "85\u00b0 to 86\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13686,6 +14073,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY05-B87.5",
               "label": "87\u00b0 to 88\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13697,6 +14085,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY05-B89.5",
               "label": "89\u00b0 to 90\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13708,6 +14097,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY05-T90",
               "label": "91\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -13727,6 +14117,7 @@
           "title": "LOW \u00b7 2026-05-05",
           "buckets": [
             {
+              "ticker": "KXLOWTHOU-26MAY05-T65",
               "label": "64\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -13738,6 +14129,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY05-B65.5",
               "label": "65\u00b0 to 66\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13749,6 +14141,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY05-B67.5",
               "label": "67\u00b0 to 68\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13760,6 +14153,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY05-B69.5",
               "label": "69\u00b0 to 70\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13771,6 +14165,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY05-B71.5",
               "label": "71\u00b0 to 72\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13782,6 +14177,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY05-T72",
               "label": "73\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -13804,6 +14200,7 @@
           "title": "HIGH \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXHIGHTHOU-26MAY06-T85",
               "label": "84\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -13815,6 +14212,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY06-B85.5",
               "label": "85\u00b0 to 86\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13826,6 +14224,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY06-B87.5",
               "label": "87\u00b0 to 88\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13837,6 +14236,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY06-B89.5",
               "label": "89\u00b0 to 90\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13848,6 +14248,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY06-B91.5",
               "label": "91\u00b0 to 92\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13859,6 +14260,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXHIGHTHOU-26MAY06-T92",
               "label": "93\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -13878,6 +14280,7 @@
           "title": "LOW \u00b7 2026-05-06",
           "buckets": [
             {
+              "ticker": "KXLOWTHOU-26MAY06-T69",
               "label": "68\u00b0 or below",
               "p_model": null,
               "p_final": null,
@@ -13889,6 +14292,7 @@
               "strike_type": "less"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY06-B69.5",
               "label": "69\u00b0 to 70\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13900,6 +14304,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY06-B71.5",
               "label": "71\u00b0 to 72\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13911,6 +14316,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY06-B73.5",
               "label": "73\u00b0 to 74\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13922,6 +14328,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY06-B75.5",
               "label": "75\u00b0 to 76\u00b0",
               "p_model": null,
               "p_final": null,
@@ -13933,6 +14340,7 @@
               "strike_type": "between"
             },
             {
+              "ticker": "KXLOWTHOU-26MAY06-T76",
               "label": "77\u00b0 or above",
               "p_model": null,
               "p_final": null,
@@ -14315,5 +14723,5 @@
     }
   ],
   "n_cities": 20,
-  "generated_at_utc": "2026-05-05T20:00:04.994948+00:00"
+  "generated_at_utc": "2026-05-05T20:01:24.393740+00:00"
 }

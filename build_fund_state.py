@@ -258,6 +258,7 @@ def _build_city_section(city) -> dict:
                     "day_D":         c["day_D"],
                     "title":         f"{c['side_label']} · {c['day_D'] or ''}",
                     "buckets": [{
+                        "ticker":    b.get("ticker"),
                         "label":     b.get("subtitle", ""),
                         "p_model":   None,
                         "p_final":   None,
@@ -273,44 +274,43 @@ def _build_city_section(city) -> dict:
             print(f"warn: {city.slug}: failed to load live_markets ({e})")
 
     # ── Per-city trained-model signals (only present once city has models)
+    # ── Critical: live_signals.json is refreshed by 13_live_signal which only
+    #     runs in the SLOW path (every 10 min).  live_markets.json is refreshed
+    #     every fast cycle (~90s).  We therefore use live_markets as the source
+    #     of truth for current bid/ask/p_market, and OVERLAY model_prob_yes /
+    #     p_final from live_signals onto the matching ticker.  This way the
+    #     displayed Kalshi prices update every 90s for trained cities, while
+    #     the model probabilities update every 10 min (which is fine — they
+    #     only change when new METARs arrive anyway, ~1 per hour).
     if sg_path.exists():
         try:
             sg = json.loads(sg_path.read_text())
             section["model_status"] = "trained"
-            # Replace bucket_charts with the model-overlaid version
-            groups = {}
+            # Build a ticker → signal map for fast lookup
+            sig_by_ticker = {}
             for s in sg.get("signals", []) or []:
-                groups.setdefault((s.get("series_ticker"), s.get("day_D")), []).append(s)
-            new_charts = []
-            for (series, day), items in groups.items():
-                if not series or not day:
-                    continue
-                items_sorted = sorted(items, key=_strike_sort)
-                buckets = []
-                for s in items_sorted:
-                    ask, bid = s.get("yes_ask"), s.get("yes_bid")
-                    mid = (float(ask) + float(bid)) / 2.0 if ask is not None and bid is not None else None
-                    buckets.append({
-                        "label":    s.get("yes_sub_title") or "",
-                        "p_model":  round(float(s.get("model_prob_yes") or 0), 3),
-                        "p_final":  round(float(s.get("p_final") or 0), 3),
-                        "p_market": round(float(mid), 3) if mid is not None else None,
-                        "yes_ask":  round(float(ask), 3) if ask is not None else None,
-                        "yes_bid":  round(float(bid), 3) if bid is not None else None,
-                        "floor_strike": s.get("floor_strike"),
-                        "cap_strike":   s.get("cap_strike"),
-                        "strike_type":  s.get("strike_type"),
-                    })
-                new_charts.append({
-                    "side_label":    items_sorted[0].get("side_label") or "",
-                    "series_ticker": series,
-                    "day_D":         day,
-                    "title":         f"{items_sorted[0].get('side_label') or ''} · {day}",
-                    "buckets":       buckets,
-                })
-            new_charts.sort(key=lambda c: (c["day_D"], 0 if c["side_label"] == "HIGH" else 1))
-            if new_charts:
-                section["bucket_charts"] = new_charts
+                t = s.get("ticker")
+                if t:
+                    sig_by_ticker[t] = s
+
+            # Walk the existing bucket_charts (built from live_markets above)
+            # and overlay model_prob_yes / p_final per matching ticker.  Keep
+            # the FRESH bid/ask/p_market from live_markets.
+            for chart in section["bucket_charts"]:
+                for b in chart["buckets"]:
+                    sig = sig_by_ticker.get(b.get("ticker"))
+                    if sig:
+                        b["p_model"] = round(float(sig.get("model_prob_yes") or 0), 3)
+                        b["p_final"] = round(float(sig.get("p_final") or 0), 3)
+                        # Keep the FRESH yes_bid/yes_ask/p_market from live_markets
+                        # — DO NOT overwrite from sig (which is up to 10 min old)
+                        # Only fill these if they were missing in live_markets
+                        if b.get("yes_bid") is None and sig.get("yes_bid") is not None:
+                            b["yes_bid"] = round(float(sig["yes_bid"]), 3)
+                        if b.get("yes_ask") is None and sig.get("yes_ask") is not None:
+                            b["yes_ask"] = round(float(sig["yes_ask"]), 3)
+                        if b.get("p_market") is None and b.get("yes_bid") is not None and b.get("yes_ask") is not None:
+                            b["p_market"] = round((b["yes_bid"] + b["yes_ask"]) / 2.0, 3)
 
             # Actionable signals → open positions
             for s in sg.get("signals", []) or []:
