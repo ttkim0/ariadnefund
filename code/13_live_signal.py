@@ -98,6 +98,31 @@ def utc_to_pst(ts):
     return utc_to_local_std(ts, 8)
 
 
+# Robust day_D parser: take it directly from the event ticker.  Kalshi
+# tempererature event tickers always end in YYMMMDD, e.g.
+# 'KXHIGHNY-26MAY05' or 'KXLOWTSFO-26MAY06'.  Computing day_D from
+# strike_date arithmetic was buggy under DST — Kalshi's strike_date
+# encodes "end of contract day in local CIVIL time" (which observes DST),
+# but our subtraction used the local STANDARD offset (no DST).  For NYC
+# in May (EDT), this caused HIGH events to land one day early.
+import re as _re
+_MONTHS = {"JAN":1,"FEB":2,"MAR":3,"APR":4,"MAY":5,"JUN":6,
+           "JUL":7,"AUG":8,"SEP":9,"OCT":10,"NOV":11,"DEC":12}
+_TICKER_DAY_RE = _re.compile(r'-(\d{2})([A-Z]{3})(\d{2})$')
+
+
+def event_ticker_to_day(event_ticker: str):
+    if not event_ticker:
+        return None
+    m = _TICKER_DAY_RE.search(event_ticker)
+    if not m:
+        return None
+    yy, mon, dd = int(m.group(1)), m.group(2), int(m.group(3))
+    if mon not in _MONTHS:
+        return None
+    return pd.Timestamp(year=2000 + yy, month=_MONTHS[mon], day=dd)
+
+
 def isotonic(qpred: np.ndarray) -> np.ndarray:
     return np.maximum.accumulate(qpred, axis=1)
 
@@ -231,9 +256,16 @@ def main():
         if not markets:
             continue
         kind = "low" if e["_series_ticker"] == low_series else "high"
-        # day_D = strike_date in local std - 1d
-        sd_local = utc_to_local_std(e["strike_date"], offset_h)
-        day_D = (sd_local - pd.Timedelta(days=1)).floor("D")
+        # day_D — parsed directly from the event ticker (e.g. KXHIGHNY-26MAY05
+        # → 2026-05-05).  Earlier we tried to derive this from strike_date
+        # via fixed local-standard offsets, but Kalshi reports strike_date in
+        # local-civil time (with DST), so the math was off by a day for
+        # cities in DST.  The event ticker is the unambiguous source.
+        day_D = event_ticker_to_day(e.get("event_ticker"))
+        if day_D is None:
+            # extremely defensive fallback
+            sd_local = utc_to_local_std(e["strike_date"], offset_h)
+            day_D = (sd_local - pd.Timedelta(days=1)).floor("D")
         hours_to_settle = ((day_D + pd.Timedelta(days=1)) - issued).total_seconds() / 3600.0
         if hours_to_settle <= 0:
             continue
