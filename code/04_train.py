@@ -21,7 +21,9 @@ Design:
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 import time
 import warnings
 from pathlib import Path
@@ -33,18 +35,19 @@ from sklearn.ensemble import HistGradientBoostingRegressor
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
-FEAT_PATH = ROOT / "data" / "sfo_features.parquet"
-TARG_PATH = ROOT / "data" / "sfo_targets.parquet"
-MODEL_DIR = ROOT / "models"
-METRICS_PATH = ROOT / "reports" / "train_metrics.json"
-SUMMARY_PATH = ROOT / "reports" / "train_summary.md"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
+
+ROOT = REPO_ROOT
 
 HORIZONS = [1, 3, 6, 12, 24, 48, 72]
 QUANTILES = [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
 
-TRAIN_END = pd.Timestamp("2019-12-31 23:00:00")
-VAL_END = pd.Timestamp("2022-12-31 23:00:00")  # test starts 2023-01-01
+# SFO defaults — for shorter-history cities we derive cutoffs from data range
+# at runtime (see derive_cutoffs()).
+DEFAULT_TRAIN_END = pd.Timestamp("2019-12-31 23:00:00")
+DEFAULT_VAL_END   = pd.Timestamp("2022-12-31 23:00:00")
 
 # Hyperparameters. Tuned to be robust across all (horizon, quantile) pairs.
 HGB_PARAMS = dict(
@@ -72,7 +75,27 @@ def coverage(y_true: np.ndarray, y_pred: np.ndarray, q: float) -> float:
     return float(np.mean(y_true <= y_pred))
 
 
-def prepare_xy(features: pd.DataFrame, targets: pd.DataFrame, h: int):
+def derive_cutoffs(df: pd.DataFrame) -> tuple[pd.Timestamp, pd.Timestamp]:
+    """Pick train/val cutoffs.  If SFO defaults sit comfortably inside the
+    available range (>=2 years of data after DEFAULT_VAL_END as a test
+    holdout), use them.  Otherwise split by ratio: 80% train, 10% val,
+    10% held-out test.  This handles cities like OKC whose LCD only
+    covers 2023+."""
+    earliest = df["hour"].min()
+    latest   = df["hour"].max()
+    if earliest <= DEFAULT_TRAIN_END - pd.Timedelta(days=365 * 5) \
+       and latest >= DEFAULT_VAL_END + pd.Timedelta(days=365):
+        return DEFAULT_TRAIN_END, DEFAULT_VAL_END
+    span = latest - earliest
+    train_end = earliest + span * 0.80
+    val_end   = earliest + span * 0.90
+    train_end = train_end.floor("h")
+    val_end   = val_end.floor("h")
+    return train_end, val_end
+
+
+def prepare_xy(features: pd.DataFrame, targets: pd.DataFrame, h: int,
+               train_end: pd.Timestamp, val_end: pd.Timestamp):
     target_col = f"temp_f_h{h}"
     df = features.copy()
     df[target_col] = targets[target_col].values
@@ -84,8 +107,8 @@ def prepare_xy(features: pd.DataFrame, targets: pd.DataFrame, h: int):
     earliest = df["hour"].min() + pd.Timedelta(hours=336 + 24)  # max LAG_HOURS + safety
     df = df[df["hour"] >= earliest].copy()
 
-    train = df[df["hour"] <= TRAIN_END]
-    val = df[(df["hour"] > TRAIN_END) & (df["hour"] <= VAL_END)]
+    train = df[df["hour"] <= train_end]
+    val = df[(df["hour"] > train_end) & (df["hour"] <= val_end)]
 
     feature_cols = [c for c in df.columns if c not in {"hour", target_col}]
 
@@ -111,26 +134,39 @@ def prepare_xy(features: pd.DataFrame, targets: pd.DataFrame, h: int):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo", help="city slug (default: sfo)")
+    args = ap.parse_args()
+    city = get_city(args.city)
+
+    FEAT_PATH = city.features_path
+    TARG_PATH = city.targets_path
+    MODEL_DIR = city.models_dir
+    METRICS_PATH = REPO_ROOT / "reports" / f"train_metrics_{city.slug}.json"
+    SUMMARY_PATH = REPO_ROOT / "reports" / f"train_summary_{city.slug}.md"
+
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
-    print(f"[train] reading features {FEAT_PATH}", flush=True)
+    print(f"[train:{city.slug}] reading features {FEAT_PATH}", flush=True)
     features = pd.read_parquet(FEAT_PATH)
-    print(f"[train] reading targets {TARG_PATH}", flush=True)
+    print(f"[train:{city.slug}] reading targets {TARG_PATH}", flush=True)
     targets = pd.read_parquet(TARG_PATH)
     assert (features["hour"].values == targets["hour"].values).all()
 
-    print(f"[train] features shape: {features.shape}", flush=True)
-    print(f"[train] training horizons {HORIZONS}, quantiles {QUANTILES}", flush=True)
+    train_end, val_end = derive_cutoffs(features)
+    print(f"[train:{city.slug}] cutoffs: train_end={train_end}, val_end={val_end}", flush=True)
+    print(f"[train:{city.slug}] features shape: {features.shape}", flush=True)
+    print(f"[train:{city.slug}] training horizons {HORIZONS}, quantiles {QUANTILES}", flush=True)
 
     metrics = {}
     feature_cols_used: list[str] | None = None
 
     total_start = time.time()
     for h in HORIZONS:
-        print(f"\n[train] === horizon h={h}h ===", flush=True)
-        X_train, y_train, X_val, y_val, feat_cols = prepare_xy(features, targets, h)
+        print(f"\n[train:{city.slug}] === horizon h={h}h ===", flush=True)
+        X_train, y_train, X_val, y_val, feat_cols = prepare_xy(features, targets, h, train_end, val_end)
         if feature_cols_used is None:
             feature_cols_used = feat_cols
-        print(f"[train]   train rows {len(y_train):,}, val rows {len(y_val):,}, "
+        print(f"[train:{city.slug}]   train rows {len(y_train):,}, val rows {len(y_val):,}, "
               f"features {len(feat_cols)}", flush=True)
 
         h_metrics = {"train_rows": len(y_train), "val_rows": len(y_val)}
@@ -159,7 +195,7 @@ def main():
                 "pinball_val": pl_val,
                 "coverage_val": cov_val,
                 "fit_seconds": elapsed,
-                "model_path": str(mpath.relative_to(ROOT)),
+                "model_path": str(mpath.relative_to(REPO_ROOT)),
             }
 
         metrics[f"h{h}"] = h_metrics
@@ -170,10 +206,11 @@ def main():
     # Save metrics + feature column order (needed for inference).
     METRICS_PATH.parent.mkdir(parents=True, exist_ok=True)
     METRICS_PATH.write_text(json.dumps({
+        "city": city.slug,
         "horizons": HORIZONS,
         "quantiles": QUANTILES,
-        "train_end": str(TRAIN_END),
-        "val_end": str(VAL_END),
+        "train_end": str(train_end),
+        "val_end": str(val_end),
         "feature_cols": feature_cols_used,
         "hgb_params": {k: v for k, v in HGB_PARAMS.items() if k != "quantile"},
         "metrics": metrics,
@@ -182,8 +219,8 @@ def main():
     print(f"[train] wrote {METRICS_PATH}", flush=True)
 
     # Markdown summary
-    lines = ["# Training Summary\n",
-             f"- Train end: **{TRAIN_END}**, Validation end: **{VAL_END}**",
+    lines = [f"# Training Summary — {city.slug}\n",
+             f"- Train end: **{train_end}**, Validation end: **{val_end}**",
              f"- Horizons: {HORIZONS}",
              f"- Quantiles: {QUANTILES}",
              f"- Total wall time: **{total_elapsed/60:.1f} min**",

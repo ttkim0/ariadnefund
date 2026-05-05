@@ -31,7 +31,9 @@ Outputs:
 
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 import time
 from pathlib import Path
 
@@ -40,20 +42,14 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import HistGradientBoostingRegressor
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
-HOURLY_PATH = ROOT / "data" / "sfo_hourly.parquet"
-FEATURES_PATH = ROOT / "data" / "sfo_features.parquet"
-TRAIN_META_PATH = ROOT / "reports" / "train_metrics.json"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
 
-MODEL_DIR = ROOT / "models"
-METRICS_OUT = ROOT / "reports" / "daily_extreme_metrics.json"
-SUMMARY_OUT = ROOT / "reports" / "daily_extreme_summary.md"
+ROOT = REPO_ROOT
 
 QUANTILES = [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
-KIND_DAY_OFFSETS = [0, 1, 2, 3]  # day(t)+k as the target day D
-
-TRAIN_END = pd.Timestamp("2019-12-31 23:00:00")
-VAL_END = pd.Timestamp("2022-12-31 23:00:00")  # test starts 2023-01-01
+KIND_DAY_OFFSETS = [0, 1, 2, 3]
 
 HGB_PARAMS = dict(
     loss="quantile",
@@ -90,12 +86,30 @@ def coverage(y, yhat, q):
 
 
 def main():
-    print("[dx] loading inputs ...", flush=True)
-    hourly = pd.read_parquet(HOURLY_PATH)
-    features = pd.read_parquet(FEATURES_PATH)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo")
+    args = ap.parse_args()
+    city = get_city(args.city)
+
+    HOURLY_PATH = city.hourly_path
+    FEATURES_PATH = city.features_path
+    TRAIN_META_PATH = REPO_ROOT / "reports" / f"train_metrics_{city.slug}.json"
+    MODEL_DIR = city.models_dir
+    METRICS_OUT = REPO_ROOT / "reports" / f"daily_extreme_metrics_{city.slug}.json"
+    SUMMARY_OUT = REPO_ROOT / "reports" / f"daily_extreme_summary_{city.slug}.md"
+
     meta = json.loads(TRAIN_META_PATH.read_text())
+    TRAIN_END = pd.Timestamp(meta["train_end"])
+    VAL_END   = pd.Timestamp(meta["val_end"])
+
+    print(f"[dx:{city.slug}] loading inputs ...", flush=True)
+    hourly = pd.read_parquet(HOURLY_PATH)
+    if "timezone" in hourly.columns:
+        hourly = hourly.drop(columns=["timezone"])
+    features = pd.read_parquet(FEATURES_PATH)
     fcols = meta["feature_cols"]
-    print(f"[dx] hourly {len(hourly):,}, features {features.shape}", flush=True)
+    print(f"[dx:{city.slug}] hourly {len(hourly):,}, features {features.shape}, "
+          f"train_end={TRAIN_END}, val_end={VAL_END}", flush=True)
 
     # 1. Compute daily extremes (PST calendar day) on the hourly grid.
     h = hourly[["hour", "temp_f"]].dropna(subset=["temp_f"]).copy()
@@ -187,22 +201,23 @@ def main():
                 "pinball_val": pl_v,
                 "coverage_val": cov_v,
                 "fit_seconds": elapsed,
-                "model_path": str(mpath.relative_to(ROOT)),
+                "model_path": str(mpath.relative_to(REPO_ROOT)),
             }
         train_metrics[kind] = kmetrics
 
     METRICS_OUT.parent.mkdir(parents=True, exist_ok=True)
     METRICS_OUT.write_text(json.dumps({
+        "city": city.slug,
         "quantiles": QUANTILES,
         "train_end": str(TRAIN_END),
         "val_end": str(VAL_END),
         "feature_cols": feature_cols_used,
         "metrics": train_metrics,
     }, indent=2))
-    print(f"\n[dx] wrote {METRICS_OUT}", flush=True)
+    print(f"\n[dx:{city.slug}] wrote {METRICS_OUT}", flush=True)
 
     # Summary
-    lines = ["# Daily Extreme Quantile Training Summary\n",
+    lines = [f"# Daily Extreme Quantile Training Summary — {city.slug}\n",
              f"- Train ends: {TRAIN_END}, Val ends: {VAL_END}",
              f"- Quantiles: {QUANTILES}",
              ""]

@@ -45,6 +45,14 @@ logs/.last_auto_push
 logs/.last_slow_refresh
 logs/.refresh.lock
 
+# Per-city trained models (5+ GB total across 19 cities × 63 models each).
+# Re-train on a fresh checkout via:  bash code/train_all_cities.sh
+# SFO's flat models/*.joblib remain tracked.
+models/*/
+
+# Per-city test predictions parquets (regenerable from models)
+data/*_test_predictions.parquet
+
 # ============================================================
 # Reference PDFs (third-party arXiv papers we cite — not ours)
 # ============================================================

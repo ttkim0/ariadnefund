@@ -31,19 +31,19 @@ Key design choices:
 
 from __future__ import annotations
 
+import argparse
 import math
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
-HOURLY_PATH = ROOT / "data" / "sfo_hourly.parquet"
-DAILY_PATH = ROOT / "data" / "sfo_daily.parquet"
-FEAT_OUT = ROOT / "data" / "sfo_features.parquet"
-TARG_OUT = ROOT / "data" / "sfo_targets.parquet"
-CLIM_OUT = ROOT / "data" / "sfo_climatology.parquet"
-SUMMARY_PATH = ROOT / "reports" / "feature_summary.md"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+import sys
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
+
+ROOT = REPO_ROOT  # back-compat for any lingering references
 
 # Forecast horizons (hours ahead) — what we want to predict.
 HORIZONS = [1, 3, 6, 12, 24, 48, 72]
@@ -267,11 +267,26 @@ def build_targets(df: pd.DataFrame) -> pd.DataFrame:
 # ---------- Main ----------
 
 def main():
-    print(f"[features] reading {HOURLY_PATH}", flush=True)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo", help="city slug (default: sfo)")
+    args = ap.parse_args()
+    city = get_city(args.city)
+
+    HOURLY_PATH = city.hourly_path
+    DAILY_PATH  = city.daily_path
+    FEAT_OUT    = city.features_path
+    TARG_OUT    = city.targets_path
+    CLIM_OUT    = city.climatology_path
+    SUMMARY_PATH = REPO_ROOT / "reports" / f"feature_summary_{city.slug}.md"
+
+    print(f"[features:{city.slug}] reading {HOURLY_PATH}", flush=True)
     df = pd.read_parquet(HOURLY_PATH)
-    print(f"[features] hourly rows: {len(df):,}", flush=True)
+    # tolerate the multi-city schema which has a 'timezone' column
+    if "timezone" in df.columns:
+        df = df.drop(columns=["timezone"])
+    print(f"[features:{city.slug}] hourly rows: {len(df):,}", flush=True)
     daily = pd.read_parquet(DAILY_PATH)
-    print(f"[features] daily rows: {len(daily):,}", flush=True)
+    print(f"[features:{city.slug}] daily rows: {len(daily):,}", flush=True)
 
     df = df.sort_values("hour").reset_index(drop=True)
 

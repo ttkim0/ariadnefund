@@ -78,6 +78,9 @@ if [ "${slow_age}" -ge "${SLOW_INTERVAL}" ]; then
     run_step "multi-city METAR refresh"   "${PY}" code/14b_multi_refresh_metar.py --hours 24
     run_step "hourly forecast (sfo)"      "${PY}" code/06_predict.py
     run_step "dashboard (sfo)"            "${PY}" code/15_dashboard.py
+    # Run 13_live_signal for every city that has finished training.
+    # Skips untrained cities silently (the script self-guards).
+    run_step "live signals (all trained)" bash code/13c_live_signal_all_trained.sh
     date +%s > "${SLOW_FLAG}"
 else
     log "(slow steps: last ran ${slow_age}s ago, <${SLOW_INTERVAL}s — skipping)"

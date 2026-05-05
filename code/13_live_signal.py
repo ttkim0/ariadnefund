@@ -38,16 +38,25 @@ import joblib
 import numpy as np
 import pandas as pd
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
-FEAT_PATH = ROOT / "data" / "sfo_features.parquet"
-DX_META = ROOT / "reports" / "daily_extreme_metrics.json"
-META_PATH = ROOT / "models" / "meta_calibrator.joblib"
-MODEL_DIR = ROOT / "models"
-SIGNALS_JSON = ROOT / "reports" / "live_signals.json"
-SIGNALS_MD = ROOT / "reports" / "live_signals.md"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+import sys as _sys
+_sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
+
+ROOT = REPO_ROOT
+
+# Local-standard-time UTC offset by IANA timezone (no DST).  Used to convert
+# Kalshi's strike_date (UTC) into the city's local civil day for matching to
+# the LCD/feature parquet (which uses local-standard time).
+_LOCAL_STD_OFFSET_H = {
+    "America/Los_Angeles": 8,
+    "America/Denver":      7,
+    "America/Phoenix":     7,
+    "America/Chicago":     6,
+    "America/New_York":    5,
+}
 
 API = "https://api.elections.kalshi.com/trade-api/v2"
-SERIES = ["KXHIGHTSFO", "KXLOWTSFO"]
 QUANTILES = [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
 KELLY_MULT = 0.25
 MAX_FRACTION = 0.05
@@ -74,11 +83,19 @@ def http_get(url: str, retries: int = 3) -> dict:
     raise RuntimeError(f"GET {url}: {last_err}")
 
 
-def utc_to_pst(ts) -> pd.Timestamp:
+def utc_to_local_std(ts, offset_h: int) -> pd.Timestamp:
+    """Convert a UTC timestamp to the city's LOCAL STANDARD time (no DST).
+    Returns a tz-naive pandas Timestamp.  Matches the time base of LCD-derived
+    parquet files."""
     t = pd.Timestamp(ts)
     if t.tzinfo is not None:
         t = t.tz_convert("UTC").tz_localize(None)
-    return t - pd.Timedelta(hours=8)
+    return t - pd.Timedelta(hours=offset_h)
+
+
+# back-compat alias
+def utc_to_pst(ts):
+    return utc_to_local_std(ts, 8)
 
 
 def isotonic(qpred: np.ndarray) -> np.ndarray:
@@ -132,12 +149,46 @@ def fetch_recent_candle(series_ticker: str, market_ticker: str) -> dict | None:
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo")
     ap.add_argument("--issued", default=None,
-                    help="Issuance timestamp PST (default: latest available feature row)")
+                    help="Issuance timestamp local std time (default: latest feature row)")
     args = ap.parse_args()
+    city = get_city(args.city)
 
-    print("[live] loading features + models", flush=True)
+    FEAT_PATH    = city.features_path
+    DX_META      = REPO_ROOT / "reports" / f"daily_extreme_metrics_{city.slug}.json"
+    META_PATH    = city.models_dir / "meta_calibrator.joblib"
+    MODEL_DIR    = city.models_dir
+    SIGNALS_JSON = city.live_signals_path
+    SIGNALS_MD   = REPO_ROOT / "reports" / f"live_signals_{city.slug}.md"
+
+    # SFO legacy paths — fall back to old locations
+    if city.slug == "sfo" and not DX_META.exists():
+        DX_META = REPO_ROOT / "reports" / "daily_extreme_metrics.json"
+    if city.slug == "sfo" and not META_PATH.exists():
+        META_PATH = REPO_ROOT / "models" / "meta_calibrator.joblib"
+    if city.slug == "sfo":
+        # Keep writing the legacy paths too so existing readers keep working
+        SIGNALS_JSON = REPO_ROOT / "reports" / "live_signals.json"
+        SIGNALS_MD   = REPO_ROOT / "reports" / "live_signals.md"
+        if not (city.models_dir / "dxmodel_high_q50.joblib").exists():
+            MODEL_DIR = REPO_ROOT / "models"
+
+    series_list = city.kalshi_series()  # [HIGH] and/or [LOW] tickers
+    if not series_list:
+        print(f"[live:{city.slug}] no Kalshi series configured; skipping")
+        return
+
+    if not DX_META.exists():
+        print(f"[live:{city.slug}] no daily-extreme metrics — train 09 for this city first; skipping")
+        return
+
+    offset_h = _LOCAL_STD_OFFSET_H.get(city.timezone, 8)
+
+    print(f"[live:{city.slug}] loading features + models", flush=True)
     features = pd.read_parquet(FEAT_PATH)
+    if "timezone" in features.columns:
+        features = features.drop(columns=["timezone"])
     dx_meta = json.loads(DX_META.read_text())
     fcols = dx_meta["feature_cols"]   # includes hours_to_settle at the end
 
@@ -146,31 +197,32 @@ def main():
     else:
         valid = features[features["temp_f"].notna()]
         issued = valid["hour"].max()
-    print(f"[live] issuance time (PST): {issued}", flush=True)
+    print(f"[live:{city.slug}] issuance time (local std): {issued}", flush=True)
 
     feat_row_base = features.loc[features["hour"].eq(issued)]
     if feat_row_base.empty:
         raise SystemExit(f"No feature row for {issued}")
     feat_row_base = feat_row_base.iloc[0]
 
-    # Fetch open events + markets
-    print("[live] fetching open Kalshi events ...", flush=True)
+    # Fetch open events + markets for this city's Kalshi series only
+    print(f"[live:{city.slug}] fetching open Kalshi events for {series_list} ...", flush=True)
     all_events = []
-    for s in SERIES:
+    low_series = city.kalshi.low_series
+    for s in series_list:
         ev_markets = fetch_open_markets(s)
         for e, ms in ev_markets:
             e["_series_ticker"] = s
             all_events.append((e, ms))
-    print(f"[live] open events: {len(all_events)}", flush=True)
+    print(f"[live:{city.slug}] open events: {len(all_events)}", flush=True)
 
-    # Optional meta-calibrator
+    # Optional meta-calibrator (only SFO has one trained)
     meta = None
     if META_PATH.exists():
         try:
             meta = joblib.load(META_PATH)
         except Exception:
             meta = None
-    print(f"[live] meta calibrator: {'loaded' if meta else 'not found'}", flush=True)
+    print(f"[live:{city.slug}] meta calibrator: {'loaded' if meta else 'not found'}", flush=True)
 
     qs_arr = np.array(QUANTILES)
     signals = []
@@ -178,10 +230,10 @@ def main():
     for e, markets in all_events:
         if not markets:
             continue
-        kind = "low" if e["_series_ticker"] == "KXLOWTSFO" else "high"
-        # day_D = strike_date_pst - 1d
-        sd_pst = utc_to_pst(e["strike_date"])
-        day_D = (sd_pst - pd.Timedelta(days=1)).floor("D")
+        kind = "low" if e["_series_ticker"] == low_series else "high"
+        # day_D = strike_date in local std - 1d
+        sd_local = utc_to_local_std(e["strike_date"], offset_h)
+        day_D = (sd_local - pd.Timedelta(days=1)).floor("D")
         hours_to_settle = ((day_D + pd.Timedelta(days=1)) - issued).total_seconds() / 3600.0
         if hours_to_settle <= 0:
             continue
@@ -350,7 +402,9 @@ def main():
 
     SIGNALS_JSON.parent.mkdir(parents=True, exist_ok=True)
     SIGNALS_JSON.write_text(json.dumps({
-        "issued_pst": str(issued),
+        "city": city.slug,
+        "issued_local_std": str(issued),
+        "issued_pst": str(issued),  # legacy alias for backwards compat
         "n_signals": len(signals),
         "n_actionable": sum(1 for s in signals if s["trade_side"] is not None),
         "signals": signals,
@@ -358,18 +412,14 @@ def main():
 
     # Markdown
     now = pd.Timestamp.utcnow().tz_localize(None)
-    age_hours = (now - (issued + pd.Timedelta(hours=8))).total_seconds() / 3600.0
+    age_hours = (now - (issued + pd.Timedelta(hours=offset_h))).total_seconds() / 3600.0
     stale_warning = ""
     if age_hours > 12:
-        stale_warning = (f"\n> ⚠️  **STALE DATA WARNING**: Forecast features are from "
-                         f"**{age_hours:.0f}h ago**. Live trading needs fresh NOAA "
-                         f"observations. See `code/14_refresh_noaa.py` (TODO) to update "
-                         f"the hourly grid with the latest METARs before generating signals. "
-                         f"The signals below may show artificial 'edge' that disappears "
-                         f"once the model sees current observations.\n")
+        stale_warning = (f"\n> ⚠️  **STALE DATA**: features are from {age_hours:.0f}h ago. "
+                         f"Run code/14b_multi_refresh_metar.py to pull latest METARs.\n")
 
-    lines = [f"# Live SFO Weather Trading Signals\n",
-             f"Issued at **{issued} PST** (= {issued + pd.Timedelta(hours=8)} UTC).",
+    lines = [f"# Live Trading Signals — {city.slug.upper()} ({city.icao})\n",
+             f"Issued at **{issued} local-std** (UTC-{offset_h}, no DST).",
              f"All Kalshi prices in dollars (1.00 = settles YES).{stale_warning}\n",
              "## Actionable trades (EV ≥ $0.02/contract after fees, sorted by EV)\n"]
     actionable = [s for s in signals if s["trade_side"] is not None]

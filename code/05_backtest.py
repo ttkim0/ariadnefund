@@ -33,25 +33,25 @@ Bucket evaluation:
 
 from __future__ import annotations
 
+import argparse
 import json
 import math
+import sys
 from pathlib import Path
 
 import joblib
 import numpy as np
 import pandas as pd
 
-ROOT = Path("/Users/terrykim/Documents/SF Weather")
-FEAT_PATH = ROOT / "data" / "sfo_features.parquet"
-TARG_PATH = ROOT / "data" / "sfo_targets.parquet"
-MODEL_DIR = ROOT / "models"
-TRAIN_META_PATH = ROOT / "reports" / "train_metrics.json"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from cities_config import get_city  # noqa: E402
 
-PRED_OUT = ROOT / "data" / "test_predictions.parquet"
-METRICS_OUT = ROOT / "reports" / "backtest_metrics.json"
-SUMMARY_OUT = ROOT / "reports" / "backtest_summary.md"
+ROOT = REPO_ROOT
 
-TEST_START = pd.Timestamp("2023-01-01 00:00:00")
+# Default test start; for short-history cities we fall back to "after val_end
+# from the training metrics file" automatically.
+DEFAULT_TEST_START = pd.Timestamp("2023-01-01 00:00:00")
 
 HORIZONS = [1, 3, 6, 12, 24, 48, 72]
 QUANTILES = [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
@@ -150,34 +150,56 @@ def normal_bucket_probs(mean: np.ndarray, std: np.ndarray, edges) -> np.ndarray:
     return out / s
 
 
-def load_models(horizons, quantiles):
+def load_models(model_dir: Path, horizons, quantiles):
     models = {}
     for h in horizons:
         for q in quantiles:
-            mpath = MODEL_DIR / f"qmodel_h{h}_q{int(q*100):02d}.joblib"
+            mpath = model_dir / f"qmodel_h{h}_q{int(q*100):02d}.joblib"
             models[(h, q)] = joblib.load(mpath)
     print(f"[backtest] loaded {len(models)} models", flush=True)
     return models
 
 
 def main():
-    print("[backtest] loading features/targets...", flush=True)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--city", default="sfo")
+    args = ap.parse_args()
+    city = get_city(args.city)
+
+    FEAT_PATH = city.features_path
+    TARG_PATH = city.targets_path
+    MODEL_DIR = city.models_dir
+    TRAIN_META_PATH = REPO_ROOT / "reports" / f"train_metrics_{city.slug}.json"
+    PRED_OUT    = REPO_ROOT / "data"    / f"{city.slug}_test_predictions.parquet"
+    METRICS_OUT = REPO_ROOT / "reports" / f"backtest_metrics_{city.slug}.json"
+    SUMMARY_OUT = REPO_ROOT / "reports" / f"backtest_summary_{city.slug}.md"
+
+    print(f"[backtest:{city.slug}] loading features/targets...", flush=True)
     features = pd.read_parquet(FEAT_PATH)
     targets = pd.read_parquet(TARG_PATH)
 
     meta = json.loads(TRAIN_META_PATH.read_text())
     feature_cols = meta["feature_cols"]
-    print(f"[backtest] {len(feature_cols)} features", flush=True)
+    print(f"[backtest:{city.slug}] {len(feature_cols)} features", flush=True)
 
-    test_mask = features["hour"] >= TEST_START
+    # Test window: anything strictly after the validation cutoff used at train time.
+    val_end = pd.Timestamp(meta["val_end"])
+    test_start = max(DEFAULT_TEST_START, val_end + pd.Timedelta(hours=1))
+
+    test_mask = features["hour"] >= test_start
     feat_test = features.loc[test_mask].reset_index(drop=True)
     targ_test = targets.loc[test_mask].reset_index(drop=True)
-    print(f"[backtest] test rows: {len(feat_test):,} ({feat_test['hour'].min()} → {feat_test['hour'].max()})", flush=True)
+    if len(feat_test) == 0:
+        print(f"[backtest:{city.slug}] WARN: no test rows after {test_start}; skipping", flush=True)
+        # still write empty metrics so downstream doesn't crash
+        METRICS_OUT.write_text(json.dumps({"city": city.slug, "horizon_metrics": {}, "bucket_metrics": {}, "test_start": str(test_start), "n": 0}, indent=2))
+        return
+    print(f"[backtest:{city.slug}] test rows: {len(feat_test):,} ({feat_test['hour'].min()} → {feat_test['hour'].max()})", flush=True)
 
     X_test = to_f32(feat_test, feature_cols)
     print(f"[backtest] X_test shape: {X_test.shape}", flush=True)
 
-    models = load_models(HORIZONS, QUANTILES)
+    models = load_models(MODEL_DIR, HORIZONS, QUANTILES)
 
     # Pre-compute climatology mean/std at the FORECAST VALID time (t + h).
     # We do this by shifting clim_mean_smooth / clim_std_smooth by -h hours.
@@ -307,7 +329,8 @@ def main():
 
     # Save metrics
     out = {
-        "test_start": str(TEST_START),
+        "city": city.slug,
+        "test_start": str(test_start),
         "horizons": HORIZONS,
         "quantiles": QUANTILES,
         "bucket_edges": BUCKET_EDGES,
@@ -318,8 +341,8 @@ def main():
     print(f"[backtest] wrote {METRICS_OUT}", flush=True)
 
     # Markdown summary
-    lines = ["# Backtest Summary\n",
-             f"Test window: **{TEST_START}** → end of data\n"]
+    lines = [f"# Backtest Summary — {city.slug}\n",
+             f"Test window: **{test_start}** → end of data\n"]
     lines.append("## Point forecast accuracy (median = q0.50)\n")
     lines.append("| horizon | n | MAE | RMSE | Bias | Persist MAE | Clim MAE | Skill vs Persist | Skill vs Clim |")
     lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|")
