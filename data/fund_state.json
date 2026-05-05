@@ -49,6 +49,17 @@
         "kelly_used": 0.05
       },
       {
+        "ticker": "KXLOWTSFO-26MAY04-B54.5",
+        "side": "NO",
+        "bucket": "54\u00b0 to 55\u00b0",
+        "day": "2026-05-04",
+        "cost": 0.08,
+        "p_model": 0.922,
+        "p_final": 0.726,
+        "ev_per_c": 0.1844,
+        "kelly_used": 0.05
+      },
+      {
         "ticker": "KXHIGHTSFO-26MAY05-B66.5",
         "side": "YES",
         "bucket": "66\u00b0 to 67\u00b0",
@@ -71,62 +82,29 @@
         "kelly_used": 0.0367
       },
       {
-        "ticker": "KXLOWTSFO-26MAY04-B54.5",
-        "side": "NO",
-        "bucket": "54\u00b0 to 55\u00b0",
-        "day": "2026-05-04",
-        "cost": 0.14,
-        "p_model": 0.922,
-        "p_final": 0.726,
-        "ev_per_c": 0.1244,
-        "kelly_used": 0.0391
-      },
-      {
         "ticker": "KXLOWTSFO-26MAY04-B52.5",
         "side": "YES",
         "bucket": "52\u00b0 to 53\u00b0",
         "day": "2026-05-04",
-        "cost": 0.14,
+        "cost": 0.13,
         "p_model": 0.078,
-        "p_final": 0.268,
-        "ev_per_c": 0.1179,
-        "kelly_used": 0.0372
-      },
-      {
-        "ticker": "KXHIGHTSFO-26MAY05-B60.5",
-        "side": "NO",
-        "bucket": "60\u00b0 to 61\u00b0",
-        "day": "2026-05-05",
-        "cost": 0.87,
-        "p_model": 0.0,
-        "p_final": 0.073,
-        "ev_per_c": 0.0473,
-        "kelly_used": 0.05
+        "p_final": 0.219,
+        "ev_per_c": 0.0794,
+        "kelly_used": 0.0257
       },
       {
         "ticker": "KXHIGHTSFO-26MAY05-T60",
         "side": "NO",
         "bucket": "59\u00b0 or below",
         "day": "2026-05-05",
-        "cost": 0.95,
+        "cost": 0.97,
         "p_model": 0.0,
         "p_final": 0.0,
-        "ev_per_c": 0.04,
+        "ev_per_c": 0.02,
         "kelly_used": 0.05
-      },
-      {
-        "ticker": "KXLOWTSFO-26MAY05-B54.5",
-        "side": "NO",
-        "bucket": "54\u00b0 to 55\u00b0",
-        "day": "2026-05-05",
-        "cost": 0.56,
-        "p_model": 0.296,
-        "p_final": 0.386,
-        "ev_per_c": 0.0369,
-        "kelly_used": 0.0308
       }
     ],
-    "n_open": 9
+    "n_open": 7
   },
   "forecast": {
     "issued": "2026-05-04 20:00:00",
@@ -632,18 +610,18 @@
         {
           "label": "52\u00b0 to 53\u00b0",
           "p_model": 0.078,
-          "p_final": 0.268,
-          "p_market": 0.11,
-          "yes_ask": 0.14,
-          "yes_bid": 0.08
+          "p_final": 0.219,
+          "p_market": 0.07,
+          "yes_ask": 0.13,
+          "yes_bid": 0.01
         },
         {
           "label": "54\u00b0 to 55\u00b0",
           "p_model": 0.922,
           "p_final": 0.726,
-          "p_market": 0.88,
-          "yes_ask": 0.9,
-          "yes_bid": 0.86
+          "p_market": 0.95,
+          "yes_ask": 0.98,
+          "yes_bid": 0.92
         },
         {
           "label": "56\u00b0 or above",
@@ -665,25 +643,25 @@
           "label": "59\u00b0 or below",
           "p_model": 0.0,
           "p_final": 0.0,
-          "p_market": 0.055,
-          "yes_ask": 0.06,
-          "yes_bid": 0.05
+          "p_market": 0.035,
+          "yes_ask": 0.04,
+          "yes_bid": 0.03
         },
         {
           "label": "60\u00b0 to 61\u00b0",
           "p_model": 0.0,
           "p_final": 0.073,
-          "p_market": 0.135,
-          "yes_ask": 0.14,
-          "yes_bid": 0.13
+          "p_market": 0.09,
+          "yes_ask": 0.11,
+          "yes_bid": 0.07
         },
         {
           "label": "62\u00b0 to 63\u00b0",
           "p_model": 0.119,
           "p_final": 0.386,
-          "p_market": 0.355,
-          "yes_ask": 0.38,
-          "yes_bid": 0.33
+          "p_market": 0.375,
+          "yes_ask": 0.4,
+          "yes_bid": 0.35
         },
         {
           "label": "64\u00b0 to 65\u00b0",
@@ -752,10 +730,10 @@
         {
           "label": "54\u00b0 to 55\u00b0",
           "p_model": 0.296,
-          "p_final": 0.386,
-          "p_market": 0.465,
-          "yes_ask": 0.49,
-          "yes_bid": 0.44
+          "p_final": 0.512,
+          "p_market": 0.51,
+          "yes_ask": 0.52,
+          "yes_bid": 0.5
         },
         {
           "label": "56\u00b0 or above",
@@ -1229,18 +1207,18 @@
             {
               "label": "52\u00b0 to 53\u00b0",
               "p_model": 0.078,
-              "p_final": 0.268,
-              "p_market": 0.11,
-              "yes_ask": 0.14,
-              "yes_bid": 0.08
+              "p_final": 0.219,
+              "p_market": 0.07,
+              "yes_ask": 0.13,
+              "yes_bid": 0.01
             },
             {
               "label": "54\u00b0 to 55\u00b0",
               "p_model": 0.922,
               "p_final": 0.726,
-              "p_market": 0.88,
-              "yes_ask": 0.9,
-              "yes_bid": 0.86
+              "p_market": 0.95,
+              "yes_ask": 0.98,
+              "yes_bid": 0.92
             },
             {
               "label": "56\u00b0 or above",
@@ -1262,25 +1240,25 @@
               "label": "59\u00b0 or below",
               "p_model": 0.0,
               "p_final": 0.0,
-              "p_market": 0.055,
-              "yes_ask": 0.06,
-              "yes_bid": 0.05
+              "p_market": 0.035,
+              "yes_ask": 0.04,
+              "yes_bid": 0.03
             },
             {
               "label": "60\u00b0 to 61\u00b0",
               "p_model": 0.0,
               "p_final": 0.073,
-              "p_market": 0.135,
-              "yes_ask": 0.14,
-              "yes_bid": 0.13
+              "p_market": 0.09,
+              "yes_ask": 0.11,
+              "yes_bid": 0.07
             },
             {
               "label": "62\u00b0 to 63\u00b0",
               "p_model": 0.119,
               "p_final": 0.386,
-              "p_market": 0.355,
-              "yes_ask": 0.38,
-              "yes_bid": 0.33
+              "p_market": 0.375,
+              "yes_ask": 0.4,
+              "yes_bid": 0.35
             },
             {
               "label": "64\u00b0 to 65\u00b0",
@@ -1349,10 +1327,10 @@
             {
               "label": "54\u00b0 to 55\u00b0",
               "p_model": 0.296,
-              "p_final": 0.386,
-              "p_market": 0.465,
-              "yes_ask": 0.49,
-              "yes_bid": 0.44
+              "p_final": 0.512,
+              "p_market": 0.51,
+              "yes_ask": 0.52,
+              "yes_bid": 0.5
             },
             {
               "label": "56\u00b0 or above",
@@ -1751,6 +1729,17 @@
           "kelly_used": 0.05
         },
         {
+          "ticker": "KXLOWTSFO-26MAY04-B54.5",
+          "side": "NO",
+          "bucket": "54\u00b0 to 55\u00b0",
+          "day": "2026-05-04",
+          "cost": 0.08,
+          "p_model": 0.922,
+          "p_final": 0.726,
+          "ev_per_c": 0.1844,
+          "kelly_used": 0.05
+        },
+        {
           "ticker": "KXHIGHTSFO-26MAY05-B66.5",
           "side": "YES",
           "bucket": "66\u00b0 to 67\u00b0",
@@ -1773,63 +1762,30 @@
           "kelly_used": 0.0367
         },
         {
-          "ticker": "KXLOWTSFO-26MAY04-B54.5",
-          "side": "NO",
-          "bucket": "54\u00b0 to 55\u00b0",
-          "day": "2026-05-04",
-          "cost": 0.14,
-          "p_model": 0.922,
-          "p_final": 0.726,
-          "ev_per_c": 0.1244,
-          "kelly_used": 0.0391
-        },
-        {
           "ticker": "KXLOWTSFO-26MAY04-B52.5",
           "side": "YES",
           "bucket": "52\u00b0 to 53\u00b0",
           "day": "2026-05-04",
-          "cost": 0.14,
+          "cost": 0.13,
           "p_model": 0.078,
-          "p_final": 0.268,
-          "ev_per_c": 0.1179,
-          "kelly_used": 0.0372
-        },
-        {
-          "ticker": "KXHIGHTSFO-26MAY05-B60.5",
-          "side": "NO",
-          "bucket": "60\u00b0 to 61\u00b0",
-          "day": "2026-05-05",
-          "cost": 0.87,
-          "p_model": 0.0,
-          "p_final": 0.073,
-          "ev_per_c": 0.0473,
-          "kelly_used": 0.05
+          "p_final": 0.219,
+          "ev_per_c": 0.0794,
+          "kelly_used": 0.0257
         },
         {
           "ticker": "KXHIGHTSFO-26MAY05-T60",
           "side": "NO",
           "bucket": "59\u00b0 or below",
           "day": "2026-05-05",
-          "cost": 0.95,
+          "cost": 0.97,
           "p_model": 0.0,
           "p_final": 0.0,
-          "ev_per_c": 0.04,
+          "ev_per_c": 0.02,
           "kelly_used": 0.05
-        },
-        {
-          "ticker": "KXLOWTSFO-26MAY05-B54.5",
-          "side": "NO",
-          "bucket": "54\u00b0 to 55\u00b0",
-          "day": "2026-05-05",
-          "cost": 0.56,
-          "p_model": 0.296,
-          "p_final": 0.386,
-          "ev_per_c": 0.0369,
-          "kelly_used": 0.0308
         }
       ],
-      "fetched_at_utc": "2026-05-05T05:59:47.347229+00:00",
-      "n_open": 9,
+      "fetched_at_utc": "2026-05-05T06:02:11.671790+00:00",
+      "n_open": 7,
       "n_charts": 4
     },
     {
@@ -2261,7 +2217,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:45.270108+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:07.754506+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -2750,7 +2706,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:47.301859+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:09.831197+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -3183,7 +3139,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:47.537392+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:11.813664+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -3196,62 +3152,6 @@
       "trains_low": true,
       "model_status": "pending",
       "bucket_charts": [
-        {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTCHI",
-          "day_D": "2026-05-04",
-          "title": "LOW \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "41\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "42\u00b0 to 43\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "44\u00b0 to 45\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "46\u00b0 to 47\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "48\u00b0 to 49\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "50\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
         {
           "side_label": "LOW",
           "series_ticker": "KXLOWTCHI",
@@ -3672,9 +3572,9 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:51.050915+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:13.610444+00:00",
       "n_open": 0,
-      "n_charts": 2
+      "n_charts": 1
     },
     {
       "slug": "phx",
@@ -4273,7 +4173,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:53.141867+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:17.707441+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -4762,7 +4662,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:51.402863+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:15.237373+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -4775,62 +4675,6 @@
       "trains_low": true,
       "model_status": "pending",
       "bucket_charts": [
-        {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTAUS",
-          "day_D": "2026-05-04",
-          "title": "LOW \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "50\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "51\u00b0 to 52\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "53\u00b0 to 54\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "55\u00b0 to 56\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "57\u00b0 to 58\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "59\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
         {
           "side_label": "LOW",
           "series_ticker": "KXLOWTAUS",
@@ -5251,9 +5095,9 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:55.116107+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:15.597784+00:00",
       "n_open": 0,
-      "n_charts": 2
+      "n_charts": 1
     },
     {
       "slug": "atl",
@@ -5740,7 +5584,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:55.301412+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:17.838967+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -5753,118 +5597,6 @@
       "trains_low": true,
       "model_status": "pending",
       "bucket_charts": [
-        {
-          "side_label": "HIGH",
-          "series_ticker": "KXHIGHTOKC",
-          "day_D": "2026-05-04",
-          "title": "HIGH \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "82\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "83\u00b0 to 84\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "85\u00b0 to 86\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "87\u00b0 to 88\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "89\u00b0 to 90\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "91\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
-        {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTOKC",
-          "day_D": "2026-05-04",
-          "title": "LOW \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "52\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "53\u00b0 to 54\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "55\u00b0 to 56\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "57\u00b0 to 58\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "59\u00b0 to 60\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "61\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
         {
           "side_label": "HIGH",
           "series_ticker": "KXHIGHTOKC",
@@ -6341,9 +6073,9 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:00.876656+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:21.692463+00:00",
       "n_open": 0,
-      "n_charts": 4
+      "n_charts": 2
     },
     {
       "slug": "bos",
@@ -6830,7 +6562,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T05:59:59.070008+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:20.127277+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -7431,7 +7163,7 @@
         }
       ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:03.059353+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:24.393542+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -7444,118 +7176,6 @@
       "trains_low": true,
       "model_status": "pending",
       "bucket_charts": [
-        {
-          "side_label": "HIGH",
-          "series_ticker": "KXHIGHTMIN",
-          "day_D": "2026-05-04",
-          "title": "HIGH \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "64\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "65\u00b0 to 66\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "67\u00b0 to 68\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "69\u00b0 to 70\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "71\u00b0 to 72\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "73\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
-        {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTMIN",
-          "day_D": "2026-05-04",
-          "title": "LOW \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "43\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "44\u00b0 to 45\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "46\u00b0 to 47\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "48\u00b0 to 49\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "50\u00b0 to 51\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "52\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
         {
           "side_label": "HIGH",
           "series_ticker": "KXHIGHTMIN",
@@ -7669,11 +7289,372 @@
           ]
         }
       ],
-      "obs_72h": [],
+      "obs_72h": [
+        {
+          "t": "2026-04-19 11:00",
+          "temp_f": 43.0,
+          "dew_f": 16.0
+        },
+        {
+          "t": "2026-04-19 12:00",
+          "temp_f": 44.0,
+          "dew_f": 15.0
+        },
+        {
+          "t": "2026-04-19 13:00",
+          "temp_f": 46.0,
+          "dew_f": 13.0
+        },
+        {
+          "t": "2026-04-19 14:00",
+          "temp_f": 44.0,
+          "dew_f": 11.0
+        },
+        {
+          "t": "2026-04-19 15:00",
+          "temp_f": 47.0,
+          "dew_f": 13.0
+        },
+        {
+          "t": "2026-04-19 16:00",
+          "temp_f": 46.0,
+          "dew_f": 11.0
+        },
+        {
+          "t": "2026-04-19 17:00",
+          "temp_f": 45.0,
+          "dew_f": 10.0
+        },
+        {
+          "t": "2026-04-19 18:00",
+          "temp_f": 43.0,
+          "dew_f": 10.0
+        },
+        {
+          "t": "2026-04-19 19:00",
+          "temp_f": 40.0,
+          "dew_f": 11.0
+        },
+        {
+          "t": "2026-04-19 20:00",
+          "temp_f": 40.0,
+          "dew_f": 9.0
+        },
+        {
+          "t": "2026-04-19 21:00",
+          "temp_f": 39.0,
+          "dew_f": 11.0
+        },
+        {
+          "t": "2026-04-19 22:00",
+          "temp_f": 38.0,
+          "dew_f": 10.0
+        },
+        {
+          "t": "2026-04-19 23:00",
+          "temp_f": 36.0,
+          "dew_f": 13.0
+        },
+        {
+          "t": "2026-04-20 00:00",
+          "temp_f": 33.0,
+          "dew_f": 20.0
+        },
+        {
+          "t": "2026-04-20 01:00",
+          "temp_f": 32.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 02:00",
+          "temp_f": 32.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-20 03:00",
+          "temp_f": 32.0,
+          "dew_f": 20.0
+        },
+        {
+          "t": "2026-04-20 04:00",
+          "temp_f": 32.0,
+          "dew_f": 15.0
+        },
+        {
+          "t": "2026-04-20 05:00",
+          "temp_f": 32.0,
+          "dew_f": 14.0
+        },
+        {
+          "t": "2026-04-20 06:00",
+          "temp_f": 37.0,
+          "dew_f": 14.0
+        },
+        {
+          "t": "2026-04-20 07:00",
+          "temp_f": 41.0,
+          "dew_f": 11.0
+        },
+        {
+          "t": "2026-04-20 08:00",
+          "temp_f": 45.0,
+          "dew_f": 14.0
+        },
+        {
+          "t": "2026-04-20 09:00",
+          "temp_f": 47.0,
+          "dew_f": 14.0
+        },
+        {
+          "t": "2026-04-20 10:00",
+          "temp_f": 51.0,
+          "dew_f": 16.0
+        },
+        {
+          "t": "2026-04-20 11:00",
+          "temp_f": 54.0,
+          "dew_f": 16.0
+        },
+        {
+          "t": "2026-04-20 12:00",
+          "temp_f": 57.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-20 13:00",
+          "temp_f": 60.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-20 14:00",
+          "temp_f": 61.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 15:00",
+          "temp_f": 63.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-20 16:00",
+          "temp_f": 63.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-20 17:00",
+          "temp_f": 62.0,
+          "dew_f": 25.0
+        },
+        {
+          "t": "2026-04-20 18:00",
+          "temp_f": 61.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-20 19:00",
+          "temp_f": 58.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-20 20:00",
+          "temp_f": 57.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-20 21:00",
+          "temp_f": 55.0,
+          "dew_f": 32.0
+        },
+        {
+          "t": "2026-04-20 22:00",
+          "temp_f": 53.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-20 23:00",
+          "temp_f": 51.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-21 00:00",
+          "temp_f": 50.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-21 01:00",
+          "temp_f": 49.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-21 02:00",
+          "temp_f": 48.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-21 03:00",
+          "temp_f": 47.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-21 04:00",
+          "temp_f": 47.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-21 05:00",
+          "temp_f": 46.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-21 06:00",
+          "temp_f": 50.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-21 07:00",
+          "temp_f": 55.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-21 08:00",
+          "temp_f": 61.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-21 09:00",
+          "temp_f": 65.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-21 10:00",
+          "temp_f": 69.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-21 11:00",
+          "temp_f": 72.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-21 12:00",
+          "temp_f": 74.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-21 13:00",
+          "temp_f": 76.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-21 14:00",
+          "temp_f": 77.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-21 15:00",
+          "temp_f": 76.0,
+          "dew_f": 32.0
+        },
+        {
+          "t": "2026-04-21 16:00",
+          "temp_f": 76.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-21 17:00",
+          "temp_f": 73.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 18:00",
+          "temp_f": 69.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-21 19:00",
+          "temp_f": 66.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-21 20:00",
+          "temp_f": 64.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-21 21:00",
+          "temp_f": 61.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-21 22:00",
+          "temp_f": 57.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-21 23:00",
+          "temp_f": 54.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-22 00:00",
+          "temp_f": 57.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-22 01:00",
+          "temp_f": 55.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-22 02:00",
+          "temp_f": 54.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-22 03:00",
+          "temp_f": 54.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-22 04:00",
+          "temp_f": 52.0,
+          "dew_f": 25.0
+        },
+        {
+          "t": "2026-04-22 05:00",
+          "temp_f": 52.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-22 06:00",
+          "temp_f": 55.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-22 07:00",
+          "temp_f": 59.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-22 08:00",
+          "temp_f": 64.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-22 09:00",
+          "temp_f": 70.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-22 10:00",
+          "temp_f": 74.0,
+          "dew_f": 39.0
+        }
+      ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:05.072145+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:24.004721+00:00",
       "n_open": 0,
-      "n_charts": 4
+      "n_charts": 2
     },
     {
       "slug": "phl",
@@ -7741,9 +7722,370 @@
           ]
         }
       ],
-      "obs_72h": [],
+      "obs_72h": [
+        {
+          "t": "2026-04-19 12:00",
+          "temp_f": 49.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-19 13:00",
+          "temp_f": 49.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-19 14:00",
+          "temp_f": 51.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-19 15:00",
+          "temp_f": 53.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-19 16:00",
+          "temp_f": 55.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-19 17:00",
+          "temp_f": 56.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-19 18:00",
+          "temp_f": 50.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-19 19:00",
+          "temp_f": 50.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-19 20:00",
+          "temp_f": 51.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-19 21:00",
+          "temp_f": 49.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-19 22:00",
+          "temp_f": 46.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-19 23:00",
+          "temp_f": 47.0,
+          "dew_f": 28.0
+        },
+        {
+          "t": "2026-04-20 00:00",
+          "temp_f": 44.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-20 01:00",
+          "temp_f": 43.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-20 02:00",
+          "temp_f": 43.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-20 03:00",
+          "temp_f": 46.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-20 04:00",
+          "temp_f": 42.0,
+          "dew_f": 28.0
+        },
+        {
+          "t": "2026-04-20 05:00",
+          "temp_f": 43.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-20 06:00",
+          "temp_f": 45.0,
+          "dew_f": 34.0
+        },
+        {
+          "t": "2026-04-20 07:00",
+          "temp_f": 46.0,
+          "dew_f": 32.0
+        },
+        {
+          "t": "2026-04-20 08:00",
+          "temp_f": 48.0,
+          "dew_f": 34.0
+        },
+        {
+          "t": "2026-04-20 09:00",
+          "temp_f": 51.0,
+          "dew_f": 34.0
+        },
+        {
+          "t": "2026-04-20 10:00",
+          "temp_f": 51.0,
+          "dew_f": 32.0
+        },
+        {
+          "t": "2026-04-20 11:00",
+          "temp_f": 50.0,
+          "dew_f": 32.0
+        },
+        {
+          "t": "2026-04-20 12:00",
+          "temp_f": 51.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-20 13:00",
+          "temp_f": 52.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-20 14:00",
+          "temp_f": 51.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-20 15:00",
+          "temp_f": 54.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-20 16:00",
+          "temp_f": 52.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 17:00",
+          "temp_f": 51.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-20 18:00",
+          "temp_f": 48.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 19:00",
+          "temp_f": 46.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-20 20:00",
+          "temp_f": 45.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-20 21:00",
+          "temp_f": 43.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-20 22:00",
+          "temp_f": 42.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-20 23:00",
+          "temp_f": 40.0,
+          "dew_f": 20.0
+        },
+        {
+          "t": "2026-04-21 00:00",
+          "temp_f": 39.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-21 01:00",
+          "temp_f": 38.0,
+          "dew_f": 20.0
+        },
+        {
+          "t": "2026-04-21 02:00",
+          "temp_f": 36.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-21 03:00",
+          "temp_f": 35.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-21 04:00",
+          "temp_f": 35.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-21 05:00",
+          "temp_f": 36.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-21 06:00",
+          "temp_f": 40.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-21 07:00",
+          "temp_f": 42.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-21 08:00",
+          "temp_f": 45.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-21 09:00",
+          "temp_f": 46.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-21 10:00",
+          "temp_f": 48.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-21 11:00",
+          "temp_f": 52.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-21 12:00",
+          "temp_f": 53.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-21 13:00",
+          "temp_f": 54.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-21 14:00",
+          "temp_f": 56.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-21 15:00",
+          "temp_f": 57.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-21 16:00",
+          "temp_f": 56.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-21 17:00",
+          "temp_f": 56.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-21 18:00",
+          "temp_f": 55.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 19:00",
+          "temp_f": 51.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-21 20:00",
+          "temp_f": 49.0,
+          "dew_f": 34.0
+        },
+        {
+          "t": "2026-04-21 21:00",
+          "temp_f": 48.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-21 22:00",
+          "temp_f": 48.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-21 23:00",
+          "temp_f": 48.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-22 00:00",
+          "temp_f": 48.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-22 01:00",
+          "temp_f": 48.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-22 02:00",
+          "temp_f": 48.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-22 03:00",
+          "temp_f": 48.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-22 04:00",
+          "temp_f": 49.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-22 05:00",
+          "temp_f": 50.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-22 06:00",
+          "temp_f": 51.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-22 07:00",
+          "temp_f": 53.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-22 08:00",
+          "temp_f": 55.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-22 09:00",
+          "temp_f": 55.0,
+          "dew_f": 47.0
+        },
+        {
+          "t": "2026-04-22 10:00",
+          "temp_f": 55.0,
+          "dew_f": 47.0
+        },
+        {
+          "t": "2026-04-22 11:00",
+          "temp_f": 57.0,
+          "dew_f": 48.0
+        }
+      ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:05.158216+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:26.029939+00:00",
       "n_open": 0,
       "n_charts": 1
     },
@@ -7981,9 +8323,370 @@
           ]
         }
       ],
-      "obs_72h": [],
+      "obs_72h": [
+        {
+          "t": "2026-04-19 09:00",
+          "temp_f": 72.0,
+          "dew_f": 4.0
+        },
+        {
+          "t": "2026-04-19 10:00",
+          "temp_f": 74.0,
+          "dew_f": 3.0
+        },
+        {
+          "t": "2026-04-19 11:00",
+          "temp_f": 77.0,
+          "dew_f": 4.0
+        },
+        {
+          "t": "2026-04-19 12:00",
+          "temp_f": 79.0,
+          "dew_f": 6.0
+        },
+        {
+          "t": "2026-04-19 13:00",
+          "temp_f": 81.0,
+          "dew_f": 9.0
+        },
+        {
+          "t": "2026-04-19 14:00",
+          "temp_f": 84.0,
+          "dew_f": 10.0
+        },
+        {
+          "t": "2026-04-19 15:00",
+          "temp_f": 83.0,
+          "dew_f": 11.0
+        },
+        {
+          "t": "2026-04-19 16:00",
+          "temp_f": 84.0,
+          "dew_f": 12.0
+        },
+        {
+          "t": "2026-04-19 17:00",
+          "temp_f": 83.0,
+          "dew_f": 13.0
+        },
+        {
+          "t": "2026-04-19 18:00",
+          "temp_f": 81.0,
+          "dew_f": 13.0
+        },
+        {
+          "t": "2026-04-19 19:00",
+          "temp_f": 79.0,
+          "dew_f": 14.0
+        },
+        {
+          "t": "2026-04-19 20:00",
+          "temp_f": 76.0,
+          "dew_f": 15.0
+        },
+        {
+          "t": "2026-04-19 21:00",
+          "temp_f": 73.0,
+          "dew_f": 15.0
+        },
+        {
+          "t": "2026-04-19 22:00",
+          "temp_f": 70.0,
+          "dew_f": 15.0
+        },
+        {
+          "t": "2026-04-19 23:00",
+          "temp_f": 69.0,
+          "dew_f": 16.0
+        },
+        {
+          "t": "2026-04-20 00:00",
+          "temp_f": 67.0,
+          "dew_f": 16.0
+        },
+        {
+          "t": "2026-04-20 01:00",
+          "temp_f": 67.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 02:00",
+          "temp_f": 66.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 03:00",
+          "temp_f": 64.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-20 04:00",
+          "temp_f": 64.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-20 05:00",
+          "temp_f": 64.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-20 06:00",
+          "temp_f": 70.0,
+          "dew_f": 25.0
+        },
+        {
+          "t": "2026-04-20 07:00",
+          "temp_f": 73.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-20 08:00",
+          "temp_f": 76.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-20 09:00",
+          "temp_f": 80.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-20 10:00",
+          "temp_f": 84.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-20 11:00",
+          "temp_f": 87.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-20 12:00",
+          "temp_f": 88.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-20 13:00",
+          "temp_f": 89.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-20 14:00",
+          "temp_f": 89.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-20 15:00",
+          "temp_f": 89.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-20 16:00",
+          "temp_f": 87.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-20 17:00",
+          "temp_f": 85.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-20 18:00",
+          "temp_f": 83.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-20 19:00",
+          "temp_f": 80.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-20 20:00",
+          "temp_f": 78.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-20 21:00",
+          "temp_f": 78.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-20 22:00",
+          "temp_f": 77.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-20 23:00",
+          "temp_f": 75.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 00:00",
+          "temp_f": 73.0,
+          "dew_f": 28.0
+        },
+        {
+          "t": "2026-04-21 01:00",
+          "temp_f": 73.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-21 02:00",
+          "temp_f": 72.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-21 03:00",
+          "temp_f": 71.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-21 04:00",
+          "temp_f": 69.0,
+          "dew_f": 28.0
+        },
+        {
+          "t": "2026-04-21 05:00",
+          "temp_f": 67.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 06:00",
+          "temp_f": 71.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-21 07:00",
+          "temp_f": 75.0,
+          "dew_f": 28.0
+        },
+        {
+          "t": "2026-04-21 08:00",
+          "temp_f": 78.0,
+          "dew_f": 28.0
+        },
+        {
+          "t": "2026-04-21 09:00",
+          "temp_f": 80.0,
+          "dew_f": 28.0
+        },
+        {
+          "t": "2026-04-21 10:00",
+          "temp_f": 83.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 11:00",
+          "temp_f": 86.0,
+          "dew_f": 10.0
+        },
+        {
+          "t": "2026-04-21 12:00",
+          "temp_f": 86.0,
+          "dew_f": 14.0
+        },
+        {
+          "t": "2026-04-21 13:00",
+          "temp_f": 86.0,
+          "dew_f": 13.0
+        },
+        {
+          "t": "2026-04-21 14:00",
+          "temp_f": 86.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-21 15:00",
+          "temp_f": 85.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-21 16:00",
+          "temp_f": 83.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-21 17:00",
+          "temp_f": 76.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-21 18:00",
+          "temp_f": 73.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-21 19:00",
+          "temp_f": 69.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-21 20:00",
+          "temp_f": 67.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-21 21:00",
+          "temp_f": 65.0,
+          "dew_f": 32.0
+        },
+        {
+          "t": "2026-04-21 22:00",
+          "temp_f": 63.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-21 23:00",
+          "temp_f": 61.0,
+          "dew_f": 34.0
+        },
+        {
+          "t": "2026-04-22 00:00",
+          "temp_f": 59.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-22 01:00",
+          "temp_f": 59.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-22 02:00",
+          "temp_f": 58.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-22 03:00",
+          "temp_f": 57.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-22 04:00",
+          "temp_f": 56.0,
+          "dew_f": 34.0
+        },
+        {
+          "t": "2026-04-22 05:00",
+          "temp_f": 57.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-22 06:00",
+          "temp_f": 59.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-22 07:00",
+          "temp_f": 63.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-22 08:00",
+          "temp_f": 65.0,
+          "dew_f": 30.0
+        }
+      ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:09.031067+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:30.162517+00:00",
       "n_open": 0,
       "n_charts": 4
     },
@@ -7996,118 +8699,6 @@
       "trains_low": true,
       "model_status": "pending",
       "bucket_charts": [
-        {
-          "side_label": "HIGH",
-          "series_ticker": "KXHIGHTSATX",
-          "day_D": "2026-05-04",
-          "title": "HIGH \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "83\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "84\u00b0 to 85\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "86\u00b0 to 87\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "88\u00b0 to 89\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "90\u00b0 to 91\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "92\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
-        {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTSATX",
-          "day_D": "2026-05-04",
-          "title": "LOW \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "52\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "53\u00b0 to 54\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "55\u00b0 to 56\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "57\u00b0 to 58\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "59\u00b0 to 60\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "61\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
         {
           "side_label": "HIGH",
           "series_ticker": "KXHIGHTSATX",
@@ -8221,11 +8812,372 @@
           ]
         }
       ],
-      "obs_72h": [],
+      "obs_72h": [
+        {
+          "t": "2026-04-19 11:00",
+          "temp_f": 64.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-19 12:00",
+          "temp_f": 64.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-19 13:00",
+          "temp_f": 64.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-19 14:00",
+          "temp_f": 63.0,
+          "dew_f": 46.0
+        },
+        {
+          "t": "2026-04-19 15:00",
+          "temp_f": 61.0,
+          "dew_f": 49.0
+        },
+        {
+          "t": "2026-04-19 16:00",
+          "temp_f": 62.0,
+          "dew_f": 48.0
+        },
+        {
+          "t": "2026-04-19 17:00",
+          "temp_f": 62.0,
+          "dew_f": 49.0
+        },
+        {
+          "t": "2026-04-19 18:00",
+          "temp_f": 60.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-19 19:00",
+          "temp_f": 59.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-19 20:00",
+          "temp_f": 58.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-19 21:00",
+          "temp_f": 58.0,
+          "dew_f": 53.0
+        },
+        {
+          "t": "2026-04-19 22:00",
+          "temp_f": 58.0,
+          "dew_f": 51.0
+        },
+        {
+          "t": "2026-04-19 23:00",
+          "temp_f": 57.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-20 00:00",
+          "temp_f": 57.0,
+          "dew_f": 51.0
+        },
+        {
+          "t": "2026-04-20 01:00",
+          "temp_f": 57.0,
+          "dew_f": 51.0
+        },
+        {
+          "t": "2026-04-20 02:00",
+          "temp_f": 57.0,
+          "dew_f": 49.0
+        },
+        {
+          "t": "2026-04-20 03:00",
+          "temp_f": 57.0,
+          "dew_f": 49.0
+        },
+        {
+          "t": "2026-04-20 04:00",
+          "temp_f": 57.0,
+          "dew_f": 48.0
+        },
+        {
+          "t": "2026-04-20 05:00",
+          "temp_f": 56.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-20 06:00",
+          "temp_f": 56.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-20 07:00",
+          "temp_f": 55.0,
+          "dew_f": 51.0
+        },
+        {
+          "t": "2026-04-20 08:00",
+          "temp_f": 54.0,
+          "dew_f": 51.0
+        },
+        {
+          "t": "2026-04-20 09:00",
+          "temp_f": 54.0,
+          "dew_f": 52.0
+        },
+        {
+          "t": "2026-04-20 10:00",
+          "temp_f": 55.0,
+          "dew_f": 53.0
+        },
+        {
+          "t": "2026-04-20 11:00",
+          "temp_f": 55.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-20 12:00",
+          "temp_f": 55.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-20 13:00",
+          "temp_f": 56.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-20 14:00",
+          "temp_f": 56.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-20 15:00",
+          "temp_f": 57.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-20 16:00",
+          "temp_f": 57.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-20 17:00",
+          "temp_f": 57.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-20 18:00",
+          "temp_f": 57.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-20 19:00",
+          "temp_f": 57.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-20 20:00",
+          "temp_f": 58.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-20 21:00",
+          "temp_f": 59.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-20 22:00",
+          "temp_f": 59.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-20 23:00",
+          "temp_f": 60.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-21 00:00",
+          "temp_f": 60.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-21 01:00",
+          "temp_f": 61.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-21 02:00",
+          "temp_f": 61.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-21 03:00",
+          "temp_f": 61.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 04:00",
+          "temp_f": 62.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 05:00",
+          "temp_f": 62.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 06:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 07:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 08:00",
+          "temp_f": 64.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-21 09:00",
+          "temp_f": 64.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-21 10:00",
+          "temp_f": 65.0,
+          "dew_f": 64.0
+        },
+        {
+          "t": "2026-04-21 11:00",
+          "temp_f": 65.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-21 12:00",
+          "temp_f": 66.0,
+          "dew_f": 64.0
+        },
+        {
+          "t": "2026-04-21 13:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 14:00",
+          "temp_f": 63.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 15:00",
+          "temp_f": 63.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 16:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 17:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 18:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 19:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 20:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 21:00",
+          "temp_f": 63.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 22:00",
+          "temp_f": 63.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-21 23:00",
+          "temp_f": 63.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-22 00:00",
+          "temp_f": 64.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-22 01:00",
+          "temp_f": 64.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-22 02:00",
+          "temp_f": 64.0,
+          "dew_f": 64.0
+        },
+        {
+          "t": "2026-04-22 03:00",
+          "temp_f": 65.0,
+          "dew_f": 64.0
+        },
+        {
+          "t": "2026-04-22 04:00",
+          "temp_f": 65.0,
+          "dew_f": 65.0
+        },
+        {
+          "t": "2026-04-22 05:00",
+          "temp_f": 67.0,
+          "dew_f": 66.0
+        },
+        {
+          "t": "2026-04-22 06:00",
+          "temp_f": 67.0,
+          "dew_f": 67.0
+        },
+        {
+          "t": "2026-04-22 07:00",
+          "temp_f": 69.0,
+          "dew_f": 68.0
+        },
+        {
+          "t": "2026-04-22 08:00",
+          "temp_f": 69.0,
+          "dew_f": 69.0
+        },
+        {
+          "t": "2026-04-22 09:00",
+          "temp_f": 74.0,
+          "dew_f": 70.0
+        },
+        {
+          "t": "2026-04-22 10:00",
+          "temp_f": 75.0,
+          "dew_f": 69.0
+        }
+      ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:10.761984+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:28.309424+00:00",
       "n_open": 0,
-      "n_charts": 4
+      "n_charts": 2
     },
     {
       "slug": "dal",
@@ -8236,118 +9188,6 @@
       "trains_low": true,
       "model_status": "pending",
       "bucket_charts": [
-        {
-          "side_label": "HIGH",
-          "series_ticker": "KXHIGHTDAL",
-          "day_D": "2026-05-04",
-          "title": "HIGH \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "80\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "81\u00b0 to 82\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "83\u00b0 to 84\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "85\u00b0 to 86\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "87\u00b0 to 88\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "89\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
-        {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTDAL",
-          "day_D": "2026-05-04",
-          "title": "LOW \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "54\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "55\u00b0 to 56\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "57\u00b0 to 58\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "59\u00b0 to 60\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "61\u00b0 to 62\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "63\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
         {
           "side_label": "HIGH",
           "series_ticker": "KXHIGHTDAL",
@@ -8461,11 +9301,372 @@
           ]
         }
       ],
-      "obs_72h": [],
+      "obs_72h": [
+        {
+          "t": "2026-04-19 12:00",
+          "temp_f": 69.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-19 13:00",
+          "temp_f": 72.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-19 14:00",
+          "temp_f": 72.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-19 15:00",
+          "temp_f": 72.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-19 16:00",
+          "temp_f": 70.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-19 17:00",
+          "temp_f": 69.0,
+          "dew_f": 34.0
+        },
+        {
+          "t": "2026-04-19 18:00",
+          "temp_f": 63.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-19 19:00",
+          "temp_f": 63.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-19 20:00",
+          "temp_f": 63.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-19 21:00",
+          "temp_f": 60.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-19 22:00",
+          "temp_f": 59.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-19 23:00",
+          "temp_f": 56.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-20 00:00",
+          "temp_f": 56.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 01:00",
+          "temp_f": 56.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 02:00",
+          "temp_f": 53.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-20 03:00",
+          "temp_f": 54.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 04:00",
+          "temp_f": 53.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 05:00",
+          "temp_f": 54.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 06:00",
+          "temp_f": 54.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-20 07:00",
+          "temp_f": 58.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-20 08:00",
+          "temp_f": 62.0,
+          "dew_f": 45.0
+        },
+        {
+          "t": "2026-04-20 09:00",
+          "temp_f": 67.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-20 10:00",
+          "temp_f": 69.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-20 11:00",
+          "temp_f": 71.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 12:00",
+          "temp_f": 70.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-20 13:00",
+          "temp_f": 70.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 14:00",
+          "temp_f": 69.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 15:00",
+          "temp_f": 72.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 16:00",
+          "temp_f": 70.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 17:00",
+          "temp_f": 68.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 18:00",
+          "temp_f": 65.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-20 19:00",
+          "temp_f": 66.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 20:00",
+          "temp_f": 65.0,
+          "dew_f": 46.0
+        },
+        {
+          "t": "2026-04-20 21:00",
+          "temp_f": 64.0,
+          "dew_f": 46.0
+        },
+        {
+          "t": "2026-04-20 22:00",
+          "temp_f": 63.0,
+          "dew_f": 47.0
+        },
+        {
+          "t": "2026-04-20 23:00",
+          "temp_f": 61.0,
+          "dew_f": 48.0
+        },
+        {
+          "t": "2026-04-21 00:00",
+          "temp_f": 60.0,
+          "dew_f": 49.0
+        },
+        {
+          "t": "2026-04-21 01:00",
+          "temp_f": 57.0,
+          "dew_f": 52.0
+        },
+        {
+          "t": "2026-04-21 02:00",
+          "temp_f": 57.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-21 03:00",
+          "temp_f": 58.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-21 04:00",
+          "temp_f": 58.0,
+          "dew_f": 52.0
+        },
+        {
+          "t": "2026-04-21 05:00",
+          "temp_f": 58.0,
+          "dew_f": 53.0
+        },
+        {
+          "t": "2026-04-21 06:00",
+          "temp_f": 57.0,
+          "dew_f": 53.0
+        },
+        {
+          "t": "2026-04-21 07:00",
+          "temp_f": 57.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-21 08:00",
+          "temp_f": 57.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-21 09:00",
+          "temp_f": 57.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-21 10:00",
+          "temp_f": 58.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 11:00",
+          "temp_f": 59.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 12:00",
+          "temp_f": 60.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 13:00",
+          "temp_f": 62.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 14:00",
+          "temp_f": 62.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 15:00",
+          "temp_f": 62.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 16:00",
+          "temp_f": 62.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 17:00",
+          "temp_f": 62.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 18:00",
+          "temp_f": 62.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 19:00",
+          "temp_f": 61.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 20:00",
+          "temp_f": 61.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 21:00",
+          "temp_f": 61.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 22:00",
+          "temp_f": 61.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 23:00",
+          "temp_f": 61.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-22 00:00",
+          "temp_f": 61.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-22 01:00",
+          "temp_f": 60.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 02:00",
+          "temp_f": 60.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 03:00",
+          "temp_f": 60.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 04:00",
+          "temp_f": 60.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 05:00",
+          "temp_f": 60.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 06:00",
+          "temp_f": 60.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 07:00",
+          "temp_f": 61.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-22 08:00",
+          "temp_f": 61.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-22 09:00",
+          "temp_f": 63.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-22 10:00",
+          "temp_f": 65.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-22 11:00",
+          "temp_f": 66.0,
+          "dew_f": 63.0
+        }
+      ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:14.808882+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:32.266282+00:00",
       "n_open": 0,
-      "n_charts": 4
+      "n_charts": 2
     },
     {
       "slug": "dca",
@@ -8589,9 +9790,370 @@
           ]
         }
       ],
-      "obs_72h": [],
+      "obs_72h": [
+        {
+          "t": "2026-04-19 12:00",
+          "temp_f": 54.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-19 13:00",
+          "temp_f": 57.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-19 14:00",
+          "temp_f": 59.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-19 15:00",
+          "temp_f": 59.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-19 16:00",
+          "temp_f": 60.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-19 17:00",
+          "temp_f": 58.0,
+          "dew_f": 22.0
+        },
+        {
+          "t": "2026-04-19 18:00",
+          "temp_f": 56.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-19 19:00",
+          "temp_f": 53.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-19 20:00",
+          "temp_f": 53.0,
+          "dew_f": 21.0
+        },
+        {
+          "t": "2026-04-19 21:00",
+          "temp_f": 52.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-19 22:00",
+          "temp_f": 49.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-19 23:00",
+          "temp_f": 47.0,
+          "dew_f": 32.0
+        },
+        {
+          "t": "2026-04-20 00:00",
+          "temp_f": 45.0,
+          "dew_f": 34.0
+        },
+        {
+          "t": "2026-04-20 01:00",
+          "temp_f": 45.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-20 02:00",
+          "temp_f": 48.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-20 03:00",
+          "temp_f": 48.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-20 04:00",
+          "temp_f": 48.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-20 05:00",
+          "temp_f": 49.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-20 06:00",
+          "temp_f": 50.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-20 07:00",
+          "temp_f": 52.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-20 08:00",
+          "temp_f": 54.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-20 09:00",
+          "temp_f": 54.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-20 10:00",
+          "temp_f": 46.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-20 11:00",
+          "temp_f": 54.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-20 12:00",
+          "temp_f": 53.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-20 13:00",
+          "temp_f": 54.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-20 14:00",
+          "temp_f": 55.0,
+          "dew_f": 24.0
+        },
+        {
+          "t": "2026-04-20 15:00",
+          "temp_f": 55.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 16:00",
+          "temp_f": 54.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 17:00",
+          "temp_f": 52.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 18:00",
+          "temp_f": 50.0,
+          "dew_f": 17.0
+        },
+        {
+          "t": "2026-04-20 19:00",
+          "temp_f": 48.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-20 20:00",
+          "temp_f": 46.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 21:00",
+          "temp_f": 45.0,
+          "dew_f": 20.0
+        },
+        {
+          "t": "2026-04-20 22:00",
+          "temp_f": 44.0,
+          "dew_f": 19.0
+        },
+        {
+          "t": "2026-04-20 23:00",
+          "temp_f": 44.0,
+          "dew_f": 18.0
+        },
+        {
+          "t": "2026-04-21 00:00",
+          "temp_f": 42.0,
+          "dew_f": 25.0
+        },
+        {
+          "t": "2026-04-21 01:00",
+          "temp_f": 39.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 02:00",
+          "temp_f": 39.0,
+          "dew_f": 23.0
+        },
+        {
+          "t": "2026-04-21 03:00",
+          "temp_f": 37.0,
+          "dew_f": 25.0
+        },
+        {
+          "t": "2026-04-21 04:00",
+          "temp_f": 37.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 05:00",
+          "temp_f": 36.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 06:00",
+          "temp_f": 42.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 07:00",
+          "temp_f": 44.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-21 08:00",
+          "temp_f": 47.0,
+          "dew_f": 29.0
+        },
+        {
+          "t": "2026-04-21 09:00",
+          "temp_f": 50.0,
+          "dew_f": 25.0
+        },
+        {
+          "t": "2026-04-21 10:00",
+          "temp_f": 52.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 11:00",
+          "temp_f": 55.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 12:00",
+          "temp_f": 56.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 13:00",
+          "temp_f": 58.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-21 14:00",
+          "temp_f": 60.0,
+          "dew_f": 26.0
+        },
+        {
+          "t": "2026-04-21 15:00",
+          "temp_f": 62.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-21 16:00",
+          "temp_f": 62.0,
+          "dew_f": 27.0
+        },
+        {
+          "t": "2026-04-21 17:00",
+          "temp_f": 61.0,
+          "dew_f": 30.0
+        },
+        {
+          "t": "2026-04-21 18:00",
+          "temp_f": 58.0,
+          "dew_f": 31.0
+        },
+        {
+          "t": "2026-04-21 19:00",
+          "temp_f": 55.0,
+          "dew_f": 33.0
+        },
+        {
+          "t": "2026-04-21 20:00",
+          "temp_f": 53.0,
+          "dew_f": 35.0
+        },
+        {
+          "t": "2026-04-21 21:00",
+          "temp_f": 52.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-21 22:00",
+          "temp_f": 52.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-21 23:00",
+          "temp_f": 52.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-22 00:00",
+          "temp_f": 53.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-22 01:00",
+          "temp_f": 54.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-22 02:00",
+          "temp_f": 53.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-22 03:00",
+          "temp_f": 52.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-22 04:00",
+          "temp_f": 52.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-22 05:00",
+          "temp_f": 51.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-22 06:00",
+          "temp_f": 54.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-22 07:00",
+          "temp_f": 56.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-22 08:00",
+          "temp_f": 59.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-22 09:00",
+          "temp_f": 60.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-22 10:00",
+          "temp_f": 60.0,
+          "dew_f": 45.0
+        },
+        {
+          "t": "2026-04-22 11:00",
+          "temp_f": 63.0,
+          "dew_f": 46.0
+        }
+      ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:12.898738+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:32.392741+00:00",
       "n_open": 0,
       "n_charts": 2
     },
@@ -8604,118 +10166,6 @@
       "trains_low": true,
       "model_status": "pending",
       "bucket_charts": [
-        {
-          "side_label": "HIGH",
-          "series_ticker": "KXHIGHTNOLA",
-          "day_D": "2026-05-04",
-          "title": "HIGH \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "76\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "77\u00b0 to 78\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "79\u00b0 to 80\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "81\u00b0 to 82\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "83\u00b0 to 84\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "85\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
-        {
-          "side_label": "LOW",
-          "series_ticker": "KXLOWTNOLA",
-          "day_D": "2026-05-04",
-          "title": "LOW \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "52\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "53\u00b0 to 54\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "55\u00b0 to 56\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "57\u00b0 to 58\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "59\u00b0 to 60\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "61\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
         {
           "side_label": "HIGH",
           "series_ticker": "KXHIGHTNOLA",
@@ -8829,11 +10279,372 @@
           ]
         }
       ],
-      "obs_72h": [],
+      "obs_72h": [
+        {
+          "t": "2026-04-19 11:00",
+          "temp_f": 62.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-19 12:00",
+          "temp_f": 65.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-19 13:00",
+          "temp_f": 68.0,
+          "dew_f": 36.0
+        },
+        {
+          "t": "2026-04-19 14:00",
+          "temp_f": 68.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-19 15:00",
+          "temp_f": 68.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-19 16:00",
+          "temp_f": 69.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-19 17:00",
+          "temp_f": 68.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-19 18:00",
+          "temp_f": 67.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-19 19:00",
+          "temp_f": 67.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-19 20:00",
+          "temp_f": 66.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-19 21:00",
+          "temp_f": 66.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-19 22:00",
+          "temp_f": 65.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-19 23:00",
+          "temp_f": 66.0,
+          "dew_f": 39.0
+        },
+        {
+          "t": "2026-04-20 00:00",
+          "temp_f": 65.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-20 01:00",
+          "temp_f": 64.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-20 02:00",
+          "temp_f": 64.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-20 03:00",
+          "temp_f": 63.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 04:00",
+          "temp_f": 62.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-20 05:00",
+          "temp_f": 62.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-20 06:00",
+          "temp_f": 63.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-20 07:00",
+          "temp_f": 65.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-20 08:00",
+          "temp_f": 67.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-20 09:00",
+          "temp_f": 69.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-20 10:00",
+          "temp_f": 70.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 11:00",
+          "temp_f": 72.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 12:00",
+          "temp_f": 72.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 13:00",
+          "temp_f": 73.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-20 14:00",
+          "temp_f": 73.0,
+          "dew_f": 37.0
+        },
+        {
+          "t": "2026-04-20 15:00",
+          "temp_f": 73.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-20 16:00",
+          "temp_f": 72.0,
+          "dew_f": 41.0
+        },
+        {
+          "t": "2026-04-20 17:00",
+          "temp_f": 70.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-20 18:00",
+          "temp_f": 66.0,
+          "dew_f": 47.0
+        },
+        {
+          "t": "2026-04-20 19:00",
+          "temp_f": 65.0,
+          "dew_f": 49.0
+        },
+        {
+          "t": "2026-04-20 20:00",
+          "temp_f": 61.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-20 21:00",
+          "temp_f": 61.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-20 22:00",
+          "temp_f": 60.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-20 23:00",
+          "temp_f": 57.0,
+          "dew_f": 52.0
+        },
+        {
+          "t": "2026-04-21 00:00",
+          "temp_f": 55.0,
+          "dew_f": 52.0
+        },
+        {
+          "t": "2026-04-21 01:00",
+          "temp_f": 53.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-21 02:00",
+          "temp_f": 52.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-21 03:00",
+          "temp_f": 55.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-21 04:00",
+          "temp_f": 57.0,
+          "dew_f": 51.0
+        },
+        {
+          "t": "2026-04-21 05:00",
+          "temp_f": 58.0,
+          "dew_f": 53.0
+        },
+        {
+          "t": "2026-04-21 06:00",
+          "temp_f": 66.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 07:00",
+          "temp_f": 68.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-21 08:00",
+          "temp_f": 71.0,
+          "dew_f": 53.0
+        },
+        {
+          "t": "2026-04-21 09:00",
+          "temp_f": 75.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-21 10:00",
+          "temp_f": 78.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-21 11:00",
+          "temp_f": 79.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-21 12:00",
+          "temp_f": 79.0,
+          "dew_f": 52.0
+        },
+        {
+          "t": "2026-04-21 13:00",
+          "temp_f": 78.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-21 14:00",
+          "temp_f": 76.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 15:00",
+          "temp_f": 75.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-21 16:00",
+          "temp_f": 74.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-21 17:00",
+          "temp_f": 74.0,
+          "dew_f": 53.0
+        },
+        {
+          "t": "2026-04-21 18:00",
+          "temp_f": 72.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-21 19:00",
+          "temp_f": 71.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-21 20:00",
+          "temp_f": 70.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-21 21:00",
+          "temp_f": 69.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 22:00",
+          "temp_f": 69.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 23:00",
+          "temp_f": 69.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 00:00",
+          "temp_f": 67.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-22 01:00",
+          "temp_f": 67.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 02:00",
+          "temp_f": 66.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 03:00",
+          "temp_f": 67.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-22 04:00",
+          "temp_f": 67.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-22 05:00",
+          "temp_f": 67.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-22 06:00",
+          "temp_f": 71.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-22 07:00",
+          "temp_f": 75.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-22 08:00",
+          "temp_f": 76.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-22 09:00",
+          "temp_f": 78.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-22 10:00",
+          "temp_f": 79.0,
+          "dew_f": 60.0
+        }
+      ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:16.985965+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:36.180375+00:00",
       "n_open": 0,
-      "n_charts": 4
+      "n_charts": 2
     },
     {
       "slug": "hou",
@@ -8844,62 +10655,6 @@
       "trains_low": true,
       "model_status": "pending",
       "bucket_charts": [
-        {
-          "side_label": "HIGH",
-          "series_ticker": "KXHIGHTHOU",
-          "day_D": "2026-05-04",
-          "title": "HIGH \u00b7 2026-05-04",
-          "buckets": [
-            {
-              "label": "79\u00b0 or below",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "80\u00b0 to 81\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "82\u00b0 to 83\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "84\u00b0 to 85\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "86\u00b0 to 87\u00b0",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            },
-            {
-              "label": "88\u00b0 or above",
-              "p_model": null,
-              "p_final": null,
-              "p_market": null,
-              "yes_bid": null,
-              "yes_ask": null
-            }
-          ]
-        },
         {
           "side_label": "HIGH",
           "series_ticker": "KXHIGHTHOU",
@@ -9013,13 +10768,374 @@
           ]
         }
       ],
-      "obs_72h": [],
+      "obs_72h": [
+        {
+          "t": "2026-04-19 11:00",
+          "temp_f": 63.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-19 12:00",
+          "temp_f": 67.0,
+          "dew_f": 45.0
+        },
+        {
+          "t": "2026-04-19 13:00",
+          "temp_f": 69.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-19 14:00",
+          "temp_f": 69.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-19 15:00",
+          "temp_f": 70.0,
+          "dew_f": 38.0
+        },
+        {
+          "t": "2026-04-19 16:00",
+          "temp_f": 69.0,
+          "dew_f": 40.0
+        },
+        {
+          "t": "2026-04-19 17:00",
+          "temp_f": 69.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-19 18:00",
+          "temp_f": 67.0,
+          "dew_f": 43.0
+        },
+        {
+          "t": "2026-04-19 19:00",
+          "temp_f": 67.0,
+          "dew_f": 42.0
+        },
+        {
+          "t": "2026-04-19 20:00",
+          "temp_f": 66.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-19 21:00",
+          "temp_f": 65.0,
+          "dew_f": 45.0
+        },
+        {
+          "t": "2026-04-19 22:00",
+          "temp_f": 65.0,
+          "dew_f": 47.0
+        },
+        {
+          "t": "2026-04-19 23:00",
+          "temp_f": 62.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-20 00:00",
+          "temp_f": 63.0,
+          "dew_f": 48.0
+        },
+        {
+          "t": "2026-04-20 01:00",
+          "temp_f": 63.0,
+          "dew_f": 48.0
+        },
+        {
+          "t": "2026-04-20 02:00",
+          "temp_f": 64.0,
+          "dew_f": 44.0
+        },
+        {
+          "t": "2026-04-20 03:00",
+          "temp_f": 64.0,
+          "dew_f": 46.0
+        },
+        {
+          "t": "2026-04-20 04:00",
+          "temp_f": 64.0,
+          "dew_f": 46.0
+        },
+        {
+          "t": "2026-04-20 05:00",
+          "temp_f": 63.0,
+          "dew_f": 46.0
+        },
+        {
+          "t": "2026-04-20 06:00",
+          "temp_f": 64.0,
+          "dew_f": 48.0
+        },
+        {
+          "t": "2026-04-20 07:00",
+          "temp_f": 64.0,
+          "dew_f": 47.0
+        },
+        {
+          "t": "2026-04-20 08:00",
+          "temp_f": 66.0,
+          "dew_f": 48.0
+        },
+        {
+          "t": "2026-04-20 09:00",
+          "temp_f": 68.0,
+          "dew_f": 50.0
+        },
+        {
+          "t": "2026-04-20 10:00",
+          "temp_f": 70.0,
+          "dew_f": 52.0
+        },
+        {
+          "t": "2026-04-20 11:00",
+          "temp_f": 71.0,
+          "dew_f": 54.0
+        },
+        {
+          "t": "2026-04-20 12:00",
+          "temp_f": 68.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-20 13:00",
+          "temp_f": 67.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-20 14:00",
+          "temp_f": 69.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-20 15:00",
+          "temp_f": 69.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-20 16:00",
+          "temp_f": 69.0,
+          "dew_f": 55.0
+        },
+        {
+          "t": "2026-04-20 17:00",
+          "temp_f": 69.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-20 18:00",
+          "temp_f": 69.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-20 19:00",
+          "temp_f": 68.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-20 20:00",
+          "temp_f": 67.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-20 21:00",
+          "temp_f": 67.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-20 22:00",
+          "temp_f": 68.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-20 23:00",
+          "temp_f": 68.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-21 00:00",
+          "temp_f": 67.0,
+          "dew_f": 59.0
+        },
+        {
+          "t": "2026-04-21 01:00",
+          "temp_f": 66.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 02:00",
+          "temp_f": 64.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 03:00",
+          "temp_f": 64.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 04:00",
+          "temp_f": 64.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 05:00",
+          "temp_f": 61.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-21 06:00",
+          "temp_f": 63.0,
+          "dew_f": 56.0
+        },
+        {
+          "t": "2026-04-21 07:00",
+          "temp_f": 63.0,
+          "dew_f": 57.0
+        },
+        {
+          "t": "2026-04-21 08:00",
+          "temp_f": 63.0,
+          "dew_f": 58.0
+        },
+        {
+          "t": "2026-04-21 09:00",
+          "temp_f": 64.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-21 10:00",
+          "temp_f": 63.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 11:00",
+          "temp_f": 63.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 12:00",
+          "temp_f": 65.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 13:00",
+          "temp_f": 65.0,
+          "dew_f": 62.0
+        },
+        {
+          "t": "2026-04-21 14:00",
+          "temp_f": 65.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-21 15:00",
+          "temp_f": 64.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-21 16:00",
+          "temp_f": 63.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 17:00",
+          "temp_f": 63.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-21 18:00",
+          "temp_f": 64.0,
+          "dew_f": 60.0
+        },
+        {
+          "t": "2026-04-21 19:00",
+          "temp_f": 65.0,
+          "dew_f": 61.0
+        },
+        {
+          "t": "2026-04-21 20:00",
+          "temp_f": 66.0,
+          "dew_f": 63.0
+        },
+        {
+          "t": "2026-04-21 21:00",
+          "temp_f": 66.0,
+          "dew_f": 64.0
+        },
+        {
+          "t": "2026-04-21 22:00",
+          "temp_f": 65.0,
+          "dew_f": 64.0
+        },
+        {
+          "t": "2026-04-21 23:00",
+          "temp_f": 66.0,
+          "dew_f": 65.0
+        },
+        {
+          "t": "2026-04-22 00:00",
+          "temp_f": 67.0,
+          "dew_f": 66.0
+        },
+        {
+          "t": "2026-04-22 01:00",
+          "temp_f": 66.0,
+          "dew_f": 66.0
+        },
+        {
+          "t": "2026-04-22 02:00",
+          "temp_f": 65.0,
+          "dew_f": 65.0
+        },
+        {
+          "t": "2026-04-22 03:00",
+          "temp_f": 65.0,
+          "dew_f": 65.0
+        },
+        {
+          "t": "2026-04-22 04:00",
+          "temp_f": 65.0,
+          "dew_f": 64.0
+        },
+        {
+          "t": "2026-04-22 05:00",
+          "temp_f": 66.0,
+          "dew_f": 65.0
+        },
+        {
+          "t": "2026-04-22 06:00",
+          "temp_f": 67.0,
+          "dew_f": 66.0
+        },
+        {
+          "t": "2026-04-22 07:00",
+          "temp_f": 72.0,
+          "dew_f": 68.0
+        },
+        {
+          "t": "2026-04-22 08:00",
+          "temp_f": 75.0,
+          "dew_f": 69.0
+        },
+        {
+          "t": "2026-04-22 09:00",
+          "temp_f": 76.0,
+          "dew_f": 68.0
+        },
+        {
+          "t": "2026-04-22 10:00",
+          "temp_f": 78.0,
+          "dew_f": 67.0
+        }
+      ],
       "open_positions": [],
-      "fetched_at_utc": "2026-05-05T06:00:18.648877+00:00",
+      "fetched_at_utc": "2026-05-05T06:02:36.340183+00:00",
       "n_open": 0,
-      "n_charts": 3
+      "n_charts": 2
     }
   ],
   "n_cities": 20,
-  "generated_at_utc": "2026-05-05T06:00:22.538565+00:00"
+  "generated_at_utc": "2026-05-05T06:02:42.757098+00:00"
 }
