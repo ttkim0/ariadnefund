@@ -3,8 +3,8 @@
   "city_name": "Las Vegas",
   "icao": "KLAS",
   "timezone": "America/Los_Angeles",
-  "fetched_at_utc": "2026-05-05T20:01:12.573614+00:00",
-  "duration_sec": 5.78,
+  "fetched_at_utc": "2026-05-05T20:09:09.985593+00:00",
+  "duration_sec": 4.11,
   "errors": [],
   "bucket_charts": [
     {
@@ -42,7 +42,7 @@
           "yes_mid": 0.05500000000000005,
           "last_price": 0.05,
           "open_interest": 2914.95,
-          "volume": 3948.92,
+          "volume": 4062.92,
           "status": "active"
         },
         {
@@ -51,11 +51,11 @@
           "strike_type": "between",
           "floor_strike": 74,
           "cap_strike": 75,
-          "yes_bid": 0.5700000000000001,
-          "yes_ask": 0.6,
-          "yes_mid": 0.585,
-          "last_price": 0.59,
-          "open_interest": 3509.05,
+          "yes_bid": 0.55,
+          "yes_ask": 0.5700000000000001,
+          "yes_mid": 0.56,
+          "last_price": 0.53,
+          "open_interest": 3368.25,
           "volume": 3955.82,
           "status": "active"
         },
@@ -66,11 +66,11 @@
           "floor_strike": 76,
           "cap_strike": 77,
           "yes_bid": 0.37,
-          "yes_ask": 0.39,
-          "yes_mid": 0.38,
-          "last_price": 0.38,
-          "open_interest": 5015.9,
-          "volume": 8783.17,
+          "yes_ask": 0.4,
+          "yes_mid": 0.385,
+          "last_price": 0.37,
+          "open_interest": 5041.59,
+          "volume": 8787.17,
           "status": "active"
         },
         {
@@ -80,8 +80,8 @@
           "floor_strike": 78,
           "cap_strike": 79,
           "yes_bid": 0.0,
-          "yes_ask": 0.020000000000000018,
-          "yes_mid": 0.010000000000000009,
+          "yes_ask": 0.030000000000000027,
+          "yes_mid": 0.015000000000000013,
           "last_price": 0.02,
           "open_interest": 5732.53,
           "volume": 6383.47,
@@ -98,7 +98,7 @@
           "yes_mid": 0.0050000000000000044,
           "last_price": 0.01,
           "open_interest": 2164.0,
-          "volume": 1462.0,
+          "volume": 1482.0,
           "status": "active"
         }
       ]
@@ -243,12 +243,12 @@
           "strike_type": "between",
           "floor_strike": 84,
           "cap_strike": 85,
-          "yes_bid": 0.43999999999999995,
-          "yes_ask": 0.45999999999999996,
-          "yes_mid": 0.44999999999999996,
+          "yes_bid": 0.43000000000000005,
+          "yes_ask": 0.43999999999999995,
+          "yes_mid": 0.435,
           "last_price": 0.45,
           "open_interest": 229.19,
-          "volume": 275.19,
+          "volume": 404.19,
           "status": "active"
         },
         {
@@ -257,12 +257,12 @@
           "strike_type": "between",
           "floor_strike": 86,
           "cap_strike": 87,
-          "yes_bid": 0.38,
-          "yes_ask": 0.4,
-          "yes_mid": 0.39,
-          "last_price": 0.4,
-          "open_interest": 49.25,
-          "volume": 55.25,
+          "yes_bid": 0.42000000000000004,
+          "yes_ask": 0.44999999999999996,
+          "yes_mid": 0.435,
+          "last_price": 0.42,
+          "open_interest": 142.0,
+          "volume": 59.25,
           "status": "active"
         },
         {
@@ -367,9 +367,9 @@
           "strike_type": "between",
           "floor_strike": 58,
           "cap_strike": 59,
-          "yes_bid": 0.29000000000000004,
+          "yes_bid": 0.30000000000000004,
           "yes_ask": 0.38,
-          "yes_mid": 0.335,
+          "yes_mid": 0.34,
           "last_price": 0.33,
           "open_interest": 2.0,
           "volume": 2.0,
@@ -384,8 +384,8 @@
           "yes_bid": 0.51,
           "yes_ask": 0.6,
           "yes_mid": 0.5549999999999999,
-          "last_price": 0.44,
-          "open_interest": 100.0,
+          "last_price": 0.51,
+          "open_interest": 102.0,
           "volume": 100.0,
           "status": "active"
         }

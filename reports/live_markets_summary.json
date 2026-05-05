@@ -1,12 +1,126 @@
 {
-  "started_at_utc": "2026-05-05T19:59:27.169777+00:00",
+  "started_at_utc": "2026-05-05T20:08:16.778172+00:00",
   "cities": [
     {
       "slug": "nyc",
       "n_events": 4,
       "n_charts": 4,
       "errors": []
+    },
+    {
+      "slug": "sfo",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "mia",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "lax",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "chi",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "phx",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "den",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "aus",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "atl",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "okc",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "bos",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "sea",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "msp",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "phl",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "las",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "san",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "dal",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "dca",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "msy",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
+    },
+    {
+      "slug": "hou",
+      "n_events": 4,
+      "n_charts": 4,
+      "errors": []
     }
   ],
-  "finished_at_utc": "2026-05-05T19:59:28.126509+00:00"
+  "finished_at_utc": "2026-05-05T20:09:23.310800+00:00"
 }

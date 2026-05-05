@@ -3,8 +3,8 @@
   "city_name": "Washington, DC",
   "icao": "KDCA",
   "timezone": "America/New_York",
-  "fetched_at_utc": "2026-05-05T20:01:22.287340+00:00",
-  "duration_sec": 5.63,
+  "fetched_at_utc": "2026-05-05T20:09:19.289317+00:00",
+  "duration_sec": 5.77,
   "errors": [],
   "bucket_charts": [
     {
@@ -56,7 +56,7 @@
           "yes_mid": 0.0050000000000000044,
           "last_price": 0.01,
           "open_interest": 3364.26,
-          "volume": 3702.44,
+          "volume": 5788.46,
           "status": "active"
         },
         {
@@ -65,12 +65,12 @@
           "strike_type": "between",
           "floor_strike": 85,
           "cap_strike": 86,
-          "yes_bid": 0.96,
-          "yes_ask": 0.97,
-          "yes_mid": 0.965,
-          "last_price": 0.96,
-          "open_interest": 4680.37,
-          "volume": 7341.04,
+          "yes_bid": 0.91,
+          "yes_ask": 0.94,
+          "yes_mid": 0.925,
+          "last_price": 0.93,
+          "open_interest": 4968.08,
+          "volume": 7598.17,
           "status": "active"
         },
         {
@@ -79,12 +79,12 @@
           "strike_type": "between",
           "floor_strike": 87,
           "cap_strike": 88,
-          "yes_bid": 0.040000000000000036,
-          "yes_ask": 0.06000000000000005,
-          "yes_mid": 0.050000000000000044,
+          "yes_bid": 0.050000000000000044,
+          "yes_ask": 0.08999999999999997,
+          "yes_mid": 0.07,
           "last_price": 0.04,
-          "open_interest": 3793.41,
-          "volume": 5288.42,
+          "open_interest": 4060.78,
+          "volume": 5497.2,
           "status": "active"
         },
         {
@@ -243,11 +243,11 @@
           "strike_type": "between",
           "floor_strike": 75,
           "cap_strike": 76,
-          "yes_bid": 0.31000000000000005,
-          "yes_ask": 0.31999999999999995,
-          "yes_mid": 0.315,
+          "yes_bid": 0.30000000000000004,
+          "yes_ask": 0.31000000000000005,
+          "yes_mid": 0.30500000000000005,
           "last_price": 0.31,
-          "open_interest": 72.52,
+          "open_interest": 87.52,
           "volume": 72.52,
           "status": "active"
         },
@@ -261,7 +261,7 @@
           "yes_ask": 0.18000000000000005,
           "yes_mid": 0.17500000000000004,
           "last_price": 0.18,
-          "open_interest": 83.0,
+          "open_interest": 94.0,
           "volume": 83.0,
           "status": "active"
         },

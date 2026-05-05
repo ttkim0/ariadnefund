@@ -3,8 +3,8 @@
   "city_name": "Oklahoma City",
   "icao": "KOKC",
   "timezone": "America/Chicago",
-  "fetched_at_utc": "2026-05-05T20:01:03.393801+00:00",
-  "duration_sec": 9.45,
+  "fetched_at_utc": "2026-05-05T20:08:54.947887+00:00",
+  "duration_sec": 8.95,
   "errors": [],
   "bucket_charts": [
     {
@@ -28,7 +28,7 @@
           "yes_mid": 0.0050000000000000044,
           "last_price": 0.01,
           "open_interest": 7637.32,
-          "volume": 8610.53,
+          "volume": 8709.53,
           "status": "active"
         },
         {
@@ -41,8 +41,8 @@
           "yes_ask": 0.010000000000000009,
           "yes_mid": 0.0050000000000000044,
           "last_price": 0.01,
-          "open_interest": 17602.82,
-          "volume": 25950.29,
+          "open_interest": 17657.82,
+          "volume": 26050.29,
           "status": "active"
         },
         {
@@ -70,7 +70,7 @@
           "yes_mid": 0.0050000000000000044,
           "last_price": 0.01,
           "open_interest": 18252.46,
-          "volume": 19984.19,
+          "volume": 20050.19,
           "status": "active"
         },
         {
@@ -97,7 +97,7 @@
           "yes_ask": 0.010000000000000009,
           "yes_mid": 0.0050000000000000044,
           "last_price": 0.01,
-          "open_interest": 3030.18,
+          "open_interest": 3172.18,
           "volume": 4450.92,
           "status": "active"
         }
@@ -119,12 +119,12 @@
           "strike_type": "less",
           "floor_strike": null,
           "cap_strike": 46,
-          "yes_bid": 0.07999999999999996,
-          "yes_ask": 0.08999999999999997,
-          "yes_mid": 0.08499999999999996,
+          "yes_bid": 0.06000000000000005,
+          "yes_ask": 0.07999999999999996,
+          "yes_mid": 0.07,
           "last_price": 0.08,
           "open_interest": 1045.44,
-          "volume": 1260.02,
+          "volume": 1265.02,
           "status": "active"
         },
         {
@@ -133,12 +133,12 @@
           "strike_type": "between",
           "floor_strike": 46,
           "cap_strike": 47,
-          "yes_bid": 0.16000000000000003,
+          "yes_bid": 0.18000000000000005,
           "yes_ask": 0.21999999999999997,
-          "yes_mid": 0.19,
+          "yes_mid": 0.2,
           "last_price": 0.16,
           "open_interest": 517.62,
-          "volume": 1654.46,
+          "volume": 1653.46,
           "status": "active"
         },
         {
@@ -147,12 +147,12 @@
           "strike_type": "between",
           "floor_strike": 48,
           "cap_strike": 49,
-          "yes_bid": 0.28,
-          "yes_ask": 0.32999999999999996,
-          "yes_mid": 0.305,
-          "last_price": 0.34,
-          "open_interest": 354.56,
-          "volume": 457.56,
+          "yes_bid": 0.29000000000000004,
+          "yes_ask": 0.33999999999999997,
+          "yes_mid": 0.315,
+          "last_price": 0.33,
+          "open_interest": 367.56,
+          "volume": 456.56,
           "status": "active"
         },
         {
@@ -162,11 +162,11 @@
           "floor_strike": 50,
           "cap_strike": 51,
           "yes_bid": 0.29000000000000004,
-          "yes_ask": 0.31000000000000005,
-          "yes_mid": 0.30000000000000004,
+          "yes_ask": 0.31999999999999995,
+          "yes_mid": 0.305,
           "last_price": 0.29,
           "open_interest": 694.03,
-          "volume": 876.1,
+          "volume": 875.1,
           "status": "active"
         },
         {
@@ -176,11 +176,11 @@
           "floor_strike": 52,
           "cap_strike": 53,
           "yes_bid": 0.12,
-          "yes_ask": 0.15000000000000002,
-          "yes_mid": 0.135,
+          "yes_ask": 0.13,
+          "yes_mid": 0.125,
           "last_price": 0.13,
           "open_interest": 272.85,
-          "volume": 408.41,
+          "volume": 407.41,
           "status": "active"
         },
         {
@@ -194,7 +194,7 @@
           "yes_mid": 0.0050000000000000044,
           "last_price": 0.01,
           "open_interest": 963.01,
-          "volume": 1048.45,
+          "volume": 1555.45,
           "status": "active"
         }
       ]
@@ -216,11 +216,11 @@
           "floor_strike": null,
           "cap_strike": 61,
           "yes_bid": 0.10999999999999999,
-          "yes_ask": 0.14,
-          "yes_mid": 0.125,
-          "last_price": 0.13,
-          "open_interest": 62.0,
-          "volume": 72.0,
+          "yes_ask": 0.12,
+          "yes_mid": 0.11499999999999999,
+          "last_price": 0.12,
+          "open_interest": 70.0,
+          "volume": 75.0,
           "status": "active"
         },
         {
@@ -229,12 +229,12 @@
           "strike_type": "between",
           "floor_strike": 61,
           "cap_strike": 62,
-          "yes_bid": 0.18999999999999995,
+          "yes_bid": 0.21999999999999997,
           "yes_ask": 0.25,
-          "yes_mid": 0.21999999999999997,
+          "yes_mid": 0.235,
           "last_price": 0.2,
           "open_interest": 87.87,
-          "volume": 88.87,
+          "volume": 92.87,
           "status": "active"
         },
         {
@@ -243,11 +243,11 @@
           "strike_type": "between",
           "floor_strike": 63,
           "cap_strike": 64,
-          "yes_bid": 0.24,
+          "yes_bid": 0.25,
           "yes_ask": 0.30000000000000004,
-          "yes_mid": 0.27,
+          "yes_mid": 0.275,
           "last_price": 0.25,
-          "open_interest": 79.0,
+          "open_interest": 80.0,
           "volume": 155.55,
           "status": "active"
         },
@@ -260,8 +260,8 @@
           "yes_bid": 0.25,
           "yes_ask": 0.26,
           "yes_mid": 0.255,
-          "last_price": 0.25,
-          "open_interest": 75.0,
+          "last_price": 0.26,
+          "open_interest": 86.0,
           "volume": 75.0,
           "status": "active"
         },
@@ -312,8 +312,8 @@
           "floor_strike": null,
           "cap_strike": 41,
           "yes_bid": 0.020000000000000018,
-          "yes_ask": 0.07999999999999996,
-          "yes_mid": 0.04999999999999999,
+          "yes_ask": 0.06999999999999995,
+          "yes_mid": 0.044999999999999984,
           "last_price": 0.03,
           "open_interest": 1.0,
           "volume": 1.0,
@@ -330,7 +330,7 @@
           "yes_mid": 0.11499999999999999,
           "last_price": 0.19,
           "open_interest": 5.0,
-          "volume": 5.0,
+          "volume": 6.0,
           "status": "active"
         },
         {
@@ -368,8 +368,8 @@
           "floor_strike": 47,
           "cap_strike": 48,
           "yes_bid": 0.25,
-          "yes_ask": 0.27,
-          "yes_mid": 0.26,
+          "yes_ask": 0.28,
+          "yes_mid": 0.265,
           "last_price": 0.25,
           "open_interest": 23.0,
           "volume": 28.0,
@@ -382,8 +382,8 @@
           "floor_strike": 48,
           "cap_strike": null,
           "yes_bid": 0.14,
-          "yes_ask": 0.16000000000000003,
-          "yes_mid": 0.15000000000000002,
+          "yes_ask": 0.15000000000000002,
+          "yes_mid": 0.14500000000000002,
           "last_price": 0.19,
           "open_interest": 14.71,
           "volume": 20.71,

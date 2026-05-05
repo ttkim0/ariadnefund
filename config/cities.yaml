@@ -64,8 +64,9 @@ cities:
     zip: "90045"
     timezone: America/Los_Angeles
     lcd_raw: data/lcd_raw/lax.csv
+    # LAX uses the no-T convention for HIGH (Kalshi inconsistency).
     kalshi:
-      high_series: null
+      high_series: KXHIGHLAX
       low_series:  KXLOWTLAX
     climatology:
       jan: [50, 65]
@@ -81,7 +82,7 @@ cities:
     timezone: America/New_York
     lcd_raw: data/lcd_raw/mia.csv
     kalshi:
-      high_series: null
+      high_series: KXHIGHMIA
       low_series:  KXLOWTMIA
     climatology:
       jan: [60, 76]
@@ -97,7 +98,7 @@ cities:
     timezone: America/Chicago
     lcd_raw: data/lcd_raw/chi.csv
     kalshi:
-      high_series: null
+      high_series: KXHIGHCHI
       low_series:  KXLOWTCHI
     climatology:
       jan: [21, 33]
@@ -129,7 +130,7 @@ cities:
     timezone: America/Denver
     lcd_raw: data/lcd_raw/den.csv
     kalshi:
-      high_series: null
+      high_series: KXHIGHDEN
       low_series:  KXLOWTDEN
     climatology:
       jan: [18, 44]
@@ -145,7 +146,7 @@ cities:
     timezone: America/Chicago
     lcd_raw: data/lcd_raw/aus.csv
     kalshi:
-      high_series: null
+      high_series: KXHIGHAUS
       low_series:  KXLOWTAUS
     climatology:
       jan: [42, 62]
@@ -241,7 +242,7 @@ cities:
     timezone: America/New_York
     lcd_raw: data/lcd_raw/phl.csv
     kalshi:
-      high_series: null
+      high_series: KXHIGHPHIL
       low_series:  KXLOWTPHIL
     climatology:
       jan: [25, 41]
