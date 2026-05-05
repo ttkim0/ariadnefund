@@ -107,13 +107,52 @@ def _strike_sort_key(market: dict):
 
 
 def _market_to_bucket(m: dict) -> dict:
-    yb = m.get("yes_bid")
-    ya = m.get("yes_ask")
-    yb_d = yb / 100.0 if yb is not None else None
-    ya_d = ya / 100.0 if ya is not None else None
+    """Extract bid/ask/mid for a Kalshi market, handling both API schemas:
+
+    OLD (integer cents, possibly all-null now):
+      m['yes_bid']        # int 0..100  e.g. 22
+      m['yes_ask']
+
+    NEW (decimal-dollar strings, populated even when old fields are null):
+      m['no_bid_dollars']    # str e.g. "0.7700"
+      m['no_ask_dollars']    # str e.g. "0.7800"
+      m['last_price_dollars']
+      m['previous_yes_bid_dollars'], m['previous_yes_ask_dollars']
+
+    For a binary YES/NO market: yes_bid = 1 − no_ask, yes_ask = 1 − no_bid.
+    We try new fields first (current API), fall back to old, fall back to
+    last_price as a single-point estimate, then to None.
+    """
+    def _f(x):
+        if x is None: return None
+        try: return float(x)
+        except (TypeError, ValueError): return None
+
+    # Path 1: new "no_*_dollars" fields → invert to yes side.
+    no_bid = _f(m.get("no_bid_dollars"))
+    no_ask = _f(m.get("no_ask_dollars"))
+    yb_d = (1.0 - no_ask) if no_ask is not None else None
+    ya_d = (1.0 - no_bid) if no_bid is not None else None
+
+    # Path 2: legacy integer-cent fields if path 1 was null.
+    if yb_d is None:
+        yb_raw = m.get("yes_bid")
+        if yb_raw is not None:
+            yb_d = float(yb_raw) / 100.0
+    if ya_d is None:
+        ya_raw = m.get("yes_ask")
+        if ya_raw is not None:
+            ya_d = float(ya_raw) / 100.0
+
+    # Path 3: last_price as a single-point fallback if no quotes either side.
+    last = _f(m.get("last_price_dollars"))
+    if yb_d is None and ya_d is None and last is not None:
+        yb_d = ya_d = last
+
     mid = None
     if yb_d is not None and ya_d is not None:
         mid = (yb_d + ya_d) / 2.0
+
     return {
         "ticker":       m.get("ticker"),
         "subtitle":     m.get("yes_sub_title") or m.get("subtitle") or "",
@@ -123,8 +162,9 @@ def _market_to_bucket(m: dict) -> dict:
         "yes_bid":      yb_d,
         "yes_ask":      ya_d,
         "yes_mid":      mid,
-        "open_interest": m.get("open_interest"),
-        "volume":       m.get("volume"),
+        "last_price":   last,
+        "open_interest": _f(m.get("open_interest_fp")) or m.get("open_interest"),
+        "volume":       _f(m.get("volume_24h_fp")) or m.get("volume"),
         "status":       m.get("status"),
     }
 

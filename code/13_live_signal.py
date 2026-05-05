@@ -292,15 +292,26 @@ def main():
             stype = mk.get("strike_type")
             floor = mk.get("floor_strike")
             cap = mk.get("cap_strike")
-            yes_bid = mk.get("yes_bid")
-            yes_ask = mk.get("yes_ask")
-
-            def cents_to_dollar(v):
-                if v is None: return None
-                v = float(v) / (100.0 if v > 1.5 else 1.0)
-                return v
-            yes_bid = cents_to_dollar(yes_bid)
-            yes_ask = cents_to_dollar(yes_ask)
+            # Kalshi schema migration: prefer new no_*_dollars / last_price
+            # fields (currently populated) over legacy yes_bid/yes_ask
+            # integer-cent fields (now usually null on the list endpoint).
+            def _f(x):
+                if x is None: return None
+                try: return float(x)
+                except (TypeError, ValueError): return None
+            no_bid = _f(mk.get("no_bid_dollars"))
+            no_ask = _f(mk.get("no_ask_dollars"))
+            yes_bid = (1.0 - no_ask) if no_ask is not None else None
+            yes_ask = (1.0 - no_bid) if no_bid is not None else None
+            # Legacy fallback (integer cents)
+            if yes_bid is None and mk.get("yes_bid") is not None:
+                v = float(mk["yes_bid"]); yes_bid = v / (100.0 if v > 1.5 else 1.0)
+            if yes_ask is None and mk.get("yes_ask") is not None:
+                v = float(mk["yes_ask"]); yes_ask = v / (100.0 if v > 1.5 else 1.0)
+            # Last-resort: use last_price_dollars as both bid and ask (zero spread)
+            last_p = _f(mk.get("last_price_dollars"))
+            if yes_bid is None and yes_ask is None and last_p is not None:
+                yes_bid = yes_ask = last_p
 
             # Fallback: if live bid/ask missing, use the most recent hourly candle.
             if yes_bid is None or yes_ask is None:
