@@ -60,6 +60,17 @@
         "kelly_used": 0.05
       },
       {
+        "ticker": "KXLOWTSFO-26MAY05-B52.5",
+        "side": "NO",
+        "bucket": "52\u00b0 to 53\u00b0",
+        "day": "2026-05-05",
+        "cost": 0.03,
+        "p_model": 0.465,
+        "p_final": 0.768,
+        "ev_per_c": 0.192,
+        "kelly_used": 0.05
+      },
+      {
         "ticker": "KXHIGHTSFO-26MAY05-B66.5",
         "side": "YES",
         "bucket": "66\u00b0 to 67\u00b0",
@@ -148,7 +159,7 @@
         "kelly_used": 0.0077
       }
     ],
-    "n_open": 11
+    "n_open": 12
   },
   "forecast": {
     "issued": "2026-05-05 14:00:00",
@@ -631,8 +642,8 @@
           "label": "47\u00b0 or below",
           "p_model": 0.0,
           "p_final": 0.0,
-          "p_market": 0.005,
-          "yes_ask": 0.01,
+          "p_market": 0.015,
+          "yes_ask": 0.03,
           "yes_bid": 0.0
         },
         {
@@ -654,10 +665,10 @@
         {
           "label": "52\u00b0 to 53\u00b0",
           "p_model": 0.465,
-          "p_final": 1.0,
-          "p_market": 0.99,
+          "p_final": 0.768,
+          "p_market": 0.985,
           "yes_ask": 1.0,
-          "yes_bid": 0.98
+          "yes_bid": 0.97
         },
         {
           "label": "54\u00b0 to 55\u00b0",
@@ -703,9 +714,9 @@
           "label": "65\u00b0 to 66\u00b0",
           "p_model": 0.098,
           "p_final": 0.386,
-          "p_market": 0.405,
-          "yes_ask": 0.41,
-          "yes_bid": 0.4
+          "p_market": 0.395,
+          "yes_ask": 0.4,
+          "yes_bid": 0.39
         },
         {
           "label": "67\u00b0 to 68\u00b0",
@@ -1269,7 +1280,7 @@
               "ticker": "KXLOWTSFO-26MAY05-B48.5",
               "label": "48\u00b0 to 49\u00b0",
               "p_model": 0.0,
-              "p_final": 0.003,
+              "p_final": 0.004,
               "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
               "yes_ask": 0.010000000000000009,
@@ -1281,7 +1292,7 @@
               "ticker": "KXLOWTSFO-26MAY05-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": 0.0,
-              "p_final": 0.003,
+              "p_final": 0.004,
               "p_market": 0.015000000000000013,
               "yes_bid": 0.010000000000000009,
               "yes_ask": 0.020000000000000018,
@@ -1293,7 +1304,7 @@
               "ticker": "KXLOWTSFO-26MAY05-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": 0.999,
-              "p_final": 0.994,
+              "p_final": 0.992,
               "p_market": 0.99,
               "yes_bid": 0.98,
               "yes_ask": 1.0,
@@ -1889,6 +1900,17 @@
           "kelly_used": 0.05
         },
         {
+          "ticker": "KXLOWTSFO-26MAY05-B52.5",
+          "side": "NO",
+          "bucket": "52\u00b0 to 53\u00b0",
+          "day": "2026-05-05",
+          "cost": 0.03,
+          "p_model": 0.465,
+          "p_final": 0.768,
+          "ev_per_c": 0.192,
+          "kelly_used": 0.05
+        },
+        {
           "ticker": "KXHIGHTSFO-26MAY05-B66.5",
           "side": "YES",
           "bucket": "66\u00b0 to 67\u00b0",
@@ -1978,7 +2000,7 @@
         }
       ],
       "fetched_at_utc": "2026-05-05T23:49:02.167081+00:00",
-      "n_open": 11,
+      "n_open": 12,
       "n_charts": 4
     },
     {
@@ -2024,7 +2046,7 @@
               "ticker": "KXHIGHNY-26MAY05-B79.5",
               "label": "79\u00b0 to 80\u00b0",
               "p_model": 0.351,
-              "p_final": 0.037,
+              "p_final": 0.041,
               "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
               "yes_ask": 0.010000000000000009,
@@ -2036,7 +2058,7 @@
               "ticker": "KXHIGHNY-26MAY05-B81.5",
               "label": "81\u00b0 to 82\u00b0",
               "p_model": 0.649,
-              "p_final": 0.963,
+              "p_final": 0.959,
               "p_market": 0.985,
               "yes_bid": 0.98,
               "yes_ask": 0.99,
@@ -2179,7 +2201,7 @@
               "ticker": "KXHIGHNY-26MAY06-B67.5",
               "label": "67\u00b0 to 68\u00b0",
               "p_model": 0.082,
-              "p_final": 0.081,
+              "p_final": 0.135,
               "p_market": 0.16000000000000003,
               "yes_bid": 0.15000000000000002,
               "yes_ask": 0.17000000000000004,
@@ -2682,26 +2704,26 @@
       ],
       "open_positions": [
         {
-          "ticker": "KXLOWTNYC-26MAY06-T56",
-          "side": "YES",
-          "bucket": "55\u00b0 or below",
-          "day": "2026-05-06",
-          "cost": 0.18,
-          "p_model": 0.524,
-          "p_final": 0.351,
-          "ev_per_c": 0.1608,
-          "kelly_used": 0.05
-        },
-        {
           "ticker": "KXHIGHNY-26MAY05-B81.5",
           "side": "NO",
           "bucket": "81\u00b0 to 82\u00b0",
           "day": "2026-05-05",
-          "cost": 0.02,
+          "cost": 0.07,
           "p_model": 0.535,
-          "p_final": 0.858,
-          "ev_per_c": 0.1124,
-          "kelly_used": 0.0312
+          "p_final": 0.78,
+          "ev_per_c": 0.1402,
+          "kelly_used": 0.0404
+        },
+        {
+          "ticker": "KXLOWTNYC-26MAY06-T56",
+          "side": "YES",
+          "bucket": "55\u00b0 or below",
+          "day": "2026-05-06",
+          "cost": 0.2,
+          "p_model": 0.524,
+          "p_final": 0.351,
+          "ev_per_c": 0.1399,
+          "kelly_used": 0.0472
         },
         {
           "ticker": "KXLOWTNYC-26MAY05-B58.5",
@@ -2715,17 +2737,6 @@
           "kelly_used": 0.0282
         },
         {
-          "ticker": "KXHIGHNY-26MAY06-B71.5",
-          "side": "NO",
-          "bucket": "71\u00b0 to 72\u00b0",
-          "day": "2026-05-06",
-          "cost": 0.73,
-          "p_model": 0.136,
-          "p_final": 0.176,
-          "ev_per_c": 0.0797,
-          "kelly_used": 0.05
-        },
-        {
           "ticker": "KXHIGHNY-26MAY06-T74",
           "side": "YES",
           "bucket": "75\u00b0 or above",
@@ -2735,6 +2746,17 @@
           "p_final": 0.135,
           "ev_per_c": 0.0749,
           "kelly_used": 0.0223
+        },
+        {
+          "ticker": "KXHIGHNY-26MAY06-B71.5",
+          "side": "NO",
+          "bucket": "71\u00b0 to 72\u00b0",
+          "day": "2026-05-06",
+          "cost": 0.74,
+          "p_model": 0.136,
+          "p_final": 0.176,
+          "ev_per_c": 0.0701,
+          "kelly_used": 0.05
         },
         {
           "ticker": "KXLOWTNYC-26MAY06-B56.5",
@@ -2752,11 +2774,11 @@
           "side": "NO",
           "bucket": "69\u00b0 to 70\u00b0",
           "day": "2026-05-06",
-          "cost": 0.52,
+          "cost": 0.51,
           "p_model": 0.142,
           "p_final": 0.416,
-          "ev_per_c": 0.0465,
-          "kelly_used": 0.0333
+          "ev_per_c": 0.0564,
+          "kelly_used": 0.0377
         },
         {
           "ticker": "KXHIGHNY-26MAY06-T67",
@@ -2781,14 +2803,14 @@
           "kelly_used": 0.05
         },
         {
-          "ticker": "KXHIGHNY-26MAY06-B67.5",
+          "ticker": "KXHIGHNY-26MAY05-B83.5",
           "side": "NO",
-          "bucket": "67\u00b0 to 68\u00b0",
-          "day": "2026-05-06",
-          "cost": 0.88,
-          "p_model": 0.082,
-          "p_final": 0.081,
-          "ev_per_c": 0.0291,
+          "bucket": "83\u00b0 to 84\u00b0",
+          "day": "2026-05-05",
+          "cost": 0.97,
+          "p_model": 0.0,
+          "p_final": 0.0,
+          "ev_per_c": 0.02,
           "kelly_used": 0.05
         }
       ],
@@ -3508,10 +3530,10 @@
           "side": "NO",
           "bucket": "68\u00b0 to 69\u00b0",
           "day": "2026-05-06",
-          "cost": 0.5,
+          "cost": 0.51,
           "p_model": 0.038,
           "p_final": 0.017,
-          "ev_per_c": 0.4657,
+          "ev_per_c": 0.4557,
           "kelly_used": 0.05
         },
         {
@@ -3519,10 +3541,10 @@
           "side": "NO",
           "bucket": "70\u00b0 to 71\u00b0",
           "day": "2026-05-06",
-          "cost": 0.66,
+          "cost": 0.67,
           "p_model": 0.066,
           "p_final": 0.017,
-          "ev_per_c": 0.3075,
+          "ev_per_c": 0.2977,
           "kelly_used": 0.05
         },
         {
@@ -3541,10 +3563,10 @@
           "side": "NO",
           "bucket": "56\u00b0 to 57\u00b0",
           "day": "2026-05-06",
-          "cost": 0.63,
+          "cost": 0.62,
           "p_model": 0.231,
           "p_final": 0.15,
-          "ev_per_c": 0.2038,
+          "ev_per_c": 0.2137,
           "kelly_used": 0.05
         },
         {
@@ -3585,10 +3607,10 @@
           "side": "NO",
           "bucket": "72\u00b0 or above",
           "day": "2026-05-06",
-          "cost": 0.94,
+          "cost": 0.93,
           "p_model": 0.0,
           "p_final": 0.017,
-          "ev_per_c": 0.0332,
+          "ev_per_c": 0.0432,
           "kelly_used": 0.05
         },
         {
@@ -3936,7 +3958,7 @@
               "ticker": "KXLOWTMIA-26MAY06-T75",
               "label": "76\u00b0 or above",
               "p_model": 0.405,
-              "p_final": 0.203,
+              "p_final": 0.295,
               "p_market": 0.16499999999999998,
               "yes_bid": 0.14,
               "yes_ask": 0.18999999999999995,
@@ -4315,10 +4337,10 @@
           "side": "NO",
           "bucket": "88\u00b0 to 89\u00b0",
           "day": "2026-05-06",
-          "cost": 0.48,
+          "cost": 0.49,
           "p_model": 0.224,
           "p_final": 0.203,
-          "ev_per_c": 0.2995,
+          "ev_per_c": 0.2895,
           "kelly_used": 0.05
         },
         {
@@ -4326,10 +4348,10 @@
           "side": "NO",
           "bucket": "90\u00b0 to 91\u00b0",
           "day": "2026-05-06",
-          "cost": 0.73,
+          "cost": 0.71,
           "p_model": 0.0,
           "p_final": 0.003,
-          "ev_per_c": 0.2533,
+          "ev_per_c": 0.2727,
           "kelly_used": 0.05
         },
         {
@@ -4337,10 +4359,10 @@
           "side": "NO",
           "bucket": "74\u00b0 to 75\u00b0",
           "day": "2026-05-06",
-          "cost": 0.49,
+          "cost": 0.5,
           "p_model": 0.393,
           "p_final": 0.295,
-          "ev_per_c": 0.1971,
+          "ev_per_c": 0.187,
           "kelly_used": 0.05
         },
         {
@@ -4359,33 +4381,33 @@
           "side": "NO",
           "bucket": "74\u00b0 to 75\u00b0",
           "day": "2026-05-05",
-          "cost": 0.06,
+          "cost": 0.05,
           "p_model": 0.822,
-          "p_final": 0.811,
-          "ev_per_c": 0.1192,
-          "kelly_used": 0.0344
+          "p_final": 0.833,
+          "ev_per_c": 0.1067,
+          "kelly_used": 0.0307
         },
         {
           "ticker": "KXLOWTMIA-26MAY06-T75",
           "side": "YES",
           "bucket": "76\u00b0 or above",
           "day": "2026-05-06",
-          "cost": 0.12,
+          "cost": 0.19,
           "p_model": 0.405,
-          "p_final": 0.203,
-          "ev_per_c": 0.073,
-          "kelly_used": 0.0236
+          "p_final": 0.295,
+          "ev_per_c": 0.0947,
+          "kelly_used": 0.0325
         },
         {
           "ticker": "KXHIGHMIA-26MAY06-B86.5",
           "side": "YES",
           "bucket": "86\u00b0 to 87\u00b0",
           "day": "2026-05-06",
-          "cost": 0.16,
+          "cost": 0.14,
           "p_model": 0.517,
           "p_final": 0.203,
-          "ev_per_c": 0.033,
-          "kelly_used": 0.0128
+          "ev_per_c": 0.053,
+          "kelly_used": 0.0183
         },
         {
           "ticker": "KXHIGHMIA-26MAY06-T91",
@@ -4397,10 +4419,21 @@
           "p_final": 0.003,
           "ev_per_c": 0.0271,
           "kelly_used": 0.05
+        },
+        {
+          "ticker": "KXLOWTMIA-26MAY06-B70.5",
+          "side": "NO",
+          "bucket": "70\u00b0 to 71\u00b0",
+          "day": "2026-05-06",
+          "cost": 0.97,
+          "p_model": 0.0,
+          "p_final": 0.0,
+          "ev_per_c": 0.02,
+          "kelly_used": 0.05
         }
       ],
       "fetched_at_utc": "2026-05-05T23:49:06.568062+00:00",
-      "n_open": 8,
+      "n_open": 9,
       "n_charts": 4
     },
     {
@@ -4613,7 +4646,7 @@
               "ticker": "KXHIGHCHI-26MAY06-B57.5",
               "label": "57\u00b0 to 58\u00b0",
               "p_model": 0.081,
-              "p_final": 0.36,
+              "p_final": 0.431,
               "p_market": 0.45999999999999996,
               "yes_bid": 0.43999999999999995,
               "yes_ask": 0.48,
@@ -4625,7 +4658,7 @@
               "ticker": "KXHIGHCHI-26MAY06-B59.5",
               "label": "59\u00b0 to 60\u00b0",
               "p_model": 0.082,
-              "p_final": 0.182,
+              "p_final": 0.165,
               "p_market": 0.22999999999999998,
               "yes_bid": 0.21999999999999997,
               "yes_ask": 0.24,
@@ -5108,11 +5141,11 @@
           "side": "NO",
           "bucket": "46\u00b0 to 47\u00b0",
           "day": "2026-05-05",
-          "cost": 0.04,
+          "cost": 0.03,
           "p_model": 0.24,
           "p_final": 0.852,
-          "ev_per_c": 0.0978,
-          "kelly_used": 0.0281
+          "ev_per_c": 0.1078,
+          "kelly_used": 0.0304
         },
         {
           "ticker": "KXHIGHCHI-26MAY06-T55",
@@ -5130,22 +5163,11 @@
           "side": "NO",
           "bucket": "59\u00b0 to 60\u00b0",
           "day": "2026-05-06",
-          "cost": 0.75,
+          "cost": 0.78,
           "p_model": 0.082,
-          "p_final": 0.182,
-          "ev_per_c": 0.0548,
+          "p_final": 0.165,
+          "ev_per_c": 0.0426,
           "kelly_used": 0.05
-        },
-        {
-          "ticker": "KXHIGHCHI-26MAY06-B57.5",
-          "side": "NO",
-          "bucket": "57\u00b0 to 58\u00b0",
-          "day": "2026-05-06",
-          "cost": 0.57,
-          "p_model": 0.081,
-          "p_final": 0.36,
-          "ev_per_c": 0.0528,
-          "kelly_used": 0.0407
         },
         {
           "ticker": "KXLOWTCHI-26MAY06-B40.5",
@@ -5159,6 +5181,17 @@
           "kelly_used": 0.05
         },
         {
+          "ticker": "KXLOWTCHI-26MAY06-T45",
+          "side": "YES",
+          "bucket": "46\u00b0 or above",
+          "day": "2026-05-06",
+          "cost": 0.07,
+          "p_model": 0.23,
+          "p_final": 0.116,
+          "ev_per_c": 0.0364,
+          "kelly_used": 0.0125
+        },
+        {
           "ticker": "KXLOWTCHI-26MAY06-B42.5",
           "side": "NO",
           "bucket": "42\u00b0 to 43\u00b0",
@@ -5168,17 +5201,6 @@
           "p_final": 0.324,
           "ev_per_c": 0.0293,
           "kelly_used": 0.0308
-        },
-        {
-          "ticker": "KXLOWTCHI-26MAY06-T45",
-          "side": "YES",
-          "bucket": "46\u00b0 or above",
-          "day": "2026-05-06",
-          "cost": 0.08,
-          "p_model": 0.23,
-          "p_final": 0.116,
-          "ev_per_c": 0.0264,
-          "kelly_used": 0.0099
         },
         {
           "ticker": "KXLOWTCHI-26MAY06-T38",
@@ -5193,7 +5215,7 @@
         }
       ],
       "fetched_at_utc": "2026-05-05T23:49:12.531834+00:00",
-      "n_open": 8,
+      "n_open": 7,
       "n_charts": 4
     },
     {
@@ -5912,10 +5934,10 @@
           "side": "NO",
           "bucket": "65\u00b0 to 66\u00b0",
           "day": "2026-05-05",
-          "cost": 0.07,
+          "cost": 0.1,
           "p_model": 0.423,
           "p_final": 0.117,
-          "ev_per_c": 0.8033,
+          "ev_per_c": 0.7733,
           "kelly_used": 0.05
         },
         {
@@ -5934,10 +5956,10 @@
           "side": "NO",
           "bucket": "60\u00b0 or above",
           "day": "2026-05-06",
-          "cost": 0.21,
+          "cost": 0.22,
           "p_model": 0.802,
           "p_final": 0.307,
-          "ev_per_c": 0.4709,
+          "ev_per_c": 0.4605,
           "kelly_used": 0.05
         },
         {
@@ -5956,10 +5978,10 @@
           "side": "NO",
           "bucket": "87\u00b0 to 88\u00b0",
           "day": "2026-05-06",
-          "cost": 0.85,
+          "cost": 0.86,
           "p_model": 0.0,
           "p_final": 0.0,
-          "ev_per_c": 0.14,
+          "ev_per_c": 0.13,
           "kelly_used": 0.05
         },
         {
@@ -6029,7 +6051,7 @@
             {
               "ticker": "KXHIGHDEN-26MAY05-T48",
               "label": "47\u00b0 or below",
-              "p_model": 0.91,
+              "p_model": 0.909,
               "p_final": 0.477,
               "p_market": 0.995,
               "yes_bid": 0.99,
@@ -6041,7 +6063,7 @@
             {
               "ticker": "KXHIGHDEN-26MAY05-B48.5",
               "label": "48\u00b0 to 49\u00b0",
-              "p_model": 0.038,
+              "p_model": 0.039,
               "p_final": 0.043,
               "p_market": 0.0050000000000000044,
               "yes_bid": 0.0,
@@ -6109,8 +6131,8 @@
             {
               "ticker": "KXLOWTDEN-26MAY05-T31",
               "label": "30\u00b0 or below",
-              "p_model": 0.719,
-              "p_final": 0.47,
+              "p_model": 0.705,
+              "p_final": 0.486,
               "p_market": 0.615,
               "yes_bid": 0.6,
               "yes_ask": 0.63,
@@ -6121,8 +6143,8 @@
             {
               "ticker": "KXLOWTDEN-26MAY05-B31.5",
               "label": "31\u00b0 to 32\u00b0",
-              "p_model": 0.281,
-              "p_final": 0.53,
+              "p_model": 0.295,
+              "p_final": 0.514,
               "p_market": 0.355,
               "yes_bid": 0.32999999999999996,
               "yes_ask": 0.38,
@@ -6195,7 +6217,7 @@
             {
               "ticker": "KXHIGHDEN-26MAY06-T36",
               "label": "35\u00b0 or below",
-              "p_model": 0.353,
+              "p_model": 0.339,
               "p_final": 0.048,
               "p_market": 0.265,
               "yes_bid": 0.25,
@@ -6207,7 +6229,7 @@
             {
               "ticker": "KXHIGHDEN-26MAY06-B36.5",
               "label": "36\u00b0 to 37\u00b0",
-              "p_model": 0.048,
+              "p_model": 0.049,
               "p_final": 0.049,
               "p_market": 0.21499999999999997,
               "yes_bid": 0.20999999999999996,
@@ -6219,8 +6241,8 @@
             {
               "ticker": "KXHIGHDEN-26MAY06-B38.5",
               "label": "38\u00b0 to 39\u00b0",
-              "p_model": 0.048,
-              "p_final": 0.049,
+              "p_model": 0.049,
+              "p_final": 0.076,
               "p_market": 0.255,
               "yes_bid": 0.24,
               "yes_ask": 0.27,
@@ -6231,7 +6253,7 @@
             {
               "ticker": "KXHIGHDEN-26MAY06-B40.5",
               "label": "40\u00b0 to 41\u00b0",
-              "p_model": 0.048,
+              "p_model": 0.049,
               "p_final": 0.048,
               "p_market": 0.175,
               "yes_bid": 0.16000000000000003,
@@ -6243,7 +6265,7 @@
             {
               "ticker": "KXHIGHDEN-26MAY06-B42.5",
               "label": "42\u00b0 to 43\u00b0",
-              "p_model": 0.069,
+              "p_model": 0.068,
               "p_final": 0.043,
               "p_market": 0.065,
               "yes_bid": 0.06000000000000005,
@@ -6255,7 +6277,7 @@
             {
               "ticker": "KXHIGHDEN-26MAY06-T43",
               "label": "44\u00b0 or above",
-              "p_model": 0.433,
+              "p_model": 0.446,
               "p_final": 0.049,
               "p_market": 0.015000000000000013,
               "yes_bid": 0.010000000000000009,
@@ -6275,8 +6297,8 @@
             {
               "ticker": "KXLOWTDEN-26MAY06-T24",
               "label": "23\u00b0 or below",
-              "p_model": 0.055,
-              "p_final": 0.043,
+              "p_model": 0.0,
+              "p_final": 0.0,
               "p_market": 0.065,
               "yes_bid": 0.050000000000000044,
               "yes_ask": 0.07999999999999996,
@@ -6287,8 +6309,8 @@
             {
               "ticker": "KXLOWTDEN-26MAY06-B24.5",
               "label": "24\u00b0 to 25\u00b0",
-              "p_model": 0.058,
-              "p_final": 0.043,
+              "p_model": 0.095,
+              "p_final": 0.048,
               "p_market": 0.14500000000000002,
               "yes_bid": 0.14,
               "yes_ask": 0.15000000000000002,
@@ -6299,8 +6321,8 @@
             {
               "ticker": "KXLOWTDEN-26MAY06-B26.5",
               "label": "26\u00b0 to 27\u00b0",
-              "p_model": 0.25,
-              "p_final": 0.2,
+              "p_model": 0.232,
+              "p_final": 0.195,
               "p_market": 0.275,
               "yes_bid": 0.25,
               "yes_ask": 0.30000000000000004,
@@ -6311,8 +6333,8 @@
             {
               "ticker": "KXLOWTDEN-26MAY06-B28.5",
               "label": "28\u00b0 to 29\u00b0",
-              "p_model": 0.191,
-              "p_final": 0.195,
+              "p_model": 0.202,
+              "p_final": 0.2,
               "p_market": 0.29500000000000004,
               "yes_bid": 0.28,
               "yes_ask": 0.31000000000000005,
@@ -6323,8 +6345,8 @@
             {
               "ticker": "KXLOWTDEN-26MAY06-B30.5",
               "label": "30\u00b0 to 31\u00b0",
-              "p_model": 0.164,
-              "p_final": 0.082,
+              "p_model": 0.18,
+              "p_final": 0.126,
               "p_market": 0.15500000000000003,
               "yes_bid": 0.15000000000000002,
               "yes_ask": 0.16000000000000003,
@@ -6335,8 +6357,8 @@
             {
               "ticker": "KXLOWTDEN-26MAY06-T31",
               "label": "32\u00b0 or above",
-              "p_model": 0.283,
-              "p_final": 0.076,
+              "p_model": 0.291,
+              "p_final": 0.082,
               "p_market": 0.07999999999999996,
               "yes_bid": 0.06999999999999995,
               "yes_ask": 0.08999999999999997,
@@ -6716,7 +6738,7 @@
           "bucket": "47\u00b0 or below",
           "day": "2026-05-05",
           "cost": 0.01,
-          "p_model": 0.91,
+          "p_model": 0.909,
           "p_final": 0.477,
           "ev_per_c": 0.5033,
           "kelly_used": 0.05
@@ -6726,10 +6748,10 @@
           "side": "NO",
           "bucket": "30\u00b0 or below",
           "day": "2026-05-05",
-          "cost": 0.42,
-          "p_model": 0.469,
-          "p_final": 0.126,
-          "ev_per_c": 0.4371,
+          "cost": 0.39,
+          "p_model": 0.456,
+          "p_final": 0.134,
+          "ev_per_c": 0.4597,
           "kelly_used": 0.05
         },
         {
@@ -6737,10 +6759,10 @@
           "side": "NO",
           "bucket": "35\u00b0 or below",
           "day": "2026-05-06",
-          "cost": 0.73,
-          "p_model": 0.353,
+          "cost": 0.75,
+          "p_model": 0.339,
           "p_final": 0.048,
-          "ev_per_c": 0.2086,
+          "ev_per_c": 0.1893,
           "kelly_used": 0.05
         },
         {
@@ -6748,10 +6770,10 @@
           "side": "NO",
           "bucket": "31\u00b0 to 32\u00b0",
           "day": "2026-05-05",
-          "cost": 0.64,
-          "p_model": 0.183,
+          "cost": 0.67,
+          "p_model": 0.191,
           "p_final": 0.142,
-          "ev_per_c": 0.2015,
+          "ev_per_c": 0.1721,
           "kelly_used": 0.05
         },
         {
@@ -6759,10 +6781,10 @@
           "side": "NO",
           "bucket": "38\u00b0 to 39\u00b0",
           "day": "2026-05-06",
-          "cost": 0.78,
-          "p_model": 0.048,
-          "p_final": 0.049,
-          "ev_per_c": 0.1588,
+          "cost": 0.76,
+          "p_model": 0.049,
+          "p_final": 0.076,
+          "ev_per_c": 0.1509,
           "kelly_used": 0.05
         },
         {
@@ -6771,7 +6793,7 @@
           "bucket": "36\u00b0 to 37\u00b0",
           "day": "2026-05-06",
           "cost": 0.79,
-          "p_model": 0.048,
+          "p_model": 0.049,
           "p_final": 0.049,
           "ev_per_c": 0.1492,
           "kelly_used": 0.05
@@ -6782,7 +6804,7 @@
           "bucket": "40\u00b0 to 41\u00b0",
           "day": "2026-05-06",
           "cost": 0.84,
-          "p_model": 0.048,
+          "p_model": 0.049,
           "p_final": 0.048,
           "ev_per_c": 0.1024,
           "kelly_used": 0.05
@@ -6793,9 +6815,9 @@
           "bucket": "24\u00b0 to 25\u00b0",
           "day": "2026-05-06",
           "cost": 0.86,
-          "p_model": 0.058,
-          "p_final": 0.043,
-          "ev_per_c": 0.0874,
+          "p_model": 0.095,
+          "p_final": 0.048,
+          "ev_per_c": 0.0824,
           "kelly_used": 0.05
         },
         {
@@ -6804,20 +6826,9 @@
           "bucket": "28\u00b0 to 29\u00b0",
           "day": "2026-05-06",
           "cost": 0.72,
-          "p_model": 0.191,
-          "p_final": 0.195,
-          "ev_per_c": 0.0705,
-          "kelly_used": 0.05
-        },
-        {
-          "ticker": "KXLOWTDEN-26MAY06-B30.5",
-          "side": "NO",
-          "bucket": "30\u00b0 to 31\u00b0",
-          "day": "2026-05-06",
-          "cost": 0.85,
-          "p_model": 0.164,
-          "p_final": 0.082,
-          "ev_per_c": 0.0582,
+          "p_model": 0.202,
+          "p_final": 0.2,
+          "ev_per_c": 0.0659,
           "kelly_used": 0.05
         },
         {
@@ -6825,10 +6836,21 @@
           "side": "NO",
           "bucket": "26\u00b0 to 27\u00b0",
           "day": "2026-05-06",
-          "cost": 0.74,
-          "p_model": 0.25,
-          "p_final": 0.2,
-          "ev_per_c": 0.0465,
+          "cost": 0.75,
+          "p_model": 0.232,
+          "p_final": 0.195,
+          "ev_per_c": 0.0415,
+          "kelly_used": 0.05
+        },
+        {
+          "ticker": "KXLOWTDEN-26MAY06-T24",
+          "side": "NO",
+          "bucket": "23\u00b0 or below",
+          "day": "2026-05-06",
+          "cost": 0.95,
+          "p_model": 0.0,
+          "p_final": 0.0,
+          "ev_per_c": 0.04,
           "kelly_used": 0.05
         },
         {
@@ -6837,7 +6859,7 @@
           "bucket": "48\u00b0 to 49\u00b0",
           "day": "2026-05-05",
           "cost": 0.01,
-          "p_model": 0.038,
+          "p_model": 0.039,
           "p_final": 0.043,
           "ev_per_c": 0.0226,
           "kelly_used": 0.0082
@@ -6859,7 +6881,7 @@
           "bucket": "33\u00b0 to 34\u00b0",
           "day": "2026-05-05",
           "cost": 0.01,
-          "p_model": 0.347,
+          "p_model": 0.353,
           "p_final": 0.043,
           "ev_per_c": 0.0226,
           "kelly_used": 0.0082
@@ -7167,7 +7189,7 @@
               "ticker": "KXLOWTAUS-26MAY06-B72.5",
               "label": "72\u00b0 to 73\u00b0",
               "p_model": 0.12,
-              "p_final": 0.102,
+              "p_final": 0.099,
               "p_market": 0.08499999999999996,
               "yes_bid": 0.07999999999999996,
               "yes_ask": 0.08999999999999997,
@@ -7588,23 +7610,23 @@
           "kelly_used": 0.0243
         },
         {
-          "ticker": "KXLOWTAUS-26MAY05-T64",
-          "side": "YES",
-          "bucket": "63\u00b0 or below",
-          "day": "2026-05-05",
-          "cost": 0.01,
-          "p_model": 0.27,
-          "p_final": 0.064,
-          "ev_per_c": 0.0435,
-          "kelly_used": 0.0135
-        },
-        {
           "ticker": "KXLOWTAUS-26MAY05-B68.5",
           "side": "YES",
           "bucket": "68\u00b0 to 69\u00b0",
           "day": "2026-05-05",
           "cost": 0.01,
           "p_model": 0.059,
+          "p_final": 0.064,
+          "ev_per_c": 0.0435,
+          "kelly_used": 0.0135
+        },
+        {
+          "ticker": "KXLOWTAUS-26MAY05-T64",
+          "side": "YES",
+          "bucket": "63\u00b0 or below",
+          "day": "2026-05-05",
+          "cost": 0.01,
+          "p_model": 0.27,
           "p_final": 0.064,
           "ev_per_c": 0.0435,
           "kelly_used": 0.0135
@@ -7632,41 +7654,19 @@
           "kelly_used": 0.0135
         },
         {
-          "ticker": "KXHIGHAUS-26MAY06-T86",
+          "ticker": "KXLOWTAUS-26MAY06-T68",
           "side": "NO",
-          "bucket": "85\u00b0 or below",
+          "bucket": "67\u00b0 or below",
           "day": "2026-05-06",
-          "cost": 0.26,
-          "p_model": 0.867,
-          "p_final": 0.696,
-          "ev_per_c": 0.0309,
-          "kelly_used": 0.015
-        },
-        {
-          "ticker": "KXHIGHAUS-26MAY06-B86.5",
-          "side": "NO",
-          "bucket": "86\u00b0 to 87\u00b0",
-          "day": "2026-05-06",
-          "cost": 0.8,
-          "p_model": 0.056,
-          "p_final": 0.16,
-          "ev_per_c": 0.0288,
-          "kelly_used": 0.05
-        },
-        {
-          "ticker": "KXHIGHAUS-26MAY06-B90.5",
-          "side": "NO",
-          "bucket": "90\u00b0 to 91\u00b0",
-          "day": "2026-05-06",
-          "cost": 0.97,
-          "p_model": 0.0,
-          "p_final": 0.0,
-          "ev_per_c": 0.02,
-          "kelly_used": 0.05
+          "cost": 0.33,
+          "p_model": 0.666,
+          "p_final": 0.634,
+          "ev_per_c": 0.0202,
+          "kelly_used": 0.0133
         }
       ],
       "fetched_at_utc": "2026-05-05T23:49:16.889589+00:00",
-      "n_open": 9,
+      "n_open": 7,
       "n_charts": 4
     },
     {
@@ -7992,7 +7992,7 @@
               "ticker": "KXLOWTATL-26MAY06-T64",
               "label": "65\u00b0 or above",
               "p_model": 0.0,
-              "p_final": 0.095,
+              "p_final": 0.102,
               "p_market": 0.52,
               "yes_bid": 0.5,
               "yes_ask": 0.54,
@@ -8371,10 +8371,10 @@
           "side": "NO",
           "bucket": "80\u00b0 or below",
           "day": "2026-05-06",
-          "cost": 0.33,
+          "cost": 0.32,
           "p_model": 0.66,
           "p_final": 0.108,
-          "ev_per_c": 0.546,
+          "ev_per_c": 0.5563,
           "kelly_used": 0.05
         },
         {
@@ -8382,10 +8382,10 @@
           "side": "NO",
           "bucket": "65\u00b0 or above",
           "day": "2026-05-06",
-          "cost": 0.51,
+          "cost": 0.5,
           "p_model": 0.0,
-          "p_final": 0.095,
-          "ev_per_c": 0.3777,
+          "p_final": 0.102,
+          "ev_per_c": 0.3803,
           "kelly_used": 0.05
         },
         {
@@ -8393,10 +8393,10 @@
           "side": "NO",
           "bucket": "63\u00b0 to 64\u00b0",
           "day": "2026-05-06",
-          "cost": 0.62,
+          "cost": 0.63,
           "p_model": 0.0,
           "p_final": 0.095,
-          "ev_per_c": 0.2687,
+          "ev_per_c": 0.2589,
           "kelly_used": 0.05
         },
         {
@@ -8422,23 +8422,23 @@
           "kelly_used": 0.05
         },
         {
-          "ticker": "KXLOWTATL-26MAY06-B57.5",
-          "side": "YES",
-          "bucket": "57\u00b0 to 58\u00b0",
-          "day": "2026-05-06",
-          "cost": 0.02,
-          "p_model": 0.271,
-          "p_final": 0.108,
-          "ev_per_c": 0.0785,
-          "kelly_used": 0.0226
-        },
-        {
           "ticker": "KXLOWTATL-26MAY06-B59.5",
           "side": "YES",
           "bucket": "59\u00b0 to 60\u00b0",
           "day": "2026-05-06",
           "cost": 0.02,
           "p_model": 0.419,
+          "p_final": 0.108,
+          "ev_per_c": 0.0785,
+          "kelly_used": 0.0226
+        },
+        {
+          "ticker": "KXLOWTATL-26MAY06-B57.5",
+          "side": "YES",
+          "bucket": "57\u00b0 to 58\u00b0",
+          "day": "2026-05-06",
+          "cost": 0.02,
+          "p_model": 0.271,
           "p_final": 0.108,
           "ev_per_c": 0.0785,
           "kelly_used": 0.0226
@@ -8595,7 +8595,7 @@
               "ticker": "KXLOWTOKC-26MAY05-B46.5",
               "label": "46\u00b0 to 47\u00b0",
               "p_model": 0.0,
-              "p_final": 0.108,
+              "p_final": 0.176,
               "p_market": 0.16999999999999998,
               "yes_bid": 0.10999999999999999,
               "yes_ask": 0.22999999999999998,
@@ -8607,7 +8607,7 @@
               "ticker": "KXLOWTOKC-26MAY05-B48.5",
               "label": "48\u00b0 to 49\u00b0",
               "p_model": 0.0,
-              "p_final": 0.392,
+              "p_final": 0.32,
               "p_market": 0.39,
               "yes_bid": 0.31000000000000005,
               "yes_ask": 0.47,
@@ -8619,7 +8619,7 @@
               "ticker": "KXLOWTOKC-26MAY05-B50.5",
               "label": "50\u00b0 to 51\u00b0",
               "p_model": 0.4,
-              "p_final": 0.392,
+              "p_final": 0.32,
               "p_market": 0.29,
               "yes_bid": 0.22999999999999998,
               "yes_ask": 0.35,
@@ -8631,7 +8631,7 @@
               "ticker": "KXLOWTOKC-26MAY05-B52.5",
               "label": "52\u00b0 to 53\u00b0",
               "p_model": 0.6,
-              "p_final": 0.108,
+              "p_final": 0.184,
               "p_market": 0.13499999999999995,
               "yes_bid": 0.06999999999999995,
               "yes_ask": 0.19999999999999996,
@@ -8678,7 +8678,7 @@
               "ticker": "KXHIGHTOKC-26MAY06-B61.5",
               "label": "61\u00b0 to 62\u00b0",
               "p_model": 0.063,
-              "p_final": 0.12,
+              "p_final": 0.143,
               "p_market": 0.22000000000000003,
               "yes_bid": 0.18000000000000005,
               "yes_ask": 0.26,
@@ -8806,7 +8806,7 @@
               "ticker": "KXLOWTOKC-26MAY06-T48",
               "label": "49\u00b0 or above",
               "p_model": 0.931,
-              "p_final": 0.163,
+              "p_final": 0.204,
               "p_market": 0.16000000000000003,
               "yes_bid": 0.14,
               "yes_ask": 0.18000000000000005,
@@ -9196,10 +9196,10 @@
           "side": "NO",
           "bucket": "48\u00b0 to 49\u00b0",
           "day": "2026-05-05",
-          "cost": 0.68,
+          "cost": 0.67,
           "p_model": 0.0,
           "p_final": 0.12,
-          "ev_per_c": 0.1843,
+          "ev_per_c": 0.1941,
           "kelly_used": 0.05
         },
         {
@@ -9211,28 +9211,6 @@
           "p_model": 0.0,
           "p_final": 0.12,
           "ev_per_c": 0.1164,
-          "kelly_used": 0.05
-        },
-        {
-          "ticker": "KXLOWTOKC-26MAY05-B50.5",
-          "side": "NO",
-          "bucket": "50\u00b0 to 51\u00b0",
-          "day": "2026-05-05",
-          "cost": 0.75,
-          "p_model": 0.076,
-          "p_final": 0.12,
-          "ev_per_c": 0.1164,
-          "kelly_used": 0.05
-        },
-        {
-          "ticker": "KXLOWTOKC-26MAY05-B46.5",
-          "side": "NO",
-          "bucket": "46\u00b0 to 47\u00b0",
-          "day": "2026-05-05",
-          "cost": 0.85,
-          "p_model": 0.0,
-          "p_final": 0.033,
-          "ev_per_c": 0.1072,
           "kelly_used": 0.05
         },
         {
@@ -9258,6 +9236,17 @@
           "kelly_used": 0.05
         },
         {
+          "ticker": "KXLOWTOKC-26MAY05-B50.5",
+          "side": "NO",
+          "bucket": "50\u00b0 to 51\u00b0",
+          "day": "2026-05-05",
+          "cost": 0.78,
+          "p_model": 0.076,
+          "p_final": 0.12,
+          "ev_per_c": 0.0876,
+          "kelly_used": 0.05
+        },
+        {
           "ticker": "KXHIGHTOKC-26MAY06-B63.5",
           "side": "NO",
           "bucket": "63\u00b0 to 64\u00b0",
@@ -9280,36 +9269,14 @@
           "kelly_used": 0.05
         },
         {
-          "ticker": "KXLOWTOKC-26MAY05-T46",
+          "ticker": "KXLOWTOKC-26MAY05-B46.5",
           "side": "NO",
-          "bucket": "45\u00b0 or below",
+          "bucket": "46\u00b0 to 47\u00b0",
           "day": "2026-05-05",
-          "cost": 0.92,
+          "cost": 0.88,
           "p_model": 0.0,
-          "p_final": 0.0,
-          "ev_per_c": 0.07,
-          "kelly_used": 0.05
-        },
-        {
-          "ticker": "KXHIGHTOKC-26MAY06-B61.5",
-          "side": "NO",
-          "bucket": "61\u00b0 to 62\u00b0",
-          "day": "2026-05-06",
-          "cost": 0.82,
-          "p_model": 0.063,
-          "p_final": 0.12,
-          "ev_per_c": 0.0492,
-          "kelly_used": 0.05
-        },
-        {
-          "ticker": "KXLOWTOKC-26MAY05-B52.5",
-          "side": "NO",
-          "bucket": "52\u00b0 to 53\u00b0",
-          "day": "2026-05-05",
-          "cost": 0.91,
-          "p_model": 0.114,
-          "p_final": 0.033,
-          "ev_per_c": 0.0472,
+          "p_final": 0.066,
+          "ev_per_c": 0.0438,
           "kelly_used": 0.05
         },
         {
@@ -9346,6 +9313,28 @@
           "kelly_used": 0.0122
         },
         {
+          "ticker": "KXLOWTOKC-26MAY05-T46",
+          "side": "NO",
+          "bucket": "45\u00b0 or below",
+          "day": "2026-05-05",
+          "cost": 0.96,
+          "p_model": 0.0,
+          "p_final": 0.0,
+          "ev_per_c": 0.03,
+          "kelly_used": 0.05
+        },
+        {
+          "ticker": "KXHIGHTOKC-26MAY06-B61.5",
+          "side": "NO",
+          "bucket": "61\u00b0 to 62\u00b0",
+          "day": "2026-05-06",
+          "cost": 0.82,
+          "p_model": 0.063,
+          "p_final": 0.143,
+          "ev_per_c": 0.0268,
+          "kelly_used": 0.05
+        },
+        {
           "ticker": "KXLOWTOKC-26MAY06-B41.5",
           "side": "NO",
           "bucket": "41\u00b0 to 42\u00b0",
@@ -9358,7 +9347,7 @@
         }
       ],
       "fetched_at_utc": "2026-05-05T23:49:22.754959+00:00",
-      "n_open": 16,
+      "n_open": 15,
       "n_charts": 4
     },
     {
@@ -9607,7 +9596,7 @@
               "ticker": "KXHIGHTBOS-26MAY06-T72",
               "label": "73\u00b0 or above",
               "p_model": 0.148,
-              "p_final": 0.186,
+              "p_final": 0.141,
               "p_market": 0.20499999999999996,
               "yes_bid": 0.19999999999999996,
               "yes_ask": 0.20999999999999996,
@@ -9651,7 +9640,7 @@
               "ticker": "KXLOWTBOS-26MAY06-B53.5",
               "label": "53\u00b0 to 54\u00b0",
               "p_model": 0.103,
-              "p_final": 0.141,
+              "p_final": 0.105,
               "p_market": 0.09500000000000003,
               "yes_bid": 0.050000000000000044,
               "yes_ask": 0.14,
@@ -9663,7 +9652,7 @@
               "ticker": "KXLOWTBOS-26MAY06-B55.5",
               "label": "55\u00b0 to 56\u00b0",
               "p_model": 0.109,
-              "p_final": 0.269,
+              "p_final": 0.217,
               "p_market": 0.36,
               "yes_bid": 0.33999999999999997,
               "yes_ask": 0.38,
@@ -10077,10 +10066,10 @@
           "side": "NO",
           "bucket": "57\u00b0 to 58\u00b0",
           "day": "2026-05-06",
-          "cost": 0.64,
+          "cost": 0.61,
           "p_model": 0.0,
           "p_final": 0.105,
-          "ev_per_c": 0.2384,
+          "ev_per_c": 0.2679,
           "kelly_used": 0.05
         },
         {
@@ -10128,14 +10117,14 @@
           "kelly_used": 0.0241
         },
         {
-          "ticker": "KXHIGHTBOS-26MAY06-T72",
+          "ticker": "KXLOWTBOS-26MAY06-T58",
           "side": "NO",
-          "bucket": "73\u00b0 or above",
+          "bucket": "59\u00b0 or above",
           "day": "2026-05-06",
-          "cost": 0.73,
-          "p_model": 0.148,
-          "p_final": 0.186,
-          "ev_per_c": 0.0697,
+          "cost": 0.87,
+          "p_model": 0.0,
+          "p_final": 0.043,
+          "ev_per_c": 0.0775,
           "kelly_used": 0.05
         },
         {
@@ -10143,33 +10132,44 @@
           "side": "YES",
           "bucket": "51\u00b0 to 52\u00b0",
           "day": "2026-05-06",
-          "cost": 0.03,
+          "cost": 0.04,
           "p_model": 0.147,
           "p_final": 0.105,
-          "ev_per_c": 0.0655,
-          "kelly_used": 0.0195
+          "ev_per_c": 0.0555,
+          "kelly_used": 0.0171
         },
         {
-          "ticker": "KXLOWTBOS-26MAY06-T58",
+          "ticker": "KXHIGHTBOS-26MAY06-T72",
           "side": "NO",
-          "bucket": "59\u00b0 or above",
+          "bucket": "73\u00b0 or above",
           "day": "2026-05-06",
-          "cost": 0.9,
-          "p_model": 0.0,
-          "p_final": 0.043,
-          "ev_per_c": 0.0475,
+          "cost": 0.8,
+          "p_model": 0.148,
+          "p_final": 0.141,
+          "ev_per_c": 0.0474,
           "kelly_used": 0.05
+        },
+        {
+          "ticker": "KXLOWTBOS-26MAY06-B53.5",
+          "side": "YES",
+          "bucket": "53\u00b0 to 54\u00b0",
+          "day": "2026-05-06",
+          "cost": 0.05,
+          "p_model": 0.103,
+          "p_final": 0.105,
+          "ev_per_c": 0.0455,
+          "kelly_used": 0.0146
         },
         {
           "ticker": "KXLOWTBOS-26MAY06-B55.5",
           "side": "NO",
           "bucket": "55\u00b0 to 56\u00b0",
           "day": "2026-05-06",
-          "cost": 0.67,
+          "cost": 0.73,
           "p_model": 0.109,
-          "p_final": 0.269,
-          "ev_per_c": 0.0459,
-          "kelly_used": 0.0465
+          "p_final": 0.217,
+          "ev_per_c": 0.0396,
+          "kelly_used": 0.0495
         },
         {
           "ticker": "KXHIGHTBOS-26MAY05-B74.5",
@@ -10205,23 +10205,23 @@
           "kelly_used": 0.0082
         },
         {
-          "ticker": "KXLOWTBOS-26MAY05-T45",
-          "side": "YES",
-          "bucket": "44\u00b0 or below",
-          "day": "2026-05-05",
-          "cost": 0.01,
-          "p_model": 0.0,
-          "p_final": 0.043,
-          "ev_per_c": 0.0225,
-          "kelly_used": 0.0082
-        },
-        {
           "ticker": "KXLOWTBOS-26MAY05-T52",
           "side": "YES",
           "bucket": "53\u00b0 or above",
           "day": "2026-05-05",
           "cost": 0.01,
           "p_model": 0.361,
+          "p_final": 0.043,
+          "ev_per_c": 0.0225,
+          "kelly_used": 0.0082
+        },
+        {
+          "ticker": "KXLOWTBOS-26MAY05-T45",
+          "side": "YES",
+          "bucket": "44\u00b0 or below",
+          "day": "2026-05-05",
+          "cost": 0.01,
+          "p_model": 0.0,
           "p_final": 0.043,
           "ev_per_c": 0.0225,
           "kelly_used": 0.0082
@@ -10239,7 +10239,7 @@
         }
       ],
       "fetched_at_utc": "2026-05-05T23:49:27.088453+00:00",
-      "n_open": 16,
+      "n_open": 17,
       "n_charts": 4
     },
     {
@@ -10576,11 +10576,6 @@
         }
       ],
       "obs_72h": [
-        {
-          "t": "2026-05-02 15:00",
-          "temp_f": 73.94,
-          "dew_f": 50.0
-        },
         {
           "t": "2026-05-02 16:00",
           "temp_f": 73.04,
@@ -10935,6 +10930,11 @@
           "t": "2026-05-05 14:00",
           "temp_f": 60.08,
           "dew_f": 51.08
+        },
+        {
+          "t": "2026-05-05 15:00",
+          "temp_f": 62.06,
+          "dew_f": 51.98
         }
       ],
       "open_positions": [],
@@ -16566,5 +16566,5 @@
     }
   ],
   "n_cities": 20,
-  "generated_at_utc": "2026-05-05T23:49:48.512752+00:00"
+  "generated_at_utc": "2026-05-05T23:53:32.999253+00:00"
 }
