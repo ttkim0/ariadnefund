@@ -249,8 +249,9 @@ function formatPacific(utcStr) {
 let _state = null;
 let _currentCity = "sfo";
 
-// Fetch & render
-fetch("data/fund_state.json")
+// Fetch & render — cache-bust query param so Vercel's CDN serves the
+// freshest deployment instead of the per-edge cache.
+fetch("data/fund_state.json?t=" + Date.now(), { cache: "no-store" })
   .then(r => r.json())
   .then(state => { _state = state; render(state); })
   .catch(err => {

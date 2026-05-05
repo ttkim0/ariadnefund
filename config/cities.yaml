@@ -46,8 +46,10 @@ cities:
     zip: "10024"
     timezone: America/New_York
     lcd_raw: data/lcd_raw/nyc.csv
+    # NYC HIGH uses an irregular ticker (KXHIGHNY, no "T") — every other city
+    # uses KXHIGHT*.  Discovered post-deployment.
     kalshi:
-      high_series: null
+      high_series: KXHIGHNY
       low_series:  KXLOWTNYC
     climatology:
       jan: [27, 39]
