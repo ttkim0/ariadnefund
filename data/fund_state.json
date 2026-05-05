@@ -27,14 +27,14 @@
     ],
     "open_positions": [
       {
-        "ticker": "KXHIGHTSFO-26MAY05-B66.5",
+        "ticker": "KXLOWTSFO-26MAY05-T55",
         "side": "YES",
-        "bucket": "66\u00b0 to 67\u00b0",
+        "bucket": "56\u00b0 or above",
         "day": "2026-05-05",
-        "cost": 0.06,
-        "p_model": 0.434,
+        "cost": 0.1,
+        "p_model": 0.368,
         "p_final": 0.386,
-        "ev_per_c": 0.3158,
+        "ev_per_c": 0.2758,
         "kelly_used": 0.05
       },
       {
@@ -43,31 +43,9 @@
         "bucket": "68\u00b0 or above",
         "day": "2026-05-05",
         "cost": 0.04,
-        "p_model": 0.331,
-        "p_final": 0.338,
-        "ev_per_c": 0.2884,
-        "kelly_used": 0.05
-      },
-      {
-        "ticker": "KXLOWTSFO-26MAY05-T55",
-        "side": "YES",
-        "bucket": "56\u00b0 or above",
-        "day": "2026-05-05",
-        "cost": 0.1,
-        "p_model": 0.379,
-        "p_final": 0.386,
-        "ev_per_c": 0.2758,
-        "kelly_used": 0.05
-      },
-      {
-        "ticker": "KXHIGHTSFO-26MAY04-B63.5",
-        "side": "NO",
-        "bucket": "63\u00b0 to 64\u00b0",
-        "day": "2026-05-04",
-        "cost": 0.01,
-        "p_model": 0.879,
-        "p_final": 0.726,
-        "ev_per_c": 0.2544,
+        "p_model": 0.307,
+        "p_final": 0.291,
+        "ev_per_c": 0.2415,
         "kelly_used": 0.05
       },
       {
@@ -82,26 +60,26 @@
         "kelly_used": 0.05
       },
       {
+        "ticker": "KXHIGHTSFO-26MAY05-B66.5",
+        "side": "YES",
+        "bucket": "66\u00b0 to 67\u00b0",
+        "day": "2026-05-05",
+        "cost": 0.06,
+        "p_model": 0.188,
+        "p_final": 0.219,
+        "ev_per_c": 0.1494,
+        "kelly_used": 0.0424
+      },
+      {
         "ticker": "KXLOWTSFO-26MAY04-B52.5",
         "side": "YES",
         "bucket": "52\u00b0 to 53\u00b0",
         "day": "2026-05-04",
         "cost": 0.14,
-        "p_model": 0.064,
+        "p_model": 0.065,
         "p_final": 0.268,
         "ev_per_c": 0.1179,
         "kelly_used": 0.0372
-      },
-      {
-        "ticker": "KXHIGHTSFO-26MAY04-B61.5",
-        "side": "YES",
-        "bucket": "61\u00b0 to 62\u00b0",
-        "day": "2026-05-04",
-        "cost": 0.01,
-        "p_model": 0.121,
-        "p_final": 0.106,
-        "ev_per_c": 0.0864,
-        "kelly_used": 0.0243
       },
       {
         "ticker": "KXLOWTSFO-26MAY04-B54.5",
@@ -109,7 +87,7 @@
         "bucket": "54\u00b0 to 55\u00b0",
         "day": "2026-05-04",
         "cost": 0.18,
-        "p_model": 0.936,
+        "p_model": 0.935,
         "p_final": 0.726,
         "ev_per_c": 0.0841,
         "kelly_used": 0.0288
@@ -142,19 +120,19 @@
         "bucket": "54\u00b0 to 55\u00b0",
         "day": "2026-05-05",
         "cost": 0.57,
-        "p_model": 0.335,
+        "p_model": 0.33,
         "p_final": 0.386,
         "ev_per_c": 0.027,
         "kelly_used": 0.0257
       }
     ],
-    "n_open": 11
+    "n_open": 9
   },
   "forecast": {
     "issued": "2026-05-04 18:00:00",
-    "current_temp": 57.92,
-    "h12_median": 58.01034092945058,
-    "h24_median": 59.33199431264667
+    "current_temp": 57.02,
+    "h12_median": 57.780653406046596,
+    "h24_median": 59.17604451071851
   },
   "horizon_skill": [
     {
@@ -589,16 +567,16 @@
         },
         {
           "label": "61\u00b0 to 62\u00b0",
-          "p_model": 0.121,
-          "p_final": 0.106,
+          "p_model": 0.0,
+          "p_final": 0.003,
           "p_market": 0.005,
           "yes_ask": 0.01,
           "yes_bid": 0.0
         },
         {
           "label": "63\u00b0 to 64\u00b0",
-          "p_model": 0.879,
-          "p_final": 0.726,
+          "p_model": 1.0,
+          "p_final": 1.0,
           "p_market": 0.995,
           "yes_ask": 1.0,
           "yes_bid": 0.99
@@ -653,7 +631,7 @@
         },
         {
           "label": "52\u00b0 to 53\u00b0",
-          "p_model": 0.064,
+          "p_model": 0.065,
           "p_final": 0.268,
           "p_market": 0.105,
           "yes_ask": 0.14,
@@ -661,7 +639,7 @@
         },
         {
           "label": "54\u00b0 to 55\u00b0",
-          "p_model": 0.936,
+          "p_model": 0.935,
           "p_final": 0.726,
           "p_market": 0.88,
           "yes_ask": 0.94,
@@ -709,7 +687,7 @@
         },
         {
           "label": "64\u00b0 to 65\u00b0",
-          "p_model": 0.236,
+          "p_model": 0.505,
           "p_final": 0.386,
           "p_market": 0.385,
           "yes_ask": 0.39,
@@ -717,16 +695,16 @@
         },
         {
           "label": "66\u00b0 to 67\u00b0",
-          "p_model": 0.434,
-          "p_final": 0.386,
+          "p_model": 0.188,
+          "p_final": 0.219,
           "p_market": 0.055,
           "yes_ask": 0.06,
           "yes_bid": 0.05
         },
         {
           "label": "68\u00b0 or above",
-          "p_model": 0.331,
-          "p_final": 0.338,
+          "p_model": 0.307,
+          "p_final": 0.291,
           "p_market": 0.035,
           "yes_ask": 0.04,
           "yes_bid": 0.03
@@ -765,7 +743,7 @@
         },
         {
           "label": "52\u00b0 to 53\u00b0",
-          "p_model": 0.287,
+          "p_model": 0.302,
           "p_final": 0.386,
           "p_market": 0.37,
           "yes_ask": 0.41,
@@ -773,7 +751,7 @@
         },
         {
           "label": "54\u00b0 to 55\u00b0",
-          "p_model": 0.335,
+          "p_model": 0.33,
           "p_final": 0.386,
           "p_market": 0.465,
           "yes_ask": 0.5,
@@ -781,7 +759,7 @@
         },
         {
           "label": "56\u00b0 or above",
-          "p_model": 0.379,
+          "p_model": 0.368,
           "p_final": 0.386,
           "p_market": 0.095,
           "yes_ask": 0.1,
@@ -1148,9 +1126,9 @@
     },
     {
       "t": "2026-05-04 18:00",
-      "temp_f": 57.92,
+      "temp_f": 57.02,
       "dew_f": 50.0
     }
   ],
-  "generated_at_utc": "2026-05-05T03:11:34.296762+00:00"
+  "generated_at_utc": "2026-05-05T03:14:03.178243+00:00"
 }
