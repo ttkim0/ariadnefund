@@ -78,6 +78,12 @@ if [ "${slow_age}" -ge "${SLOW_INTERVAL}" ]; then
     run_step "multi-city METAR refresh"   "${PY}" code/14b_multi_refresh_metar.py --hours 24
     run_step "hourly forecast (sfo)"      "${PY}" code/06_predict.py
     run_step "dashboard (sfo)"            "${PY}" code/15_dashboard.py
+    # CRITICAL: regenerate features for every trained city BEFORE running
+    # live signals.  Without this step features.parquet stays frozen at the
+    # timestamp it had when 03_features first ran, and 13_live_signal will
+    # re-issue an old forecast (midnight if 04_train ran overnight) every
+    # cycle, ignoring any METARs that have arrived since.
+    run_step "features refresh (trained)" bash code/03b_refresh_features_trained.sh
     # Run 13_live_signal for every city that has finished training.
     # Skips untrained cities silently (the script self-guards).
     run_step "live signals (all trained)" bash code/13c_live_signal_all_trained.sh

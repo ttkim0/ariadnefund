@@ -173,7 +173,7 @@ if (!window.AriadneAuth.isLoggedIn()) {
   <!-- ===================== 72h observations ===================== -->
   <section class="t-panel t-row-full">
     <div class="t-panel-header">
-      <span class="num">07</span><span class="title">SFO OBSERVATIONS · LAST 72h</span>
+      <span class="num">07</span><span class="title" id="obs-title">OBSERVATIONS · LAST 72h</span>
       <span class="sub">hourly METAR · temperature (amber) &amp; dew point (blue)</span>
       <span class="pill" id="obs-span">—</span>
     </div>
@@ -434,6 +434,8 @@ function renderCity(s, slug) {
 
   // ── 72h observations canvas (panel 07)
   const obs = city.obs_72h || [];
+  document.getElementById("obs-title").textContent =
+    `${city.icao} OBSERVATIONS · LAST 72h`;
   drawObsChart(obs);
   if (obs.length >= 2) {
     document.getElementById("obs-span").textContent =
